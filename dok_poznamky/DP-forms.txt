@@ -1,0 +1,12 @@
+- tlustý/ tenký klient (obrázky)
+- moduly:
+Object Library
+PL/SQL Library  
+Form Module   
+Menu Module
+- bloky:
+Data blocks
+Control blocks
+
+- ukazky implementovanych formularu, GUI-popis
+- datovy model

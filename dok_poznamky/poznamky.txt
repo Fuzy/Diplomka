@@ -1,0 +1,10 @@
+Proc ne JDBC?
+uzivatel ma pristup k databazi, muze poskodit data
+vyuzitelnost soucasneho kodu, volani databazovych objektu z javy, jeste vetsi 
+nutnost na zabezpeceni
+
+android komponenty pro sync, ucet authentikace, auth UI
+http nejaky info
+handler
+cursor loader
+alarmanager - Intent.ACTION_TIME_TICK
