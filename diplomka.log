@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-1.40.10 (MiKTeX 2.8) (preloaded format=pdflatex 2013.1.20)  7 MAR 2013 22:54
+This is pdfTeX, Version 3.1415926-1.40.10 (MiKTeX 2.8) (preloaded format=pdflatex 2013.1.20)  19 MAR 2013 21:56
 entering extended mode
 **C:/MojeData/Škola/DP/Dokument/diplomka.tex
 (C:/MojeData/Škola/DP/Dokument/diplomka.tex
@@ -286,39 +286,100 @@ File: t1aer.fd 1997/11/16 Font definitions for T1/aer.
 \f@ncyO@olf=\skip50
 \f@ncyO@orf=\skip51
 )
-(C:\MojeData\Škola\DP\Dokument\diplomka.aux)
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 17.
-LaTeX Font Info:    ... okay on input line 17.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 17.
-LaTeX Font Info:    ... okay on input line 17.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 17.
-LaTeX Font Info:    ... okay on input line 17.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 17.
-LaTeX Font Info:    ... okay on input line 17.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 17.
-LaTeX Font Info:    ... okay on input line 17.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 17.
-LaTeX Font Info:    ... okay on input line 17.
-LaTeX Font Info:    Calculating math sizes for size <16> on input line 24.
+("C:\Program Files\MikTex\tex\latex\float\float.sty"
+Package: float 2001/11/08 v1.3d Float enhancements (AL)
+\c@float@type=\count90
+\float@exts=\toks16
+\float@box=\box26
+\@float@everytoks=\toks17
+\@floatcapt=\box27
+)
+("C:\Program Files\MikTex\tex\latex\graphics\graphicx.sty"
+Package: graphicx 1999/02/16 v1.0f Enhanced LaTeX Graphics (DPC,SPQR)
+
+("C:\Program Files\MikTex\tex\latex\graphics\keyval.sty"
+Package: keyval 1999/03/16 v1.13 key=value parser (DPC)
+\KV@toks@=\toks18
+)
+("C:\Program Files\MikTex\tex\latex\graphics\graphics.sty"
+Package: graphics 2009/02/05 v1.0o Standard LaTeX Graphics (DPC,SPQR)
+
+("C:\Program Files\MikTex\tex\latex\graphics\trig.sty"
+Package: trig 1999/03/16 v1.09 sin cos tan (DPC)
+)
+("C:\Program Files\MikTex\tex\latex\00miktex\graphics.cfg"
+File: graphics.cfg 2007/01/18 v1.5 graphics configuration of teTeX/TeXLive
+)
+Package graphics Info: Driver file: pdftex.def on input line 91.
+
+("C:\Program Files\MikTex\tex\latex\pdftex-def\pdftex.def"
+File: pdftex.def 2011/05/27 v0.06d Graphics/color for pdfTeX
+
+("C:\Program Files\MikTex\tex\generic\oberdiek\infwarerr.sty"
+Package: infwarerr 2010/04/08 v1.3 Providing info/warning/message (HO)
+)
+("C:\Program Files\MikTex\tex\generic\oberdiek\ltxcmds.sty"
+Package: ltxcmds 2011/04/18 v1.20 LaTeX kernel commands for general use (HO)
+)
+\Gread@gobject=\count91
+))
+\Gin@req@height=\dimen104
+\Gin@req@width=\dimen105
+)
+(C:\MojeData\Škola\DP\Dokument\diplomka.aux
+
+LaTeX Warning: Label `' multiply defined.
+
+
+LaTeX Warning: Label `' multiply defined.
+
+)
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 19.
+LaTeX Font Info:    ... okay on input line 19.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 19.
+LaTeX Font Info:    ... okay on input line 19.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 19.
+LaTeX Font Info:    ... okay on input line 19.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 19.
+LaTeX Font Info:    ... okay on input line 19.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 19.
+LaTeX Font Info:    ... okay on input line 19.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 19.
+LaTeX Font Info:    ... okay on input line 19.
+ ("C:\Program Files\MikTex\tex\context\base\supp-pdf.mkii"
+[Loading MPS to PDF converter (version 2006.09.02).]
+\scratchcounter=\count92
+\scratchdimen=\dimen106
+\scratchbox=\box28
+\nofMPsegments=\count93
+\nofMParguments=\count94
+\everyMPshowfont=\toks19
+\MPscratchCnt=\count95
+\MPscratchDim=\dimen107
+\MPnumerator=\count96
+\makeMPintoPDFobject=\count97
+\everyMPtoPDFconversion=\toks20
+)
+LaTeX Font Info:    Calculating math sizes for size <16> on input line 26.
 
 
 LaTeX Font Warning: Font shape `OT1/cmr/m/n' in size <16> not available
-(Font)              size <17.28> substituted on input line 24.
+(Font)              size <17.28> substituted on input line 26.
 
 
 LaTeX Font Warning: Font shape `OML/cmm/m/it' in size <16> not available
-(Font)              size <17.28> substituted on input line 24.
+(Font)              size <17.28> substituted on input line 26.
 
 
 LaTeX Font Warning: Font shape `OMS/cmsy/m/n' in size <16> not available
-(Font)              size <17.28> substituted on input line 24.
+(Font)              size <17.28> substituted on input line 26.
 
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <16> on input line 24.
+(Font)              <16> on input line 26.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <11.19995> on input line 24.
+(Font)              <11.19995> on input line 26.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <8> on input line 24.
+(Font)              <8> on input line 26.
 [1
 
 {C:/Users/Fuzy/AppData/Local/MiKTeX/2.8/pdftex/config/pdftex.map}] [1
@@ -338,37 +399,45 @@ LaTeX Font Info:    External font `cmex10' loaded for size
 ]
 Kapitola 1.
 
-Underfull \hbox (badness 10000) in paragraph at lines 57--58
-
- []
-
-
 Underfull \hbox (badness 10000) in paragraph at lines 59--60
 
  []
 
-LaTeX Font Info:    Try loading font information for T1+aett on input line 60.
+
+Underfull \hbox (badness 10000) in paragraph at lines 61--62
+
+ []
+
+LaTeX Font Info:    Try loading font information for T1+aett on input line 62.
 ("C:\Program Files\MikTex\tex\latex\ae\t1aett.fd"
 File: t1aett.fd 1997/11/16 Font definitions for T1/aett.
 )
-Underfull \hbox (badness 10000) in paragraph at lines 64--72
+Underfull \hbox (badness 10000) in paragraph at lines 66--74
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 73--75
+Underfull \hbox (badness 10000) in paragraph at lines 75--77
 
  []
 
 [1
 
-]
-LaTeX Font Info:    Try loading font information for OMS+aer on input line 80.
- ("C:\Program Files\MikTex\tex\latex\ae\omsaer.fd"
-File: omsaer.fd 1999/12/27
-)
-LaTeX Font Info:    Font shape `OMS/aer/m/n' in size <12> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 80.
+] <obr/3tier.png, id=21, 714.67pt x 291.0875pt>
+File: obr/3tier.png Graphic file (type png)
+ <use obr/3tier.png>
+Package pdftex.def Info: obr/3tier.png used on input line 84.
+(pdftex.def)             Requested size: 393.0697pt x 160.0986pt.
+
+Overfull \hbox (3.0697pt too wide) in paragraph at lines 84--86
+ [][] 
+ []
+
+<obr/BD27.png, id=22, 604.50844pt x 373.395pt>
+File: obr/BD27.png Graphic file (type png)
+ <use obr/BD27.png>
+Package pdftex.def Info: obr/BD27.png used on input line 95.
+(pdftex.def)             Requested size: 362.70786pt x 224.03873pt.
 
 
 Package Fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -376,29 +445,66 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[2] [3] [4] (C:\MojeData\Škola\DP\Dokument\diplomka.aux)
+[2 <C:/MojeData/Škola/DP/Dokument/obr/3tier.png (PNG copy)>]
+<obr/VX42.png, id=27, 602.25pt x 372.64218pt>
+File: obr/VX42.png Graphic file (type png)
+ <use obr/VX42.png>
+Package pdftex.def Info: obr/VX42.png used on input line 102.
+(pdftex.def)             Requested size: 361.35278pt x 223.58702pt.
+ [3 <C:/MojeData/Škola/DP/Dokument/obr/BD27.png (PNG copy)>] [4 <C:/MojeData/Šk
+ola/DP/Dokument/obr/VX42.png (PNG copy)>]
+Kapitola 2.
+
+
+pdfTeX warning: pdflatex (file C:/MojeData/Škola/DP/Dokument/obr/souc_arch2.pdf
+): PDF inclusion: found PDF version <1.5>, but at most version <1.4> allowed
+<obr/souc_arch2.pdf, id=35, 512.66531pt x 228.10219pt>
+File: obr/souc_arch2.pdf Graphic file (type pdf)
+
+<use obr/souc_arch2.pdf>
+Package pdftex.def Info: obr/souc_arch2.pdf used on input line 120.
+(pdftex.def)             Requested size: 410.1328pt x 182.48198pt.
+
+Overfull \hbox (20.1328pt too wide) in paragraph at lines 120--122
+ [][] 
+ []
+
+LaTeX Font Info:    Try loading font information for OMS+aer on input line 125.
+
+("C:\Program Files\MikTex\tex\latex\ae\omsaer.fd"
+File: omsaer.fd 1999/12/27
+)
+LaTeX Font Info:    Font shape `OMS/aer/m/n' in size <12> not available
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 125.
+ [5
+
+ <C:/MojeData/Škola/DP/Dokument/obr/souc_arch2.pdf>] [6] [7] (C:\MojeData\Škola
+\DP\Dokument\diplomka.aux)
 
 LaTeX Font Warning: Size substitutions with differences
 (Font)              up to 1.28pt have occurred.
 
+
+LaTeX Warning: There were multiply-defined labels.
+
  ) 
 Here is how much of TeX's memory you used:
- 1371 strings out of 495324
- 14662 string characters out of 3182598
- 65224 words of memory out of 3000000
- 4554 multiletter control sequences out of 15000+200000
- 39990 words of font info for 83 fonts, out of 3000000 for 9000
+ 2345 strings out of 495324
+ 27699 string characters out of 3182598
+ 80804 words of memory out of 3000000
+ 5482 multiletter control sequences out of 15000+200000
+ 44633 words of font info for 90 fonts, out of 3000000 for 9000
  5 hyphenation exceptions out of 8191
- 30i,10n,43p,302b,353s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 28i,10n,43p,302b,329s stack positions out of 5000i,500n,10000p,200000b,50000s
 <C:/Program Files/MikTex/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Progra
 m Files/MikTex/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Program Files/MikTe
 x/fonts/type1/public/amsfonts/cm/cmr17.pfb><C:/Program Files/MikTex/fonts/type1
 /public/amsfonts/cm/cmsy10.pfb><C:/Program Files/MikTex/fonts/type1/public/amsf
 onts/cm/cmti12.pfb><C:/Program Files/MikTex/fonts/type1/public/amsfonts/cm/cmtt
 12.pfb>
-Output written on diplomka.pdf (8 pages, 88506 bytes).
+Output written on diplomka.pdf (11 pages, 269123 bytes).
 PDF statistics:
- 53 PDF objects out of 1000 (max. 8388607)
+ 80 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
- 1 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 21 words of extra memory for PDF output out of 10000 (max. 10000000)
 

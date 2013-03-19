@@ -4,6 +4,8 @@
 \usepackage[czech]{babel}
 \usepackage{ae}
 \usepackage{fancyhdr}
+\usepackage{float}
+\usepackage{graphicx}
 %\usepackage[pdftex]{graphicx}
 \author{Martin Kadlec}
 \title{Docháka a výkazy práce pro systém IMIS na platformě Android}
@@ -73,8 +75,51 @@ Control blocks\\
 - ukazky implementovanych formularu, GUI-popis\\
 - datovy model\\
 
+\section{Oracle forms}
+
+\paragraph{PL/SQL}
+PL/SQL (Procedural Language/Structured Query Language) je procedurální nadstavba jazyka SQL od firmy Oracle založená na programovacím jazyku Ada.
+\begin{figure}[H]
+  \centering
+  \includegraphics[scale=0.55]{obr/3tier.png}
+  \label{}
+\end{figure}
+TODO zobrazit jako desktop klienta
+\section{Datový model}
+
+\section{Forms klient}
+
+\subsection{Zápis příchodů a odchodů}
+\begin{figure}[H]
+  \centering
+  \includegraphics[scale=0.6]{obr/BD27.png}
+  \label{}
+\end{figure}
+
+\subsection{Výkaz práce}
+\begin{figure}[H]
+  \centering
+  \includegraphics[scale=0.6]{obr/VX42.png}
+  \label{}
+\end{figure}
+
+\section{Triggery}
+jen ty, jejichž funkčnost bude muset být implementována.
+
+\chapter{Implementace}
+
+\section{Funkcionalita}
+
+\section{Výběr achitektury}
+vhodne prostredky: JDBC/webova sluzby/Oracle Database Mobile Server 11g - zajistuje synchronizaci mezi Oracle db a mobilnim zarizenim, zamitnuto z licencnich duvodu, mozna by stalo za to to vic prozkoumat a neco o tom napsat
 \section{Architektura}
 Android aplikace funguje jako tenký klient, který se připojuje k webové službě. Webová služba používá REST architekturu a přistupuje k samotné databázi.
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[scale=0.8]{obr/souc_arch2.pdf}
+  \label{obr: logo zcu}
+\end{figure}
 
 \begin{itemize}
 \item Webová služba - Java EE 6, aplikační server GlassFish
@@ -83,62 +128,37 @@ Android aplikace funguje jako tenký klient, který se připojuje k webové slu�
 \end{itemize}
 
 V knihovnách pro Forms aplikace se nachází další kód, který bude nutné přepsat do webové služby.
+\section{REST}
+\begin{enumerate}
+\item REST operace - davkove vs jednotlive
+\item REST, tabulka URI, 
+\end{enumerate}
+
+\section{Synchronizace}
+\begin{enumerate}
+\item sync algoritmus - 2 algoritmy (jeden ideální, druhý reálný), srovnání
+\item sync architektura - komponenty
+\end{enumerate}
 
 \section{Zabezpečení}
 Server webové služby je dostupná v síti VPN. Další zabezpečení bude řešeno později...
 
 \section{O čem psát...}
 \begin{enumerate}
-\item pouzita technologie
-\item vhodne prostredky: JDBC/webova sluzby/Oracle Database Mobile Server 11g - zajistuje synchronizaci mezi Oracle db a mobilnim zarizenim, zamitnuto z licencnich duvodu, mozna by stalo za to to vic prozkoumat a neco o tom napsat
-\item zabezpeceni
 \item vyuziti soucasneho kodu z knihoven - databazove baliky a PLL forms knihovny
 \item datovy model, na strane androida jen jeho podmnozina, napr ciselniky..
-\item REST, tabulka URI, 
 \item popsat IMIS 
 \item ROWID jako unikatni identifikator, problemy ktere to prinasi
 \item pripraveno webove sluzby na dalsi mobilni platformy
 \item cinnost apliakce online/offline
 \item flow diagramy pro ruzne cinnosti
-\item sync algoritmus
-\item sync architektura - komponenty
 \item pristupova prava
-\item REST operace - davkove vs jednotlive
 \item uspora pesistentni pameti na strane androida
 \item chybove reporty a opravy na aplikaci v ostrem prostredi
 \item jak zjisit zmenu zaznamu, v datech se uklada pouze datum posledni zmeny, nikoli presny cas
 \item výhrady v db schématu
+\item android komponenty pro sync, authentikaci..., nestandartni UI atd...
 \end{enumerate}
-
-\section{Co dodělat}
-\begin{enumerate}
-\item opticky rozlisit udalosti synchronizovane a nesynchronizovane
-\item chybove rizeni
-\item ORM?
-\item ship android app with database?
-\item lepsi UI - kalendar mesicni, tydenni?, denni
-\item zjistovat silu WIFI a dostupnost VPN, neposilat data kdyz se signal slaby - pri automaticke sync
-\item sluzby?
-\item rychla volba 
-\item lepsi UI pro authentikaci
-\item HTTP ResponseHandler?
-\item UI detail udalosti
-\item davkove operace v content provideru
-\item připadn další funkcnost grafy atd.. později
-\item logovani
-\end{enumerate}
-
-\section{Problémy}
-\begin{enumerate}
-\item jak zajistit aby uzivatel mohl pristupovat pouze ke svym zaznamum
-\item chybove reporty a opravy na aplikaci v ostrem prostredi
-\end{enumerate}
-
-\section{SVN}
-\begin{verbatim}
-https://github.com/Fuzy/dp_android
-https://github.com/Fuzy/Imisoid_WS
-\end{verbatim}
 
 \appendix
 \bibliographystyle{csplainnat}

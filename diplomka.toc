@@ -2,9 +2,18 @@
 \contentsline {chapter}{\numberline {1}\IeC {\'U}vod}{1}
 \contentsline {section}{\numberline {1.1}Z\IeC {\'a}sady pro vypracov\IeC {\'a}n\IeC {\'\i }}{1}
 \contentsline {section}{\numberline {1.2}Sou\IeC {\v c}asn\IeC {\'y} syst\IeC {\'e}m}{1}
-\contentsline {section}{\numberline {1.3}Architektura}{2}
-\contentsline {section}{\numberline {1.4}Zabezpe\IeC {\v c}en\IeC {\'\i }}{2}
-\contentsline {section}{\numberline {1.5}O \IeC {\v c}em ps\IeC {\'a}t...}{2}
-\contentsline {section}{\numberline {1.6}Co dod\IeC {\v e}lat}{3}
-\contentsline {section}{\numberline {1.7}Probl\IeC {\'e}my}{4}
-\contentsline {section}{\numberline {1.8}SVN}{4}
+\contentsline {section}{\numberline {1.3}Oracle forms}{2}
+\contentsline {paragraph}{PL/SQL}{2}
+\contentsline {section}{\numberline {1.4}Datov\IeC {\'y} model}{3}
+\contentsline {section}{\numberline {1.5}Forms klient}{3}
+\contentsline {subsection}{\numberline {1.5.1}Z\IeC {\'a}pis p\IeC {\v r}\IeC {\'\i }chod\IeC {\r u} a odchod\IeC {\r u}}{3}
+\contentsline {subsection}{\numberline {1.5.2}V\IeC {\'y}kaz pr\IeC {\'a}ce}{4}
+\contentsline {section}{\numberline {1.6}Triggery}{4}
+\contentsline {chapter}{\numberline {2}Implementace}{5}
+\contentsline {section}{\numberline {2.1}Funkcionalita}{5}
+\contentsline {section}{\numberline {2.2}V\IeC {\'y}b\IeC {\v e}r achitektury}{5}
+\contentsline {section}{\numberline {2.3}Architektura}{5}
+\contentsline {section}{\numberline {2.4}REST}{6}
+\contentsline {section}{\numberline {2.5}Synchronizace}{6}
+\contentsline {section}{\numberline {2.6}Zabezpe\IeC {\v c}en\IeC {\'\i }}{6}
+\contentsline {section}{\numberline {2.7}O \IeC {\v c}em ps\IeC {\'a}t...}{6}

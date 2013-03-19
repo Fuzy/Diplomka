@@ -2,3 +2,4 @@ proc ne put
 uti tabulka pro events
 navratove kody
 rest teorie
+HTTP hlavièky
