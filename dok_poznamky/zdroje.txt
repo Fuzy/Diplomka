@@ -4,3 +4,10 @@ http://docstore.mik.ua/orelly/oracle/prog2/ch01_01.htm
 sql2.0101.gif
 http://docs.oracle.com/cd/E24269_01/doc.11120/e24478/servlet.htm
 csimp.gif
+https://www.youtube.com/watch?feature=player_embedded&v=xHXn3Kg2IQE
+
++zjistit nejake knizni
+
+http://www.oracle.com/technetwork/database/enterprise-edition/jdbc-faq-090281.html#34_05
+
+http://www.sqlite.org/datatype3.html

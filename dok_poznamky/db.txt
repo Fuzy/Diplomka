@@ -1,0 +1,15 @@
+db tabulka datovy typ oracle - android
+format pro datum, delka dat v sqlite UTC = ISO 8601
+
+trunc(nvl(datum_vyneti,to_date('4000','YYYY'))) Vyneti,
+         trunc(nvl(datum_konec_vyneti,to_date('1000','YYYY'))) Konec
+         problemy s prevodem date na long?
+         
+vyhody prevodu date na long: odpada starost se serializaci a deserialzaci data v JSON,
+snazsi kod, pro UI stejne long nutne, porovnavani pomoci relacnich operatoru 
+         
+nejakej graf jak se zpracovavaji zaznamy ve formsech, tzn jde po radcih pre-update...
+
+vyhrady - navrh prichody/odchody - jeden radek
+chybi primarni klic
+format casu

@@ -1,2 +1,5 @@
 IMIS - co to je
 formsy + achitektura
+
+rest vs soap, porovnat, oduvodnit vyber rest sluzby
+HTTP auth vs OAuth

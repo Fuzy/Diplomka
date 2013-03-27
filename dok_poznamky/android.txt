@@ -1,0 +1,15 @@
+AUTHENTIKACE
+android authentikace
+AbstractAccountAuthenticator
+AccountAuthenticatorActivity
+
+
+Always remember these two rules about the single thread model. Do not block
+the UI thread, and make sure that you access the Android UI toolkit only on the UI
+thread.
+
+Remember that the account manager is running as a system process, so the phone will crash if there's an unhandled exception in your code, a missing manifest entry, or an error in your xml.
+
+jak to je s tokenem, jak to funguje jinde, napr generovani token i na strane klienta
+
+omezeni - networking na hlavnim vlakne

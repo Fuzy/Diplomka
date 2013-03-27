@@ -10,3 +10,7 @@ Control blocks
 
 - ukazky implementovanych formularu, GUI-popis
 - datovy model
+
+oracle adf - co to je, co to resi, proc to neresi muj problem
+druhy trigerù, 
+které triggery budu muset pøedìlat do WS

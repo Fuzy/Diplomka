@@ -1,19 +1,38 @@
 \select@language {czech}
-\contentsline {chapter}{\numberline {1}\IeC {\'U}vod}{1}
+\contentsline {chapter}{\numberline {1}null}{1}
 \contentsline {section}{\numberline {1.1}Z\IeC {\'a}sady pro vypracov\IeC {\'a}n\IeC {\'\i }}{1}
-\contentsline {section}{\numberline {1.2}Sou\IeC {\v c}asn\IeC {\'y} syst\IeC {\'e}m}{1}
-\contentsline {section}{\numberline {1.3}Oracle forms}{2}
-\contentsline {paragraph}{PL/SQL}{2}
-\contentsline {section}{\numberline {1.4}Datov\IeC {\'y} model}{3}
-\contentsline {section}{\numberline {1.5}Forms klient}{3}
-\contentsline {subsection}{\numberline {1.5.1}Z\IeC {\'a}pis p\IeC {\v r}\IeC {\'\i }chod\IeC {\r u} a odchod\IeC {\r u}}{3}
-\contentsline {subsection}{\numberline {1.5.2}V\IeC {\'y}kaz pr\IeC {\'a}ce}{4}
-\contentsline {section}{\numberline {1.6}Triggery}{4}
-\contentsline {chapter}{\numberline {2}Implementace}{5}
-\contentsline {section}{\numberline {2.1}Funkcionalita}{5}
-\contentsline {section}{\numberline {2.2}V\IeC {\'y}b\IeC {\v e}r achitektury}{5}
-\contentsline {section}{\numberline {2.3}Architektura}{5}
-\contentsline {section}{\numberline {2.4}REST}{6}
-\contentsline {section}{\numberline {2.5}Synchronizace}{6}
-\contentsline {section}{\numberline {2.6}Zabezpe\IeC {\v c}en\IeC {\'\i }}{6}
-\contentsline {section}{\numberline {2.7}O \IeC {\v c}em ps\IeC {\'a}t...}{6}
+\contentsline {chapter}{\numberline {2}\IeC {\'U}vod}{2}
+\contentsline {section}{\numberline {2.1}Sou\IeC {\v c}asn\IeC {\'y} syst\IeC {\'e}m}{2}
+\contentsline {section}{\numberline {2.2}Oracle forms}{2}
+\contentsline {paragraph}{PL/SQL}{3}
+\contentsline {subsection}{\numberline {2.2.1}Triggery}{3}
+\contentsline {subsection}{\numberline {2.2.2}LOV}{4}
+\contentsline {section}{\numberline {2.3}Datov\IeC {\'y} model}{5}
+\contentsline {section}{\numberline {2.4}U\IeC {\v z}ivatelsk\IeC {\'e} rozhran\IeC {\'\i }}{6}
+\contentsline {subsection}{\numberline {2.4.1}Z\IeC {\'a}pis p\IeC {\v r}\IeC {\'\i }chod\IeC {\r u} a odchod\IeC {\r u}}{6}
+\contentsline {subsection}{\numberline {2.4.2}V\IeC {\'y}kaz pr\IeC {\'a}ce}{7}
+\contentsline {chapter}{\numberline {3}Anal\IeC {\'y}za}{8}
+\contentsline {section}{\numberline {3.1}Architektura}{8}
+\contentsline {subsection}{\numberline {3.1.1}P\IeC {\v r}\IeC {\'\i }m\IeC {\'e} p\IeC {\v r}ipojen\IeC {\'\i } k datab\IeC {\'a}zi}{8}
+\contentsline {subsection}{\numberline {3.1.2}Oracle Database Mobile Server}{8}
+\contentsline {subsection}{\numberline {3.1.3}Webov\IeC {\'a} slu\IeC {\v z}ba}{8}
+\contentsline {section}{\numberline {3.2}Datov\IeC {\'a} vrstva}{8}
+\contentsline {subsection}{\numberline {3.2.1}Pr\IeC {\'a}ce s datumem a \IeC {\v c}asem}{8}
+\contentsline {subsection}{\numberline {3.2.2}Kritika datov\IeC {\'e} vrstvy}{9}
+\contentsline {section}{\numberline {3.3}Business logika}{9}
+\contentsline {subsection}{\numberline {3.3.1}Triggery}{9}
+\contentsline {subsection}{\numberline {3.3.2}Datab\IeC {\'a}zov\IeC {\'e} bal\IeC {\'\i }\IeC {\v c}ky a ulo\IeC {\v z}en\IeC {\'e} procedury}{10}
+\contentsline {subsection}{\numberline {3.3.3}Forms knihovny}{10}
+\contentsline {section}{\numberline {3.4}U\IeC {\v z}ivatelsk\IeC {\'e} rozhran\IeC {\'\i }}{10}
+\contentsline {subsection}{\numberline {3.4.1}LOV}{10}
+\contentsline {chapter}{\numberline {4}Implementace}{11}
+\contentsline {section}{\numberline {4.1}Funkcionalita}{11}
+\contentsline {section}{\numberline {4.2}Architektura}{11}
+\contentsline {section}{\numberline {4.3}Business logika}{12}
+\contentsline {section}{\numberline {4.4}Android komponenty}{12}
+\contentsline {section}{\numberline {4.5}SQLite}{12}
+\contentsline {section}{\numberline {4.6}REST}{12}
+\contentsline {section}{\numberline {4.7}Synchronizace}{12}
+\contentsline {section}{\numberline {4.8}Zabezpe\IeC {\v c}en\IeC {\'\i }}{13}
+\contentsline {section}{\numberline {4.9}Zp\IeC {\v e}tn\IeC {\'a} kompatibilita}{13}
+\contentsline {section}{\numberline {4.10}O \IeC {\v c}em ps\IeC {\'a}t...}{13}

@@ -1,0 +1,4 @@
+connection pooling
+vykazy - jizdy v obou?
+authentikace - tabulka s tokeny a jejich platnosti?
+printscreeny dochazka s daty, LOV, datovy model vykazy
