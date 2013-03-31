@@ -27,12 +27,18 @@
 \contentsline {subsection}{\numberline {3.4.1}LOV}{10}
 \contentsline {chapter}{\numberline {4}Implementace}{11}
 \contentsline {section}{\numberline {4.1}Funkcionalita}{11}
-\contentsline {section}{\numberline {4.2}Architektura}{11}
-\contentsline {section}{\numberline {4.3}Business logika}{12}
-\contentsline {section}{\numberline {4.4}Android komponenty}{12}
-\contentsline {section}{\numberline {4.5}SQLite}{12}
-\contentsline {section}{\numberline {4.6}REST}{12}
-\contentsline {section}{\numberline {4.7}Synchronizace}{12}
-\contentsline {section}{\numberline {4.8}Zabezpe\IeC {\v c}en\IeC {\'\i }}{13}
-\contentsline {section}{\numberline {4.9}Zp\IeC {\v e}tn\IeC {\'a} kompatibilita}{13}
-\contentsline {section}{\numberline {4.10}O \IeC {\v c}em ps\IeC {\'a}t...}{13}
+\contentsline {paragraph}{Doch\IeC {\'a}zka}{11}
+\contentsline {paragraph}{Aktu\IeC {\'a}ln\IeC {\'\i } p\IeC {\v r}\IeC {\'\i }tomnost na pracovi\IeC {\v s}ti}{11}
+\contentsline {paragraph}{V\IeC {\'y}kazy pr\IeC {\'a}ce}{11}
+\contentsline {subsection}{\numberline {4.1.1}Nastaven\IeC {\'\i } a konfigurovatelnost}{12}
+\contentsline {subsection}{\numberline {4.1.2}U\IeC {\v z}ivatelsk\IeC {\'a} p\IeC {\v r}\IeC {\'\i }v\IeC {\v e}tivost}{12}
+\contentsline {section}{\numberline {4.2}Architektura}{12}
+\contentsline {section}{\numberline {4.3}Business logika}{13}
+\contentsline {section}{\numberline {4.4}Android komponenty}{13}
+\contentsline {section}{\numberline {4.5}SQLite}{13}
+\contentsline {section}{\numberline {4.6}REST}{14}
+\contentsline {section}{\numberline {4.7}Synchronizace}{14}
+\contentsline {section}{\numberline {4.8}Zabezpe\IeC {\v c}en\IeC {\'\i }}{14}
+\contentsline {section}{\numberline {4.9}Zp\IeC {\v e}tn\IeC {\'a} kompatibilita}{14}
+\contentsline {section}{\numberline {4.10}Budouc\IeC {\'\i } roz\IeC {\v s}i\IeC {\v r}itelnost}{14}
+\contentsline {section}{\numberline {4.11}O \IeC {\v c}em ps\IeC {\'a}t...}{14}

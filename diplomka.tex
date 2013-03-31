@@ -8,7 +8,7 @@
 \usepackage{graphicx}
 %\usepackage[pdftex]{graphicx}
 \author{Martin Kadlec}
-\title{Docháka a výkazy práce pro systém IMIS na platformě Android}
+\title{Docházka a výkazy práce pro systém IMIS na platformě Android}
 \titlet{}
 \titlett{}
 \university{Západočeská univerzita v Plzni}
@@ -24,7 +24,7 @@
 \lhead{\leftmark}
 \rhead{\rightmark}
 \maketitle
-\chapter*{Prohlížení}
+\chapter*{Prohlášení}
 \thispagestyle{empty}
 Prohlašuji, že jsem bakalářskou práci vypracoval samostatně a výhradně s~použitím citovaných pramenů.
 \vskip 1.5em
@@ -34,6 +34,7 @@ V Plzni dne \today
 \chapter*{Abstract}
 \thispagestyle{empty}
 Text of abstract.
+\pagestyle{empty}
 \tableofcontents
 \pagestyle{fancy}
 \renewcommand{\chaptermark}[1]{\markboth{\textit{#1}}{}}
@@ -53,6 +54,8 @@ Zvažte aspekty zabezpečení komunikace aplikace se systémem.
 \item Ověřte funkcionalitu vytvořené aplikace.
 \end{enumerate}
 
+%\renewcommand{\chaptermark}[1]{\markboth{\textit{#1}}{}}
+%\renewcommand{\sectionmark}[1]{\markright{\textit{#1}}{}}
 \chapter{Úvod}
 
 \section{Současný systém}
@@ -108,7 +111,7 @@ A List of Values is based on a Record Group. In Oracle Forms, a record group is 
   \includegraphics[scale=0.6]{obr/bd27_dochazka.png}
   \label{}
 \end{figure}
-
+TODO vytvorit schemata pro datovy model tykajici se jednotlivych modul (dochazka/vykazy), zvyraznit co je vlastne jako podnozina uchovavano na strane android DB
 
 \section{Uživatelské rozhraní}
 
@@ -193,6 +196,31 @@ jaka alternativa v androidu
 \chapter{Implementace}
 
 \section{Funkcionalita}
+Na základě analýzy současného systému a potřeb zaměstnanců byla vybrána k implementaci následující funkčnost: 
+\paragraph{Docházka}
+\begin{itemize}
+\item Přehledné zobrazení událostí docházky daného zaměstnance
+\item Uživatel má možnost přidávat, ediovat a mazat svoje události
+\item Aplikace zajišťuje automatickou synchronzaci těchto údajů s firemní databází
+\end{itemize}
+\paragraph{Aktuální přítomnost na pracovišti}
+\begin{itemize}
+\item Zobrazení seznamu zaměstnanců aktuálně přítomných na pracovišti
+\item Uživatel má možnost spravovat seznam svých "oblíbených" zaměstnanců a tento seznam zobrazovat přednostně
+\end{itemize}
+\paragraph{Výkazy práce}
+\begin{itemize}
+\item Zobrazení poměru typů zakázek za dané obdoí
+\item Zobrazení vývoje vývoje daného typu zakázky v daném období 
+\item Možnost zobrazení těchto údajů i za jiné zaměstnance
+\end{itemize}
+
+\subsection{Nastavení a konfigurovatelnost}
+Aplikace si musí pamatovat údaje nutné pro snadnou obsluhu tzn. uživatelské jméno a heslo, adresu umístění webové služby a tyto údaje jsou konfigurovatelné.\\
+Dále aplikace umožní uživateli konfigurovat vzhled některých kompoment, jako je barva typu události v docházce a typu záznamu ve výkazech.
+
+\subsection{Uživatelská přívětivost}
+Uživatelské rozhraní aplikace klade důraz na přehlednost, ergonomii a časově efektivní obsluhu.
 
 \section{Architektura}
 Android aplikace funguje jako tenký klient, který se připojuje k webové službě. Webová služba používá REST architekturu a přistupuje k samotné databázi.
@@ -206,8 +234,10 @@ Android aplikace funguje jako tenký klient, který se připojuje k webové slu�
 \begin{itemize}
 \item Webová služba - Java EE 6, aplikační server GlassFish
 \item Databáze - Oracle 10g, obsahuje navíc databázové procedury, které se používají v současných formulářích  
-\item Android - obsahuje persistentní úložiště, obsahuje záznamy o docházce (tabulka KARTA - v datovém modelu), úložiště se bude automaticky synchronizovat ve stavu online s databázovým serverem prostřednictvím webové služby
+\item Android - obsahuje persistentní úložiště, obsahuje záznamy o docházce, úložiště se bude automaticky synchronizovat ve stavu online s databázovým serverem prostřednictvím webové služby
 \end{itemize}
+TODO prepsat srozumitelneji
+TODO schema komunikace -HHTP, JDBC
 
 \section{Business logika}
 prijde to do webove sluzby - duvody
@@ -218,6 +248,8 @@ prijde to do webove sluzby - duvody
 \item CursorLoader
 \item Async task
 \item  nestandartni UI
+\item modifilkace adapterview
+\item cutom UI - viewgroup
 \end{enumerate}
 + nejaka ukazka konkretniho pouziti
 
@@ -238,9 +270,12 @@ V knihovnách pro Forms aplikace se nachází další kód, který bude nutné p
 \end{enumerate}
 
 \section{Zabezpečení}
+-authentikace
 Server webové služby je dostupná v síti VPN. Další zabezpečení bude řešeno později...
 
 \section{Zpětná kompatibilita}
+
+\section{Budoucí rozšiřitelnost}
 
 \section{O čem psát...}
 \begin{enumerate}
@@ -252,6 +287,7 @@ Server webové služby je dostupná v síti VPN. Další zabezpečení bude ře�
 \item uspora pesistentni pameti na strane androida
 \item chybove reporty a opravy na aplikaci v ostrem prostredi, obrazek + ukazka
 \item jak zjisit zmenu zaznamu, v datech se uklada pouze datum posledni zmeny, nikoli presny cas
+\item perioda automatickeho mazani dat
 \end{enumerate}
 
 \appendix
