@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-1.40.10 (MiKTeX 2.8) (preloaded format=pdflatex 2013.1.20)  3 APR 2013 23:19
+This is pdfTeX, Version 3.1415926-1.40.10 (MiKTeX 2.8) (preloaded format=pdflatex 2013.1.20)  4 APR 2013 23:02
 entering extended mode
 **C:/MojeData/Škola/DP/Dokument/diplomka.tex
 (C:/MojeData/Škola/DP/Dokument/diplomka.tex
@@ -22,10 +22,39 @@ File: size12.clo 2007/10/19 v1.4h Standard LaTeX file (size option)
 \belowcaptionskip=\skip42
 \bibindent=\dimen102
 )
+("C:\Program Files\MikTex\tex\latex\listings\listings.sty"
+("C:\Program Files\MikTex\tex\latex\graphics\keyval.sty"
+Package: keyval 1999/03/16 v1.13 key=value parser (DPC)
+\KV@toks@=\toks14
+)
+\lst@mode=\count88
+\lst@gtempboxa=\box26
+\lst@token=\toks15
+\lst@length=\count89
+\lst@currlwidth=\dimen103
+\lst@column=\count90
+\lst@pos=\count91
+\lst@lostspace=\dimen104
+\lst@width=\dimen105
+\lst@newlines=\count92
+\lst@lineno=\count93
+\lst@maxwidth=\dimen106
+
+("C:\Program Files\MikTex\tex\latex\listings\lstmisc.sty"
+File: lstmisc.sty 2007/02/22 1.4 (Carsten Heinz)
+\c@lstnumber=\count94
+\lst@skipnumbers=\count95
+\lst@framebox=\box27
+)
+("C:\Program Files\MikTex\tex\latex\listings\listings.cfg"
+File: listings.cfg 2007/02/22 1.4 listings configuration
+))
+Package: listings 2007/02/22 1.4 (Carsten Heinz)
+
 ("C:\Program Files\MikTex\tex\latex\base\inputenc.sty"
 Package: inputenc 2008/03/30 v1.1d Input encoding file
-\inpenc@prehook=\toks14
-\inpenc@posthook=\toks15
+\inpenc@prehook=\toks16
+\inpenc@posthook=\toks17
 
 ("C:\Program Files\MikTex\tex\latex\base\utf8.def"
 File: utf8.def 2008/04/05 v1.1m UTF-8 support for inputenc
@@ -253,11 +282,11 @@ Language: czech 2008/07/06 v3.1a Czech support from the babel system
 
 ("C:\Program Files\MikTex\tex\generic\babel\babel.def"
 File: babel.def 2008/07/08 v3.8m Babel common definitions
-\babel@savecnt=\count88
-\U@D=\dimen103
+\babel@savecnt=\count96
+\U@D=\dimen107
 )
 Package babel Info: Making " an active character on input line 172.
-\cs@wordlen=\count89
+\cs@wordlen=\count97
 Package babel Info: Making - an active character on input line 226.
 ))
 ("C:\Program Files\MikTex\tex\latex\ae\ae.sty"
@@ -288,19 +317,15 @@ File: t1aer.fd 1997/11/16 Font definitions for T1/aer.
 )
 ("C:\Program Files\MikTex\tex\latex\float\float.sty"
 Package: float 2001/11/08 v1.3d Float enhancements (AL)
-\c@float@type=\count90
-\float@exts=\toks16
-\float@box=\box26
-\@float@everytoks=\toks17
-\@floatcapt=\box27
+\c@float@type=\count98
+\float@exts=\toks18
+\float@box=\box28
+\@float@everytoks=\toks19
+\@floatcapt=\box29
 )
 ("C:\Program Files\MikTex\tex\latex\graphics\graphicx.sty"
 Package: graphicx 1999/02/16 v1.0f Enhanced LaTeX Graphics (DPC,SPQR)
 
-("C:\Program Files\MikTex\tex\latex\graphics\keyval.sty"
-Package: keyval 1999/03/16 v1.13 key=value parser (DPC)
-\KV@toks@=\toks18
-)
 ("C:\Program Files\MikTex\tex\latex\graphics\graphics.sty"
 Package: graphics 2009/02/05 v1.0o Standard LaTeX Graphics (DPC,SPQR)
 
@@ -321,10 +346,13 @@ Package: infwarerr 2010/04/08 v1.3 Providing info/warning/message (HO)
 ("C:\Program Files\MikTex\tex\generic\oberdiek\ltxcmds.sty"
 Package: ltxcmds 2011/04/18 v1.20 LaTeX kernel commands for general use (HO)
 )
-\Gread@gobject=\count91
+\Gread@gobject=\count99
 ))
-\Gin@req@height=\dimen104
-\Gin@req@width=\dimen105
+\Gin@req@height=\dimen108
+\Gin@req@width=\dimen109
+)
+("C:\Program Files\MikTex\tex\latex\listings\lstlang1.sty"
+File: lstlang1.sty 2004/09/05 1.3 listings language file
 )
 (C:\MojeData\Škola\DP\Dokument\diplomka.aux
 
@@ -337,52 +365,53 @@ LaTeX Warning: Label `' multiply defined.
 LaTeX Warning: Label `' multiply defined.
 
 )
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 19.
-LaTeX Font Info:    ... okay on input line 19.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 19.
-LaTeX Font Info:    ... okay on input line 19.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 19.
-LaTeX Font Info:    ... okay on input line 19.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 19.
-LaTeX Font Info:    ... okay on input line 19.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 19.
-LaTeX Font Info:    ... okay on input line 19.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 19.
-LaTeX Font Info:    ... okay on input line 19.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 25.
+LaTeX Font Info:    ... okay on input line 25.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 25.
+LaTeX Font Info:    ... okay on input line 25.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 25.
+LaTeX Font Info:    ... okay on input line 25.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 25.
+LaTeX Font Info:    ... okay on input line 25.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 25.
+LaTeX Font Info:    ... okay on input line 25.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 25.
+LaTeX Font Info:    ... okay on input line 25.
+\c@lstlisting=\count100
  ("C:\Program Files\MikTex\tex\context\base\supp-pdf.mkii"
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count92
-\scratchdimen=\dimen106
-\scratchbox=\box28
-\nofMPsegments=\count93
-\nofMParguments=\count94
-\everyMPshowfont=\toks19
-\MPscratchCnt=\count95
-\MPscratchDim=\dimen107
-\MPnumerator=\count96
-\makeMPintoPDFobject=\count97
-\everyMPtoPDFconversion=\toks20
+\scratchcounter=\count101
+\scratchdimen=\dimen110
+\scratchbox=\box30
+\nofMPsegments=\count102
+\nofMParguments=\count103
+\everyMPshowfont=\toks20
+\MPscratchCnt=\count104
+\MPscratchDim=\dimen111
+\MPnumerator=\count105
+\makeMPintoPDFobject=\count106
+\everyMPtoPDFconversion=\toks21
 )
-LaTeX Font Info:    Calculating math sizes for size <16> on input line 26.
+LaTeX Font Info:    Calculating math sizes for size <16> on input line 32.
 
 
 LaTeX Font Warning: Font shape `OT1/cmr/m/n' in size <16> not available
-(Font)              size <17.28> substituted on input line 26.
+(Font)              size <17.28> substituted on input line 32.
 
 
 LaTeX Font Warning: Font shape `OML/cmm/m/it' in size <16> not available
-(Font)              size <17.28> substituted on input line 26.
+(Font)              size <17.28> substituted on input line 32.
 
 
 LaTeX Font Warning: Font shape `OMS/cmsy/m/n' in size <16> not available
-(Font)              size <17.28> substituted on input line 26.
+(Font)              size <17.28> substituted on input line 32.
 
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <16> on input line 26.
+(Font)              <16> on input line 32.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <11.19995> on input line 26.
+(Font)              <11.19995> on input line 32.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <8> on input line 26.
+(Font)              <8> on input line 32.
 [1
 
 {C:/Users/Fuzy/AppData/Local/MiKTeX/2.8/pdftex/config/pdftex.map}] [1
@@ -406,25 +435,25 @@ Kapitola 1.
 ]
 Kapitola 2.
 
-Underfull \hbox (badness 10000) in paragraph at lines 62--63
+Underfull \hbox (badness 10000) in paragraph at lines 68--69
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 64--65
+Underfull \hbox (badness 10000) in paragraph at lines 70--71
 
  []
 
-LaTeX Font Info:    Try loading font information for T1+aett on input line 65.
+LaTeX Font Info:    Try loading font information for T1+aett on input line 71.
 ("C:\Program Files\MikTex\tex\latex\ae\t1aett.fd"
 File: t1aett.fd 1997/11/16 Font definitions for T1/aett.
 )
-Underfull \hbox (badness 10000) in paragraph at lines 69--77
+Underfull \hbox (badness 10000) in paragraph at lines 75--83
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 78--80
+Underfull \hbox (badness 10000) in paragraph at lines 84--86
 
  []
 
@@ -433,19 +462,20 @@ Underfull \hbox (badness 10000) in paragraph at lines 78--80
 ] <obr/3tier.png, id=28, 714.67pt x 291.0875pt>
 File: obr/3tier.png Graphic file (type png)
  <use obr/3tier.png>
-Package pdftex.def Info: obr/3tier.png used on input line 90.
+Package pdftex.def Info: obr/3tier.png used on input line 96.
 (pdftex.def)             Requested size: 393.0697pt x 160.0986pt.
 
-Overfull \hbox (3.0697pt too wide) in paragraph at lines 90--92
+Overfull \hbox (3.0697pt too wide) in paragraph at lines 96--98
  [][] 
  []
 
-LaTeX Font Info:    Try loading font information for OMS+aer on input line 96.
+LaTeX Font Info:    Try loading font information for OMS+aer on input line 102.
+
 ("C:\Program Files\MikTex\tex\latex\ae\omsaer.fd"
 File: omsaer.fd 1999/12/27
 )
 LaTeX Font Info:    Font shape `OMS/aer/m/n' in size <12> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 96.
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 102.
 
 
 Package Fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -458,25 +488,25 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
 File: obr/bd27_dochazka.png Graphic file (type png)
 
 <use obr/bd27_dochazka.png>
-Package pdftex.def Info: obr/bd27_dochazka.png used on input line 111.
+Package pdftex.def Info: obr/bd27_dochazka.png used on input line 117.
 (pdftex.def)             Requested size: 387.09917pt x 408.32864pt.
  [4] <obr/BD27.png, id=39, 604.50844pt x 373.395pt>
 File: obr/BD27.png Graphic file (type png)
 
 <use obr/BD27.png>
-Package pdftex.def Info: obr/BD27.png used on input line 121.
+Package pdftex.def Info: obr/BD27.png used on input line 127.
 (pdftex.def)             Requested size: 362.70786pt x 224.03873pt.
  [5 <C:/MojeData/Škola/DP/Dokument/obr/bd27_dochazka.png>]
 <obr/VX42.png, id=44, 602.25pt x 372.64218pt>
 File: obr/VX42.png Graphic file (type png)
  <use obr/VX42.png>
-Package pdftex.def Info: obr/VX42.png used on input line 128.
+Package pdftex.def Info: obr/VX42.png used on input line 134.
 (pdftex.def)             Requested size: 361.35278pt x 223.58702pt.
  [6 <C:/MojeData/Škola/DP/Dokument/obr/BD27.png (PNG copy)>] [7 <C:/MojeData/Šk
 ola/DP/Dokument/obr/VX42.png (PNG copy)>]
 Kapitola 3.
 
-Overfull \hbox (27.26987pt too wide) in paragraph at lines 145--146
+Overfull \hbox (27.26987pt too wide) in paragraph at lines 151--152
 []\T1/aer/bx/n/12 TEXT \T1/aer/m/n/12 podle ISO8601 normy ve for-mátu "YYYY-MM-
 DD HH:MM:SS.SSS". 
  []
@@ -484,7 +514,7 @@ DD HH:MM:SS.SSS".
 [8
 
 ]
-Overfull \hbox (42.33237pt too wide) in paragraph at lines 162--169
+Overfull \hbox (42.33237pt too wide) in paragraph at lines 168--175
  [][] 
  []
 
@@ -500,15 +530,34 @@ pdfTeX warning: pdflatex (file C:/MojeData/Škola/DP/Dokument/obr/souc_arch2.pdf
 File: obr/souc_arch2.pdf Graphic file (type pdf)
 
 <use obr/souc_arch2.pdf>
-Package pdftex.def Info: obr/souc_arch2.pdf used on input line 231.
+Package pdftex.def Info: obr/souc_arch2.pdf used on input line 237.
 (pdftex.def)             Requested size: 410.1328pt x 182.48198pt.
 
-Overfull \hbox (20.1328pt too wide) in paragraph at lines 231--233
+Overfull \hbox (20.1328pt too wide) in paragraph at lines 237--239
  [][] 
  []
 
-[12 <C:/MojeData/Škola/DP/Dokument/obr/souc_arch2.pdf>] [13] [14] [15]
-(C:\MojeData\Škola\DP\Dokument\diplomka.aux)
+[12 <C:/MojeData/Škola/DP/Dokument/obr/souc_arch2.pdf>] [13]
+Underfull \hbox (badness 10000) in paragraph at lines 285--286
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 286--287
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 287--288
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 288--289
+
+ []
+
+[14] [15] [16] (C:\MojeData\Škola\DP\Dokument\diplomka.aux)
 
 LaTeX Font Warning: Size substitutions with differences
 (Font)              up to 1.28pt have occurred.
@@ -518,22 +567,22 @@ LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 2360 strings out of 495324
- 27937 string characters out of 3182598
- 82816 words of memory out of 3000000
- 5496 multiletter control sequences out of 15000+200000
+ 3732 strings out of 495324
+ 47434 string characters out of 3182598
+ 130659 words of memory out of 3000000
+ 6852 multiletter control sequences out of 15000+200000
  44633 words of font info for 90 fonts, out of 3000000 for 9000
  5 hyphenation exceptions out of 8191
- 29i,11n,43p,641b,348s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 29i,11n,43p,641b,350s stack positions out of 5000i,500n,10000p,200000b,50000s
 <C:/Program Files/MikTex/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Progra
 m Files/MikTex/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Program Files/MikTe
 x/fonts/type1/public/amsfonts/cm/cmr17.pfb><C:/Program Files/MikTex/fonts/type1
 /public/amsfonts/cm/cmsy10.pfb><C:/Program Files/MikTex/fonts/type1/public/amsf
 onts/cm/cmti12.pfb><C:/Program Files/MikTex/fonts/type1/public/amsfonts/cm/cmtt
 12.pfb>
-Output written on diplomka.pdf (20 pages, 323782 bytes).
+Output written on diplomka.pdf (21 pages, 331005 bytes).
 PDF statistics:
- 112 PDF objects out of 1000 (max. 8388607)
+ 115 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  26 words of extra memory for PDF output out of 10000 (max. 10000000)
 

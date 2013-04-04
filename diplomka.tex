@@ -1,5 +1,6 @@
 \documentclass{bakalarka}
 %\usepackage[cp1250]{inputenc}
+\usepackage{listings}
 \usepackage[utf8]{inputenc} 
 \usepackage[czech]{babel}
 \usepackage{ae}
@@ -7,6 +8,11 @@
 \usepackage{float}
 \usepackage{graphicx}
 %\usepackage[pdftex]{graphicx}
+
+\lstset{language=Java,keywordstyle=\color{blue}, commentstyle=\color{Green},stringstyle=\color{red},showstringspaces=false,breaklines=true,tabsize=3,basicstyle=\footnotesize}
+
+
+
 \author{Martin Kadlec}
 \title{Docházka a výkazy práce pro systém IMIS na platformě Android}
 \titlet{}
@@ -253,6 +259,34 @@ prijde to do webove sluzby - duvody
 \item cutom UI - viewgroup
 \end{enumerate}
 + nejaka ukazka konkretniho pouziti
+
+\section{Ukládání dat}
+
+\paragraph{Sdílené preference}\hfill \\ukládá primitivní datové typy ve tvaru klíč-hodnota. Slouží k uložení nastavení specifických pro aplikaci. Toto nastavení může být uloženo jako soukromé, kdy mohou k datům přistupovat pouze aplikace sdílející stejné \emph{Linux user ID}.\\ V aplikaci používám toto úložiště pro nastavení síťového připojení (doména a port webové služby) a barevného nastavení pro typy docházkových událostí.\\
+Načtení dat se typicky odehrává v onCreate() metodě aktivity:
+\begin{verbatim}
+%\begin{lstlisting}
+SharedPreferences settings = getSharedPreferences(PREFS_NAME, 
+Context.MODE_PRIVATE);
+int color = settings.getInt("color", defaultColor);
+%\end{lstlisting}
+\end{verbatim}
+\noindent
+Uložení dat se typicky odehrává v onStop() metodě aktivity:
+\begin{verbatim}
+SharedPreferences settings = getSharedPreferences(PREFS_NAME, 
+Context.MODE_PRIVATE);
+SharedPreferences.Editor editor = settings.edit();
+editor.putInt(("color", userColor);
+editor.commit();
+\end{verbatim}
+
+\begin{description}
+\item [Interní úložiště]\hfill \\
+\item [Externí úložiště]\hfill \\
+\item [SQLite databáze]\hfill \\
+\item [Cloudové úložiště]\hfill \\
+\end{description}
 
 \section{SQLite}
 je treba resit delku dat napriklad stringu?, dynamic typing
