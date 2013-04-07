@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-1.40.10 (MiKTeX 2.8) (preloaded format=pdflatex 2013.1.20)  4 APR 2013 23:02
+This is pdfTeX, Version 3.1415926-1.40.10 (MiKTeX 2.8) (preloaded format=pdflatex 2013.1.20)  7 APR 2013 19:54
 entering extended mode
 **C:/MojeData/Škola/DP/Dokument/diplomka.tex
 (C:/MojeData/Škola/DP/Dokument/diplomka.tex
@@ -364,6 +364,18 @@ LaTeX Warning: Label `' multiply defined.
 
 LaTeX Warning: Label `' multiply defined.
 
+
+LaTeX Warning: Label `' multiply defined.
+
+
+LaTeX Warning: Label `' multiply defined.
+
+
+LaTeX Warning: Label `' multiply defined.
+
+
+LaTeX Warning: Label `' multiply defined.
+
 )
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 25.
 LaTeX Font Info:    ... okay on input line 25.
@@ -557,7 +569,34 @@ Underfull \hbox (badness 10000) in paragraph at lines 288--289
 
  []
 
-[14] [15] [16] (C:\MojeData\Škola\DP\Dokument\diplomka.aux)
+[14] [15] <scr/time_doch.png, id=92, 722.7pt x 1284.8pt>
+File: scr/time_doch.png Graphic file (type png)
+
+<use scr/time_doch.png>
+Package pdftex.def Info: scr/time_doch.png used on input line 337.
+(pdftex.def)             Requested size: 216.81166pt x 385.44298pt.
+ <scr/graf_doch.png, id=93, 1284.8pt x 722.7pt>
+File: scr/graf_doch.png Graphic file (type png)
+
+<use scr/graf_doch.png>
+Package pdftex.def Info: scr/graf_doch.png used on input line 343.
+(pdftex.def)             Requested size: 385.44298pt x 216.81166pt.
+ [16 <C:/MojeData/Škola/DP/Dokument/scr/time_doch.png (PNG copy)>] <scr/ucet.pn
+g, id=97, 722.7pt x 1284.8pt>
+File: scr/ucet.png Graphic file (type png)
+ <use scr/ucet.png>
+Package pdftex.def Info: scr/ucet.png used on input line 349.
+(pdftex.def)             Requested size: 216.81166pt x 385.44298pt.
+
+[17 <C:/MojeData/Škola/DP/Dokument/scr/graf_doch.png (PNG copy)>]
+<scr/network.png, id=101, 722.7pt x 1284.8pt>
+File: scr/network.png Graphic file (type png)
+ <use scr/network.png>
+Package pdftex.def Info: scr/network.png used on input line 355.
+(pdftex.def)             Requested size: 216.81166pt x 385.44298pt.
+ [18 <C:/MojeData/Škola/DP/Dokument/scr/ucet.png (PNG copy)>] [19 <C:/MojeData/
+Škola/DP/Dokument/scr/network.png (PNG copy)>] (C:\MojeData\Škola\DP\Dokument\d
+iplomka.aux)
 
 LaTeX Font Warning: Size substitutions with differences
 (Font)              up to 1.28pt have occurred.
@@ -567,10 +606,10 @@ LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 3732 strings out of 495324
- 47434 string characters out of 3182598
+ 3753 strings out of 495324
+ 47803 string characters out of 3182598
  130659 words of memory out of 3000000
- 6852 multiletter control sequences out of 15000+200000
+ 6868 multiletter control sequences out of 15000+200000
  44633 words of font info for 90 fonts, out of 3000000 for 9000
  5 hyphenation exceptions out of 8191
  29i,11n,43p,641b,350s stack positions out of 5000i,500n,10000p,200000b,50000s
@@ -580,9 +619,9 @@ x/fonts/type1/public/amsfonts/cm/cmr17.pfb><C:/Program Files/MikTex/fonts/type1
 /public/amsfonts/cm/cmsy10.pfb><C:/Program Files/MikTex/fonts/type1/public/amsf
 onts/cm/cmti12.pfb><C:/Program Files/MikTex/fonts/type1/public/amsfonts/cm/cmtt
 12.pfb>
-Output written on diplomka.pdf (21 pages, 331005 bytes).
+Output written on diplomka.pdf (24 pages, 578883 bytes).
 PDF statistics:
- 115 PDF objects out of 1000 (max. 8388607)
+ 128 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
- 26 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 46 words of extra memory for PDF output out of 10000 (max. 10000000)
 
