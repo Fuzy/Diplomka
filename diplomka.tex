@@ -50,54 +50,50 @@ Text of abstract.
 \rhead{\rightmark}
 \parskip 1em
 
-\chapter{null}
-\section{Zásady pro vypracování}
-\begin{enumerate}
-\item Prozkoumejte systém IMIS pro evidenci docházky a pracovních výkazů. Vyberte činnosti, které by bylo vhodné implementovat i pro mobilní zařízení.
-\item Navrhněte mobilní aplikaci pro platformu Android, které bude obsahovat vybrané funkce z předchozího bodu zadání.
-Zvažte aspekty zabezpečení komunikace aplikace se systémem.
-\item Implementujte navržené řešení, berte přitom v úvahu možnou rozšiřitelnost o další funkce.
-\item Ověřte funkcionalitu vytvořené aplikace.
-\end{enumerate}
-
 %\renewcommand{\chaptermark}[1]{\markboth{\textit{#1}}{}}
 %\renewcommand{\sectionmark}[1]{\markright{\textit{#1}}{}}
 \chapter{Úvod}
 
-\section{Současný systém}
-IMIS = Integrovaný manažerský informační systém\\
-
-Oracle Forms 6i - tlustý klient \\
-\begin{verbatim}
-http://en.wikipedia.org/wiki/Oracle_Forms
-\end{verbatim}
-
-- moduly:\\
-Object Library\\
-PL/SQL Library  \\
-Form Module   \\
-Menu Module\\
-- bloky:\\
-Data blocks\\
-Control blocks\\
-
-- ukazky implementovanych formularu, GUI-popis\\
-- datovy model\\
+\chapter{Současný systém}
+IMIS = Integrovaný manažerský informační systém
 
 \section{Oracle forms}
-Oracle Forms is a software product for creating screens that interact with an Oracle database. It has an IDE including an object navigator, property sheet and code editor that uses PL/SQL. It was originally developed to run server-side in character mode terminal sessions. It was ported to other platforms, including Windows, to function in a client–server environment. Later versions were ported to Java where it runs in a Java EE container and can integrate with Java and web services.
-
-The primary focus of Forms is to create data entry systems that access an Oracle database.
+Oracle forms je softwarový produkt vyvinutý společností Oracle. Slouží k vytváření formulářů, které interagují s Oracle databází. Jako programovací jazyk využívá PL/SQL. Produkt byl původně požíval terminálové rozhraní pro komuikaci se serverem. Později byl přepracován do architekrury klient-server.\\ \indent
+Prostředí běhu zajišťuje defaultní správu transakcí. Díky tomu je Oracle Forms silný nástroj pro efektivní vývoj aplikací, jejichž primárním cílem je přístup k datům uložených v databázi. 
 
 \paragraph{PL/SQL}
 PL/SQL (Procedural Language/Structured Query Language) je procedurální nadstavba jazyka SQL od firmy Oracle založená na programovacím jazyku Ada.
+
+\section{Architektura}
+Z hlediska architektury se Oracle Forms aplikace skládá z těchto celků:
+
+\paragraph{Modul formuláře} 
+A form (or form module) is the main component that anchors an application and provides the necessary code to interact with the datasource and the user interface. The underlying database data is reflected in multiple items, including fields, check boxes, and radio groups. A form is logically organized into blocks.
+\begin{itemize}
+\item Datový blok The data block serves as a bridge to the underlying data and provides an abstraction for how the data is reached.
+A data block can be associated with a specific database table (or a view), a stored procedure, a FROM clause query, or a transactional triggers. By default, the association between a data block and the database allows for automatic access and manipulation of data in the database.
+\item Řídící blok A control block is a block that does not have a relationship to a database table. Control blocks can contain items of any type (buttons, text items, check boxes, etc.), however, regardless of item type, all of the items in a control block are control items--that is, items that do not correspond to columns in a database table.
+\end{itemize}
+
+\paragraph{Modul menu} 
+The menu module consists of a hierarchy of menus. Each menu consists of the items that can be selected. Menu modules are usually attached to form modules. Every form module has a default menu that includes the commands for all basic database operations, such as insert, update, delete, and query.
+
+\paragraph{Modul PL/SQL knihovny}
+The PL/SQL library contains reusable code invoked by other form, menu, or library modules. The code, also called a program unit, can be user-named functions, procedures, or packages. The program unit is stored and executed on the client. The program units are not for database-related code alone. They may contain purely business logic. Libraries make all the PL/SQL code available to the form without being part of the form. The libraries are loaded dynamically. Multiple forms can attach the same PL/SQL library.
+
+\paragraph{Modul knihovny objektů}
+Object Library\\
+The object-oriented programming concept of reusing code is implemented in Oracle Forms by the object library and PL/SQL library modules. The Object library contains reusable objects and the PL/SQL library contains reusable code.
+
 \begin{figure}[H]
   \centering
-  \includegraphics[scale=0.55]{obr/3tier.png}
+  \includegraphics[scale=0.8]{obr/forms_arch3.png}
   \label{}
 \end{figure}
-TODO zobrazit jako desktop klienta
+TODO obrazek upravit - prepsat Oracle Module na Form Module
+
 \subsection{Triggery}
+Aplikace v Oracle pracuje s následujícími typy triggerů:
 \begin{itemize}
 \item Block-processing triggers: - Block processing triggers fire in response to events related to record management in a block.
 \item Interface event triggers: - Interface event triggers fire in response to events that occur in the form interface.
@@ -108,16 +104,10 @@ TODO zobrazit jako desktop klienta
 \item Validation triggers: - Validation triggers fire when Form Builder validates data in an item or record.
 \end{itemize}
 
-\subsection{LOV}
-A List of Values is based on a Record Group. In Oracle Forms, a record group is a query that returns some collection of records. Record groups can be used to populate blocks or LOVs and they can be used in procedures. When the user navigates to an item with an LOV attached to it, the LOV key (F9 in MS Windows) can be pressed to call up the LOV. At that time, the query associated with the record group is executed and the results are displayed in a pop up window. Once the user makes a selection from the list, the value or values are returned to the form and placed in the appropriate fields.
+\subsection{Seznam hodnot}
+A (LOV) is a pop-up window that provides the user with a selection of values. The values can be static or populated by querying the database. LOVs are populated using columns returned by record groups. Check the Record Group property of the LOV for the record group which is used to provide values.
 
 \section{Datový model}
-\begin{figure}[H]
-  \centering
-  \includegraphics[scale=0.6]{obr/bd27_dochazka.png}
-  \label{}
-\end{figure}
-TODO vytvorit schemata pro datovy model tykajici se jednotlivych modul (dochazka/vykazy), zvyraznit co je vlastne jako podnozina uchovavano na strane android DB
 
 \section{Uživatelské rozhraní}
 
@@ -199,7 +189,11 @@ jen ty, jejichž funkčnost bude muset být implementována.
 \subsection{LOV}
 jaka alternativa v androidu
 
-\chapter{Implementace}
+\chapter{Zabezpečení}
+
+\chapter{Webová služba}
+
+\chapter{Android aplikace}
 
 \section{Funkcionalita}
 Na základě analýzy současného systému a potřeb zaměstnanců byla vybrána k implementaci následující funkčnost: 
@@ -315,6 +309,10 @@ Server webové služby je dostupná v síti VPN. Další zabezpečení bude ře�
 \section{Vytváření grafů}
 knihovny, cloudové řešení, vlastní komponenty
 
+\section{Chybové reporty}
+
+\chapter{Testování}
+
 \section{O čem psát...}
 \begin{enumerate}
 \item popsat IMIS 
@@ -326,6 +324,17 @@ knihovny, cloudové řešení, vlastní komponenty
 \item chybove reporty a opravy na aplikaci v ostrem prostredi, obrazek + ukazka
 \item jak zjisit zmenu zaznamu, v datech se uklada pouze datum posledni zmeny, nikoli presny cas
 \item perioda automatickeho mazani dat
+\item budoucnost formsu? 
+\item datovy model schema
+\end{enumerate}
+
+\section{Zásady pro vypracování}
+\begin{enumerate}
+\item Prozkoumejte systém IMIS pro evidenci docházky a pracovních výkazů. Vyberte činnosti, které by bylo vhodné implementovat i pro mobilní zařízení.
+\item Navrhněte mobilní aplikaci pro platformu Android, které bude obsahovat vybrané funkce z předchozího bodu zadání.
+Zvažte aspekty zabezpečení komunikace aplikace se systémem.
+\item Implementujte navržené řešení, berte přitom v úvahu možnou rozšiřitelnost o další funkce.
+\item Ověřte funkcionalitu vytvořené aplikace.
 \end{enumerate}
 
 \appendix
