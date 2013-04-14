@@ -7,6 +7,10 @@
 \usepackage{fancyhdr}
 \usepackage{float}
 \usepackage{graphicx}
+\usepackage{multirow}
+\usepackage{color, colortbl}
+\usepackage{enumitem}
+\usepackage{array}
 %\usepackage[pdftex]{graphicx}
 
 \lstset{language=Java,keywordstyle=\color{blue}, commentstyle=\color{Green},stringstyle=\color{red},showstringspaces=false,breaklines=true,tabsize=3,basicstyle=\footnotesize}
@@ -65,25 +69,38 @@ Prostředí běhu zajišťuje defaultní správu transakcí. Díky tomu je Oracl
 PL/SQL (Procedural Language/Structured Query Language) je procedurální nadstavba jazyka SQL od firmy Oracle založená na programovacím jazyku Ada.
 
 \section{Architektura}
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[scale=0.8]{obr/d2k_wea2.png}
+  \label{}
+\end{figure}
+TODO asi vyrobit vlastni
+
+\section{Komponenty formuláře}
 Z hlediska architektury se Oracle Forms aplikace skládá z těchto celků:
 
+\subsection{Moduly}
+
 \paragraph{Modul formuláře} 
-A form (or form module) is the main component that anchors an application and provides the necessary code to interact with the datasource and the user interface. The underlying database data is reflected in multiple items, including fields, check boxes, and radio groups. A form is logically organized into blocks.
+Modul formuláře je hlavní komponenta aplikace. Poskytuje kód nezbytný pro interakci s úložištěm a uživatelským rozhraním. 
+Data poskytovaná databází jsou reflektovaná v prvcích uživatelského rozhraní jako jsou textová pole, zaškrtávací políčka, přepínače, talčítka atd. Formulář je logicky organizován do bloků. Existují dva typy bloků: 
 \begin{itemize}
-\item Datový blok The data block serves as a bridge to the underlying data and provides an abstraction for how the data is reached.
-A data block can be associated with a specific database table (or a view), a stored procedure, a FROM clause query, or a transactional triggers. By default, the association between a data block and the database allows for automatic access and manipulation of data in the database.
-\item Řídící blok A control block is a block that does not have a relationship to a database table. Control blocks can contain items of any type (buttons, text items, check boxes, etc.), however, regardless of item type, all of the items in a control block are control items--that is, items that do not correspond to columns in a database table.
+\item Datový blok\\ Datový blok zobrazuje zdrojová data a poskytuje abstrakci pro způsob jakým jsou tato data získávána. Blok může být asociován s databázovou tabulkou, databázovým pohledem, uloženou procedurou, dotazem do databáze nebo transakčním triggerem. Asociace datového bloku a databázových dat standartně umožnujě přístup k těmto datům a jejich modifikaci.\indent
+Datové bloky mohou být navzájem svázany vztahem "rodič - potomek". Takový vztah představuje relaci 1:N databázových tabulek. Oracle Forms zajišťuje to, že při spojení mezi master a detail bloky se zobrazí pouze ty detail bloky, které jsou vázány na master blok přes cizí klíč. 
+
+\item Řídící blok \\
+Představuje blok, který nemá vztah k databázové tabulce. Řídící blok může obsahovat jakékoli prvky uživatelského rozhraní. Prvky mohou sloužit k uložení dočasných proměných nebo k zobrazení dat, které nemají přímou vazbu s databází. 
 \end{itemize}
 
 \paragraph{Modul menu} 
-The menu module consists of a hierarchy of menus. Each menu consists of the items that can be selected. Menu modules are usually attached to form modules. Every form module has a default menu that includes the commands for all basic database operations, such as insert, update, delete, and query.
+Modul obsahuje hiearchii menu. Každé menu obsahuje zvolitelné položky. Každý formulář obsahuje defaultní menu obsahující příkazy pro základní DML operace s databází CRUD.
 
 \paragraph{Modul PL/SQL knihovny}
-The PL/SQL library contains reusable code invoked by other form, menu, or library modules. The code, also called a program unit, can be user-named functions, procedures, or packages. The program unit is stored and executed on the client. The program units are not for database-related code alone. They may contain purely business logic. Libraries make all the PL/SQL code available to the form without being part of the form. The libraries are loaded dynamically. Multiple forms can attach the same PL/SQL library.
+Modul obsahuje znovu využitelný kód, který může být využit jinými formuláři, menu či knihovnami. Programové jednotky knihovny mohou být fuknce, procedury a balíčky. Programové jednotky jsou spouštěny na straně klienta. Mohou obsahovat business logiku. Knihovny jsou nezávislé na formuláři, jsou zaváděny dynamicky a mohou být zároveň využívány více formuláři.
 
 \paragraph{Modul knihovny objektů}
-Object Library\\
-The object-oriented programming concept of reusing code is implemented in Oracle Forms by the object library and PL/SQL library modules. The Object library contains reusable objects and the PL/SQL library contains reusable code.
+Modul obsahuje znovu využitelné objekty. Řeší uskladnění, správu a distribuci těchto objektů, které mohou být využity jinými formuláři, menu či knihovnami. Využívání tohoto modulu přináší přínosy v podobě úspory paměti při běhu aplikace.
 
 \begin{figure}[H]
   \centering
@@ -95,21 +112,34 @@ TODO obrazek upravit - prepsat Oracle Module na Form Module
 \subsection{Triggery}
 Aplikace v Oracle pracuje s následujícími typy triggerů:
 \begin{itemize}
-\item Block-processing triggers: - Block processing triggers fire in response to events related to record management in a block.
-\item Interface event triggers: - Interface event triggers fire in response to events that occur in the form interface.
-\item Master-detail triggers: - Form Builder generates master-detail triggers automatically when you define a master-detail relation between blocks. The default master-detail triggers enforce coordination between records in a detail block and the master record in a master block.
-\item Message-handling triggers: - Form Builder automatically issues appropriate error and informational messages in response to runtime events.
-\item Navigational triggers: - Navigational triggers fire in response to navigational events.
-\item Query-time triggers: - Query-time triggers fire just before and just after the operator or the application executes a query in a block. 
-\item Validation triggers: - Validation triggers fire when Form Builder validates data in an item or record.
+\item Block-processing triggers - jsou spouštěny při události na položce patřící tomuto bloku.
+\item Interface event triggers - jsou spouštěny při události v uživatelském rozhraní formuláře.
+\item Master-detail triggers - jsou spouštěny při události související se vztahem "rodič - potomek"  na daných blocích. Např. při změně položky rodiče příslušný trigger zobrazí správné položky v bloku potomka.
+\item Message-handling triggers - zpracovávájí zobrazení chybových či informačních zpráv.
+\item Navigational triggers - jsou spouštěny při navigaci po položkách formuláře.
+\item Query-time triggers - jsou spouštěny na úrovni bloku před a po dotazu do databáze.
+\item Validation triggers - jsou spouštěny při validaci záznamu v položce.
+\item Transactional Triggers - vyvolají se při různých událostech související s interakcí s datovým úložištěm.
 \end{itemize}
+Pokud se jedná o datový blok, který je svázan s tabulkou v databázi, prostředí běhu automaticky zajištuje DML pro tyto bloky.
+Pokud vývojář požaduje nestandartní akci při těchto úkonech, provede překrytí těchto triggerů s vlastní definovanou akcí.
 
 \subsection{Seznam hodnot}
 A (LOV) is a pop-up window that provides the user with a selection of values. The values can be static or populated by querying the database. LOVs are populated using columns returned by record groups. Check the Record Group property of the LOV for the record group which is used to provide values.
 
+\section{Uživatelské rozhraní}
+\begin{figure}[H]
+  \centering
+  \includegraphics[scale=0.8]{obr/window.png}
+  \label{}
+\end{figure}
+Plátno je objekt, na který je nakresleno celé GUI formuláře, tedy všechny viditelné objekty. Může mít prakticky jakoukoli velikost. Okno ohraničuje plochu plátna, která bude zobrazena. View řídí, jak bude plátno v určité době zobrazeno v okně.\\
+TODO přepsat
+
+
 \section{Datový model}
 
-\section{Uživatelské rozhraní}
+\section{Důležité formuláře}
 
 \subsection{Zápis příchodů a odchodů}
 \begin{figure}[H]
@@ -190,8 +220,79 @@ jen ty, jejichž funkčnost bude muset být implementována.
 jaka alternativa v androidu
 
 \chapter{Zabezpečení}
+Server webové služby je dostupná v síti VPN. 
 
 \chapter{Webová služba}
+
+\section{REST}
+Zdroj události
+
+\definecolor{Gray}{gray}{0.9}
+\renewcommand{\arraystretch}{1.5}
+\begin{center}
+\begin{tabular}{| m{2cm} |  m{10cm} |}
+\hline
+\rowcolor{Gray}
+GET & events/\{icp\}?from=\{from\}\&to=\{to\} \\ \hline
+&  \parbox{10cm}{Získá všechny události zaměstnance za dané období\\
+Parametry:\begin{itemize}[noitemsep,nolistsep]
+\item icp - identifikátor zaměstnance
+\item from - datum začátku období
+\item to - datum konce období
+\end{itemize}} \\ \hline
+\rowcolor{Gray}
+DELETE  & events/\{rowid\} \\  \hline
+&  \parbox{10cm}{Smaže danou událost\\
+Parametry:\begin{itemize}[noitemsep,nolistsep]
+\item rowid - identifikátor události
+\end{itemize}} \\ \hline
+\rowcolor{Gray}
+POST  & events \\  \hline
+&  \parbox{10cm}{Vytvoří událost, používá se bez parametrů protože identifikátor pro událost vytváří server
+} \\ \hline
+\rowcolor{Gray}
+PUT  & events/\{rowid\} \\ 
+&  \parbox{10cm}{Aktualizuje danou událost\\
+Parametry:\begin{itemize}[noitemsep,nolistsep]
+\item rowid - identifikátor události
+\end{itemize}} \\ \hline
+\end{tabular}
+\end{center}
+
+\noindent
+Zdroj zaměstnanci
+\begin{center}
+\begin{tabular}{| m{2cm} |  m{10cm} |}
+\hline
+\rowcolor{Gray}
+GET  & employees/\{icp\} \\ \hline
+&  \parbox{10cm}{Získá seznam všech zaměstnanců, kteří jsou aktuálně v zaměstnaneckém poměru, obsahuje informaci zda jsou tito zaměstnanci podřízení, vzhledem k zaměstnanci identifikovém pomocí parametru\\
+Parametry:\begin{itemize}[noitemsep,nolistsep]
+\item icp - identifikátor zaměstnance
+\end{itemize}} \\ \hline
+\rowcolor{Gray}
+GET  & employees \\ 
+&  \parbox{10cm}{Získá poslední událost v docházce všech zaměstnanců, kteří jsou aktuálně v zaměstnaneckém poměru}\\
+\hline
+\end{tabular}
+\end{center}
+
+\noindent
+Zdroj výkazy práce
+\begin{center}
+\begin{tabular}{| m{2cm} |  m{10cm} |}
+\hline
+\rowcolor{Gray}
+GET  &records/\{kodpra\}?from=\{from\}\&to=\{to\} \\ 
+&  \parbox{10cm}{Získá všechny výkazy práce zaměstnance za dané období\\
+Parametry:\begin{itemize}[noitemsep,nolistsep]
+\item kodpra - identifikátor zaměstnance (zkratka)
+\item from - datum začátku období
+\item to - datum konce období
+\end{itemize}} \\ \hline
+\end{tabular}
+\end{center}
+TODO uri authentikace?, test spojeni?
 
 \chapter{Android aplikace}
 
@@ -243,6 +344,7 @@ TODO schema komunikace -HHTP, JDBC
 \section{Business logika}
 prijde to do webove sluzby - duvody
 
+
 \section{Android komponenty}
 \begin{enumerate}
 \item komponenty pro sync a auth, provazani s android ucetm
@@ -287,6 +389,7 @@ je treba resit delku dat napriklad stringu?, dynamic typing
 
 V knihovnách pro Forms aplikace se nachází další kód, který bude nutné přepsat do webové služby.
 \section{REST}
+RestaTemplates - springframework
 \begin{enumerate}
 \item REST operace - davkove vs jednotlive
 \item REST, tabulka URI, 
@@ -300,7 +403,10 @@ V knihovnách pro Forms aplikace se nachází další kód, který bude nutné p
 
 \section{Zabezpečení}
 -authentikace
-Server webové služby je dostupná v síti VPN. Další zabezpečení bude řešeno později...
+
+\section{Oprávnění}
+persmission v manifestu, vypsat a vysvětlit
+
 
 \section{Zpětná kompatibilita}
 
@@ -324,7 +430,6 @@ knihovny, cloudové řešení, vlastní komponenty
 \item chybove reporty a opravy na aplikaci v ostrem prostredi, obrazek + ukazka
 \item jak zjisit zmenu zaznamu, v datech se uklada pouze datum posledni zmeny, nikoli presny cas
 \item perioda automatickeho mazani dat
-\item budoucnost formsu? 
 \item datovy model schema
 \end{enumerate}
 

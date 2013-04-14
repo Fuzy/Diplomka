@@ -3,3 +3,9 @@ uti tabulka pro events
 navratove kody
 rest teorie
 HTTP hlavièky
+
+popsat:
+vyznam
+parametry
+navratove kody
+operace
