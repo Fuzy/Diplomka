@@ -159,10 +159,34 @@ TODO přepsat
 \chapter{Analýza}
 
 \section{Architektura}
+Při návrhu architektury jsem se rozhodoval mezi třemi variantami: přímé spojení Android aplikace ke vzdálené databázi pomocí JDBC, synchronizaci dat se vzdálenou databází pomocí Oracle Database Mobile Server a nakonec využití webové služby, která by sloužila jako rozhraní mezi klientskou aplikací a databázovým serverem.
+
 \subsection{Přímé připojení k databázi}
+Přestože příme připojení k Oracle databázi pomocí JDBC je možné, tuto variantu jsem zamítl. Připojení pomocí JDBC je primárně určeno pro stabilní síťové připojení, které má malou odezvu a nízkou ztrátu paketů. Využití JDBC by přineslo problémy v podobě špatné odezvy aplikace, kvůli znovu navazování spojení a vytváření nových databázových relací, které musely být v důsledku ztráty konektivity ukončeny.\\ \indent
+Vzhledem k tomu, že původní Forms aplikace funguje jako tlustý klient, provádí veškerou bussines logiku. Tato logika je zapotřebí ke správné funkčnosti systému. Bylo by tedy nutné přenést tuto logiku na stranu klienta a potřeba komunikace se vzdálenou databází by byla větší než k pouhému přenesení dat.
+
 \subsection{Oracle Database Mobile Server}
-Oracle Database Mobile Server 11g - zajistuje synchronizaci mezi Oracle db a mobilnim zarizenim, zamitnuto z licencnich duvodu, mozna by stalo za to to vic prozkoumat a neco o tom napsat
+Oracle Database Mobile Server 11g je server zajišťující  synchronizaci dat mezi Oracle databází a mobilními zařízeními. Klíčovou vlastností tohoto produktu je synchronizační jádro, které je schopné zajistit synchronizaci velké počtu mobilních zařízení se vzdálenou databázovým systémem. Přestože bylo toto synchronizační jádro navrženo pro stabilní připojení, je schopné zajistit spolehlivou funkci i při nestabilním připojení. V případě, že je spojení přerušeno synchronizace je pozastavena a po navázání spojení pokračuje v místě přerušení. Dále umožuje šifrování dat, jak pro přenos tak i pro jejich persistenci.\\ \indent
+Tato varianta byla zamítnuta protože řeší pouze synchronizaci dat a neumožňuje zajistit provedení business logiky. Dalším důvodem je skutečnost, že její použití by vyžadovalo zakoupení licence pro tento server.\\ \indent
+Server je možné spustit na serverech Oracle WebLogic Server a Oracle Glassfish. Mobilní klient, který běží na straně mobilního zařízení zajišťuje správu zařízení nutnou k synchronizaci. Tento klient je dostupný pro platfromy Java, Android, Blackberry, Windows a Linux.
+(http://www.oracle.com/technetwork/products/database-mobile-server/overview/index.html)
+
 \subsection{Webová služba}
+Jako použitou architekturu jsem zvolil použití webové služby, která bude fungovat jako rozhraní mezi klientskou aplikací a databázovým serverem. Android klient v této architektuře funguje jako tenký klient spravující jen část funkčnosti z původního tlustého klienta. Business logika je umístěna na straně webové služby. Díky tomu že, webová služba bude umístěna v blízkosti firemní databáze, dojde k minimalizace odezev při zajištění business logiky systému. Mezi klientem a webovou službou se přenášejí pouzy data, která jsou opravdu nutná. \\ \indent
+Z pohledu rozšiřitelnosti systému o další mobilní platformy se toto řešení jeví rovněž výhodně. Business logika by nebyla implementována ani na klientských aplikacích jiných platforem. Při změne logiky bude potřeba úpravy v kódu pouze na straně webové služby. Cílová architektura na vyobrazena na obrázku \ref{obr:arch}
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[scale=0.8]{obr/souc_arch2.pdf}
+\caption{Zvolená architektura}
+\label{obr:arch}
+\end{figure}
+
+\section{Výběr typu webové služby}
+
+\subsection{Representational State Transfer}
+
+\subsection{Simple Object Access Protocol}
 
 \section{Datová vrstva}
 \subsection{Práce s datumem a časem}
@@ -220,7 +244,7 @@ jen ty, jejichž funkčnost bude muset být implementována.
 jaka alternativa v androidu
 
 \chapter{Zabezpečení}
-Server webové služby je dostupná v síti VPN. 
+Server webové služby je dostupná v síti VPN. LDAP + Spring security
 
 \chapter{Webová služba}
 
@@ -327,11 +351,7 @@ Uživatelské rozhraní aplikace klade důraz na přehlednost, ergonomii a časo
 \section{Architektura}
 Android aplikace funguje jako tenký klient, který se připojuje k webové službě. Webová služba používá REST architekturu a přistupuje k samotné databázi.
 
-\begin{figure}[H]
-  \centering
-  \includegraphics[scale=0.8]{obr/souc_arch2.pdf}
-  \label{obr: logo zcu}
-\end{figure}
+
 
 \begin{itemize}
 \item Webová služba - Java EE 6, aplikační server GlassFish

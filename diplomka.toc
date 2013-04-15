@@ -21,40 +21,43 @@
 \contentsline {section}{\numberline {3.1}Architektura}{9}
 \contentsline {subsection}{\numberline {3.1.1}P\IeC {\v r}\IeC {\'\i }m\IeC {\'e} p\IeC {\v r}ipojen\IeC {\'\i } k datab\IeC {\'a}zi}{9}
 \contentsline {subsection}{\numberline {3.1.2}Oracle Database Mobile Server}{9}
-\contentsline {subsection}{\numberline {3.1.3}Webov\IeC {\'a} slu\IeC {\v z}ba}{9}
-\contentsline {section}{\numberline {3.2}Datov\IeC {\'a} vrstva}{9}
-\contentsline {subsection}{\numberline {3.2.1}Pr\IeC {\'a}ce s datumem a \IeC {\v c}asem}{9}
-\contentsline {subsection}{\numberline {3.2.2}Kritika datov\IeC {\'e} vrstvy}{10}
-\contentsline {section}{\numberline {3.3}Business logika}{10}
-\contentsline {subsection}{\numberline {3.3.1}Triggery}{10}
-\contentsline {subsection}{\numberline {3.3.2}Datab\IeC {\'a}zov\IeC {\'e} bal\IeC {\'\i }\IeC {\v c}ky a ulo\IeC {\v z}en\IeC {\'e} procedury}{11}
-\contentsline {subsection}{\numberline {3.3.3}Forms knihovny}{11}
-\contentsline {section}{\numberline {3.4}U\IeC {\v z}ivatelsk\IeC {\'e} rozhran\IeC {\'\i }}{11}
-\contentsline {subsection}{\numberline {3.4.1}LOV}{11}
-\contentsline {chapter}{\numberline {4}Zabezpe\IeC {\v c}en\IeC {\'\i }}{12}
-\contentsline {chapter}{\numberline {5}Webov\IeC {\'a} slu\IeC {\v z}ba}{13}
-\contentsline {section}{\numberline {5.1}REST}{13}
-\contentsline {chapter}{\numberline {6}Android aplikace}{15}
-\contentsline {section}{\numberline {6.1}Funkcionalita}{15}
-\contentsline {paragraph}{Doch\IeC {\'a}zka}{15}
-\contentsline {paragraph}{Aktu\IeC {\'a}ln\IeC {\'\i } p\IeC {\v r}\IeC {\'\i }tomnost na pracovi\IeC {\v s}ti}{15}
-\contentsline {paragraph}{V\IeC {\'y}kazy pr\IeC {\'a}ce}{15}
-\contentsline {subsection}{\numberline {6.1.1}Nastaven\IeC {\'\i } a konfigurovatelnost}{16}
-\contentsline {subsection}{\numberline {6.1.2}U\IeC {\v z}ivatelsk\IeC {\'a} p\IeC {\v r}\IeC {\'\i }v\IeC {\v e}tivost}{16}
-\contentsline {section}{\numberline {6.2}Architektura}{16}
-\contentsline {section}{\numberline {6.3}Business logika}{17}
-\contentsline {section}{\numberline {6.4}Android komponenty}{17}
-\contentsline {section}{\numberline {6.5}Ukl\IeC {\'a}d\IeC {\'a}n\IeC {\'\i } dat}{17}
-\contentsline {paragraph}{Sd\IeC {\'\i }len\IeC {\'e} preference}{17}
-\contentsline {section}{\numberline {6.6}SQLite}{18}
-\contentsline {section}{\numberline {6.7}REST}{19}
-\contentsline {section}{\numberline {6.8}Synchronizace}{19}
-\contentsline {section}{\numberline {6.9}Zabezpe\IeC {\v c}en\IeC {\'\i }}{19}
-\contentsline {section}{\numberline {6.10}Opr\IeC {\'a}vn\IeC {\v e}n\IeC {\'\i }}{19}
-\contentsline {section}{\numberline {6.11}Zp\IeC {\v e}tn\IeC {\'a} kompatibilita}{19}
-\contentsline {section}{\numberline {6.12}Budouc\IeC {\'\i } roz\IeC {\v s}i\IeC {\v r}itelnost}{19}
-\contentsline {section}{\numberline {6.13}Vytv\IeC {\'a}\IeC {\v r}en\IeC {\'\i } graf\IeC {\r u}}{19}
-\contentsline {section}{\numberline {6.14}Chybov\IeC {\'e} reporty}{20}
-\contentsline {chapter}{\numberline {7}Testov\IeC {\'a}n\IeC {\'\i }}{21}
-\contentsline {section}{\numberline {7.1}O \IeC {\v c}em ps\IeC {\'a}t...}{21}
-\contentsline {section}{\numberline {7.2}Z\IeC {\'a}sady pro vypracov\IeC {\'a}n\IeC {\'\i }}{21}
+\contentsline {subsection}{\numberline {3.1.3}Webov\IeC {\'a} slu\IeC {\v z}ba}{10}
+\contentsline {section}{\numberline {3.2}V\IeC {\'y}b\IeC {\v e}r typu webov\IeC {\'e} slu\IeC {\v z}by}{11}
+\contentsline {subsection}{\numberline {3.2.1}Representational State Transfer}{11}
+\contentsline {subsection}{\numberline {3.2.2}Simple Object Access Protocol}{11}
+\contentsline {section}{\numberline {3.3}Datov\IeC {\'a} vrstva}{11}
+\contentsline {subsection}{\numberline {3.3.1}Pr\IeC {\'a}ce s datumem a \IeC {\v c}asem}{11}
+\contentsline {subsection}{\numberline {3.3.2}Kritika datov\IeC {\'e} vrstvy}{12}
+\contentsline {section}{\numberline {3.4}Business logika}{12}
+\contentsline {subsection}{\numberline {3.4.1}Triggery}{12}
+\contentsline {subsection}{\numberline {3.4.2}Datab\IeC {\'a}zov\IeC {\'e} bal\IeC {\'\i }\IeC {\v c}ky a ulo\IeC {\v z}en\IeC {\'e} procedury}{13}
+\contentsline {subsection}{\numberline {3.4.3}Forms knihovny}{13}
+\contentsline {section}{\numberline {3.5}U\IeC {\v z}ivatelsk\IeC {\'e} rozhran\IeC {\'\i }}{13}
+\contentsline {subsection}{\numberline {3.5.1}LOV}{13}
+\contentsline {chapter}{\numberline {4}Zabezpe\IeC {\v c}en\IeC {\'\i }}{14}
+\contentsline {chapter}{\numberline {5}Webov\IeC {\'a} slu\IeC {\v z}ba}{15}
+\contentsline {section}{\numberline {5.1}REST}{15}
+\contentsline {chapter}{\numberline {6}Android aplikace}{17}
+\contentsline {section}{\numberline {6.1}Funkcionalita}{17}
+\contentsline {paragraph}{Doch\IeC {\'a}zka}{17}
+\contentsline {paragraph}{Aktu\IeC {\'a}ln\IeC {\'\i } p\IeC {\v r}\IeC {\'\i }tomnost na pracovi\IeC {\v s}ti}{17}
+\contentsline {paragraph}{V\IeC {\'y}kazy pr\IeC {\'a}ce}{17}
+\contentsline {subsection}{\numberline {6.1.1}Nastaven\IeC {\'\i } a konfigurovatelnost}{18}
+\contentsline {subsection}{\numberline {6.1.2}U\IeC {\v z}ivatelsk\IeC {\'a} p\IeC {\v r}\IeC {\'\i }v\IeC {\v e}tivost}{18}
+\contentsline {section}{\numberline {6.2}Architektura}{18}
+\contentsline {section}{\numberline {6.3}Business logika}{18}
+\contentsline {section}{\numberline {6.4}Android komponenty}{19}
+\contentsline {section}{\numberline {6.5}Ukl\IeC {\'a}d\IeC {\'a}n\IeC {\'\i } dat}{19}
+\contentsline {paragraph}{Sd\IeC {\'\i }len\IeC {\'e} preference}{19}
+\contentsline {section}{\numberline {6.6}SQLite}{20}
+\contentsline {section}{\numberline {6.7}REST}{20}
+\contentsline {section}{\numberline {6.8}Synchronizace}{20}
+\contentsline {section}{\numberline {6.9}Zabezpe\IeC {\v c}en\IeC {\'\i }}{21}
+\contentsline {section}{\numberline {6.10}Opr\IeC {\'a}vn\IeC {\v e}n\IeC {\'\i }}{21}
+\contentsline {section}{\numberline {6.11}Zp\IeC {\v e}tn\IeC {\'a} kompatibilita}{21}
+\contentsline {section}{\numberline {6.12}Budouc\IeC {\'\i } roz\IeC {\v s}i\IeC {\v r}itelnost}{21}
+\contentsline {section}{\numberline {6.13}Vytv\IeC {\'a}\IeC {\v r}en\IeC {\'\i } graf\IeC {\r u}}{21}
+\contentsline {section}{\numberline {6.14}Chybov\IeC {\'e} reporty}{21}
+\contentsline {chapter}{\numberline {7}Testov\IeC {\'a}n\IeC {\'\i }}{22}
+\contentsline {section}{\numberline {7.1}O \IeC {\v c}em ps\IeC {\'a}t...}{22}
+\contentsline {section}{\numberline {7.2}Z\IeC {\'a}sady pro vypracov\IeC {\'a}n\IeC {\'\i }}{22}
