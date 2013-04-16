@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-1.40.10 (MiKTeX 2.8) (preloaded format=pdflatex 2013.4.14)  15 APR 2013 22:39
+This is pdfTeX, Version 3.1415926-1.40.10 (MiKTeX 2.8) (preloaded format=pdflatex 2013.4.14)  16 APR 2013 23:54
 entering extended mode
 **C:/MojeData/Škola/DP/Dokument/diplomka.tex
 (C:/MojeData/Škola/DP/Dokument/diplomka.tex
@@ -580,70 +580,69 @@ Overfull \hbox (44.33234pt too wide) in paragraph at lines 212--219
 
 [11] [12] [13]
 Kapitola 4.
-[14
+LaTeX Font Info:    Try loading font information for T1+aett on input line 255.
 
-]
-Kapitola 5.
-[15
-
-] [16]
-Kapitola 6.
-[17
-
-] [18]
-LaTeX Font Info:    Try loading font information for T1+aett on input line 383.
-
- ("C:\Program Files\MikTex\tex\latex\ae\t1aett.fd"
+("C:\Program Files\MikTex\tex\latex\ae\t1aett.fd"
 File: t1aett.fd 1997/11/16 Font definitions for T1/aett.
-) [19]
-Underfull \hbox (badness 10000) in paragraph at lines 401--402
+) [14
+
+] [15]
+Kapitola 5.
+[16
+
+] [17]
+Kapitola 6.
+[18
+
+] [19] [20]
+Underfull \hbox (badness 10000) in paragraph at lines 439--440
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 402--403
+Underfull \hbox (badness 10000) in paragraph at lines 440--441
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 403--404
+Underfull \hbox (badness 10000) in paragraph at lines 441--442
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 404--405
+Underfull \hbox (badness 10000) in paragraph at lines 442--443
 
  []
 
-[20] [21]
+[21] [22]
 Kapitola 7.
-<scr/time_doch.png, id=114, 722.7pt x 1284.8pt>
+<scr/time_doch.png, id=117, 722.7pt x 1284.8pt>
 File: scr/time_doch.png Graphic file (type png)
  <use scr/time_doch.png>
-Package pdftex.def Info: scr/time_doch.png used on input line 471.
+Package pdftex.def Info: scr/time_doch.png used on input line 509.
 (pdftex.def)             Requested size: 216.81166pt x 385.44298pt.
 
-[22
+[23
 
-] <scr/graf_doch.png, id=118, 1284.8pt x 722.7pt>
+] <scr/graf_doch.png, id=121, 1284.8pt x 722.7pt>
 File: scr/graf_doch.png Graphic file (type png)
  <use scr/graf_doch.png>
-Package pdftex.def Info: scr/graf_doch.png used on input line 477.
+Package pdftex.def Info: scr/graf_doch.png used on input line 515.
 (pdftex.def)             Requested size: 385.44298pt x 216.81166pt.
 
-[23 <C:/MojeData/Škola/DP/Dokument/scr/time_doch.png (PNG copy)>]
-<scr/ucet.png, id=122, 722.7pt x 1284.8pt>
+[24 <C:/MojeData/Škola/DP/Dokument/scr/time_doch.png (PNG copy)>]
+<scr/ucet.png, id=125, 722.7pt x 1284.8pt>
 File: scr/ucet.png Graphic file (type png)
  <use scr/ucet.png>
-Package pdftex.def Info: scr/ucet.png used on input line 483.
+Package pdftex.def Info: scr/ucet.png used on input line 521.
 (pdftex.def)             Requested size: 216.81166pt x 385.44298pt.
- [24 <C:/MojeData/Škola/DP/Dokument/scr/graf_doch.png (PNG copy)>]
-<scr/network.png, id=126, 722.7pt x 1284.8pt>
+ [25 <C:/MojeData/Škola/DP/Dokument/scr/graf_doch.png (PNG copy)>]
+<scr/network.png, id=129, 722.7pt x 1284.8pt>
 File: scr/network.png Graphic file (type png)
  <use scr/network.png>
-Package pdftex.def Info: scr/network.png used on input line 489.
+Package pdftex.def Info: scr/network.png used on input line 527.
 (pdftex.def)             Requested size: 216.81166pt x 385.44298pt.
- [25 <C:/MojeData/Škola/DP/Dokument/scr/ucet.png (PNG copy)>] [26 <C:/MojeData/
+ [26 <C:/MojeData/Škola/DP/Dokument/scr/ucet.png (PNG copy)>] [27 <C:/MojeData/
 Škola/DP/Dokument/scr/network.png (PNG copy)>] (C:\MojeData\Škola\DP\Dokument\d
 iplomka.aux)
 
@@ -668,9 +667,9 @@ x/fonts/type1/public/amsfonts/cm/cmr17.pfb><C:/Program Files/MikTex/fonts/type1
 /public/amsfonts/cm/cmsy10.pfb><C:/Program Files/MikTex/fonts/type1/public/amsf
 onts/cm/cmti12.pfb><C:/Program Files/MikTex/fonts/type1/public/amsfonts/cm/cmtt
 12.pfb>
-Output written on diplomka.pdf (31 pages, 554097 bytes).
+Output written on diplomka.pdf (32 pages, 560577 bytes).
 PDF statistics:
- 154 PDF objects out of 1000 (max. 8388607)
+ 157 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  51 words of extra memory for PDF output out of 10000 (max. 10000000)
 

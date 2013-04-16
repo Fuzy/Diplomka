@@ -245,6 +245,44 @@ jaka alternativa v androidu
 
 \chapter{Zabezpečení}
 Server webové služby je dostupná v síti VPN. LDAP + Spring security
+\section{LDAP}
+ Directory Access Protocol (LDAP) je internetový protokol definující přístup k distribuované adresářové službě. Podle tohoto protokolu jsou jednotlivé položky na serveru ukládány formou záznamů a uspořádány do stromové struktury. Protokol LDAP je byl navržen v souladu  se sadou standartů X.500 vyvinutých pro adresářové služby v počítačových sítích. Protokol LDAP je jejich odlehčenou verzí.\\ \indent
+Aplikace funguje na bázi klient-server. Klient se při komunikaci se serverem autentizuje. Prostřednictvím klienta lze přidávat, modifikovat a mazat záznamy na serveru.
+
+\subsection{Schéma}
+Úkolem informačního modelu LDAP je definovat datové typy a informace, které lze v adresářovém serveru ukládat. Data jsou uchovávána ve stromové struktuře pomocí záznamů. Záznam představuje souhrn atributů (dvojice jméno - hodnota). Atributy nesou informaci o stavu daného záznamu. Záznamy, uložené v adresáři, musí odpovídat přípustnému schématu. Schéma  představuje soubor povolených objektových tříd a k nim náležících atributů.\\
+Ukázka schématu definující strukturu záznamu zaměstnance:
+\begin{verbatim}
+objectclass ( 1.1.2.2.2 NAME 'zamestnanec'
+                DESC 'zamestnanec firmy'
+                SUP osoba
+                MUST ( jmeno $ identifikacniCislo )
+                MAY zkratkaZamestnance )
+\end{verbatim}
+
+Objekt popisující zaměstnance dědí od objektu osoba, vyžaduje povinný atribut 'jmeno' a 'identifikacniCislo' a nepovinny atribut 'zkratkaZamestnance'.
+
+\subsection{Funkční model}
+Funkční model umožňuje pomocí základních operací manipulovat a přistupovat k záznamům v adresáři a měnit či zjišťovat tak jejich stav.
+\begin{itemize}[noitemsep,nolistsep]
+\item Autentizační operace: Slouží k přihlášení a odhlášení uživatele pro komunikaci s adresářovým serverem. Jsou jimi míněny především operace bind a unbind. Na úspěšném provedení operace bind závisí výsledky aktualizačních a dotazovacích operací nad adresářem.
+\item Aktualizační a dotazovací operace: Každý adresářový server podporuje základní operace s daty, jako je vyhledávání, přidávání, mazání, porovnávání a modifikace záznamů. Tyto operace bývají často spjaté s nastavením bezpečnostního modelu.
+\end{itemize}
+
+\subsection{LDAP URL}
+Umístění zdroje je v LDAP specifikováno pomocí URL, které má následující tvar:
+\begin{verbatim}
+ldap://host:port/DN?attributes?scope?filter?extensions
+\end{verbatim}
+\begin{itemize}[noitemsep,nolistsep]
+\item host - doména nebo IP adresa
+\item port - síťový port (defaultně 389)
+\item DN - význačné jméno použité jako základ pro vyhedávání
+\item attributes -  seznam atributů
+\item scope - specifikuje vyhledávácí rozsah  
+\item filter - filtrovací kritérium
+\item extensions - rozšíření
+\end{itemize}
 
 \chapter{Webová služba}
 
