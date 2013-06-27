@@ -244,12 +244,56 @@ jen ty, jejichž funkčnost bude muset být implementována.
 jaka alternativa v androidu
 
 \chapter{Zabezpečení}
-Server webové služby je dostupná v síti VPN. LDAP + Spring security
-\section{LDAP}
+V následující kapitole se zabývám zabezpečením aplikace. Popisuji několik možných variant. Na závěr vysvětluji výběr zvoleného řešení.
+\section{Autentizace a autorizace}
+Při analýze současného systému jsem zjistil, že informace o docházce a výkazech zaměstnanců jsou dostupné všem ostatním uživatelům (údaje týkající se nadřízených pracovníků jsou dostupné i podřízením). Dalším zajímavostí je, že heslo používané k zadání docházky je pro uživatele nepovinné (má ho jen ten uživatel, který si ho nastavil) a je prakticky možné zadat docházku jinému uživateli. Není předmětem mojí práce hodnotit tuto skutečnost, která je vlastností současného systému.
+
+\subsection*{Autentizace}
+Autentizace je proces ověření proklamované identity subjektu. Vzhledem k tomu, že heslo je nepovinné a mají ho nastavené, jen někteří uživatele, nelze zajistit autenticitu pro každého uživatele.
+
+\subsection*{Autorizace}
+Autorizace je proces získávání souhlasu s provedením nějaké operace.
+\subsection*{Riziko poškození systému}
+Webová služba umožňuje čtení a úpravu docházkových dat a dále čtení dat o výkazech práce a zaměstnancích. Dále používá některé databázové objekty jako jsou procedury a funkce, které pracují s těmito daty. Je vhodné aby aplikace měla přístup pouze k těm databázovým objektům, které jsou relevantní pro navrženou funkčnost aplikace. To je vhodné pro maximální zabezpečení okolního systému a minimalizaci případných rizik při zneužití či chybě v aplikaci. Toto je zodpovědností databázového administrátora organizace a v této práci se touto problematikou dále nezabývám.
+
+\section{VPN pro vzdálený přístup}
+Virtuální privátní síť  je prostředek pro propojení počítačů v prostředí nedůvěryhodné sítě. Díky VPN spojení mohou počítače komunikovat tak, jako by byly součástí důvěryhodné sítě.
+
+\subsection*{Vlastnosti připojení VPN}
+\begin{itemize}[noitemsep,nolistsep]
+\item Zapouzdření\\ Při použití technologie VPN jsou data zapouzdřena pomocí hlavičky obsahující směrovací informace, které umožňují průchod dat přes tranzitní síť.
+\item Ověřování\\
+Klient a VPN server se vzájemně ověřují na úrovni počítače. Ověřování  se děje pomocí PPTP protokolu. 
+\item Šifrování dat\\
+Pro utajení dat během jejich přenosu sdílenou nebo veřejnou tranzitní sítí jsou data na straně odesílatele zašifrována a na straně příjemce dešifrována. Šifrování a dešifrování je založeno na tom, že odesílatel i příjemce používají společný šifrovací klíč.
+\end{itemize}
+
+Webová služba je tedy umístěna na serveru uvnitř firemní sítě. Pokud klient chce komunikovat s webovou službou musí tak činit 
+prostřednictvím sítě VPN.
+
+\section{Použité řešení}
+Klient i server jsou součástí jedné VPN sítě, která zajišťuje důvěryhodný komunikační kanál.  Klient posílá na server HTTP požadavek jehož součástí je autentizační hlavička nesoucí uživatelské jméno a heslo. Webová služba ověří jméno a heslo pomocí databázové procedury. Jméno a heslo uživatele je uloženo v databázi. Implementované řešení je znázorněno na obr. \ref{obr:auth}, který zobrazuje sekveční UML diagram v případě úspěšné autentizace.
+\begin{figure}[H]
+  \centering
+  \includegraphics[scale=0.8]{visio/auth.pdf}
+\caption{Diagram aktivit při úspěšné autentizaci}
+\label{obr:auth}
+\end{figure}
+\subsection{HTTP Basic autentizace}
+Klient posílá autentizační hlavičku jako součást HTTP požadavku na server. Jméno a heslo je zasláno jako jeden textový řetězec oddělený dvojtečkou. Výsledný řetězec je poté zakódován metodou Base64. Uživatelské jméno a heslo se tedy posílá v zakódované podobě. Nejedná se ale o kryptografické zabezpečení přihlašovacích údajů. Použití této metody předpokládá použití zapezpečeného komunikačního kanálu mezi klientem a serverem.
+\section{Alternativní řešení}
+Alternativním řešením by bylo ověřování uživatelů pomocí LDAP adresáře. Organizace již LDAP používá v některých dalších firemních systémech. Toto řešení se liší v tom, že dotaz na ověření identity uživatele probíhá k LDAP adresáři a nikoli k databázi. Implementované řešení je znázorněno na obr. \ref{obr:authldap}, který zobrazuje sekveční UML diagram v případě úspěšné autentizace.
+\begin{figure}[H]
+  \centering
+  \includegraphics[scale=0.8]{visio/auth_ldap.pdf}
+\caption{Diagram aktivit při úspěšné autentizaci}
+\label{obr:authldap}
+\end{figure}
+\subsection{LDAP}
  Directory Access Protocol (LDAP) je internetový protokol definující přístup k distribuované adresářové službě. Podle tohoto protokolu jsou jednotlivé položky na serveru ukládány formou záznamů a uspořádány do stromové struktury. Protokol LDAP je byl navržen v souladu  se sadou standartů X.500 vyvinutých pro adresářové služby v počítačových sítích. Protokol LDAP je jejich odlehčenou verzí.\\ \indent
 Aplikace funguje na bázi klient-server. Klient se při komunikaci se serverem autentizuje. Prostřednictvím klienta lze přidávat, modifikovat a mazat záznamy na serveru.
 
-\subsection{Schéma}
+\subsection*{Schéma}
 Úkolem informačního modelu LDAP je definovat datové typy a informace, které lze v adresářovém serveru ukládat. Data jsou uchovávána ve stromové struktuře pomocí záznamů. Záznam představuje souhrn atributů (dvojice jméno - hodnota). Atributy nesou informaci o stavu daného záznamu. Záznamy, uložené v adresáři, musí odpovídat přípustnému schématu. Schéma  představuje soubor povolených objektových tříd a k nim náležících atributů.\\
 Ukázka schématu definující strukturu záznamu zaměstnance:
 \begin{verbatim}
@@ -262,14 +306,14 @@ objectclass ( 1.1.2.2.2 NAME 'zamestnanec'
 
 Objekt popisující zaměstnance dědí od objektu osoba, vyžaduje povinný atribut 'jmeno' a 'identifikacniCislo' a nepovinny atribut 'zkratkaZamestnance'.
 
-\subsection{Funkční model}
+\subsection*{Funkční model}
 Funkční model umožňuje pomocí základních operací manipulovat a přistupovat k záznamům v adresáři a měnit či zjišťovat tak jejich stav.
 \begin{itemize}[noitemsep,nolistsep]
 \item Autentizační operace: Slouží k přihlášení a odhlášení uživatele pro komunikaci s adresářovým serverem. Jsou jimi míněny především operace bind a unbind. Na úspěšném provedení operace bind závisí výsledky aktualizačních a dotazovacích operací nad adresářem.
 \item Aktualizační a dotazovací operace: Každý adresářový server podporuje základní operace s daty, jako je vyhledávání, přidávání, mazání, porovnávání a modifikace záznamů. Tyto operace bývají často spjaté s nastavením bezpečnostního modelu.
 \end{itemize}
 
-\subsection{LDAP URL}
+\subsection*{LDAP URL}
 Umístění zdroje je v LDAP specifikováno pomocí URL, které má následující tvar:
 \begin{verbatim}
 ldap://host:port/DN?attributes?scope?filter?extensions
@@ -284,13 +328,19 @@ ldap://host:port/DN?attributes?scope?filter?extensions
 \item extensions - rozšíření
 \end{itemize}
 
+\section{Shrnutí}
+Použil jsem první řešení protože je to implementačně jednodušší. Stávají řešení pomocí Oracle Forms aplikace používá rovněž ověření uživatele dotazem k databázi tzn. ověření se děje na aplikační vrstvě. \\ \indent
+Použití alternativní varianty by přineslo lepší zabezpečení ze strany mobilního klienta. Každý uživatel by musel použít svoje heslo, které nyní používá v ostatních systémech používající ověření pomocí LDAP. Vzhledem k tomu, že současný systém bude nadále funkčí, tak silnější zabezpečení mobilního klienta nemá praktický přínos.
+
 \chapter{Webová služba}
 
 \section{REST}
-Zdroj události
+Při návrhu REST služby jsem nejprve identifikoval všechny zdroje, které webová služba zpřístupňuje. Jedná se o údaje o docházce zaměstnanců, výkazech práce a zaměstnancích samotných. Posledním zdrojem je možnost testovat komunikaci s webovou službou. \par
+Zdroj pro docházku zaměstnaců tzn. jejich příchody a odchody (označované jako události) a poskytované služby zobrazuje tabulka \ref{tab:urievents}. Služba umožňuje operace CRUD na datovém zdroji zaměstnanců a dále zjištění součtu doby v zaměstnání.
 
 \definecolor{Gray}{gray}{0.9}
 \renewcommand{\arraystretch}{1.5}
+\begin{table}[H]
 \begin{center}
 \begin{tabular}{| m{2cm} |  m{10cm} |}
 \hline
@@ -318,29 +368,57 @@ PUT  & events/\{rowid\} \\
 Parametry:\begin{itemize}[noitemsep,nolistsep]
 \item rowid - identifikátor události
 \end{itemize}} \\ \hline
+\rowcolor{Gray}
+GET & events/sum/\{icp\}?from=\{from\}\&to=\{to\} \\ \hline
+&  \parbox{10cm}{Získá součet přítomnosti zaměstnance za dané období\\
+Parametry:\begin{itemize}[noitemsep,nolistsep]
+\item icp - identifikátor zaměstnance
+\item from - datum začátku období
+\item to - datum konce období
+\end{itemize}} \\ \hline
 \end{tabular}
 \end{center}
+\caption{Služby pro události docházky}
+\label{tab:urievents}
+\end {table}
 
 \noindent
-Zdroj zaměstnanci
+Zdroj pro údaje o zaměstnancích
+\begin{table}[H]
 \begin{center}
 \begin{tabular}{| m{2cm} |  m{10cm} |}
 \hline
 \rowcolor{Gray}
 GET  & employees/\{icp\} \\ \hline
+&  \parbox{10cm}{Získá údaje o zaměstnaci identifikovém pomocí parametru\\
+Parametry:\begin{itemize}[noitemsep,nolistsep]
+\item icp - identifikátor zaměstnance
+\end{itemize}} \\ \hline
+\hline
+\rowcolor{Gray}
+GET  & employees/all/\{icp\} \\ \hline
 &  \parbox{10cm}{Získá seznam všech zaměstnanců, kteří jsou aktuálně v zaměstnaneckém poměru, obsahuje informaci zda jsou tito zaměstnanci podřízení, vzhledem k zaměstnanci identifikovém pomocí parametru\\
 Parametry:\begin{itemize}[noitemsep,nolistsep]
 \item icp - identifikátor zaměstnance
 \end{itemize}} \\ \hline
 \rowcolor{Gray}
-GET  & employees \\ 
+GET  & employees/lastevents \\ 
 &  \parbox{10cm}{Získá poslední událost v docházce všech zaměstnanců, kteří jsou aktuálně v zaměstnaneckém poměru}\\
+\hline
+\rowcolor{Gray}
+GET  & employees/lastevents/\{icp\} \\ 
+&  \parbox{10cm}{Získá poslední událost v docházce zaměstnance identifikovém pomocí parametru}\\
 \hline
 \end{tabular}
 \end{center}
-
+\caption{Služby pro zaměstnance}
+\label{tab:uriemps}
+\end{table}
 \noindent
+
+
 Zdroj výkazy práce
+\begin{table}[H]
 \begin{center}
 \begin{tabular}{| m{2cm} |  m{10cm} |}
 \hline
@@ -352,9 +430,23 @@ Parametry:\begin{itemize}[noitemsep,nolistsep]
 \item from - datum začátku období
 \item to - datum konce období
 \end{itemize}} \\ \hline
+\rowcolor{Gray}
+GET & records/sum/\{icp\}?from=\{from\}\&to=\{to\} \\ \hline
+&  \parbox{10cm}{Získá součet vykázaného času zaměstnance za dané období\\
+Parametry:\begin{itemize}[noitemsep,nolistsep]
+\item icp - identifikátor zaměstnance
+\item from - datum začátku období
+\item to - datum konce období
+\end{itemize}} \\ \hline
 \end{tabular}
 \end{center}
-TODO uri authentikace?, test spojeni?
+\caption{Služby pro výkazy práce}
+\label{tab:urirecords}
+\end{table}
+
+\section{Filtry}
+
+\section{web.xml}
 
 \chapter{Android aplikace}
 
@@ -415,6 +507,11 @@ prijde to do webove sluzby - duvody
 + nejaka ukazka konkretniho pouziti
 
 \section{Ukládání dat}
+\section{Struktura projektu}
+(jen ty pouzite)
+\section{Manifest + oprávnění}
+\section{9png grafika}
+\section{Návrhy na vylepšení}
 
 \paragraph{Sdílené preference}\hfill \\ukládá primitivní datové typy ve tvaru klíč-hodnota. Slouží k uložení nastavení specifických pro aplikaci. Toto nastavení může být uloženo jako soukromé, kdy mohou k datům přistupovat pouze aplikace sdílející stejné \emph{Linux user ID}.\\ V aplikaci používám toto úložiště pro nastavení síťového připojení (doména a port webové služby) a barevného nastavení pro typy docházkových událostí.\\
 Načtení dat se typicky odehrává v onCreate() metodě aktivity:

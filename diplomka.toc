@@ -35,33 +35,42 @@
 \contentsline {section}{\numberline {3.5}U\IeC {\v z}ivatelsk\IeC {\'e} rozhran\IeC {\'\i }}{13}
 \contentsline {subsection}{\numberline {3.5.1}LOV}{13}
 \contentsline {chapter}{\numberline {4}Zabezpe\IeC {\v c}en\IeC {\'\i }}{14}
-\contentsline {section}{\numberline {4.1}LDAP}{14}
-\contentsline {subsection}{\numberline {4.1.1}Sch\IeC {\'e}ma}{14}
-\contentsline {subsection}{\numberline {4.1.2}Funk\IeC {\v c}n\IeC {\'\i } model}{15}
-\contentsline {subsection}{\numberline {4.1.3}LDAP URL}{15}
-\contentsline {chapter}{\numberline {5}Webov\IeC {\'a} slu\IeC {\v z}ba}{16}
-\contentsline {section}{\numberline {5.1}REST}{16}
-\contentsline {chapter}{\numberline {6}Android aplikace}{18}
-\contentsline {section}{\numberline {6.1}Funkcionalita}{18}
-\contentsline {paragraph}{Doch\IeC {\'a}zka}{18}
-\contentsline {paragraph}{Aktu\IeC {\'a}ln\IeC {\'\i } p\IeC {\v r}\IeC {\'\i }tomnost na pracovi\IeC {\v s}ti}{18}
-\contentsline {paragraph}{V\IeC {\'y}kazy pr\IeC {\'a}ce}{18}
-\contentsline {subsection}{\numberline {6.1.1}Nastaven\IeC {\'\i } a konfigurovatelnost}{19}
-\contentsline {subsection}{\numberline {6.1.2}U\IeC {\v z}ivatelsk\IeC {\'a} p\IeC {\v r}\IeC {\'\i }v\IeC {\v e}tivost}{19}
-\contentsline {section}{\numberline {6.2}Architektura}{19}
-\contentsline {section}{\numberline {6.3}Business logika}{19}
-\contentsline {section}{\numberline {6.4}Android komponenty}{20}
-\contentsline {section}{\numberline {6.5}Ukl\IeC {\'a}d\IeC {\'a}n\IeC {\'\i } dat}{20}
-\contentsline {paragraph}{Sd\IeC {\'\i }len\IeC {\'e} preference}{20}
-\contentsline {section}{\numberline {6.6}SQLite}{21}
-\contentsline {section}{\numberline {6.7}REST}{21}
-\contentsline {section}{\numberline {6.8}Synchronizace}{21}
-\contentsline {section}{\numberline {6.9}Zabezpe\IeC {\v c}en\IeC {\'\i }}{22}
-\contentsline {section}{\numberline {6.10}Opr\IeC {\'a}vn\IeC {\v e}n\IeC {\'\i }}{22}
-\contentsline {section}{\numberline {6.11}Zp\IeC {\v e}tn\IeC {\'a} kompatibilita}{22}
-\contentsline {section}{\numberline {6.12}Budouc\IeC {\'\i } roz\IeC {\v s}i\IeC {\v r}itelnost}{22}
-\contentsline {section}{\numberline {6.13}Vytv\IeC {\'a}\IeC {\v r}en\IeC {\'\i } graf\IeC {\r u}}{22}
-\contentsline {section}{\numberline {6.14}Chybov\IeC {\'e} reporty}{22}
-\contentsline {chapter}{\numberline {7}Testov\IeC {\'a}n\IeC {\'\i }}{23}
-\contentsline {section}{\numberline {7.1}O \IeC {\v c}em ps\IeC {\'a}t...}{23}
-\contentsline {section}{\numberline {7.2}Z\IeC {\'a}sady pro vypracov\IeC {\'a}n\IeC {\'\i }}{23}
+\contentsline {section}{\numberline {4.1}Autentizace a autorizace}{14}
+\contentsline {section}{\numberline {4.2}VPN pro vzd\IeC {\'a}len\IeC {\'y} p\IeC {\v r}\IeC {\'\i }stup}{15}
+\contentsline {section}{\numberline {4.3}Pou\IeC {\v z}it\IeC {\'e} \IeC {\v r}e\IeC {\v s}en\IeC {\'\i }}{15}
+\contentsline {subsection}{\numberline {4.3.1}HTTP Basic autentizace}{16}
+\contentsline {section}{\numberline {4.4}Alternativn\IeC {\'\i } \IeC {\v r}e\IeC {\v s}en\IeC {\'\i }}{16}
+\contentsline {subsection}{\numberline {4.4.1}LDAP}{17}
+\contentsline {section}{\numberline {4.5}Shrnut\IeC {\'\i }}{19}
+\contentsline {chapter}{\numberline {5}Webov\IeC {\'a} slu\IeC {\v z}ba}{20}
+\contentsline {section}{\numberline {5.1}REST}{20}
+\contentsline {section}{\numberline {5.2}Filtry}{23}
+\contentsline {section}{\numberline {5.3}web.xml}{23}
+\contentsline {chapter}{\numberline {6}Android aplikace}{24}
+\contentsline {section}{\numberline {6.1}Funkcionalita}{24}
+\contentsline {paragraph}{Doch\IeC {\'a}zka}{24}
+\contentsline {paragraph}{Aktu\IeC {\'a}ln\IeC {\'\i } p\IeC {\v r}\IeC {\'\i }tomnost na pracovi\IeC {\v s}ti}{24}
+\contentsline {paragraph}{V\IeC {\'y}kazy pr\IeC {\'a}ce}{24}
+\contentsline {subsection}{\numberline {6.1.1}Nastaven\IeC {\'\i } a konfigurovatelnost}{25}
+\contentsline {subsection}{\numberline {6.1.2}U\IeC {\v z}ivatelsk\IeC {\'a} p\IeC {\v r}\IeC {\'\i }v\IeC {\v e}tivost}{25}
+\contentsline {section}{\numberline {6.2}Architektura}{25}
+\contentsline {section}{\numberline {6.3}Business logika}{25}
+\contentsline {section}{\numberline {6.4}Android komponenty}{26}
+\contentsline {section}{\numberline {6.5}Ukl\IeC {\'a}d\IeC {\'a}n\IeC {\'\i } dat}{26}
+\contentsline {section}{\numberline {6.6}Struktura projektu}{26}
+\contentsline {section}{\numberline {6.7}Manifest + opr\IeC {\'a}vn\IeC {\v e}n\IeC {\'\i }}{26}
+\contentsline {section}{\numberline {6.8}9png grafika}{26}
+\contentsline {section}{\numberline {6.9}N\IeC {\'a}vrhy na vylep\IeC {\v s}en\IeC {\'\i }}{26}
+\contentsline {paragraph}{Sd\IeC {\'\i }len\IeC {\'e} preference}{26}
+\contentsline {section}{\numberline {6.10}SQLite}{27}
+\contentsline {section}{\numberline {6.11}REST}{28}
+\contentsline {section}{\numberline {6.12}Synchronizace}{28}
+\contentsline {section}{\numberline {6.13}Zabezpe\IeC {\v c}en\IeC {\'\i }}{28}
+\contentsline {section}{\numberline {6.14}Opr\IeC {\'a}vn\IeC {\v e}n\IeC {\'\i }}{28}
+\contentsline {section}{\numberline {6.15}Zp\IeC {\v e}tn\IeC {\'a} kompatibilita}{28}
+\contentsline {section}{\numberline {6.16}Budouc\IeC {\'\i } roz\IeC {\v s}i\IeC {\v r}itelnost}{28}
+\contentsline {section}{\numberline {6.17}Vytv\IeC {\'a}\IeC {\v r}en\IeC {\'\i } graf\IeC {\r u}}{28}
+\contentsline {section}{\numberline {6.18}Chybov\IeC {\'e} reporty}{29}
+\contentsline {chapter}{\numberline {7}Testov\IeC {\'a}n\IeC {\'\i }}{30}
+\contentsline {section}{\numberline {7.1}O \IeC {\v c}em ps\IeC {\'a}t...}{30}
+\contentsline {section}{\numberline {7.2}Z\IeC {\'a}sady pro vypracov\IeC {\'a}n\IeC {\'\i }}{30}
