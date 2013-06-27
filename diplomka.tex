@@ -249,10 +249,11 @@ V následující kapitole se zabývám zabezpečením aplikace. Popisuji několi
 Při analýze současného systému jsem zjistil, že informace o docházce a výkazech zaměstnanců jsou dostupné všem ostatním uživatelům (údaje týkající se nadřízených pracovníků jsou dostupné i podřízením). Dalším zajímavostí je, že heslo používané k zadání docházky je pro uživatele nepovinné (má ho jen ten uživatel, který si ho nastavil) a je prakticky možné zadat docházku jinému uživateli. Není předmětem mojí práce hodnotit tuto skutečnost, která je vlastností současného systému.
 
 \subsection*{Autentizace}
-Autentizace je proces ověření proklamované identity subjektu. Vzhledem k tomu, že heslo je nepovinné a mají ho nastavené, jen někteří uživatele, nelze zajistit autenticitu pro každého uživatele.
+Autentizace je proces ověření proklamované identity subjektu. Vzhledem k tomu, že heslo je nepovinné a mají ho nastavené jen někteří uživatele, nelze ověřit autenticitu pro každého uživatele.
 
 \subsection*{Autorizace}
-Autorizace je proces získávání souhlasu s provedením nějaké operace.
+Autorizace je proces získávání souhlasu s provedením nějaké operace. Současný systém neřeší autorizaci týkající se dat pro docházku a výkazy práce. Vzhledem k tomu, že nelze ověřit autenticitu pro každého uživatele, nelze autorizaci seriozně řešit.
+
 \subsection*{Riziko poškození systému}
 Webová služba umožňuje čtení a úpravu docházkových dat a dále čtení dat o výkazech práce a zaměstnancích. Dále používá některé databázové objekty jako jsou procedury a funkce, které pracují s těmito daty. Je vhodné aby aplikace měla přístup pouze k těm databázovým objektům, které jsou relevantní pro navrženou funkčnost aplikace. To je vhodné pro maximální zabezpečení okolního systému a minimalizaci případných rizik při zneužití či chybě v aplikaci. Toto je zodpovědností databázového administrátora organizace a v této práci se touto problematikou dále nezabývám.
 
@@ -271,16 +272,18 @@ Pro utajení dat během jejich přenosu sdílenou nebo veřejnou tranzitní sít
 Webová služba je tedy umístěna na serveru uvnitř firemní sítě. Pokud klient chce komunikovat s webovou službou musí tak činit 
 prostřednictvím sítě VPN.
 
+\section{HTTP Basic autentizace}
+Klient posílá autentizační hlavičku jako součást HTTP požadavku na server. Jméno a heslo je zasláno jako jeden textový řetězec oddělený dvojtečkou. Výsledný řetězec je poté zakódován metodou Base64. Uživatelské jméno a heslo se tedy posílá v zakódované podobě. Nejedná se ale o kryptografické zabezpečení přihlašovacích údajů. Použití této metody předpokládá použití zabezpečeného komunikačního kanálu mezi klientem a serverem.
+
 \section{Použité řešení}
-Klient i server jsou součástí jedné VPN sítě, která zajišťuje důvěryhodný komunikační kanál.  Klient posílá na server HTTP požadavek jehož součástí je autentizační hlavička nesoucí uživatelské jméno a heslo. Webová služba ověří jméno a heslo pomocí databázové procedury. Jméno a heslo uživatele je uloženo v databázi. Implementované řešení je znázorněno na obr. \ref{obr:auth}, který zobrazuje sekveční UML diagram v případě úspěšné autentizace.
+Klient i server jsou součástí jedné VPN sítě, která zajišťuje důvěryhodný komunikační kanál.  Klient posílá na server HTTP požadavek jehož součástí je autentizační hlavička nesoucí uživatelské jméno a heslo. Webová služba ověří jméno a heslo pomocí databázové procedury. Jméno a heslo uživatele je uloženo v databázi. Implementované řešení je znázorněno na obr. \ref{obr:auth} který zobrazuje sekveční UML diagram v případě úspěšné autentizace.
 \begin{figure}[H]
   \centering
   \includegraphics[scale=0.8]{visio/auth.pdf}
 \caption{Diagram aktivit při úspěšné autentizaci}
 \label{obr:auth}
 \end{figure}
-\subsection{HTTP Basic autentizace}
-Klient posílá autentizační hlavičku jako součást HTTP požadavku na server. Jméno a heslo je zasláno jako jeden textový řetězec oddělený dvojtečkou. Výsledný řetězec je poté zakódován metodou Base64. Uživatelské jméno a heslo se tedy posílá v zakódované podobě. Nejedná se ale o kryptografické zabezpečení přihlašovacích údajů. Použití této metody předpokládá použití zapezpečeného komunikačního kanálu mezi klientem a serverem.
+
 \section{Alternativní řešení}
 Alternativním řešením by bylo ověřování uživatelů pomocí LDAP adresáře. Organizace již LDAP používá v některých dalších firemních systémech. Toto řešení se liší v tom, že dotaz na ověření identity uživatele probíhá k LDAP adresáři a nikoli k databázi. Implementované řešení je znázorněno na obr. \ref{obr:authldap}, který zobrazuje sekveční UML diagram v případě úspěšné autentizace.
 \begin{figure}[H]

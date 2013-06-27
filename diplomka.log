@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-1.40.10 (MiKTeX 2.8) (preloaded format=pdflatex 2013.4.14)  27 JUN 2013 19:22
+This is pdfTeX, Version 3.1415926-1.40.10 (MiKTeX 2.8) (preloaded format=pdflatex 2013.4.14)  27 JUN 2013 22:48
 entering extended mode
 **C:/MojeData/Škola/DP/Dokument/diplomka.tex
 (C:/MojeData/Škola/DP/Dokument/diplomka.tex
@@ -582,16 +582,16 @@ Overfull \hbox (44.33234pt too wide) in paragraph at lines 212--219
 Kapitola 4.
 [14
 
-]
+] [15]
 
 pdfTeX warning: pdflatex (file C:/MojeData/Škola/DP/Dokument/visio/auth.pdf): P
 DF inclusion: found PDF version <1.5>, but at most version <1.4> allowed
-<visio/auth.pdf, id=91, 456.20438pt x 313.9228pt>
+<visio/auth.pdf, id=94, 456.20438pt x 313.9228pt>
 File: visio/auth.pdf Graphic file (type pdf)
  <use visio/auth.pdf>
-Package pdftex.def Info: visio/auth.pdf used on input line 278.
+Package pdftex.def Info: visio/auth.pdf used on input line 282.
 (pdftex.def)             Requested size: 364.96399pt x 251.13857pt.
- [15]
+
 
 pdfTeX warning: pdflatex (file C:/MojeData/Škola/DP/Dokument/visio/auth_ldap.pd
 f): PDF inclusion: found PDF version <1.5>, but at most version <1.4> allowed
@@ -599,11 +599,11 @@ f): PDF inclusion: found PDF version <1.5>, but at most version <1.4> allowed
 File: visio/auth_ldap.pdf Graphic file (type pdf)
 
 <use visio/auth_ldap.pdf>
-Package pdftex.def Info: visio/auth_ldap.pdf used on input line 288.
+Package pdftex.def Info: visio/auth_ldap.pdf used on input line 291.
 (pdftex.def)             Requested size: 364.96399pt x 251.13857pt.
  [16 <C:/MojeData/Škola/DP/Dokument/visio/auth.pdf>]
 [17 <C:/MojeData/Škola/DP/Dokument/visio/auth_ldap.pdf>]
-LaTeX Font Info:    Try loading font information for T1+aett on input line 299.
+LaTeX Font Info:    Try loading font information for T1+aett on input line 302.
 
 
 ("C:\Program Files\MikTex\tex\latex\ae\t1aett.fd"
@@ -617,22 +617,22 @@ Kapitola 6.
 [24
 
 ] [25] [26]
-Underfull \hbox (badness 10000) in paragraph at lines 536--537
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 537--538
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 538--539
-
- []
-
-
 Underfull \hbox (badness 10000) in paragraph at lines 539--540
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 540--541
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 541--542
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 542--543
 
  []
 
@@ -641,7 +641,7 @@ Kapitola 7.
 <scr/time_doch.png, id=167, 722.7pt x 1284.8pt>
 File: scr/time_doch.png Graphic file (type png)
  <use scr/time_doch.png>
-Package pdftex.def Info: scr/time_doch.png used on input line 606.
+Package pdftex.def Info: scr/time_doch.png used on input line 609.
 (pdftex.def)             Requested size: 216.81166pt x 385.44298pt.
 
 [30
@@ -649,20 +649,20 @@ Package pdftex.def Info: scr/time_doch.png used on input line 606.
 ] <scr/graf_doch.png, id=171, 1284.8pt x 722.7pt>
 File: scr/graf_doch.png Graphic file (type png)
  <use scr/graf_doch.png>
-Package pdftex.def Info: scr/graf_doch.png used on input line 612.
+Package pdftex.def Info: scr/graf_doch.png used on input line 615.
 (pdftex.def)             Requested size: 385.44298pt x 216.81166pt.
 
 [31 <C:/MojeData/Škola/DP/Dokument/scr/time_doch.png (PNG copy)>]
 <scr/ucet.png, id=175, 722.7pt x 1284.8pt>
 File: scr/ucet.png Graphic file (type png)
  <use scr/ucet.png>
-Package pdftex.def Info: scr/ucet.png used on input line 618.
+Package pdftex.def Info: scr/ucet.png used on input line 621.
 (pdftex.def)             Requested size: 216.81166pt x 385.44298pt.
  [32 <C:/MojeData/Škola/DP/Dokument/scr/graf_doch.png (PNG copy)>]
 <scr/network.png, id=180, 722.7pt x 1284.8pt>
 File: scr/network.png Graphic file (type png)
  <use scr/network.png>
-Package pdftex.def Info: scr/network.png used on input line 624.
+Package pdftex.def Info: scr/network.png used on input line 627.
 (pdftex.def)             Requested size: 216.81166pt x 385.44298pt.
  [33 <C:/MojeData/Škola/DP/Dokument/scr/ucet.png (PNG copy)>] [34 <C:/MojeData/
 Škola/DP/Dokument/scr/network.png (PNG copy)>] (C:\MojeData\Škola\DP\Dokument\d
@@ -689,7 +689,7 @@ x/fonts/type1/public/amsfonts/cm/cmr17.pfb><C:/Program Files/MikTex/fonts/type1
 /public/amsfonts/cm/cmsy10.pfb><C:/Program Files/MikTex/fonts/type1/public/amsf
 onts/cm/cmti12.pfb><C:/Program Files/MikTex/fonts/type1/public/amsfonts/cm/cmtt
 12.pfb>
-Output written on diplomka.pdf (39 pages, 680981 bytes).
+Output written on diplomka.pdf (39 pages, 681550 bytes).
 PDF statistics:
  209 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)

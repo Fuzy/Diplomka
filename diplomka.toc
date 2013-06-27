@@ -37,11 +37,11 @@
 \contentsline {chapter}{\numberline {4}Zabezpe\IeC {\v c}en\IeC {\'\i }}{14}
 \contentsline {section}{\numberline {4.1}Autentizace a autorizace}{14}
 \contentsline {section}{\numberline {4.2}VPN pro vzd\IeC {\'a}len\IeC {\'y} p\IeC {\v r}\IeC {\'\i }stup}{15}
-\contentsline {section}{\numberline {4.3}Pou\IeC {\v z}it\IeC {\'e} \IeC {\v r}e\IeC {\v s}en\IeC {\'\i }}{15}
-\contentsline {subsection}{\numberline {4.3.1}HTTP Basic autentizace}{16}
-\contentsline {section}{\numberline {4.4}Alternativn\IeC {\'\i } \IeC {\v r}e\IeC {\v s}en\IeC {\'\i }}{16}
-\contentsline {subsection}{\numberline {4.4.1}LDAP}{17}
-\contentsline {section}{\numberline {4.5}Shrnut\IeC {\'\i }}{19}
+\contentsline {section}{\numberline {4.3}HTTP Basic autentizace}{16}
+\contentsline {section}{\numberline {4.4}Pou\IeC {\v z}it\IeC {\'e} \IeC {\v r}e\IeC {\v s}en\IeC {\'\i }}{16}
+\contentsline {section}{\numberline {4.5}Alternativn\IeC {\'\i } \IeC {\v r}e\IeC {\v s}en\IeC {\'\i }}{17}
+\contentsline {subsection}{\numberline {4.5.1}LDAP}{17}
+\contentsline {section}{\numberline {4.6}Shrnut\IeC {\'\i }}{19}
 \contentsline {chapter}{\numberline {5}Webov\IeC {\'a} slu\IeC {\v z}ba}{20}
 \contentsline {section}{\numberline {5.1}REST}{20}
 \contentsline {section}{\numberline {5.2}Filtry}{23}
