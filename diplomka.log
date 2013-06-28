@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-1.40.10 (MiKTeX 2.8) (preloaded format=pdflatex 2013.4.14)  27 JUN 2013 22:48
+This is pdfTeX, Version 3.1415926-1.40.10 (MiKTeX 2.8) (preloaded format=pdflatex 2013.4.14)  28 JUN 2013 18:22
 entering extended mode
 **C:/MojeData/äkola/DP/Dokument/diplomka.tex
 (C:/MojeData/äkola/DP/Dokument/diplomka.tex
@@ -474,15 +474,15 @@ LaTeX Font Info:    External font `cmex10' loaded for size
 (Font)              <6> on input line 4.
  [3
 
-])
+] [4])
 \tf@toc=\write3
- [4]
+ [5]
 Kapitola 1.
 [1
 
 ]
 Kapitola 2.
-<obr/d2k_wea2.png, id=23, 291.33844pt x 237.13594pt>
+<obr/d2k_wea2.png, id=27, 291.33844pt x 237.13594pt>
 File: obr/d2k_wea2.png Graphic file (type png)
  <use obr/d2k_wea2.png>
 Package pdftex.def Info: obr/d2k_wea2.png used on input line 75.
@@ -511,26 +511,26 @@ Overfull \hbox (0.4533pt too wide) in paragraph at lines 103--104
 ovu vy-u-∫i-telnÈ ob-jekty. êe≤Ì
  []
 
-<obr/forms_arch3.png, id=35, 149.8097pt x 374.14781pt>
+<obr/forms_arch3.png, id=38, 149.8097pt x 374.14781pt>
 File: obr/forms_arch3.png Graphic file (type png)
 
 <use obr/forms_arch3.png>
 Package pdftex.def Info: obr/forms_arch3.png used on input line 107.
 (pdftex.def)             Requested size: 119.8479pt x 299.31863pt.
- [4 <C:/MojeData/äkola/DP/Dokument/obr/forms_arch3.png>] <obr/window.png, id=40
+ [4 <C:/MojeData/äkola/DP/Dokument/obr/forms_arch3.png>] <obr/window.png, id=43
 , 252.945pt x 237.88875pt>
 File: obr/window.png Graphic file (type png)
  <use obr/window.png>
 Package pdftex.def Info: obr/window.png used on input line 133.
 (pdftex.def)             Requested size: 202.35626pt x 190.31123pt.
 
-[5] <obr/BD27.png, id=44, 604.50844pt x 373.395pt>
+[5] <obr/BD27.png, id=47, 604.50844pt x 373.395pt>
 File: obr/BD27.png Graphic file (type png)
  <use obr/BD27.png>
 Package pdftex.def Info: obr/BD27.png used on input line 147.
 (pdftex.def)             Requested size: 362.70786pt x 224.03873pt.
  [6 <C:/MojeData/äkola/DP/Dokument/obr/window.png>]
-<obr/VX42.png, id=49, 602.25pt x 372.64218pt>
+<obr/VX42.png, id=52, 602.25pt x 372.64218pt>
 File: obr/VX42.png Graphic file (type png)
  <use obr/VX42.png>
 Package pdftex.def Info: obr/VX42.png used on input line 154.
@@ -556,7 +556,7 @@ le.com/technetwork/products/database-
 
 pdfTeX warning: pdflatex (file C:/MojeData/äkola/DP/Dokument/obr/souc_arch2.pdf
 ): PDF inclusion: found PDF version <1.5>, but at most version <1.4> allowed
-<obr/souc_arch2.pdf, id=60, 512.66531pt x 228.10219pt>
+<obr/souc_arch2.pdf, id=63, 512.66531pt x 228.10219pt>
 File: obr/souc_arch2.pdf Graphic file (type pdf)
 
 <use obr/souc_arch2.pdf>
@@ -578,93 +578,93 @@ Overfull \hbox (44.33234pt too wide) in paragraph at lines 212--219
  [][] 
  []
 
-[11] [12] [13]
+[11] [12] [13] [14]
 Kapitola 4.
-[14
+[15
 
-] [15]
+] [16]
 
 pdfTeX warning: pdflatex (file C:/MojeData/äkola/DP/Dokument/visio/auth.pdf): P
 DF inclusion: found PDF version <1.5>, but at most version <1.4> allowed
-<visio/auth.pdf, id=94, 456.20438pt x 313.9228pt>
+<visio/auth.pdf, id=100, 456.20438pt x 313.9228pt>
 File: visio/auth.pdf Graphic file (type pdf)
  <use visio/auth.pdf>
-Package pdftex.def Info: visio/auth.pdf used on input line 282.
+Package pdftex.def Info: visio/auth.pdf used on input line 294.
 (pdftex.def)             Requested size: 364.96399pt x 251.13857pt.
 
 
 pdfTeX warning: pdflatex (file C:/MojeData/äkola/DP/Dokument/visio/auth_ldap.pd
 f): PDF inclusion: found PDF version <1.5>, but at most version <1.4> allowed
-<visio/auth_ldap.pdf, id=96, 456.20438pt x 313.9228pt>
+<visio/auth_ldap.pdf, id=102, 456.20438pt x 313.9228pt>
 File: visio/auth_ldap.pdf Graphic file (type pdf)
 
 <use visio/auth_ldap.pdf>
-Package pdftex.def Info: visio/auth_ldap.pdf used on input line 291.
+Package pdftex.def Info: visio/auth_ldap.pdf used on input line 303.
 (pdftex.def)             Requested size: 364.96399pt x 251.13857pt.
- [16 <C:/MojeData/äkola/DP/Dokument/visio/auth.pdf>]
-[17 <C:/MojeData/äkola/DP/Dokument/visio/auth_ldap.pdf>]
-LaTeX Font Info:    Try loading font information for T1+aett on input line 302.
+ [17 <C:/MojeData/äkola/DP/Dokument/visio/auth.pdf>]
+[18 <C:/MojeData/äkola/DP/Dokument/visio/auth_ldap.pdf>]
+LaTeX Font Info:    Try loading font information for T1+aett on input line 314.
 
 
 ("C:\Program Files\MikTex\tex\latex\ae\t1aett.fd"
 File: t1aett.fd 1997/11/16 Font definitions for T1/aett.
-) [18] [19]
+) [19] [20]
 Kapitola 5.
-[20
+[21
 
-] [21] [22] [23]
+] [22] [23] [24]
 Kapitola 6.
-[24
+[25
 
-] [25] [26]
-Underfull \hbox (badness 10000) in paragraph at lines 539--540
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 540--541
+] [26] [27]
+Underfull \hbox (badness 10000) in paragraph at lines 551--552
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 541--542
+Underfull \hbox (badness 10000) in paragraph at lines 552--553
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 542--543
+Underfull \hbox (badness 10000) in paragraph at lines 553--554
 
  []
 
-[27] [28] [29]
+
+Underfull \hbox (badness 10000) in paragraph at lines 554--555
+
+ []
+
+[28] [29] [30]
 Kapitola 7.
-<scr/time_doch.png, id=167, 722.7pt x 1284.8pt>
+<scr/time_doch.png, id=173, 722.7pt x 1284.8pt>
 File: scr/time_doch.png Graphic file (type png)
  <use scr/time_doch.png>
-Package pdftex.def Info: scr/time_doch.png used on input line 609.
+Package pdftex.def Info: scr/time_doch.png used on input line 623.
 (pdftex.def)             Requested size: 216.81166pt x 385.44298pt.
 
-[30
+[31
 
-] <scr/graf_doch.png, id=171, 1284.8pt x 722.7pt>
+] <scr/graf_doch.png, id=178, 1284.8pt x 722.7pt>
 File: scr/graf_doch.png Graphic file (type png)
  <use scr/graf_doch.png>
-Package pdftex.def Info: scr/graf_doch.png used on input line 615.
+Package pdftex.def Info: scr/graf_doch.png used on input line 629.
 (pdftex.def)             Requested size: 385.44298pt x 216.81166pt.
 
-[31 <C:/MojeData/äkola/DP/Dokument/scr/time_doch.png (PNG copy)>]
-<scr/ucet.png, id=175, 722.7pt x 1284.8pt>
+[32 <C:/MojeData/äkola/DP/Dokument/scr/time_doch.png (PNG copy)>]
+<scr/ucet.png, id=182, 722.7pt x 1284.8pt>
 File: scr/ucet.png Graphic file (type png)
  <use scr/ucet.png>
-Package pdftex.def Info: scr/ucet.png used on input line 621.
+Package pdftex.def Info: scr/ucet.png used on input line 635.
 (pdftex.def)             Requested size: 216.81166pt x 385.44298pt.
- [32 <C:/MojeData/äkola/DP/Dokument/scr/graf_doch.png (PNG copy)>]
-<scr/network.png, id=180, 722.7pt x 1284.8pt>
+ [33 <C:/MojeData/äkola/DP/Dokument/scr/graf_doch.png (PNG copy)>]
+<scr/network.png, id=186, 722.7pt x 1284.8pt>
 File: scr/network.png Graphic file (type png)
  <use scr/network.png>
-Package pdftex.def Info: scr/network.png used on input line 627.
+Package pdftex.def Info: scr/network.png used on input line 641.
 (pdftex.def)             Requested size: 216.81166pt x 385.44298pt.
- [33 <C:/MojeData/äkola/DP/Dokument/scr/ucet.png (PNG copy)>] [34 <C:/MojeData/
+ [34 <C:/MojeData/äkola/DP/Dokument/scr/ucet.png (PNG copy)>] [35 <C:/MojeData/
 äkola/DP/Dokument/scr/network.png (PNG copy)>] (C:\MojeData\äkola\DP\Dokument\d
 iplomka.aux)
 
@@ -689,9 +689,9 @@ x/fonts/type1/public/amsfonts/cm/cmr17.pfb><C:/Program Files/MikTex/fonts/type1
 /public/amsfonts/cm/cmsy10.pfb><C:/Program Files/MikTex/fonts/type1/public/amsf
 onts/cm/cmti12.pfb><C:/Program Files/MikTex/fonts/type1/public/amsfonts/cm/cmtt
 12.pfb>
-Output written on diplomka.pdf (39 pages, 681550 bytes).
+Output written on diplomka.pdf (41 pages, 685403 bytes).
 PDF statistics:
- 209 PDF objects out of 1000 (max. 8388607)
+ 215 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  61 words of extra memory for PDF output out of 10000 (max. 10000000)
 

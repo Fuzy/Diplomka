@@ -238,6 +238,18 @@ jen ty, jejichž funkčnost bude muset být implementována.
 
 \subsection{Forms knihovny}
 
+\section{Synchronizace dat}
+V současném systému uživatel zadává data prostřednictvím příslušného formuláře. Změny jsou aplikovány bezprostředně po uložení během databázové transakce. Mobilní klient přináší nový způsob použití - data lze zadat i v režimu offline, kdy mobilní klient není v dosahu webové služby. Tyto data jsou uložena persistentně na straně klienta a jsou synchronizována až ve chvíli kdy je možná komunikace s webovou službou.\\ \indent
+Synchronizace se týká pouze dat pro docházku uživatele. Ostatní data jsou prostřednictvím mobilní klienta pouze zobrazována. Je třeba počítat s tím, že záznamy přidané na straně klienta v režimu offline nemusí být přijaty při synchronizaci z důvodu porušení business pravidel a uživatel by měl být o této skutečnosti vhodně informován.
+
+\subsection{Obousměrná synchronizace}
+Při obousměrné synchronizaci se odesílají data ze strany klienta na server tak i opačným směrem ze serveru na klienta. Klienta lze navrhnout tak, aby si uchovával informaci o změnách na svojí straně. Při analýze databázového schématu pro docházku v současném systému jsem zjistil, že databáze neuchovává informaci o změnách na svojí straně. Beze změny této skutečnosti není možné sledovat změny na straně databáze. Výsledkem je poněkud neefektivní způsob synchronizace, kdy klient odesílá na server pouze změny, zatímco ze serveru stahuje všechna data pro daného uživatele a období.
+
+\subsection{Obousměrná synchronizace s úpravou databáze}
+Jiná varianta řešení problému synchronizace dat, která se snaží eliminovat nedostatky předchozí varianty, by vyžadovala změny v databázovém schématu současného systému. U každého záznamu by byla přidána informace o poslední změně záznamu s vhodnou časovou přestní - na sekundy. Pokud by došlo k požadavku na smazání záznamu, nebyl by záznam skutečně smazán, ale pouze nastaven přížnak smazaného záznamu. Při použití tohoto řešení by bylo možné synchronizovat oběma směry pouze změny ze strany klienta i serveru. 
+
+\subsection{Srovnání}
+V obou případech řešení je iniciátorem synchronizace klient.
 
 \section{Uživatelské rozhraní}
 \subsection{LOV}
@@ -574,6 +586,8 @@ persmission v manifestu, vypsat a vysvětlit
 knihovny, cloudové řešení, vlastní komponenty
 
 \section{Chybové reporty}
+
+\section{Distribuce}
 
 \chapter{Testování}
 
