@@ -240,16 +240,46 @@ jen ty, jejichž funkčnost bude muset být implementována.
 
 \section{Synchronizace dat}
 V současném systému uživatel zadává data prostřednictvím příslušného formuláře. Změny jsou aplikovány bezprostředně po uložení během databázové transakce. Mobilní klient přináší nový způsob použití - data lze zadat i v režimu offline, kdy mobilní klient není v dosahu webové služby. Tyto data jsou uložena persistentně na straně klienta a jsou synchronizována až ve chvíli kdy je možná komunikace s webovou službou.\\ \indent
-Synchronizace se týká pouze dat pro docházku uživatele. Ostatní data jsou prostřednictvím mobilní klienta pouze zobrazována. Je třeba počítat s tím, že záznamy přidané na straně klienta v režimu offline nemusí být přijaty při synchronizaci z důvodu porušení business pravidel a uživatel by měl být o této skutečnosti vhodně informován.
+Synchronizace se týká pouze dat pro docházku uživatele. Ostatní data jsou prostřednictvím mobilního klienta pouze zobrazována. Je třeba počítat s tím, že záznamy přidané na straně klienta v režimu offline nemusí být přijaty při synchronizaci z důvodu porušení business pravidel a uživatel by měl být o této skutečnosti vhodně informován.
 
 \subsection{Obousměrná synchronizace}
 Při obousměrné synchronizaci se odesílají data ze strany klienta na server tak i opačným směrem ze serveru na klienta. Klienta lze navrhnout tak, aby si uchovával informaci o změnách na svojí straně. Při analýze databázového schématu pro docházku v současném systému jsem zjistil, že databáze neuchovává informaci o změnách na svojí straně. Beze změny této skutečnosti není možné sledovat změny na straně databáze. Výsledkem je poněkud neefektivní způsob synchronizace, kdy klient odesílá na server pouze změny, zatímco ze serveru stahuje všechna data pro daného uživatele a období.
+\\ \indent
+Celkový průběh synchronizace je znázorněn v diagramu \ref{obr:sync}. Klient nejprve odešle všechny svoje změny na server. Poté smaže všechny úspěšně odeslaná data. Bez smazání by nebylo možné zjistit, že na serveru došlo ke změně či smazání dat jiným klientem. Poté už zbývá pouze stažení aktuálních dat ze serveru. Data která na klientovi nebyla smazána z důvodu neúspěsného odeslání na server, zůstávají do té doby, než uživatel tyto data upraví tak aby vyhovovali bussines pravidlům. Dalším důvodem pro neúspěšnou synchronizaci může být přerušení spojení. Data zůstavají na klientovi, až do doby úspěšného pokusu o synchronizaci.
+\begin{figure}[H]
+  \centering
+  \includegraphics[scale=0.7]{visio/sync.pdf}
+\caption{Diagram aktivit pro průběh synchronizace}
+\label{obr:sync}
+\end{figure}
+
+Diagram \ref{obr:syncup} podrobněji rozepisuje průběh odeslání požadavku na server. Pokud klient nemá server ID záznamu, znamená to, že záznam byl vytvořen na straně klienta a odesílá se požadavek na vytvoření. Pokud klient zná server ID může požadovat smazání nebo aktualizaci záznamu. 
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[scale=0.7]{visio/syncup.pdf}
+\caption{Diagram aktivit pro odeslání požadavku na server}
+\label{obr:syncup}
+\end{figure}
+
+Diagram \ref{obr:syncup} podrobněji rozepisuje průběh přijetí záznamu ze serveru.
+TODO popsat kolizi
+\begin{figure}[H]
+  \centering
+  \includegraphics[scale=0.7]{visio/syncdown.pdf}
+\caption{Diagram aktivit pro přijetí záznamu ze serveru}
+\label{obr:syncdown}
+\end{figure}
 
 \subsection{Obousměrná synchronizace s úpravou databáze}
-Jiná varianta řešení problému synchronizace dat, která se snaží eliminovat nedostatky předchozí varianty, by vyžadovala změny v databázovém schématu současného systému. U každého záznamu by byla přidána informace o poslední změně záznamu s vhodnou časovou přestní - na sekundy. Pokud by došlo k požadavku na smazání záznamu, nebyl by záznam skutečně smazán, ale pouze nastaven přížnak smazaného záznamu. Při použití tohoto řešení by bylo možné synchronizovat oběma směry pouze změny ze strany klienta i serveru. 
+Jiná varianta řešení problému synchronizace dat, která se snaží eliminovat nedostatky předchozí varianty, by vyžadovala změny v databázovém schématu současného systému. U každého záznamu by byla přidána informace o poslední změně záznamu s vhodnou časovou přesností. Pokud by došlo k požadavku na smazání záznamu, nebyl by záznam skutečně smazán, ale pouze nastaven přížnak smazaného záznamu. Při použití tohoto řešení by bylo možné synchronizovat oběma směry pouze změny ze strany klienta i serveru. \\ \indent
+Klient který iniciuje synchronizaci nejprve odešle na server požadavek ke kterému připojí údaj o času provedení poslední synchronizace. Server odesílá ke klientovi pouze ty data, která se změnila po tomto termínu. Poté klient odesílá svoje změny na server.
+
+\subsection{Řešení kolizí}
+Kolize teoreticky nastane vždy, když se v době od poslední synchronizace změní stejná data jak na serveru, tak v zařízení. Vzhledem k tomu, že server neukládá informaci o čase poslední synchronizace a není tedy možné zjistit že vůbec došlo ke změne dat, tak mobilní klient vždy přepíše záznam na serveru.
 
 \subsection{Srovnání}
-V obou případech řešení je iniciátorem synchronizace klient.
+V obou případech řešení je iniciátorem synchronizace klient. Druhá varianta by oproti první přinesla úsporu množství přenesených dat. Vzhledem k tomu že druhá varianta by vyžadovala změnu v databázovém schématu současného systému zvolil jsem první variantu i přesto, že z hlediska efektivity synchronizace je to horší řešení.
 
 \section{Uživatelské rozhraní}
 \subsection{LOV}

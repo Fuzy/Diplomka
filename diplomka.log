@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-1.40.10 (MiKTeX 2.8) (preloaded format=pdflatex 2013.4.14)  28 JUN 2013 18:22
+This is pdfTeX, Version 3.1415926-1.40.10 (MiKTeX 2.8) (preloaded format=pdflatex 2013.4.14)  29 JUN 2013 23:11
 entering extended mode
 **C:/MojeData/Škola/DP/Dokument/diplomka.tex
 (C:/MojeData/Škola/DP/Dokument/diplomka.tex
@@ -578,93 +578,128 @@ Overfull \hbox (44.33234pt too wide) in paragraph at lines 212--219
  [][] 
  []
 
-[11] [12] [13] [14]
-Kapitola 4.
-[15
+[11] [12]
 
-] [16]
+pdfTeX warning: pdflatex (file C:/MojeData/Škola/DP/Dokument/visio/sync.pdf): P
+DF inclusion: found PDF version <1.5>, but at most version <1.4> allowed
+<visio/sync.pdf, id=87, 512.66531pt x 370.38374pt>
+File: visio/sync.pdf Graphic file (type pdf)
+ <use visio/sync.pdf>
+Package pdftex.def Info: visio/sync.pdf used on input line 251.
+(pdftex.def)             Requested size: 358.86327pt x 259.26685pt.
+
+[13]
+
+pdfTeX warning: pdflatex (file C:/MojeData/Škola/DP/Dokument/visio/syncup.pdf):
+ PDF inclusion: found PDF version <1.5>, but at most version <1.4> allowed
+<visio/syncup.pdf, id=93, 598.48593pt x 427.5975pt>
+File: visio/syncup.pdf Graphic file (type pdf)
+ <use visio/syncup.pdf>
+Package pdftex.def Info: visio/syncup.pdf used on input line 260.
+(pdftex.def)             Requested size: 418.93729pt x 299.31621pt.
+
+Overfull \hbox (28.93729pt too wide) in paragraph at lines 260--261
+ [][] 
+ []
+
+[14 <C:/MojeData/Škola/DP/Dokument/visio/sync.pdf>]
+
+pdfTeX warning: pdflatex (file C:/MojeData/Škola/DP/Dokument/visio/syncdown.pdf
+): PDF inclusion: found PDF version <1.5>, but at most version <1.4> allowed
+<visio/syncdown.pdf, id=118, 456.20438pt x 171.64125pt>
+File: visio/syncdown.pdf Graphic file (type pdf)
+
+<use visio/syncdown.pdf>
+Package pdftex.def Info: visio/syncdown.pdf used on input line 269.
+(pdftex.def)             Requested size: 319.34087pt x 120.14804pt.
+ [15 <C:/MojeData/Škola/DP/Dokument/visio/syncup.pdf> <C:/MojeData/Škola/DP/Dok
+ument/visio/syncdown.pdf>] [16] [17]
+Kapitola 4.
+[18
+
+] [19]
 
 pdfTeX warning: pdflatex (file C:/MojeData/Škola/DP/Dokument/visio/auth.pdf): P
 DF inclusion: found PDF version <1.5>, but at most version <1.4> allowed
-<visio/auth.pdf, id=100, 456.20438pt x 313.9228pt>
+<visio/auth.pdf, id=162, 456.20438pt x 313.9228pt>
 File: visio/auth.pdf Graphic file (type pdf)
  <use visio/auth.pdf>
-Package pdftex.def Info: visio/auth.pdf used on input line 294.
+Package pdftex.def Info: visio/auth.pdf used on input line 324.
 (pdftex.def)             Requested size: 364.96399pt x 251.13857pt.
 
 
 pdfTeX warning: pdflatex (file C:/MojeData/Škola/DP/Dokument/visio/auth_ldap.pd
 f): PDF inclusion: found PDF version <1.5>, but at most version <1.4> allowed
-<visio/auth_ldap.pdf, id=102, 456.20438pt x 313.9228pt>
+<visio/auth_ldap.pdf, id=164, 456.20438pt x 313.9228pt>
 File: visio/auth_ldap.pdf Graphic file (type pdf)
 
 <use visio/auth_ldap.pdf>
-Package pdftex.def Info: visio/auth_ldap.pdf used on input line 303.
+Package pdftex.def Info: visio/auth_ldap.pdf used on input line 333.
 (pdftex.def)             Requested size: 364.96399pt x 251.13857pt.
- [17 <C:/MojeData/Škola/DP/Dokument/visio/auth.pdf>]
-[18 <C:/MojeData/Škola/DP/Dokument/visio/auth_ldap.pdf>]
-LaTeX Font Info:    Try loading font information for T1+aett on input line 314.
+ [20 <C:/MojeData/Škola/DP/Dokument/visio/auth.pdf>]
+[21 <C:/MojeData/Škola/DP/Dokument/visio/auth_ldap.pdf>]
+LaTeX Font Info:    Try loading font information for T1+aett on input line 344.
 
 
 ("C:\Program Files\MikTex\tex\latex\ae\t1aett.fd"
 File: t1aett.fd 1997/11/16 Font definitions for T1/aett.
-) [19] [20]
+) [22] [23]
 Kapitola 5.
-[21
+[24
 
-] [22] [23] [24]
+] [25] [26] [27]
 Kapitola 6.
-[25
+[28
 
-] [26] [27]
-Underfull \hbox (badness 10000) in paragraph at lines 551--552
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 552--553
+] [29] [30]
+Underfull \hbox (badness 10000) in paragraph at lines 581--582
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 553--554
+Underfull \hbox (badness 10000) in paragraph at lines 582--583
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 554--555
+Underfull \hbox (badness 10000) in paragraph at lines 583--584
 
  []
 
-[28] [29] [30]
+
+Underfull \hbox (badness 10000) in paragraph at lines 584--585
+
+ []
+
+[31] [32] [33]
 Kapitola 7.
-<scr/time_doch.png, id=173, 722.7pt x 1284.8pt>
+<scr/time_doch.png, id=235, 722.7pt x 1284.8pt>
 File: scr/time_doch.png Graphic file (type png)
  <use scr/time_doch.png>
-Package pdftex.def Info: scr/time_doch.png used on input line 623.
+Package pdftex.def Info: scr/time_doch.png used on input line 653.
 (pdftex.def)             Requested size: 216.81166pt x 385.44298pt.
 
-[31
+[34
 
-] <scr/graf_doch.png, id=178, 1284.8pt x 722.7pt>
+] <scr/graf_doch.png, id=239, 1284.8pt x 722.7pt>
 File: scr/graf_doch.png Graphic file (type png)
  <use scr/graf_doch.png>
-Package pdftex.def Info: scr/graf_doch.png used on input line 629.
+Package pdftex.def Info: scr/graf_doch.png used on input line 659.
 (pdftex.def)             Requested size: 385.44298pt x 216.81166pt.
 
-[32 <C:/MojeData/Škola/DP/Dokument/scr/time_doch.png (PNG copy)>]
-<scr/ucet.png, id=182, 722.7pt x 1284.8pt>
+[35 <C:/MojeData/Škola/DP/Dokument/scr/time_doch.png (PNG copy)>]
+<scr/ucet.png, id=243, 722.7pt x 1284.8pt>
 File: scr/ucet.png Graphic file (type png)
  <use scr/ucet.png>
-Package pdftex.def Info: scr/ucet.png used on input line 635.
+Package pdftex.def Info: scr/ucet.png used on input line 665.
 (pdftex.def)             Requested size: 216.81166pt x 385.44298pt.
- [33 <C:/MojeData/Škola/DP/Dokument/scr/graf_doch.png (PNG copy)>]
-<scr/network.png, id=186, 722.7pt x 1284.8pt>
+ [36 <C:/MojeData/Škola/DP/Dokument/scr/graf_doch.png (PNG copy)>]
+<scr/network.png, id=247, 722.7pt x 1284.8pt>
 File: scr/network.png Graphic file (type png)
  <use scr/network.png>
-Package pdftex.def Info: scr/network.png used on input line 641.
+Package pdftex.def Info: scr/network.png used on input line 671.
 (pdftex.def)             Requested size: 216.81166pt x 385.44298pt.
- [34 <C:/MojeData/Škola/DP/Dokument/scr/ucet.png (PNG copy)>] [35 <C:/MojeData/
+ [37 <C:/MojeData/Škola/DP/Dokument/scr/ucet.png (PNG copy)>] [38 <C:/MojeData/
 Škola/DP/Dokument/scr/network.png (PNG copy)>] (C:\MojeData\Škola\DP\Dokument\d
 iplomka.aux)
 
@@ -676,22 +711,22 @@ LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 4219 strings out of 495324
- 55216 string characters out of 3182598
+ 4237 strings out of 495324
+ 55531 string characters out of 3182598
  144903 words of memory out of 3000000
- 7311 multiletter control sequences out of 15000+200000
+ 7326 multiletter control sequences out of 15000+200000
  44633 words of font info for 90 fonts, out of 3000000 for 9000
  5 hyphenation exceptions out of 8191
- 34i,16n,43p,744b,412s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 34i,16n,43p,760b,412s stack positions out of 5000i,500n,10000p,200000b,50000s
 <C:/Program Files/MikTex/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Progra
 m Files/MikTex/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Program Files/MikTe
 x/fonts/type1/public/amsfonts/cm/cmr17.pfb><C:/Program Files/MikTex/fonts/type1
 /public/amsfonts/cm/cmsy10.pfb><C:/Program Files/MikTex/fonts/type1/public/amsf
 onts/cm/cmti12.pfb><C:/Program Files/MikTex/fonts/type1/public/amsfonts/cm/cmtt
 12.pfb>
-Output written on diplomka.pdf (41 pages, 685403 bytes).
+Output written on diplomka.pdf (44 pages, 941595 bytes).
 PDF statistics:
- 215 PDF objects out of 1000 (max. 8388607)
+ 277 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
- 61 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 76 words of extra memory for PDF output out of 10000 (max. 10000000)
 
