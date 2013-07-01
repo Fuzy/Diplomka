@@ -59,28 +59,49 @@ Text of abstract.
 \chapter{Úvod}
 
 \chapter{Současný systém}
-IMIS = Integrovaný manažerský informační systém
+Integrovaný manažerský informační systém (IMIS) je součástí informačního systému Ramses ERP vyvinutý společností CCA Group a.s. Jedná se modulový ERP systém zabývající se oblastmi podnikových financí, kontrolováním nákladů, personalistikou a činnostmi podporující obchod. Společnost tento systém sama využívá pro svoje interní potřeby.
 
-\section{Oracle forms}
+\section{Vybraná funkcionalita}
+V této práci se zaměřuji na funkcionalitu z oblasti systému věnující se personalistice. Konktretně se jedná o moduly pro zápis příchodů a odchodů na pracovistě a vykazování provedené práce. Jedná se o činnosti, které zaměstnanec provádí jako každodenní rutinu a zároveň jsou to činnosti s nejširší skupinou uživatelů v rámci podniku.
+ 
+\subsection{Evidence docházky}
+Docházkový systém slouží k evidenci docházky zaměstnanců, která se následně využívá k přípravě podkladů pro zpracování mzdové agendy.
+
+\subsection{Vykazování odvedené práce}
+Vykazování odvedené práce je jedním ze způsobů pro průběžnou kontrolu aktivit zaměstnanců. Ve firmě probíhá současně více projektů a bez výkazů by bylo velmi těžké sledovat průběžně náklady jednotlivých projektů. 
+Díky evidenci je možné sledovat produktivitu jednotlivých zaměstnanců stejně jako nalézt slabá místa v pracovním procesu.
+\\ \indent Výkazy práce jsou propojeny s docházkovým systémem a je možné porovnávat výstupy z těchto systémů. 
+
+\subsection{Motivace}
+Motivací pro vznik této práce bylo vytvořit mobilní aplikaci umožnující provádět každodenní agendu - zadávat příchody a odchody a výkazy práce pro zaměstnance, kteří často cestují a působí mimo sídlo organizace. Také snaha o využítí možností mobilního zařízení tzn. pohodlné zadávání údajů a možnost mít požadované informace po ruce.
+
+Výsledná mobilní aplikace se nemá nahradit vybrané části používaného systému, ale poskytnout efektivnější alternativu ve vybraných činnostech.
+
+[TODO pozn. původní ambice byla možnost zadávat i výkazy práce prostřednictvím mobilního klienta, vzhledem k tomu, že by bylo nutné provést úpravy v současném systému se od tohoto upustilo]
+
+\section{Použitá technologie}
+Současný systém je postaven na Oracle technologii. Jako uživatelské rozhraní používá Oracle Forms a data jsou ukládany v Oracle databázi.
+ 
+\subsection{Oracle forms}
 Oracle forms je softwarový produkt vyvinutý společností Oracle. Slouží k vytváření formulářů, které interagují s Oracle databází. Jako programovací jazyk využívá PL/SQL. Produkt byl původně požíval terminálové rozhraní pro komuikaci se serverem. Později byl přepracován do architekrury klient-server.\\ \indent
 Prostředí běhu zajišťuje defaultní správu transakcí. Díky tomu je Oracle Forms silný nástroj pro efektivní vývoj aplikací, jejichž primárním cílem je přístup k datům uložených v databázi. 
 
 \paragraph{PL/SQL}
 PL/SQL (Procedural Language/Structured Query Language) je procedurální nadstavba jazyka SQL od firmy Oracle založená na programovacím jazyku Ada.
 
-\section{Architektura}
+\subsection{Architektura}
 
 \begin{figure}[H]
   \centering
   \includegraphics[scale=0.8]{obr/d2k_wea2.png}
   \label{}
 \end{figure}
-TODO asi vyrobit vlastni
+[TODO asi vyrobit vlastni]
 
-\section{Komponenty formuláře}
+\subsection{Komponenty formuláře}
 Z hlediska architektury se Oracle Forms aplikace skládá z těchto celků:
 
-\subsection{Moduly}
+\subsection*{Moduly}
 
 \paragraph{Modul formuláře} 
 Modul formuláře je hlavní komponenta aplikace. Poskytuje kód nezbytný pro interakci s úložištěm a uživatelským rozhraním. 
@@ -107,9 +128,8 @@ Modul obsahuje znovu využitelné objekty. Řeší uskladnění, správu a distr
   \includegraphics[scale=0.8]{obr/forms_arch3.png}
   \label{}
 \end{figure}
-TODO obrazek upravit - prepsat Oracle Module na Form Module
 
-\subsection{Triggery}
+\subsection*{Triggery}
 Aplikace v Oracle pracuje s následujícími typy triggerů:
 \begin{itemize}
 \item Block-processing triggers - jsou spouštěny při události na položce patřící tomuto bloku.
@@ -124,9 +144,6 @@ Aplikace v Oracle pracuje s následujícími typy triggerů:
 Pokud se jedná o datový blok, který je svázan s tabulkou v databázi, prostředí běhu automaticky zajištuje DML pro tyto bloky.
 Pokud vývojář požaduje nestandartní akci při těchto úkonech, provede překrytí těchto triggerů s vlastní definovanou akcí.
 
-\subsection{Seznam hodnot}
-A (LOV) is a pop-up window that provides the user with a selection of values. The values can be static or populated by querying the database. LOVs are populated using columns returned by record groups. Check the Record Group property of the LOV for the record group which is used to provide values.
-
 \section{Uživatelské rozhraní}
 \begin{figure}[H]
   \centering
@@ -135,6 +152,8 @@ A (LOV) is a pop-up window that provides the user with a selection of values. Th
 \end{figure}
 Plátno je objekt, na který je nakresleno celé GUI formuláře, tedy všechny viditelné objekty. Může mít prakticky jakoukoli velikost. Okno ohraničuje plochu plátna, která bude zobrazena. View řídí, jak bude plátno v určité době zobrazeno v okně.\\
 TODO přepsat
+\subsection*{Seznam hodnot}
+Seznam hodnot je prvek uživatelského rozhraní, který uživateli nabízí výběr hodnot. Výběr může být na základě pevně daných dat či dotazem z databáze.
 
 
 \section{Datový model}
@@ -147,14 +166,14 @@ TODO přepsat
   \includegraphics[scale=0.6]{obr/BD27.png}
   \label{}
 \end{figure}
-+popsat z pohledu uzivatele
+[TODO popsat z pohledu uzivatele]
 \subsection{Výkaz práce}
 \begin{figure}[H]
   \centering
   \includegraphics[scale=0.6]{obr/VX42.png}
   \label{}
 \end{figure}
-+popsat z pohledu uzivatele
+[TODO popsat z pohledu uzivatele]
 
 \chapter{Analýza}
 
@@ -279,25 +298,27 @@ Klient který iniciuje synchronizaci nejprve odešle na server požadavek ke kte
 Kolize teoreticky nastane vždy, když se v době od poslední synchronizace změní stejná data jak na serveru, tak v zařízení. Vzhledem k tomu, že server neukládá informaci o čase poslední synchronizace a není tedy možné zjistit že vůbec došlo ke změne dat, tak mobilní klient vždy přepíše záznam na serveru.
 
 \subsection{Srovnání}
-V obou případech řešení je iniciátorem synchronizace klient. Druhá varianta by oproti první přinesla úsporu množství přenesených dat. Vzhledem k tomu že druhá varianta by vyžadovala změnu v databázovém schématu současného systému zvolil jsem první variantu i přesto, že z hlediska efektivity synchronizace je to horší řešení.
+V obou případech řešení je iniciátorem synchronizace klient. Druhá varianta by oproti první přinesla úsporu množství přenesených dat. Vzhledem k tomu, že druhá varianta by vyžadovala změnu v databázovém schématu současného systému, zvolil jsem první variantu i přesto, že z hlediska efektivity synchronizace je to horší řešení.
 
 \section{Uživatelské rozhraní}
-\subsection{LOV}
-jaka alternativa v androidu
 
 \chapter{Zabezpečení}
-V následující kapitole se zabývám zabezpečením aplikace. Popisuji několik možných variant. Na závěr vysvětluji výběr zvoleného řešení.
+V následující kapitole se zabývám zabezpečením aplikace. Popisuji několik možných variant z hlediska ověřování identity uživatele. Na závěr vysvětluji výběr zvoleného řešení.
 \section{Autentizace a autorizace}
-Při analýze současného systému jsem zjistil, že informace o docházce a výkazech zaměstnanců jsou dostupné všem ostatním uživatelům (údaje týkající se nadřízených pracovníků jsou dostupné i podřízením). Dalším zajímavostí je, že heslo používané k zadání docházky je pro uživatele nepovinné (má ho jen ten uživatel, který si ho nastavil) a je prakticky možné zadat docházku jinému uživateli. Není předmětem mojí práce hodnotit tuto skutečnost, která je vlastností současného systému.
+Při analýze současného systému jsem zjistil, že informace o docházce a výkazech zaměstnanců jsou dostupné všem ostatním uživatelům (údaje týkající se nadřízených pracovníků jsou dostupné i podřízením). Dalším zajímavostí je, že heslo používané k zadání docházky je pro uživatele nepovinné (má ho jen ten uživatel, který si ho nastavil). 
 
 \subsection*{Autentizace}
-Autentizace je proces ověření proklamované identity subjektu. Vzhledem k tomu, že heslo je nepovinné a mají ho nastavené jen někteří uživatele, nelze ověřit autenticitu pro každého uživatele.
+Autentizace je proces ověření proklamované identity subjektu. Uživatel se identifikuje pomocí svého uživatelského jména a hesla.
 
 \subsection*{Autorizace}
-Autorizace je proces získávání souhlasu s provedením nějaké operace. Současný systém neřeší autorizaci týkající se dat pro docházku a výkazy práce. Vzhledem k tomu, že nelze ověřit autenticitu pro každého uživatele, nelze autorizaci seriozně řešit.
+Autorizace je proces získávání souhlasu s provedením nějaké operace. Uživatel musí zadávat svoj přístupové údaje při zadání každého záznamu docházky. 
 
 \subsection*{Riziko poškození systému}
 Webová služba umožňuje čtení a úpravu docházkových dat a dále čtení dat o výkazech práce a zaměstnancích. Dále používá některé databázové objekty jako jsou procedury a funkce, které pracují s těmito daty. Je vhodné aby aplikace měla přístup pouze k těm databázovým objektům, které jsou relevantní pro navrženou funkčnost aplikace. To je vhodné pro maximální zabezpečení okolního systému a minimalizaci případných rizik při zneužití či chybě v aplikaci. Toto je zodpovědností databázového administrátora organizace a v této práci se touto problematikou dále nezabývám.
+
+\subsection*{HTTP Basic autentizace}
+Klient posílá autentizační hlavičku jako součást HTTP požadavku na server. Jméno a heslo je zasláno jako jeden textový řetězec oddělený dvojtečkou. Výsledný řetězec je poté zakódován metodou Base64. Uživatelské jméno a heslo se tedy posílá v zakódované podobě. Nejedná se ale o kryptografické zabezpečení přihlašovacích údajů. Použití této metody předpokládá použití zabezpečeného komunikačního kanálu mezi klientem a serverem.
+
 
 \section{VPN pro vzdálený přístup}
 Virtuální privátní síť  je prostředek pro propojení počítačů v prostředí nedůvěryhodné sítě. Díky VPN spojení mohou počítače komunikovat tak, jako by byly součástí důvěryhodné sítě.
@@ -306,7 +327,7 @@ Virtuální privátní síť  je prostředek pro propojení počítačů v prost
 \begin{itemize}[noitemsep,nolistsep]
 \item Zapouzdření\\ Při použití technologie VPN jsou data zapouzdřena pomocí hlavičky obsahující směrovací informace, které umožňují průchod dat přes tranzitní síť.
 \item Ověřování\\
-Klient a VPN server se vzájemně ověřují na úrovni počítače. Ověřování  se děje pomocí PPTP protokolu. 
+Klient a VPN server se vzájemně ověřují na úrovni počítače. Android má integrovanou podporu pro VPN využívající protokoly PPTP, L2TP a IPSec.
 \item Šifrování dat\\
 Pro utajení dat během jejich přenosu sdílenou nebo veřejnou tranzitní sítí jsou data na straně odesílatele zašifrována a na straně příjemce dešifrována. Šifrování a dešifrování je založeno na tom, že odesílatel i příjemce používají společný šifrovací klíč.
 \end{itemize}
@@ -314,10 +335,7 @@ Pro utajení dat během jejich přenosu sdílenou nebo veřejnou tranzitní sít
 Webová služba je tedy umístěna na serveru uvnitř firemní sítě. Pokud klient chce komunikovat s webovou službou musí tak činit 
 prostřednictvím sítě VPN.
 
-\section{HTTP Basic autentizace}
-Klient posílá autentizační hlavičku jako součást HTTP požadavku na server. Jméno a heslo je zasláno jako jeden textový řetězec oddělený dvojtečkou. Výsledný řetězec je poté zakódován metodou Base64. Uživatelské jméno a heslo se tedy posílá v zakódované podobě. Nejedná se ale o kryptografické zabezpečení přihlašovacích údajů. Použití této metody předpokládá použití zabezpečeného komunikačního kanálu mezi klientem a serverem.
-
-\section{Použité řešení}
+\section{Autentizace proti databázi}
 Klient i server jsou součástí jedné VPN sítě, která zajišťuje důvěryhodný komunikační kanál.  Klient posílá na server HTTP požadavek jehož součástí je autentizační hlavička nesoucí uživatelské jméno a heslo. Webová služba ověří jméno a heslo pomocí databázové procedury. Jméno a heslo uživatele je uloženo v databázi. Implementované řešení je znázorněno na obr. \ref{obr:auth} který zobrazuje sekveční UML diagram v případě úspěšné autentizace.
 \begin{figure}[H]
   \centering
@@ -326,7 +344,7 @@ Klient i server jsou součástí jedné VPN sítě, která zajišťuje důvěryh
 \label{obr:auth}
 \end{figure}
 
-\section{Alternativní řešení}
+\section{Autentizace proti LDAP}
 Alternativním řešením by bylo ověřování uživatelů pomocí LDAP adresáře. Organizace již LDAP používá v některých dalších firemních systémech. Toto řešení se liší v tom, že dotaz na ověření identity uživatele probíhá k LDAP adresáři a nikoli k databázi. Implementované řešení je znázorněno na obr. \ref{obr:authldap}, který zobrazuje sekveční UML diagram v případě úspěšné autentizace.
 \begin{figure}[H]
   \centering
@@ -349,7 +367,7 @@ objectclass ( 1.1.2.2.2 NAME 'zamestnanec'
                 MAY zkratkaZamestnance )
 \end{verbatim}
 
-Objekt popisující zaměstnance dědí od objektu osoba, vyžaduje povinný atribut 'jmeno' a 'identifikacniCislo' a nepovinny atribut 'zkratkaZamestnance'.
+Objekt popisující zaměstnance dědí od objektu osoba, vyžaduje povinný atribut 'jmeno' a 'identifikacniCislo' a nepovinný atribut 'zkratkaZamestnance'.
 
 \subsection*{Funkční model}
 Funkční model umožňuje pomocí základních operací manipulovat a přistupovat k záznamům v adresáři a měnit či zjišťovat tak jejich stav.
@@ -374,8 +392,9 @@ ldap://host:port/DN?attributes?scope?filter?extensions
 \end{itemize}
 
 \section{Shrnutí}
-Použil jsem první řešení protože je to implementačně jednodušší. Stávají řešení pomocí Oracle Forms aplikace používá rovněž ověření uživatele dotazem k databázi tzn. ověření se děje na aplikační vrstvě. \\ \indent
-Použití alternativní varianty by přineslo lepší zabezpečení ze strany mobilního klienta. Každý uživatel by musel použít svoje heslo, které nyní používá v ostatních systémech používající ověření pomocí LDAP. Vzhledem k tomu, že současný systém bude nadále funkčí, tak silnější zabezpečení mobilního klienta nemá praktický přínos.
+Hlavním prvkem zabezpečení je VPN přístup. Uživatel bez přístupu do firemní VPN nemůže komunikovat s webovou službou. Od uživatele se očekává, že si nakonfiguruje VPN připojení v nastavení Android mobilního zařízení.\\ \indent
+Použil jsem první řešení protože je shoduje se způsobem ověřování v současném systému. Stávají řešení pomocí Oracle Forms aplikace používá rovněž ověření uživatele dotazem k databázi tzn. ověření se děje na aplikační vrstvě. \\ \indent
+Je nutné dívat se na pravidlo dobrovolného hesla jako na firemní pravidlo, které může být kdykoli zrušeno. V případě zrušení tohoto pravidla by se z největší pravděpodobností uplatnilo ověřování proti LDAP adresáři. 
 
 \chapter{Webová služba}
 
@@ -597,12 +616,9 @@ RestaTemplates - springframework
 
 \section{Synchronizace}
 \begin{enumerate}
-\item sync algoritmus - 2 algoritmy (jeden ideální, druhý reálný), srovnání
 \item sync architektura - komponenty
 \end{enumerate}
 
-\section{Zabezpečení}
--authentikace
 
 \section{Oprávnění}
 persmission v manifestu, vypsat a vysvětlit
@@ -620,28 +636,17 @@ knihovny, cloudové řešení, vlastní komponenty
 \section{Distribuce}
 
 \chapter{Testování}
-
+[TODO testovaci scenare synchronizace]
 \section{O čem psát...}
 \begin{enumerate}
-\item popsat IMIS 
 \item pripraveno webove sluzby na dalsi mobilni platformy
 \item cinnost apliakce online/offline
 \item flow diagramy pro ruzne cinnosti
 \item pristupova prava
 \item uspora pesistentni pameti na strane androida
 \item chybove reporty a opravy na aplikaci v ostrem prostredi, obrazek + ukazka
-\item jak zjisit zmenu zaznamu, v datech se uklada pouze datum posledni zmeny, nikoli presny cas
 \item perioda automatickeho mazani dat
 \item datovy model schema
-\end{enumerate}
-
-\section{Zásady pro vypracování}
-\begin{enumerate}
-\item Prozkoumejte systém IMIS pro evidenci docházky a pracovních výkazů. Vyberte činnosti, které by bylo vhodné implementovat i pro mobilní zařízení.
-\item Navrhněte mobilní aplikaci pro platformu Android, které bude obsahovat vybrané funkce z předchozího bodu zadání.
-Zvažte aspekty zabezpečení komunikace aplikace se systémem.
-\item Implementujte navržené řešení, berte přitom v úvahu možnou rozšiřitelnost o další funkce.
-\item Ověřte funkcionalitu vytvořené aplikace.
 \end{enumerate}
 
 \appendix
