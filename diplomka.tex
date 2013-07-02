@@ -1,4 +1,4 @@
-\documentclass{bakalarka}
+\documentclass{diplomka}
 %\usepackage[cp1250]{inputenc}
 \usepackage{listings}
 \usepackage[utf8]{inputenc} 
@@ -11,6 +11,9 @@
 \usepackage{color, colortbl}
 \usepackage{enumitem}
 \usepackage{array}
+\usepackage{caption}
+\usepackage{subcaption}
+
 %\usepackage[pdftex]{graphicx}
 
 \lstset{language=Java,keywordstyle=\color{blue}, commentstyle=\color{Green},stringstyle=\color{red},showstringspaces=false,breaklines=true,tabsize=3,basicstyle=\footnotesize}
@@ -59,13 +62,14 @@ Text of abstract.
 \chapter{Úvod}
 
 \chapter{Současný systém}
-Integrovaný manažerský informační systém (IMIS) je součástí informačního systému Ramses ERP vyvinutý společností CCA Group a.s. Jedná se modulový ERP systém zabývající se oblastmi podnikových financí, kontrolováním nákladů, personalistikou a činnostmi podporující obchod. Společnost tento systém sama využívá pro svoje interní potřeby.
+Integrovaný manažerský informační systém (IMIS) je součástí informačního systému Ramses ERP vyvinutého společností CCA Group a.s. Jedná se modulový ERP systém zabývající se oblastmi podnikových financí, kontrolováním nákladů, personalistikou a činnostmi podporující obchod. Společnost tento systém sama využívá pro svoje interní potřeby.
 
 \section{Vybraná funkcionalita}
-V této práci se zaměřuji na funkcionalitu z oblasti systému věnující se personalistice. Konktretně se jedná o moduly pro zápis příchodů a odchodů na pracovistě a vykazování provedené práce. Jedná se o činnosti, které zaměstnanec provádí jako každodenní rutinu a zároveň jsou to činnosti s nejširší skupinou uživatelů v rámci podniku.
+V této práci se zaměřuji na funkcionalitu z oblasti systému věnující se personalistice. Konktrétně se jedná o moduly pro zápis příchodů a odchodů na pracovistě a vykazování provedené práce. Jedná se o činnosti, které zaměstnanec provádí jako každodenní rutinu a zároveň jsou to činnosti s nejširší skupinou uživatelů v rámci podniku.
  
 \subsection{Evidence docházky}
 Docházkový systém slouží k evidenci docházky zaměstnanců, která se následně využívá k přípravě podkladů pro zpracování mzdové agendy.
+[TODO rozbor+odkaz?]
 
 \subsection{Vykazování odvedené práce}
 Vykazování odvedené práce je jedním ze způsobů pro průběžnou kontrolu aktivit zaměstnanců. Ve firmě probíhá současně více projektů a bez výkazů by bylo velmi těžké sledovat průběžně náklady jednotlivých projektů. 
@@ -94,7 +98,6 @@ PL/SQL (Procedural Language/Structured Query Language) je procedurální nadstav
 \begin{figure}[H]
   \centering
   \includegraphics[scale=0.8]{obr/d2k_wea2.png}
-  \label{}
 \end{figure}
 [TODO asi vyrobit vlastni]
 
@@ -126,7 +129,6 @@ Modul obsahuje znovu využitelné objekty. Řeší uskladnění, správu a distr
 \begin{figure}[H]
   \centering
   \includegraphics[scale=0.8]{obr/forms_arch3.png}
-  \label{}
 \end{figure}
 
 \subsection*{Triggery}
@@ -148,7 +150,6 @@ Pokud vývojář požaduje nestandartní akci při těchto úkonech, provede př
 \begin{figure}[H]
   \centering
   \includegraphics[scale=0.8]{obr/window.png}
-  \label{}
 \end{figure}
 Plátno je objekt, na který je nakresleno celé GUI formuláře, tedy všechny viditelné objekty. Může mít prakticky jakoukoli velikost. Okno ohraničuje plochu plátna, která bude zobrazena. View řídí, jak bude plátno v určité době zobrazeno v okně.\\
 TODO přepsat
@@ -164,14 +165,12 @@ Seznam hodnot je prvek uživatelského rozhraní, který uživateli nabízí vý
 \begin{figure}[H]
   \centering
   \includegraphics[scale=0.6]{obr/BD27.png}
-  \label{}
 \end{figure}
 [TODO popsat z pohledu uzivatele]
 \subsection{Výkaz práce}
 \begin{figure}[H]
   \centering
   \includegraphics[scale=0.6]{obr/VX42.png}
-  \label{}
 \end{figure}
 [TODO popsat z pohledu uzivatele]
 
@@ -200,6 +199,17 @@ Z pohledu rozšiřitelnosti systému o další mobilní platformy se toto řeše
 \caption{Zvolená architektura}
 \label{obr:arch}
 \end{figure}
+
+\section{Architektura}
+Android aplikace funguje jako tenký klient, který se připojuje k webové službě. Webová služba používá REST architekturu a přistupuje k samotné databázi.
+
+\begin{itemize}
+\item Webová služba - Java EE 6, aplikační server GlassFish
+\item Databáze - Oracle 10g, obsahuje navíc databázové procedury, které se používají v současných formulářích  
+\item Android - obsahuje persistentní úložiště, obsahuje záznamy o docházce, úložiště se bude automaticky synchronizovat ve stavu online s databázovým serverem prostřednictvím webové služby
+\end{itemize}
+TODO prepsat srozumitelneji
+TODO schema komunikace -HHTP, JDBC
 
 \section{Výběr typu webové služby}
 
@@ -245,7 +255,8 @@ chybi primarni klic - ROWID jako unikatni identifikator, problemy ktere to prina
 format casu - problemy s prevodem
 
 \section{Business logika}
-existuje někajá možnost převodu formsů do javy - oracle adf - co to je, co to resi, proc to neresi muj problem
+existuje někajá možnost převodu formsů do javy - oracle adf - co to je, co to resi, proc to neresi muj problem\\
+prijde to do webove sluzby - duvody
 \subsection{Triggery}
 jen ty, jejichž funkčnost bude muset být implementována.
 \begin{itemize}
@@ -480,7 +491,6 @@ GET  & employees/lastevents/\{icp\} \\
 \end{table}
 \noindent
 
-
 Zdroj výkazy práce
 \begin{table}[H]
 \begin{center}
@@ -542,24 +552,17 @@ Dále aplikace umožní uživateli konfigurovat vzhled některých kompoment, ja
 \subsection{Uživatelská přívětivost}
 Uživatelské rozhraní aplikace klade důraz na přehlednost, ergonomii a časově efektivní obsluhu.
 
-\section{Architektura}
-Android aplikace funguje jako tenký klient, který se připojuje k webové službě. Webová služba používá REST architekturu a přistupuje k samotné databázi.
+\subsection{Návrhy na vylepšení}
+
+\section{Android základní komponenty}
+
+\subsection{Aktivita}
+\subsection{Služba}
+\subsection{Content provider}
+\subsection{Broadcast receiver}
 
 
-
-\begin{itemize}
-\item Webová služba - Java EE 6, aplikační server GlassFish
-\item Databáze - Oracle 10g, obsahuje navíc databázové procedury, které se používají v současných formulářích  
-\item Android - obsahuje persistentní úložiště, obsahuje záznamy o docházce, úložiště se bude automaticky synchronizovat ve stavu online s databázovým serverem prostřednictvím webové služby
-\end{itemize}
-TODO prepsat srozumitelneji
-TODO schema komunikace -HHTP, JDBC
-
-\section{Business logika}
-prijde to do webove sluzby - duvody
-
-
-\section{Android komponenty}
+\section{Android další komponenty}
 \begin{enumerate}
 \item komponenty pro sync a auth, provazani s android ucetm
 \item CursorLoader
@@ -567,46 +570,94 @@ prijde to do webove sluzby - duvody
 \item  nestandartni UI
 \item modifilkace adapterview
 \item cutom UI - viewgroup
+\item widgety
+\item alarmanager
+\item handler - hlavni vlakno
+\item activity - dedicnost
 \end{enumerate}
 + nejaka ukazka konkretniho pouziti
 
-\section{Ukládání dat}
+\section{Uživatelský účet}
+Android poskytuje správu účtů pro online služby. Uživatel zadá svoje přihlašovací údaje při vytvoření účtu a dává tak aplikaci svolení k využívání tohoto účtu.\\ \indent
+Různé online služby mohou využívat odlišný způsob pro autentizaci. Android manažer účtů využívá kompomentu \emph{authenticator} \cite{accman}, která je obvykle poskytována třetí stranou - poskytovatelem dané služby. Příkladem služby, která poskytuje vlastní \emph{authenticator} je např. Google, Facebook a Microsoft Exchange.\\ \indent
+Nejdůležitější třída pro práci s účty je \emph{AccountManager}. Zde je výčet nejdůležitějších metod:
+\begin{itemize}[]
+\item \textbf{addAccountExplicitly(Account account, String password, Bundle userdata)}\\
+Vytvoří nový účet.
+\item \textbf{Account[]: getAccountsByType(String type)}\\
+Vrátí seznam všech účtů daného typu.
+\item \textbf{setAuthToken(Account account, String authTokenType, String authToken)}\\
+Přidá autorizační token do cache paměti pro daný účet.
+\item \textbf{String:getPassword(Account account)/setPassword(Account account, String password)}\\
+Získání uloženého hesla pro účet./Nastavení hesla.
+\end{itemize}
+
+Na diagramu \ref{obr:andauth} je zobrazen průběh vytvoření účtu, který je použit v implementované aplikaci. Jakmile uživatel v sekci \emph{Nastavení->Účty} (obr. \ref{obr:setting}) zvolí přidání nového účtu a následně zvolí typ účtu (obr. \ref{obr:addacc}), manažer účtu spustí službu \emph{AutheticationService}. Služba vytvoří instanci třídy \emph{AccountAuthenticator} - authenticator komponenty. \emph{AccountManager} následně volá metodu \emph{addAccount()}, která zkontroluje zda již účet daného typu existuje. Pokud ne, vrací objekt \emph{Bundle} obsahující \emph{Intent} s klíčem \emph{AccountManager.KEY\_INTENT} označující, že bude nutná interakce s uživatelem. Následně je spuštěna aktivita \emph{AuthenticatorActivity} vyzývající uživatele, aby zadal svoje přihlašovací údaje. Po potvrzení je vytvořen účet (obr. \ref{obr:setting}).
+\begin{figure}[H]
+  \centering
+  \includegraphics[scale=0.7]{visio/andauth.pdf}
+\caption{Sekvenční diagram zobrazující průběh vytvoření účtu}
+\label{obr:andauth}
+\end{figure}
+
+\begin{figure}
+\centering
+\begin{minipage}{.5\textwidth}
+  \centering
+  \includegraphics[width=.75\linewidth]{scr/setting.png}
+  \captionof{figure}{Nastavení}
+  \label{obr:setting}
+\end{minipage}%
+\begin{minipage}{.5\textwidth}
+  \centering
+  \includegraphics[width=.75\linewidth]{scr/addacc.png}
+  \captionof{figure}{Přidání účtu}
+  \label{obr:addacc}
+\end{minipage}
+\end{figure}
+
+
 \section{Struktura projektu}
 (jen ty pouzite)
-\section{Manifest + oprávnění}
-\section{9png grafika}
-\section{Návrhy na vylepšení}
 
-\paragraph{Sdílené preference}\hfill \\ukládá primitivní datové typy ve tvaru klíč-hodnota. Slouží k uložení nastavení specifických pro aplikaci. Toto nastavení může být uloženo jako soukromé, kdy mohou k datům přistupovat pouze aplikace sdílející stejné \emph{Linux user ID}.\\ V aplikaci používám toto úložiště pro nastavení síťového připojení (doména a port webové služby) a barevného nastavení pro typy docházkových událostí.\\
-Načtení dat se typicky odehrává v onCreate() metodě aktivity:
-\begin{verbatim}
-%\begin{lstlisting}
-SharedPreferences settings = getSharedPreferences(PREFS_NAME, 
-Context.MODE_PRIVATE);
+\section{Manifest + oprávnění}
+persmission v manifestu, vypsat a vysvětlit
+
+\section{9png grafika}
+
+
+\section{Ukládání dat}
+\subsection*{Sdílené preference} Ukládá primitivní datové typy ve tvaru klíč-hodnota. Slouží k uložení nastavení specifických pro aplikaci. K těmto se přistupuje pomocí \emph{SharedPreferences} rozhraní. Data jsou ukládána persistentně. \\ V aplikaci používám toto úložiště pro nastavení síťového připojení, barevného nastavení pro typy docházkových událostí a další uživatelsky měnitelné hodnoty.\\ \\
+Objekty se získávají pomocí příslušné get metody:
+\begin{lstlisting}
+SharedPreferences settings = PreferenceManager.getDefaultSharedPreferences(context);
 int color = settings.getInt("color", defaultColor);
-%\end{lstlisting}
-\end{verbatim}
+\end{lstlisting}
+
 \noindent
-Uložení dat se typicky odehrává v onStop() metodě aktivity:
-\begin{verbatim}
-SharedPreferences settings = getSharedPreferences(PREFS_NAME, 
-Context.MODE_PRIVATE);
+Změny nastavení se provádějí pomocí \emph{SharedPreferences.Editor} rozhraní, které se postará aby data zůstala konsistentní a řídí transkační zpracování.
+\begin{lstlisting}
+SharedPreferences settings = PreferenceManager.getDefaultSharedPreferences(context);
 SharedPreferences.Editor editor = settings.edit();
 editor.putInt(("color", userColor);
 editor.commit();
-\end{verbatim}
+\end{lstlisting}
 
-\begin{description}
-\item [Interní úložiště]\hfill \\
-\item [Externí úložiště]\hfill \\
-\item [SQLite databáze]\hfill \\
-\item [Cloudové úložiště]\hfill \\
-\end{description}
+\subsection*{Interní úložiště}
+Soubory lze ukládat v interní paměti zařízení. Tyto soubory jsou defaultně přístupné pouze pro aplikace, která je vytvořila a při odinstalování jsou automaticky smazány.
+\subsection*{Externí úložiště}
+Další možností pro ukládání souborů je externí úložiště (např. SD karta).  Toto úložiště je sdílené a mohou být editována i mimo aplikaci.
+\subsection*{SQLite databáze}
+Data lze ukládat persistentně pomocí SQLite databáze. Vytvořená databáze je dostupná jakkékoli třídě v aplikaci, ale není přístupná mimo aplikaci, která jí vytořila. SQLite databázi detailněji popisuji v kapitole \ref{sqlite}.
 
 \section{SQLite}
-je treba resit delku dat napriklad stringu?, dynamic typing
+\label{sqlite}
+[TODO]je treba resit delku dat napriklad stringu?, dynamic typing
 
 V knihovnách pro Forms aplikace se nachází další kód, který bude nutné přepsat do webové služby.
+
+\subsection{Content provider}
+
 \section{REST}
 RestaTemplates - springframework
 \begin{enumerate}
@@ -619,10 +670,7 @@ RestaTemplates - springframework
 \item sync architektura - komponenty
 \end{enumerate}
 
-
-\section{Oprávnění}
-persmission v manifestu, vypsat a vysvětlit
-
+\section{GPS}
 
 \section{Zpětná kompatibilita}
 
@@ -649,9 +697,24 @@ knihovny, cloudové řešení, vlastní komponenty
 \item datovy model schema
 \end{enumerate}
 
+
+\chapter*{Seznam zkratek} 
+\addcontentsline{toc}{chapter}{Seznam zkratek}
+
+\begin{list}{}{\setlength{\leftmargin}{30mm}
+\setlength{\labelwidth}{30mm} \setlength{\labelsep}{0mm} }
+\item[\parbox{30mm}{IMIS}] Integrovaný manažerský informační systém
+\item[\parbox{30mm}{ERP}] Enterprise Resource Planning 
+%\item[\parbox{30mm}{}]
+\end{list}
+
 \appendix
-\bibliographystyle{csplainnat}
-%\bibliography{bakalarka}
+\bibliographystyle{czechiso}
+\bibliography{diplomka}
+\addcontentsline{toc}{chapter}{Literatura}
+
+\pagestyle{fancy}
+\chapter{Uživatelská dokumentace}
 
 \begin{figure}[H]
   \centering
@@ -676,4 +739,7 @@ knihovny, cloudové řešení, vlastní komponenty
   \includegraphics[scale=0.3]{scr/network.png}
   \label{}
 \end{figure}
+
+\chapter{Manifest?}
+
 \end{document}

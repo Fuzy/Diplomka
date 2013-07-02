@@ -1,10 +1,14 @@
-This is pdfTeX, Version 3.1415926-1.40.10 (MiKTeX 2.8) (preloaded format=pdflatex 2013.4.14)  1 JUL 2013 18:40
+This is pdfTeX, Version 3.1415926-1.40.10 (MiKTeX 2.8) (preloaded format=pdflatex 2013.4.14)  2 JUL 2013 23:22
 entering extended mode
 **C:/MojeData/äkola/DP/Dokument/diplomka.tex
 (C:/MojeData/äkola/DP/Dokument/diplomka.tex
 LaTeX2e <2011/06/27>
 Babel <v3.8m> and hyphenation patterns for czech, loaded.
-(C:\MojeData\äkola\DP\Dokument\bakalarka.cls
+(C:\MojeData\äkola\DP\Dokument\diplomka.cls
+
+LaTeX Warning: You have requested document class `diplomka',
+               but the document class provides `bakalarka'.
+
 Document Class: bakalarka 2005/09/16 v1.4f Standard LaTeX document class
 ("C:\Program Files\MikTex\tex\latex\base\size12.clo"
 File: size12.clo 2007/10/19 v1.4h Standard LaTeX file (size option)
@@ -384,6 +388,27 @@ Package: enumitem 2011/09/28 v3.5.2 Customized lists
 \enit@inbox=\box30
 \enitdp@description=\count100
 )
+("C:\Program Files\MikTex\tex\latex\caption\caption.sty"
+Package: caption 2012/02/19 v3.2f Customizing captions (AR)
+
+("C:\Program Files\MikTex\tex\latex\caption\caption3.sty"
+Package: caption3 2012/01/12 v1.4b caption3 kernel (AR)
+\captionmargin=\dimen114
+\captionmargin@=\dimen115
+\captionwidth=\dimen116
+\caption@indent=\dimen117
+\caption@parindent=\dimen118
+\caption@hangindent=\dimen119
+)
+\c@ContinuedFloat=\count101
+Package caption Info: float package is loaded.
+Package caption Info: listings package is loaded.
+)
+("C:\Program Files\MikTex\tex\latex\caption\subcaption.sty"
+Package: subcaption 2012/01/12 v1.1d Sub-captions (AR)
+\c@subfigure=\count102
+\c@subtable=\count103
+)
 ("C:\Program Files\MikTex\tex\latex\listings\lstlang1.sty"
 File: lstlang1.sty 2004/09/05 1.3 listings language file
 )
@@ -397,69 +422,56 @@ LaTeX Warning: Label `' multiply defined.
 
 LaTeX Warning: Label `' multiply defined.
 
-
-LaTeX Warning: Label `' multiply defined.
-
-
-LaTeX Warning: Label `' multiply defined.
-
-
-LaTeX Warning: Label `' multiply defined.
-
-
-LaTeX Warning: Label `' multiply defined.
-
-
-LaTeX Warning: Label `' multiply defined.
-
 )
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 29.
-LaTeX Font Info:    ... okay on input line 29.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 29.
-LaTeX Font Info:    ... okay on input line 29.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 29.
-LaTeX Font Info:    ... okay on input line 29.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 29.
-LaTeX Font Info:    ... okay on input line 29.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 29.
-LaTeX Font Info:    ... okay on input line 29.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 29.
-LaTeX Font Info:    ... okay on input line 29.
-\c@lstlisting=\count101
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 32.
+LaTeX Font Info:    ... okay on input line 32.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 32.
+LaTeX Font Info:    ... okay on input line 32.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 32.
+LaTeX Font Info:    ... okay on input line 32.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 32.
+LaTeX Font Info:    ... okay on input line 32.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 32.
+LaTeX Font Info:    ... okay on input line 32.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 32.
+LaTeX Font Info:    ... okay on input line 32.
+\c@lstlisting=\count104
  ("C:\Program Files\MikTex\tex\context\base\supp-pdf.mkii"
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count102
-\scratchdimen=\dimen114
+\scratchcounter=\count105
+\scratchdimen=\dimen120
 \scratchbox=\box31
-\nofMPsegments=\count103
-\nofMParguments=\count104
+\nofMPsegments=\count106
+\nofMParguments=\count107
 \everyMPshowfont=\toks23
-\MPscratchCnt=\count105
-\MPscratchDim=\dimen115
-\MPnumerator=\count106
-\makeMPintoPDFobject=\count107
+\MPscratchCnt=\count108
+\MPscratchDim=\dimen121
+\MPnumerator=\count109
+\makeMPintoPDFobject=\count110
 \everyMPtoPDFconversion=\toks24
 )
-LaTeX Font Info:    Calculating math sizes for size <16> on input line 36.
+Package caption Info: Begin \AtBeginDocument code.
+Package caption Info: End \AtBeginDocument code.
+LaTeX Font Info:    Calculating math sizes for size <16> on input line 39.
 
 
 LaTeX Font Warning: Font shape `OT1/cmr/m/n' in size <16> not available
-(Font)              size <17.28> substituted on input line 36.
+(Font)              size <17.28> substituted on input line 39.
 
 
 LaTeX Font Warning: Font shape `OML/cmm/m/it' in size <16> not available
-(Font)              size <17.28> substituted on input line 36.
+(Font)              size <17.28> substituted on input line 39.
 
 
 LaTeX Font Warning: Font shape `OMS/cmsy/m/n' in size <16> not available
-(Font)              size <17.28> substituted on input line 36.
+(Font)              size <17.28> substituted on input line 39.
 
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <16> on input line 36.
+(Font)              <16> on input line 39.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <11.19995> on input line 36.
+(Font)              <11.19995> on input line 39.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <8> on input line 36.
+(Font)              <8> on input line 39.
 [1
 
 {C:/Users/Fuzy/AppData/Local/MiKTeX/2.8/pdftex/config/pdftex.map}] [1
@@ -488,7 +500,7 @@ Kapitola 2.
 File: obr/d2k_wea2.png Graphic file (type png)
 
 <use obr/d2k_wea2.png>
-Package pdftex.def Info: obr/d2k_wea2.png used on input line 96.
+Package pdftex.def Info: obr/d2k_wea2.png used on input line 100.
 (pdftex.def)             Requested size: 233.07106pt x 189.709pt.
 
 
@@ -498,15 +510,15 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  This may cause the page layout to be inconsistent, however.
 
 [3]
-LaTeX Font Info:    Try loading font information for OMS+aer on input line 110.
+LaTeX Font Info:    Try loading font information for OMS+aer on input line 113.
 
  ("C:\Program Files\MikTex\tex\latex\ae\omsaer.fd"
 File: omsaer.fd 1999/12/27
 )
 LaTeX Font Info:    Font shape `OMS/aer/m/n' in size <12> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 110.
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 113.
  [4 <C:/MojeData/äkola/DP/Dokument/obr/d2k_wea2.png>]
-Overfull \hbox (0.4533pt too wide) in paragraph at lines 124--125
+Overfull \hbox (0.4533pt too wide) in paragraph at lines 127--128
  \T1/aer/bx/n/12 Mo-dul knihovny ob-jekt∑[] \T1/aer/m/n/12 Mo-dul ob-sa-huje zn
 ovu vy-u-∫i-telnÈ ob-jekty. êe≤Ì
  []
@@ -515,20 +527,20 @@ ovu vy-u-∫i-telnÈ ob-jekty. êe≤Ì
 File: obr/forms_arch3.png Graphic file (type png)
 
 <use obr/forms_arch3.png>
-Package pdftex.def Info: obr/forms_arch3.png used on input line 128.
+Package pdftex.def Info: obr/forms_arch3.png used on input line 131.
 (pdftex.def)             Requested size: 119.8479pt x 299.31863pt.
  [5] [6 <C:/MojeData/äkola/DP/Dokument/obr/forms_arch3.png>] <obr/window.png, i
 d=49, 252.945pt x 237.88875pt>
 File: obr/window.png Graphic file (type png)
  <use obr/window.png>
-Package pdftex.def Info: obr/window.png used on input line 150.
+Package pdftex.def Info: obr/window.png used on input line 152.
 (pdftex.def)             Requested size: 202.35626pt x 190.31123pt.
 
 [7 <C:/MojeData/äkola/DP/Dokument/obr/window.png>]
 <obr/BD27.png, id=55, 604.50844pt x 373.395pt>
 File: obr/BD27.png Graphic file (type png)
  <use obr/BD27.png>
-Package pdftex.def Info: obr/BD27.png used on input line 166.
+Package pdftex.def Info: obr/BD27.png used on input line 167.
 (pdftex.def)             Requested size: 362.70786pt x 224.03873pt.
 
 <obr/VX42.png, id=56, 602.25pt x 372.64218pt>
@@ -540,13 +552,13 @@ Package pdftex.def Info: obr/VX42.png used on input line 173.
 ola/DP/Dokument/obr/VX42.png (PNG copy)>]
 Kapitola 3.
 
-Overfull \hbox (4.61766pt too wide) in paragraph at lines 188--192
+Overfull \hbox (4.61766pt too wide) in paragraph at lines 187--191
 \T1/aer/m/n/12 spr·vu za-∞Ì-zenÌ nut-nou k syn-chro-ni-zaci. Tento kli-ent je d
 o-stupn˝ pro platfromy
  []
 
 
-Overfull \hbox (138.42766pt too wide) in paragraph at lines 188--192
+Overfull \hbox (138.42766pt too wide) in paragraph at lines 187--191
 \T1/aer/m/n/12 Java, An-droid, Blac-kberry, Win-dows a Li-nux. (http://www.orac
 le.com/technetwork/products/database-
  []
@@ -561,32 +573,32 @@ pdfTeX warning: pdflatex (file C:/MojeData/äkola/DP/Dokument/obr/souc_arch2.pdf
 File: obr/souc_arch2.pdf Graphic file (type pdf)
 
 <use obr/souc_arch2.pdf>
-Package pdftex.def Info: obr/souc_arch2.pdf used on input line 199.
+Package pdftex.def Info: obr/souc_arch2.pdf used on input line 198.
 (pdftex.def)             Requested size: 410.1328pt x 182.48198pt.
 
-Overfull \hbox (20.1328pt too wide) in paragraph at lines 199--200
+Overfull \hbox (20.1328pt too wide) in paragraph at lines 198--199
  [][] 
  []
 
 [11 <C:/MojeData/äkola/DP/Dokument/obr/souc_arch2.pdf>]
-Overfull \hbox (27.26987pt too wide) in paragraph at lines 214--215
+Overfull \hbox (27.26987pt too wide) in paragraph at lines 224--225
 []\T1/aer/bx/n/12 TEXT \T1/aer/m/n/12 podle ISO8601 normy ve for-m·tu "YYYY-MM-
 DD HH:MM:SS.SSS". 
  []
 
-
-Overfull \hbox (44.33234pt too wide) in paragraph at lines 231--238
+[12]
+Overfull \hbox (44.33234pt too wide) in paragraph at lines 241--248
  [][] 
  []
 
-[12] [13]
+[13]
 
 pdfTeX warning: pdflatex (file C:/MojeData/äkola/DP/Dokument/visio/sync.pdf): P
 DF inclusion: found PDF version <1.5>, but at most version <1.4> allowed
 <visio/sync.pdf, id=91, 512.66531pt x 370.38374pt>
 File: visio/sync.pdf Graphic file (type pdf)
  <use visio/sync.pdf>
-Package pdftex.def Info: visio/sync.pdf used on input line 270.
+Package pdftex.def Info: visio/sync.pdf used on input line 281.
 (pdftex.def)             Requested size: 358.86327pt x 259.26685pt.
 
 [14]
@@ -596,10 +608,10 @@ pdfTeX warning: pdflatex (file C:/MojeData/äkola/DP/Dokument/visio/syncup.pdf):
 <visio/syncup.pdf, id=96, 598.48593pt x 427.5975pt>
 File: visio/syncup.pdf Graphic file (type pdf)
  <use visio/syncup.pdf>
-Package pdftex.def Info: visio/syncup.pdf used on input line 279.
+Package pdftex.def Info: visio/syncup.pdf used on input line 290.
 (pdftex.def)             Requested size: 418.93729pt x 299.31621pt.
 
-Overfull \hbox (28.93729pt too wide) in paragraph at lines 279--280
+Overfull \hbox (28.93729pt too wide) in paragraph at lines 290--291
  [][] 
  []
 
@@ -611,7 +623,7 @@ pdfTeX warning: pdflatex (file C:/MojeData/äkola/DP/Dokument/visio/syncdown.pdf
 File: visio/syncdown.pdf Graphic file (type pdf)
 
 <use visio/syncdown.pdf>
-Package pdftex.def Info: visio/syncdown.pdf used on input line 288.
+Package pdftex.def Info: visio/syncdown.pdf used on input line 299.
 (pdftex.def)             Requested size: 319.34087pt x 120.14804pt.
  [16 <C:/MojeData/äkola/DP/Dokument/visio/syncup.pdf> <C:/MojeData/äkola/DP/Dok
 ument/visio/syncdown.pdf>] [17]
@@ -625,7 +637,7 @@ DF inclusion: found PDF version <1.5>, but at most version <1.4> allowed
 <visio/auth.pdf, id=162, 456.20438pt x 313.9228pt>
 File: visio/auth.pdf Graphic file (type pdf)
  <use visio/auth.pdf>
-Package pdftex.def Info: visio/auth.pdf used on input line 342.
+Package pdftex.def Info: visio/auth.pdf used on input line 353.
 (pdftex.def)             Requested size: 364.96399pt x 251.13857pt.
 
 
@@ -635,11 +647,11 @@ f): PDF inclusion: found PDF version <1.5>, but at most version <1.4> allowed
 File: visio/auth_ldap.pdf Graphic file (type pdf)
 
 <use visio/auth_ldap.pdf>
-Package pdftex.def Info: visio/auth_ldap.pdf used on input line 351.
+Package pdftex.def Info: visio/auth_ldap.pdf used on input line 362.
 (pdftex.def)             Requested size: 364.96399pt x 251.13857pt.
  [20 <C:/MojeData/äkola/DP/Dokument/visio/auth.pdf>]
 [21 <C:/MojeData/äkola/DP/Dokument/visio/auth_ldap.pdf>]
-LaTeX Font Info:    Try loading font information for T1+aett on input line 362.
+LaTeX Font Info:    Try loading font information for T1+aett on input line 373.
 
 
 ("C:\Program Files\MikTex\tex\latex\ae\t1aett.fd"
@@ -652,57 +664,108 @@ Kapitola 5.
 Kapitola 6.
 [28
 
-] [29] [30]
-Underfull \hbox (badness 10000) in paragraph at lines 600--601
-
+] [29]
+Overfull \hbox (17.27571pt too wide) in paragraph at lines 585--587
+[]\T1/aer/bx/n/12 addAccountExplicitly(Account ac-count, String password, Bundl
+e
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 601--602
-
+Overfull \hbox (5.4796pt too wide) in paragraph at lines 589--591
+[]\T1/aer/bx/n/12 setAuthToken(Account ac-count, String au-th-To-ken-Type, Stri
+ng
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 602--603
-
+Overfull \hbox (12.82321pt too wide) in paragraph at lines 591--593
+[]\T1/aer/bx/n/12 String:getPassword(Account ac-count)/setPassword(Account ac-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 603--604
+
+pdfTeX warning: pdflatex (file C:/MojeData/äkola/DP/Dokument/visio/andauth.pdf)
+: PDF inclusion: found PDF version <1.5>, but at most version <1.4> allowed
+<visio/andauth.pdf, id=222, 569.87906pt x 569.87906pt>
+File: visio/andauth.pdf Graphic file (type pdf)
+ <use visio/andauth.pdf>
+Package pdftex.def Info: visio/andauth.pdf used on input line 598.
+(pdftex.def)             Requested size: 398.91261pt x 398.91261pt.
+
+Overfull \hbox (8.91261pt too wide) in paragraph at lines 598--599
+ [][] 
+ []
+
+[30] <scr/setting.png, id=227, 722.7pt x 1284.8pt>
+File: scr/setting.png Graphic file (type png)
+ <use scr/setting.png>
+Package pdftex.def Info: scr/setting.png used on input line 607.
+(pdftex.def)             Requested size: 146.25pt x 259.99414pt.
+
+<scr/addacc.png, id=228, 722.7pt x 1284.8pt>
+File: scr/addacc.png Graphic file (type png)
+ <use scr/addacc.png>
+Package pdftex.def Info: scr/addacc.png used on input line 613.
+(pdftex.def)             Requested size: 146.25pt x 259.99414pt.
+ [31 <C:/MojeData/äkola/DP/Dokument/visio/andauth.pdf>]
+Underfull \hbox (badness 10000) in paragraph at lines 630--632
 
  []
 
-[31] [32]
+[32 <C:/MojeData/äkola/DP/Dokument/scr/setting.png (PNG copy)> <C:/MojeData/äko
+la/DP/Dokument/scr/addacc.png (PNG copy)>]
+Overfull \hbox (5.541pt too wide) in paragraph at lines 637--639
+\T1/aer/m/n/12 Zm•ny na-sta-venÌ se pro-v·-d•jÌ po-mocÌ \T1/aer/m/it/12 Sha-red
+-Pre-fe-ren-ces.Editor \T1/aer/m/n/12 roz-hranÌ, kterÈ
+ []
+
+[33] [34] [35]
 Kapitola 7.
-<scr/time_doch.png, id=232, 722.7pt x 1284.8pt>
+[36
+
+] (C:\MojeData\äkola\DP\Dokument\diplomka.bbl [37
+
+]
+Overfull \hbox (118.23784pt too wide) in paragraph at lines 12--16
+\T1/aer/m/n/12 URL \T1/aett/m/n/12 http://developer.android.com/reference/andro
+id/accounts/AccountManager.html 
+ []
+
+) [38
+
+]
+P\v {r}\'{\i }loha A.
+<scr/time_doch.png, id=262, 722.7pt x 1284.8pt>
 File: scr/time_doch.png Graphic file (type png)
  <use scr/time_doch.png>
-Package pdftex.def Info: scr/time_doch.png used on input line 658.
+Package pdftex.def Info: scr/time_doch.png used on input line 721.
 (pdftex.def)             Requested size: 216.81166pt x 385.44298pt.
 
-[33
-
-] <scr/graf_doch.png, id=236, 1284.8pt x 722.7pt>
+<scr/graf_doch.png, id=263, 1284.8pt x 722.7pt>
 File: scr/graf_doch.png Graphic file (type png)
  <use scr/graf_doch.png>
-Package pdftex.def Info: scr/graf_doch.png used on input line 664.
+Package pdftex.def Info: scr/graf_doch.png used on input line 727.
 (pdftex.def)             Requested size: 385.44298pt x 216.81166pt.
 
-[34 <C:/MojeData/äkola/DP/Dokument/scr/time_doch.png (PNG copy)>]
-<scr/ucet.png, id=240, 722.7pt x 1284.8pt>
+[39
+
+ <C:/MojeData/äkola/DP/Dokument/scr/time_doch.png (PNG copy)>]
+<scr/ucet.png, id=267, 722.7pt x 1284.8pt>
 File: scr/ucet.png Graphic file (type png)
  <use scr/ucet.png>
-Package pdftex.def Info: scr/ucet.png used on input line 670.
+Package pdftex.def Info: scr/ucet.png used on input line 733.
 (pdftex.def)             Requested size: 216.81166pt x 385.44298pt.
- [35 <C:/MojeData/äkola/DP/Dokument/scr/graf_doch.png (PNG copy)>]
-<scr/network.png, id=244, 722.7pt x 1284.8pt>
+ [40 <C:/MojeData/äkola/DP/Dokument/scr/graf_doch.png (PNG copy)>]
+<scr/network.png, id=271, 722.7pt x 1284.8pt>
 File: scr/network.png Graphic file (type png)
  <use scr/network.png>
-Package pdftex.def Info: scr/network.png used on input line 676.
+Package pdftex.def Info: scr/network.png used on input line 739.
 (pdftex.def)             Requested size: 216.81166pt x 385.44298pt.
- [36 <C:/MojeData/äkola/DP/Dokument/scr/ucet.png (PNG copy)>] [37 <C:/MojeData/
-äkola/DP/Dokument/scr/network.png (PNG copy)>] (C:\MojeData\äkola\DP\Dokument\d
-iplomka.aux)
+ [41 <C:/MojeData/äkola/DP/Dokument/scr/ucet.png (PNG copy)>] [42 <C:/MojeData/
+äkola/DP/Dokument/scr/network.png (PNG copy)>]
+P\v {r}\'{\i }loha B.
+[43
+
+] (C:\MojeData\äkola\DP\Dokument\diplomka.aux)
 
 LaTeX Font Warning: Size substitutions with differences
 (Font)              up to 1.28pt have occurred.
@@ -712,22 +775,23 @@ LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 4237 strings out of 495324
- 55531 string characters out of 3182598
- 144903 words of memory out of 3000000
- 7326 multiletter control sequences out of 15000+200000
- 44633 words of font info for 90 fonts, out of 3000000 for 9000
+ 5643 strings out of 495324
+ 77538 string characters out of 3182598
+ 177733 words of memory out of 3000000
+ 8716 multiletter control sequences out of 15000+200000
+ 46782 words of font info for 93 fonts, out of 3000000 for 9000
  5 hyphenation exceptions out of 8191
- 34i,16n,43p,760b,412s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 36i,16n,43p,974b,1146s stack positions out of 5000i,500n,10000p,200000b,50000s
 <C:/Program Files/MikTex/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Progra
-m Files/MikTex/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Program Files/MikTe
-x/fonts/type1/public/amsfonts/cm/cmr17.pfb><C:/Program Files/MikTex/fonts/type1
-/public/amsfonts/cm/cmsy10.pfb><C:/Program Files/MikTex/fonts/type1/public/amsf
-onts/cm/cmti12.pfb><C:/Program Files/MikTex/fonts/type1/public/amsfonts/cm/cmtt
-12.pfb>
-Output written on diplomka.pdf (43 pages, 940620 bytes).
+m Files/MikTex/fonts/type1/public/amsfonts/cm/cmmi12.pfb><C:/Program Files/MikT
+ex/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Program Files/MikTex/fonts/type
+1/public/amsfonts/cm/cmr12.pfb><C:/Program Files/MikTex/fonts/type1/public/amsf
+onts/cm/cmr17.pfb><C:/Program Files/MikTex/fonts/type1/public/amsfonts/cm/cmsy1
+0.pfb><C:/Program Files/MikTex/fonts/type1/public/amsfonts/cm/cmti12.pfb><C:/Pr
+ogram Files/MikTex/fonts/type1/public/amsfonts/cm/cmtt12.pfb>
+Output written on diplomka.pdf (49 pages, 1154843 bytes).
 PDF statistics:
- 274 PDF objects out of 1000 (max. 8388607)
+ 310 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
- 76 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 91 words of extra memory for PDF output out of 10000 (max. 10000000)
 

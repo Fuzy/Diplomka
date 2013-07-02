@@ -1,14 +1,17 @@
 \begin{thebibliography}{1}
-\providecommand{\natexlab}[1]{#1}
 \providecommand{\url}[1]{\texttt{#1}}
+\providecommand{\urlprefix}{URL }
 \expandafter\ifx\csname urlstyle\endcsname\relax
-  \providecommand{\doi}[1]{doi: #1}\else
-  \providecommand{\doi}{doi: \begingroup \urlstyle{rm}\Url}\fi
+  \providecommand{\doi}[1]{doi:\discretionary{}{}{}#1}\else
+  \providecommand{\doi}{doi:\discretionary{}{}{}\begingroup
+  \urlstyle{rm}\Url}\fi
+\providecommand{\selectlanguage}[1]{\relax}
+\providecommand{\eprint}[2][]{\url{#2}}
 
-\bibitem[Sun(2007)]{guide}
-\emph{JXTA JavaTM Standard Edition v2.5:Programmers Guide}.
-\newblock Sun Microsystems, 2007.
-\newblock Dostupn{\'{e}} z:
-  \url{https://jxta-guide.dev.java.net/source/browse/jxta-guide/trunk/src/}.
+\bibitem{accman}
+http://developer.android.com/: The Developer's Guide. [online], [cit.
+  2013-7-2].
+\newline\urlprefix\url{http://developer.android.com/reference/android/accounts%
+/AccountManager.html}
 
 \end{thebibliography}
