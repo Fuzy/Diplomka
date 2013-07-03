@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-1.40.10 (MiKTeX 2.8) (preloaded format=pdflatex 2013.4.14)  2 JUL 2013 23:22
+This is pdfTeX, Version 3.1415926-1.40.10 (MiKTeX 2.8) (preloaded format=pdflatex 2013.4.14)  3 JUL 2013 22:28
 entering extended mode
 **C:/MojeData/Škola/DP/Dokument/diplomka.tex
 (C:/MojeData/Škola/DP/Dokument/diplomka.tex
@@ -664,20 +664,20 @@ Kapitola 5.
 Kapitola 6.
 [28
 
-] [29]
-Overfull \hbox (17.27571pt too wide) in paragraph at lines 585--587
+] [29] [30] [31] [32]
+Overfull \hbox (17.27571pt too wide) in paragraph at lines 638--640
 []\T1/aer/bx/n/12 addAccountExplicitly(Account ac-count, String password, Bundl
 e
  []
 
 
-Overfull \hbox (5.4796pt too wide) in paragraph at lines 589--591
+Overfull \hbox (5.4796pt too wide) in paragraph at lines 642--644
 []\T1/aer/bx/n/12 setAuthToken(Account ac-count, String au-th-To-ken-Type, Stri
 ng
  []
 
 
-Overfull \hbox (12.82321pt too wide) in paragraph at lines 591--593
+Overfull \hbox (12.82321pt too wide) in paragraph at lines 644--646
 []\T1/aer/bx/n/12 String:getPassword(Account ac-count)/setPassword(Account ac-
  []
 
@@ -685,44 +685,48 @@ Overfull \hbox (12.82321pt too wide) in paragraph at lines 591--593
 
 pdfTeX warning: pdflatex (file C:/MojeData/Škola/DP/Dokument/visio/andauth.pdf)
 : PDF inclusion: found PDF version <1.5>, but at most version <1.4> allowed
-<visio/andauth.pdf, id=222, 569.87906pt x 569.87906pt>
+<visio/andauth.pdf, id=232, 569.87906pt x 569.87906pt>
 File: visio/andauth.pdf Graphic file (type pdf)
  <use visio/andauth.pdf>
-Package pdftex.def Info: visio/andauth.pdf used on input line 598.
+Package pdftex.def Info: visio/andauth.pdf used on input line 651.
 (pdftex.def)             Requested size: 398.91261pt x 398.91261pt.
 
-Overfull \hbox (8.91261pt too wide) in paragraph at lines 598--599
+Overfull \hbox (8.91261pt too wide) in paragraph at lines 651--652
  [][] 
  []
 
-[30] <scr/setting.png, id=227, 722.7pt x 1284.8pt>
+[33] <scr/setting.png, id=238, 722.7pt x 1284.8pt>
 File: scr/setting.png Graphic file (type png)
  <use scr/setting.png>
-Package pdftex.def Info: scr/setting.png used on input line 607.
+Package pdftex.def Info: scr/setting.png used on input line 660.
 (pdftex.def)             Requested size: 146.25pt x 259.99414pt.
 
-<scr/addacc.png, id=228, 722.7pt x 1284.8pt>
+<scr/addacc.png, id=239, 722.7pt x 1284.8pt>
 File: scr/addacc.png Graphic file (type png)
  <use scr/addacc.png>
-Package pdftex.def Info: scr/addacc.png used on input line 613.
+Package pdftex.def Info: scr/addacc.png used on input line 666.
 (pdftex.def)             Requested size: 146.25pt x 259.99414pt.
- [31 <C:/MojeData/Škola/DP/Dokument/visio/andauth.pdf>]
-Underfull \hbox (badness 10000) in paragraph at lines 630--632
+
+Underfull \hbox (badness 10000) in paragraph at lines 677--679
 
  []
 
-[32 <C:/MojeData/Škola/DP/Dokument/scr/setting.png (PNG copy)> <C:/MojeData/Ško
-la/DP/Dokument/scr/addacc.png (PNG copy)>]
-Overfull \hbox (5.541pt too wide) in paragraph at lines 637--639
+[34 <C:/MojeData/Škola/DP/Dokument/visio/andauth.pdf>]
+Overfull \hbox (5.541pt too wide) in paragraph at lines 684--686
 \T1/aer/m/n/12 Zm¥ny na-sta-vení se pro-vá-d¥jí po-mocí \T1/aer/m/it/12 Sha-red
 -Pre-fe-ren-ces.Editor \T1/aer/m/n/12 roz-hraní, které
  []
 
-[33] [34] [35]
+[35 <C:/MojeData/Škola/DP/Dokument/scr/setting.png (PNG copy)> <C:/MojeData/Ško
+la/DP/Dokument/scr/addacc.png (PNG copy)>] [36] [37]
 Kapitola 7.
-[36
+[38
 
-] (C:\MojeData\Škola\DP\Dokument\diplomka.bbl [37
+]
+Kapitola 8.
+[39
+
+] (C:\MojeData\Škola\DP\Dokument\diplomka.bbl [40
 
 ]
 Overfull \hbox (118.23784pt too wide) in paragraph at lines 12--16
@@ -730,40 +734,40 @@ Overfull \hbox (118.23784pt too wide) in paragraph at lines 12--16
 id/accounts/AccountManager.html 
  []
 
-) [38
+) [41
 
 ]
 P\v {r}\'{\i }loha A.
-<scr/time_doch.png, id=262, 722.7pt x 1284.8pt>
+<scr/time_doch.png, id=271, 722.7pt x 1284.8pt>
 File: scr/time_doch.png Graphic file (type png)
  <use scr/time_doch.png>
-Package pdftex.def Info: scr/time_doch.png used on input line 721.
+Package pdftex.def Info: scr/time_doch.png used on input line 770.
 (pdftex.def)             Requested size: 216.81166pt x 385.44298pt.
 
-<scr/graf_doch.png, id=263, 1284.8pt x 722.7pt>
+<scr/graf_doch.png, id=272, 1284.8pt x 722.7pt>
 File: scr/graf_doch.png Graphic file (type png)
  <use scr/graf_doch.png>
-Package pdftex.def Info: scr/graf_doch.png used on input line 727.
+Package pdftex.def Info: scr/graf_doch.png used on input line 776.
 (pdftex.def)             Requested size: 385.44298pt x 216.81166pt.
 
-[39
+[42
 
  <C:/MojeData/Škola/DP/Dokument/scr/time_doch.png (PNG copy)>]
-<scr/ucet.png, id=267, 722.7pt x 1284.8pt>
+<scr/ucet.png, id=276, 722.7pt x 1284.8pt>
 File: scr/ucet.png Graphic file (type png)
  <use scr/ucet.png>
-Package pdftex.def Info: scr/ucet.png used on input line 733.
+Package pdftex.def Info: scr/ucet.png used on input line 782.
 (pdftex.def)             Requested size: 216.81166pt x 385.44298pt.
- [40 <C:/MojeData/Škola/DP/Dokument/scr/graf_doch.png (PNG copy)>]
-<scr/network.png, id=271, 722.7pt x 1284.8pt>
+ [43 <C:/MojeData/Škola/DP/Dokument/scr/graf_doch.png (PNG copy)>]
+<scr/network.png, id=281, 722.7pt x 1284.8pt>
 File: scr/network.png Graphic file (type png)
  <use scr/network.png>
-Package pdftex.def Info: scr/network.png used on input line 739.
+Package pdftex.def Info: scr/network.png used on input line 788.
 (pdftex.def)             Requested size: 216.81166pt x 385.44298pt.
- [41 <C:/MojeData/Škola/DP/Dokument/scr/ucet.png (PNG copy)>] [42 <C:/MojeData/
+ [44 <C:/MojeData/Škola/DP/Dokument/scr/ucet.png (PNG copy)>] [45 <C:/MojeData/
 Škola/DP/Dokument/scr/network.png (PNG copy)>]
 P\v {r}\'{\i }loha B.
-[43
+[46
 
 ] (C:\MojeData\Škola\DP\Dokument\diplomka.aux)
 
@@ -777,11 +781,11 @@ LaTeX Warning: There were multiply-defined labels.
 Here is how much of TeX's memory you used:
  5643 strings out of 495324
  77538 string characters out of 3182598
- 177733 words of memory out of 3000000
+ 176733 words of memory out of 3000000
  8716 multiletter control sequences out of 15000+200000
  46782 words of font info for 93 fonts, out of 3000000 for 9000
  5 hyphenation exceptions out of 8191
- 36i,16n,43p,974b,1146s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 36i,16n,43p,982b,1146s stack positions out of 5000i,500n,10000p,200000b,50000s
 <C:/Program Files/MikTex/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Progra
 m Files/MikTex/fonts/type1/public/amsfonts/cm/cmmi12.pfb><C:/Program Files/MikT
 ex/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Program Files/MikTex/fonts/type
@@ -789,9 +793,9 @@ ex/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Program Files/MikTex/fonts/type
 onts/cm/cmr17.pfb><C:/Program Files/MikTex/fonts/type1/public/amsfonts/cm/cmsy1
 0.pfb><C:/Program Files/MikTex/fonts/type1/public/amsfonts/cm/cmti12.pfb><C:/Pr
 ogram Files/MikTex/fonts/type1/public/amsfonts/cm/cmtt12.pfb>
-Output written on diplomka.pdf (49 pages, 1154843 bytes).
+Output written on diplomka.pdf (52 pages, 1160701 bytes).
 PDF statistics:
- 310 PDF objects out of 1000 (max. 8388607)
+ 319 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  91 words of extra memory for PDF output out of 10000 (max. 10000000)
 

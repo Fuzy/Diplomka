@@ -525,6 +525,7 @@ Parametry:\begin{itemize}[noitemsep,nolistsep]
 \chapter{Android aplikace}
 
 \section{Funkcionalita}
+[TODO ještě upřesnit]
 Na základě analýzy současného systému a potřeb zaměstnanců byla vybrána k implementaci následující funkčnost: 
 \paragraph{Docházka}
 \begin{itemize}
@@ -554,15 +555,60 @@ Uživatelské rozhraní aplikace klade důraz na přehlednost, ergonomii a časo
 
 \subsection{Návrhy na vylepšení}
 
-\section{Android základní komponenty}
+\section{Komponenty Android aplikace}
 
 \subsection{Aktivita}
+Aktivita představuje jednu obrazovku s uživatelským rozhraním. Každá akvitita umožňuje nějakou funkčnost. Příkladem aktivit použitých v implementované aplikaci může být zobrazení denní docházky uživatele, kalendář umožňující výběr data, přidání a editace docházkové události nebo uživatelské nastavení.
+
+\subsubsection*{Životní cyklus aktivity}
+Aktivita se může nacházet ve třech stavech:
+
+\begin{itemize}[]
+\item \textbf{Běžící}\\
+Aktivita je na popředí a umožňuje interakci s uživatelem.
+\item \textbf{Pozastavený}\\
+Na popředí se dostala jiná aktivita. Pozastavená aktivita je stále viditelná, ale je překrytá novou aktivitou. Pozastavená aktivita nemůže provádět interakci s uživatelem. Objekt aktivity zůstává v paměti, je zachována veškerá stavová informace. Při nedostatku systémové paměti může být aktivita zničena.
+\item \textbf{Zastavený}\\
+Aktivita není viditelná. Objekt aktivity zůstává v paměti, je zachována veškerá stavová informace. Při nedostatku systémové paměti může být aktivita zničena.
+\end{itemize}
+
+\subsubsection*{Metody životního cyklu aktivity}
+Při přechodech aktivity mezi výše uvedenými stavy dochází k volání callback metod. Tyto metody jsou volány systémem. Každá  
+z metod má defaultní chování. Programátor může libovolnou z metod překrýt v případě, že požaduje jinou funkcionalitu, ale musí mít na paměti, že většina z nich vyžaduje volání metody rodiče.
+\begin{itemize}[]
+\item \textbf{onCreate()}\\
+Metoda je volána v okamžiku, kdy je aktivita poprvé vytvořena. Zde se připraví prvky uživatelského rozhraní a nastaví se zdroje dat. Pokud existuje uložený stav aktivity z dřívější doby, může být využit. 
+\item \textbf{onRestart()}\\
+Volána pokud se aktivita před tím nacházela ve stavu \emph{Zastavený} a má se dostat do stavu \emph{Běžící}.
+\item \textbf{onStart()}\\
+Volána před tím, než se aktivita stane viditelnou.
+\item \textbf{onResume()}\\
+Volána před tím, než je uživatelovi umožněna interakce s aktivitou. Aktivita se dostává na vrchol zásobníku aktivit aplikace.
+\item \textbf{onPause()}\\
+Volána ve chvíli kdy se má jiná aktivita dostat na popředí. V této metodě by měla být uložena veškerá rozpracovaná data a ukončeny úkoly, které si zabírají výpočetní výkon. Nová aktivita není spuštěna, dokud tato metoda není dokončena.
+\item \textbf{onStop()}\\
+Po volání metody není aktivita nadále viditelná. K volání dochází v situaci, kdy je aktivita ukončována nebo se jiná aktivita dostala do popředí.
+\item \textbf{onDestroy()}\\
+Volání před tím než je aktivita ukončena. K volání dochází v případě, že aktivita končí svoji činnost nebo v situaci, kdy se systém dožaduje systémových prostředků.
+\end{itemize}
+
+\subsubsection*{Ukládání stavu aktivity}
+Ukládat stav aktivity je vhodné protože systém může zničit aktivitu z důvodu nedostatku paměti. Další důvodem je situace, kdy uživatel změní orientaci obrazovky. V takové situaci nezůstává v paměti objekt aktivity, ale aktivita musí být znovu vytvořena. Uživatel samozřejmě očekává, že aktivitu nalezne ve stejném stavu v jakém ji opustil. K těmto účelům jsou určeny dvě callback metody:
+
+\begin{itemize}[]
+\item \textbf{onSaveInstanceState(Bundle)}\\
+Metoda je volána před tím než je aktivita zničena (před provedením \emph{onStop()}. Do objektu \emph{Bundle} by měla být uložena všechna data, která jsou nutná pro obnovu předchozího stavu aktivity. Data jsou ukládána ve formátu klíč-hodnota. Metoda není volána v situaci kdy uživatel explicitně ukončil aktivitu. Na začátku metody je nutné zavolat metodu rodiče, aby mohl být uložen stav prvků UI pomocí defaultní implementace.
+\item \textbf{onRestoreInstanceState(Bundle)}\\
+Metoda je volána (po provedením \emph{onStart()} v případě, že aktivita byla znovuobnovena z předchozího uloženého stavu.Na začátku metody je nutné zavolat metodu rodiče, aby mohl být obnoven stav prvků UI pomocí defaultní implementace.
+\end{itemize}
+
+
+\subsection{Fragment}
 \subsection{Služba}
++ restart zařízení?
 \subsection{Content provider}
 \subsection{Broadcast receiver}
 
-
-\section{Android další komponenty}
 \begin{enumerate}
 \item komponenty pro sync a auth, provazani s android ucetm
 \item CursorLoader
@@ -577,6 +623,13 @@ Uživatelské rozhraní aplikace klade důraz na přehlednost, ergonomii a časo
 \end{enumerate}
 + nejaka ukazka konkretniho pouziti
 
+\section{Komponenty pro synchronizaci}
+\begin{enumerate}
+\item sync architektura - komponenty
+\end{enumerate}
+
+
+
 \section{Uživatelský účet}
 Android poskytuje správu účtů pro online služby. Uživatel zadá svoje přihlašovací údaje při vytvoření účtu a dává tak aplikaci svolení k využívání tohoto účtu.\\ \indent
 Různé online služby mohou využívat odlišný způsob pro autentizaci. Android manažer účtů využívá kompomentu \emph{authenticator} \cite{accman}, která je obvykle poskytována třetí stranou - poskytovatelem dané služby. Příkladem služby, která poskytuje vlastní \emph{authenticator} je např. Google, Facebook a Microsoft Exchange.\\ \indent
@@ -587,12 +640,12 @@ Vytvoří nový účet.
 \item \textbf{Account[]: getAccountsByType(String type)}\\
 Vrátí seznam všech účtů daného typu.
 \item \textbf{setAuthToken(Account account, String authTokenType, String authToken)}\\
-Přidá autorizační token do cache paměti pro daný účet.
+Přidá autentizační token do cache paměti pro daný účet.
 \item \textbf{String:getPassword(Account account)/setPassword(Account account, String password)}\\
 Získání uloženého hesla pro účet./Nastavení hesla.
 \end{itemize}
 
-Na diagramu \ref{obr:andauth} je zobrazen průběh vytvoření účtu, který je použit v implementované aplikaci. Jakmile uživatel v sekci \emph{Nastavení->Účty} (obr. \ref{obr:setting}) zvolí přidání nového účtu a následně zvolí typ účtu (obr. \ref{obr:addacc}), manažer účtu spustí službu \emph{AutheticationService}. Služba vytvoří instanci třídy \emph{AccountAuthenticator} - authenticator komponenty. \emph{AccountManager} následně volá metodu \emph{addAccount()}, která zkontroluje zda již účet daného typu existuje. Pokud ne, vrací objekt \emph{Bundle} obsahující \emph{Intent} s klíčem \emph{AccountManager.KEY\_INTENT} označující, že bude nutná interakce s uživatelem. Následně je spuštěna aktivita \emph{AuthenticatorActivity} vyzývající uživatele, aby zadal svoje přihlašovací údaje. Po potvrzení je vytvořen účet (obr. \ref{obr:setting}).
+Na diagramu \ref{obr:andauth} je zobrazen průběh vytvoření účtu, který je použit v implementované aplikaci. Jakmile uživatel v sekci \emph{Nastavení->Účty} (obr. \ref{obr:setting}) zvolí přidání nového účtu a následně zvolí typ účtu (obr. \ref{obr:addacc}), manažer účtů spustí službu \emph{AutheticationService}. Služba vytvoří instanci třídy \emph{AccountAuthenticator} - \emph{authenticator} komponenty. \emph{AccountManager} následně volá metodu \emph{addAccount()}, která zkontroluje zda již účet daného typu existuje. Pokud ne, vrací objekt \emph{Bundle} obsahující \emph{Intent} s klíčem \emph{AccountManager.KEY\_INTENT} označující, že bude nutná interakce s uživatelem. Následně je spuštěna aktivita \emph{AuthenticatorActivity} vyzývající uživatele, aby zadal svoje přihlašovací údaje. Po potvrzení je vytvořen účet (obr. \ref{obr:setting}).
 \begin{figure}[H]
   \centering
   \includegraphics[scale=0.7]{visio/andauth.pdf}
@@ -617,16 +670,10 @@ Na diagramu \ref{obr:andauth} je zobrazen průběh vytvoření účtu, který je
 \end{figure}
 
 
-\section{Struktura projektu}
-(jen ty pouzite)
-
-\section{Manifest + oprávnění}
-persmission v manifestu, vypsat a vysvětlit
-
-\section{9png grafika}
 
 
 \section{Ukládání dat}
+Android umožňuje několik způsobů jak persistentně ukládat data aplikace. Programátor by měl vzít v úvahu, zda data mají být soukromá či dostupná i ostatním aplikacím a také velikost těchto dat. 
 \subsection*{Sdílené preference} Ukládá primitivní datové typy ve tvaru klíč-hodnota. Slouží k uložení nastavení specifických pro aplikaci. K těmto se přistupuje pomocí \emph{SharedPreferences} rozhraní. Data jsou ukládána persistentně. \\ V aplikaci používám toto úložiště pro nastavení síťového připojení, barevného nastavení pro typy docházkových událostí a další uživatelsky měnitelné hodnoty.\\ \\
 Objekty se získávají pomocí příslušné get metody:
 \begin{lstlisting}
@@ -656,8 +703,6 @@ Data lze ukládat persistentně pomocí SQLite databáze. Vytvořená databáze 
 
 V knihovnách pro Forms aplikace se nachází další kód, který bude nutné přepsat do webové služby.
 
-\subsection{Content provider}
-
 \section{REST}
 RestaTemplates - springframework
 \begin{enumerate}
@@ -665,10 +710,13 @@ RestaTemplates - springframework
 \item REST, tabulka URI, 
 \end{enumerate}
 
-\section{Synchronizace}
-\begin{enumerate}
-\item sync architektura - komponenty
-\end{enumerate}
+\section{Struktura projektu}
+(jen ty pouzite)
+
+\section{Manifest + oprávnění}
+persmission v manifestu, vypsat a vysvětlit
+
+\section{9png grafika}
 
 \section{GPS}
 
@@ -697,6 +745,7 @@ knihovny, cloudové řešení, vlastní komponenty
 \item datovy model schema
 \end{enumerate}
 
+\chapter{Závěr}
 
 \chapter*{Seznam zkratek} 
 \addcontentsline{toc}{chapter}{Seznam zkratek}
