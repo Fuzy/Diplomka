@@ -68,8 +68,22 @@ Integrovaný manažerský informační systém (IMIS) je součástí informačn�
 V této práci se zaměřuji na funkcionalitu z oblasti systému věnující se personalistice. Konktrétně se jedná o moduly pro zápis příchodů a odchodů na pracovistě a vykazování provedené práce. Jedná se o činnosti, které zaměstnanec provádí jako každodenní rutinu a zároveň jsou to činnosti s nejširší skupinou uživatelů v rámci podniku.
  
 \subsection{Evidence docházky}
-Docházkový systém slouží k evidenci docházky zaměstnanců, která se následně využívá k přípravě podkladů pro zpracování mzdové agendy.
-[TODO rozbor+odkaz?]
+Docházkový systém slouží k evidenci docházky zaměstnanců, která se následně využívá k přípravě podkladů pro zpracování mzdové agendy.\\ \indent
+Eviduje se každý příchod i odchod z pracoviště společně s účelem události. Účel události je důležitý, protože délka pracovní přestávky či odchod z pracoviště k lékaři jsou legislativně ošetřené záležitosti.\\ \indent Každá událost se zaznamenává s přesností na minuty. Časová osa s průběhem běžného pracovního dne je zobrazena na obr. \ref{obr:attn}.
+\begin{figure}[H]
+  \centering
+  \includegraphics[scale=0.7]{visio/attnormal.pdf}
+\caption{Časová osa běžného pracovního dne}
+\label{obr:attn}
+\end{figure}
+
+Na obrázku \ref{obr:atts} je znázorněn pracovní den se služební cestou. Zaměstnanec nejprve zadá příchod do normální pracovní doby a s minutovým odstupem následuje služební odchod. Podobně musí zadat i návrat, nejprve zadá příchod do normální pracovní doby a s minutovým odstupem následuje normální odchod.
+\begin{figure}[H]
+  \centering
+  \includegraphics[scale=0.7]{visio/attservice.pdf}
+\caption{Časová osa pracovního dne se služební cestou}
+\label{obr:atts}
+\end{figure}
 
 \subsection{Vykazování odvedené práce}
 Vykazování odvedené práce je jedním ze způsobů pro průběžnou kontrolu aktivit zaměstnanců. Ve firmě probíhá současně více projektů a bez výkazů by bylo velmi těžké sledovat průběžně náklady jednotlivých projektů. 
@@ -77,29 +91,45 @@ Díky evidenci je možné sledovat produktivitu jednotlivých zaměstnanců stej
 \\ \indent Výkazy práce jsou propojeny s docházkovým systémem a je možné porovnávat výstupy z těchto systémů. 
 
 \subsection{Motivace}
-Motivací pro vznik této práce bylo vytvořit mobilní aplikaci umožnující provádět každodenní agendu - zadávat příchody a odchody a výkazy práce pro zaměstnance, kteří často cestují a působí mimo sídlo organizace. Také snaha o využítí možností mobilního zařízení tzn. pohodlné zadávání údajů a možnost mít požadované informace po ruce.
+Motivací pro vznik této práce bylo vytvořit mobilní aplikaci umožnující provádět každodenní agendu - zadávat příchody, odchody a výkazy práce pro zaměstnance, kteří často cestují a působí mimo sídlo organizace. Také snaha o využítí možností mobilního zařízení. Aplikace umožní pohodlné zadávání údajů a přinese možnost mít požadované informace po ruce.
 
-Výsledná mobilní aplikace se nemá nahradit vybrané části používaného systému, ale poskytnout efektivnější alternativu ve vybraných činnostech.
+Výsledná mobilní aplikace nemá nahradit vybrané části používaného systému, ale poskytnout efektivnější alternativu ve vybraných činnostech.
 
-[TODO pozn. původní ambice byla možnost zadávat i výkazy práce prostřednictvím mobilního klienta, vzhledem k tomu, že by bylo nutné provést úpravy v současném systému se od tohoto upustilo]
+[TODO kam? pozn. původní ambice byla možnost zadávat i výkazy práce prostřednictvím mobilního klienta, vzhledem k tomu, že by bylo nutné provést úpravy v současném systému se od tohoto upustilo]
 
 \section{Použitá technologie}
 Současný systém je postaven na Oracle technologii. Jako uživatelské rozhraní používá Oracle Forms a data jsou ukládany v Oracle databázi.
  
 \subsection{Oracle forms}
-Oracle forms je softwarový produkt vyvinutý společností Oracle. Slouží k vytváření formulářů, které interagují s Oracle databází. Jako programovací jazyk využívá PL/SQL. Produkt byl původně požíval terminálové rozhraní pro komuikaci se serverem. Později byl přepracován do architekrury klient-server.\\ \indent
+Oracle forms je softwarový produkt vyvinutý společností Oracle. Slouží k vytváření formulářů, které interagují s Oracle databází. Jako programovací jazyk využívá PL/SQL. Produkt byl původně používán jako terminálové rozhraní pro komuikaci se serverem. Později byl přepracován do architektury klient-server.\\ \indent
 Prostředí běhu zajišťuje defaultní správu transakcí. Díky tomu je Oracle Forms silný nástroj pro efektivní vývoj aplikací, jejichž primárním cílem je přístup k datům uložených v databázi. 
 
 \paragraph{PL/SQL}
 PL/SQL (Procedural Language/Structured Query Language) je procedurální nadstavba jazyka SQL od firmy Oracle založená na programovacím jazyku Ada.
 
 \subsection{Architektura}
+Oracle Forms používá client-server architekturu. Klient funguje jako tlustý klient, který se kromě zobrazení dat stará o bussines logiku aplikace. Serverm je myšlel databázový server. Architektura je znázorněna na obr. \ref{obr:arch}
 
 \begin{figure}[H]
   \centering
-  \includegraphics[scale=0.8]{obr/d2k_wea2.png}
+  \includegraphics[scale=0.7]{visio/arch.pdf}
+\label{obr:arch}
+\caption{Klient-server architektura Oracle Forms aplikace}
 \end{figure}
-[TODO asi vyrobit vlastni]
+\paragraph{Forms prostředí běhu}
+\begin{itemize}[noitemsep,nolistsep]
+\item \textbf{Prezentační vrstva}\\
+Zobrazuje informace pro uživatele formou grafického uživatelského rozhraní. Kontrolovat zadávané vstupy.
+\item \textbf{Aplikační logika}\\
+Stará se o provedení aplikační logiky.
+\item \textbf{Správce dat}\\
+Stará se o zpracování dat se kterými formulář pracuje. Řídí databázovou transakci.
+\item \textbf{PL/SQL Engine}\\
+Komponenta která zpracovává PL/SQL kód. Stará se o provedení procedurálního (PL) kódu a SQL kód předává ke zpracování databázi.
+\end{itemize}
+
+\paragraph{Databáze}
+Databáze obsahuje data a kód, který s těmito daty pracuje (triggery, procedury, funkce). 
 
 \subsection{Komponenty formuláře}
 Z hlediska architektury se Oracle Forms aplikace skládá z těchto celků:
@@ -141,7 +171,7 @@ Aplikace v Oracle pracuje s následujícími typy triggerů:
 \item Navigational triggers - jsou spouštěny při navigaci po položkách formuláře.
 \item Query-time triggers - jsou spouštěny na úrovni bloku před a po dotazu do databáze.
 \item Validation triggers - jsou spouštěny při validaci záznamu v položce.
-\item Transactional Triggers - vyvolají se při různých událostech související s interakcí s datovým úložištěm.
+\item Transactional triggers - vyvolají se při různých událostech související s interakcí s datovým úložištěm.
 \end{itemize}
 Pokud se jedná o datový blok, který je svázan s tabulkou v databázi, prostředí běhu automaticky zajištuje DML pro tyto bloky.
 Pokud vývojář požaduje nestandartní akci při těchto úkonech, provede překrytí těchto triggerů s vlastní definovanou akcí.
@@ -157,20 +187,38 @@ TODO přepsat
 Seznam hodnot je prvek uživatelského rozhraní, který uživateli nabízí výběr hodnot. Výběr může být na základě pevně daných dat či dotazem z databáze.
 
 
-\section{Datový model}
-
+\newpage
 \section{Důležité formuláře}
 
 \subsection{Zápis příchodů a odchodů}
 \begin{figure}[H]
   \centering
-  \includegraphics[scale=0.6]{obr/BD27.png}
+  \includegraphics[scale=0.7]{obr/BD27.png}
+\label{obr:att}
+\caption{Formulář pro zápis příchodů a odchodů}
 \end{figure}
-[TODO popsat z pohledu uzivatele]
-\subsection{Výkaz práce}
+\begin{itemize}
+\item Položky bloku pro zápis docházky
+\begin{description}[noitemsep,nolistsep]
+\item [Kód] Identifikátor zaměstnance.
+\item [Heslo] Heslo zaměstnance. Pokud heslo nemá tak prázdné pole.
+\item [Druh] Druh události - příchod či odchod. Kód události.
+\item [Popis] Doplní se automaticky podle kódu události.
+\item [Poznámka] Volitelná poznámka.
+\item [Datum] Datum události.
+\item [Čas] Čas události.
+\end{description}
+\item Pole \emph{Denní záznamy} Zobrazuje denní docházku formou strukturovaného řetězce.
+\item Pole s tlačítky Umožňuje akce které nejsou pro potřeby cílové aplikace relevantní.
+\end{itemize}
+
+\newpage
+\subsection{Výkazy práce}
 \begin{figure}[H]
   \centering
-  \includegraphics[scale=0.6]{obr/VX42.png}
+  \includegraphics[scale=0.7]{obr/VX42.png}
+\label{obr:rep}
+\caption{Formulář pro pracovní výkazy}
 \end{figure}
 [TODO popsat z pohledu uzivatele]
 
@@ -218,6 +266,30 @@ TODO schema komunikace -HHTP, JDBC
 \subsection{Simple Object Access Protocol}
 
 \section{Datová vrstva}
+V této kapitole analyzuji datovou vrstvu systému. 
+
+\subsection{Datový model}
+V následujícím diagramu (obr. \ref{obr:object}) zobrazuji entity nacházející se v systému, které jsou relevantní pro zkoumanou část systému. Další tabulky a číselníky jsou pro jednoduchost vypuštěny.
+\begin{figure}[H]
+  \centering
+  \includegraphics[scale=0.7]{visio/object.pdf}
+\caption{Diagram relevantních entit nacházejících se v systému}
+\label{obr:object}
+\end{figure}
+Jednotlivé entity a jejich popis:
+\begin{itemize}
+\item Záznam\\
+Příchod nebo odchod na pracoviště. Obsahuje informaci o čase, datu, účelu a případně zaměstnancův krátky popis události.
+\item Výkaz\\
+Pracovní výkaz. Obsahuje informaci o čase, datu, osobě zadavatele, osobě řešitele, vykazované době, vazbu na zakázku či chybové hlášení, stav výkazu, zaměsnancův popis činnosti.
+\item Zaměstnanec\\
+Zaměstnanec a jeho příslušnost k pracovnímu oddělení, funkce, vedoucí pracovník a typ úvazku. 
+\item Osoba\\
+Podrobnější informace o osobě zaměstnance, jméno, pracovní zkratka.
+\item Den\\
+Rozlišení pracovních dnů a svátků.
+\end{itemize}
+
 \subsection{Práce s datumem a časem}
 Při návrhu datového modelu jsem řešil problém pomocí jakého datového typu vyjadřovat údaj o čase či datu. V Oracle databázi je použit datový typ Date. SQLite databáze nabízí tři způsoby jako ukládat informaci o čase:
 \begin{itemize}
@@ -265,7 +337,7 @@ jen ty, jejichž funkčnost bude muset být implementována.
 \end{itemize}
 
 \subsection{Databázové balíčky a uložené procedury}
-
+ukázky volání z javy
 \subsection{Forms knihovny}
 
 \section{Synchronizace dat}
@@ -312,6 +384,7 @@ Kolize teoreticky nastane vždy, když se v době od poslední synchronizace zm�
 V obou případech řešení je iniciátorem synchronizace klient. Druhá varianta by oproti první přinesla úsporu množství přenesených dat. Vzhledem k tomu, že druhá varianta by vyžadovala změnu v databázovém schématu současného systému, zvolil jsem první variantu i přesto, že z hlediska efektivity synchronizace je to horší řešení.
 
 \section{Uživatelské rozhraní}
+zarizeni zna identitu uzivatele, nezadava zbytecnosti
 
 \chapter{Zabezpečení}
 V následující kapitole se zabývám zabezpečením aplikace. Popisuji několik možných variant z hlediska ověřování identity uživatele. Na závěr vysvětluji výběr zvoleného řešení.
@@ -754,6 +827,7 @@ knihovny, cloudové řešení, vlastní komponenty
 \setlength{\labelwidth}{30mm} \setlength{\labelsep}{0mm} }
 \item[\parbox{30mm}{IMIS}] Integrovaný manažerský informační systém
 \item[\parbox{30mm}{ERP}] Enterprise Resource Planning 
+\item[\parbox{30mm}{PL/SQL}] Procedural Language/Structured Query Language
 %\item[\parbox{30mm}{}]
 \end{list}
 
