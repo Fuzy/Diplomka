@@ -14,4 +14,15 @@ http://developer.android.com/: The Developer's Guide. [online], [cit.
 \newline\urlprefix\url{http://developer.android.com/reference/android/accounts%
 /AccountManager.html}
 
+\bibitem{microsoft}
+http://technet.microsoft.com/: Migrating Oracle Forms. [online], [cit.
+  2013-7-5].
+\newline\urlprefix\url{http://www.oracle.com/technetwork/developer-tools/forms%
+/overview/index.html}
+
+\bibitem{forms}
+http://www.oracle.com/: Oracle Forms. [online], [cit. 2013-7-5].
+\newline\urlprefix\url{http://www.oracle.com/technetwork/developer-tools/forms%
+/overview/index.html}
+
 \end{thebibliography}

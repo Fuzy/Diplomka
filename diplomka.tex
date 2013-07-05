@@ -95,20 +95,19 @@ Motivací pro vznik této práce bylo vytvořit mobilní aplikaci umožnující 
 
 Výsledná mobilní aplikace nemá nahradit vybrané části používaného systému, ale poskytnout efektivnější alternativu ve vybraných činnostech.
 
-[TODO kam? pozn. původní ambice byla možnost zadávat i výkazy práce prostřednictvím mobilního klienta, vzhledem k tomu, že by bylo nutné provést úpravy v současném systému se od tohoto upustilo]
 
 \section{Použitá technologie}
 Současný systém je postaven na Oracle technologii. Jako uživatelské rozhraní používá Oracle Forms a data jsou ukládany v Oracle databázi.
  
-\subsection{Oracle forms}
-Oracle forms je softwarový produkt vyvinutý společností Oracle. Slouží k vytváření formulářů, které interagují s Oracle databází. Jako programovací jazyk využívá PL/SQL. Produkt byl původně používán jako terminálové rozhraní pro komuikaci se serverem. Později byl přepracován do architektury klient-server.\\ \indent
+\subsection{Oracle Forms}
+Oracle Forms\cite{forms} je softwarový produkt vyvinutý společností Oracle. Slouží k vytváření formulářů, které interagují s Oracle databází. Jako programovací jazyk využívá PL/SQL. Produkt byl původně používán jako terminálové rozhraní pro komuikaci se serverem. Později byl přepracován do architektury klient-server.\\ \indent
 Prostředí běhu zajišťuje defaultní správu transakcí. Díky tomu je Oracle Forms silný nástroj pro efektivní vývoj aplikací, jejichž primárním cílem je přístup k datům uložených v databázi. 
 
-\paragraph{PL/SQL}
+\subsection*{PL/SQL}
 PL/SQL (Procedural Language/Structured Query Language) je procedurální nadstavba jazyka SQL od firmy Oracle založená na programovacím jazyku Ada.
-
+\newpage
 \subsection{Architektura}
-Oracle Forms používá client-server architekturu. Klient funguje jako tlustý klient, který se kromě zobrazení dat stará o bussines logiku aplikace. Serverm je myšlel databázový server. Architektura je znázorněna na obr. \ref{obr:arch}
+Oracle Forms používá client-server architekturu. Klient funguje jako tlustý klient, který se kromě zobrazení dat stará o bussines logiku aplikace. Serverem je myšlel databázový server. Architektura je znázorněna na obr. \ref{obr:arch}
 
 \begin{figure}[H]
   \centering
@@ -119,11 +118,11 @@ Oracle Forms používá client-server architekturu. Klient funguje jako tlustý 
 \paragraph{Forms prostředí běhu}
 \begin{itemize}[noitemsep,nolistsep]
 \item \textbf{Prezentační vrstva}\\
-Zobrazuje informace pro uživatele formou grafického uživatelského rozhraní. Kontrolovat zadávané vstupy.
-\item \textbf{Aplikační logika}\\
+Zobrazuje informace pro uživatele formou grafického uživatelského rozhraní. Kontroluje zadávané vstupy.
+\item \textbf{Aplikační vrstva}\\
 Stará se o provedení aplikační logiky.
 \item \textbf{Správce dat}\\
-Stará se o zpracování dat se kterými formulář pracuje. Řídí databázovou transakci.
+Stará se o zpracování dat se kterými formulář pracuje. Řídí databázové transakce.
 \item \textbf{PL/SQL Engine}\\
 Komponenta která zpracovává PL/SQL kód. Stará se o provedení procedurálního (PL) kódu a SQL kód předává ke zpracování databázi.
 \end{itemize}
@@ -131,6 +130,7 @@ Komponenta která zpracovává PL/SQL kód. Stará se o provedení proceduráln�
 \paragraph{Databáze}
 Databáze obsahuje data a kód, který s těmito daty pracuje (triggery, procedury, funkce). 
 
+\newpage
 \subsection{Komponenty formuláře}
 Z hlediska architektury se Oracle Forms aplikace skládá z těchto celků:
 
@@ -140,8 +140,8 @@ Z hlediska architektury se Oracle Forms aplikace skládá z těchto celků:
 Modul formuláře je hlavní komponenta aplikace. Poskytuje kód nezbytný pro interakci s úložištěm a uživatelským rozhraním. 
 Data poskytovaná databází jsou reflektovaná v prvcích uživatelského rozhraní jako jsou textová pole, zaškrtávací políčka, přepínače, talčítka atd. Formulář je logicky organizován do bloků. Existují dva typy bloků: 
 \begin{itemize}
-\item Datový blok\\ Datový blok zobrazuje zdrojová data a poskytuje abstrakci pro způsob jakým jsou tato data získávána. Blok může být asociován s databázovou tabulkou, databázovým pohledem, uloženou procedurou, dotazem do databáze nebo transakčním triggerem. Asociace datového bloku a databázových dat standartně umožnujě přístup k těmto datům a jejich modifikaci.\indent
-Datové bloky mohou být navzájem svázany vztahem "rodič - potomek". Takový vztah představuje relaci 1:N databázových tabulek. Oracle Forms zajišťuje to, že při spojení mezi master a detail bloky se zobrazí pouze ty detail bloky, které jsou vázány na master blok přes cizí klíč. 
+\item Datový blok\\ Datový blok zobrazuje zdrojová data a poskytuje abstrakci pro způsob jakým jsou tato data získávána. Blok může být asociován s databázovou tabulkou, databázovým pohledem, uloženou procedurou, dotazem do databáze nebo transakčním triggerem. Asociace datového bloku a databázových dat standartně umožnujě přístup k těmto datům a jejich modifikaci.\\ \indent
+Datové bloky mohou být navzájem svázany vztahem \emph{rodič - potomek}. Takový vztah představuje relaci 1:N databázových tabulek. Oracle Forms zajišťuje to, že při spojení mezi master a detail bloky se zobrazí pouze ty detail bloky, které jsou vázány na master blok přes cizí klíč. 
 
 \item Řídící blok \\
 Představuje blok, který nemá vztah k databázové tabulce. Řídící blok může obsahovat jakékoli prvky uživatelského rozhraní. Prvky mohou sloužit k uložení dočasných proměných nebo k zobrazení dat, které nemají přímou vazbu s databází. 
@@ -151,7 +151,7 @@ Představuje blok, který nemá vztah k databázové tabulce. Řídící blok m�
 Modul obsahuje hiearchii menu. Každé menu obsahuje zvolitelné položky. Každý formulář obsahuje defaultní menu obsahující příkazy pro základní DML operace s databází CRUD.
 
 \paragraph{Modul PL/SQL knihovny}
-Modul obsahuje znovu využitelný kód, který může být využit jinými formuláři, menu či knihovnami. Programové jednotky knihovny mohou být fuknce, procedury a balíčky. Programové jednotky jsou spouštěny na straně klienta. Mohou obsahovat business logiku. Knihovny jsou nezávislé na formuláři, jsou zaváděny dynamicky a mohou být zároveň využívány více formuláři.
+Modul obsahuje znovu využitelný kód, který může být využit jinými formuláři, menu či knihovnami. Programové jednotky knihovny mohou být funkce, procedury a balíčky. Programové jednotky jsou spouštěny na straně klienta. Mohou obsahovat business logiku. Knihovny jsou nezávislé na formuláři, jsou zaváděny dynamicky a mohou být zároveň využívány více formuláři.
 
 \paragraph{Modul knihovny objektů}
 Modul obsahuje znovu využitelné objekty. Řeší uskladnění, správu a distribuci těchto objektů, které mohou být využity jinými formuláři, menu či knihovnami. Využívání tohoto modulu přináší přínosy v podobě úspory paměti při běhu aplikace.
@@ -159,15 +159,17 @@ Modul obsahuje znovu využitelné objekty. Řeší uskladnění, správu a distr
 \begin{figure}[H]
   \centering
   \includegraphics[scale=0.8]{obr/forms_arch3.png}
+\label{obr:arch3}
+\caption{Komponenty Oracle Forms aplikace\cite{microsoft}}
 \end{figure}
-
+\newpage
 \subsection*{Triggery}
 Aplikace v Oracle pracuje s následujícími typy triggerů:
 \begin{itemize}
 \item Block-processing triggers - jsou spouštěny při události na položce patřící tomuto bloku.
 \item Interface event triggers - jsou spouštěny při události v uživatelském rozhraní formuláře.
-\item Master-detail triggers - jsou spouštěny při události související se vztahem "rodič - potomek"  na daných blocích. Např. při změně položky rodiče příslušný trigger zobrazí správné položky v bloku potomka.
-\item Message-handling triggers - zpracovávájí zobrazení chybových či informačních zpráv.
+\item Master-detail triggers - jsou spouštěny při události související se vztahem \emph{rodič - potomek} na daných blocích. Např. při změně položky rodiče příslušný trigger zobrazí příslušné položky v bloku potomka.
+\item Message-handling triggers - zpracovávají zobrazení chybových či informačních zpráv.
 \item Navigational triggers - jsou spouštěny při navigaci po položkách formuláře.
 \item Query-time triggers - jsou spouštěny na úrovni bloku před a po dotazu do databáze.
 \item Validation triggers - jsou spouštěny při validaci záznamu v položce.
@@ -175,21 +177,24 @@ Aplikace v Oracle pracuje s následujícími typy triggerů:
 \end{itemize}
 Pokud se jedná o datový blok, který je svázan s tabulkou v databázi, prostředí běhu automaticky zajištuje DML pro tyto bloky.
 Pokud vývojář požaduje nestandartní akci při těchto úkonech, provede překrytí těchto triggerů s vlastní definovanou akcí.
-
-\section{Uživatelské rozhraní}
+\newpage
+\subsection{Uživatelské rozhraní}
+Při pohledu na uživatelské rozhraní se Oracle Forms aplikace skládá z těchto objektů:
 \begin{figure}[H]
   \centering
   \includegraphics[scale=0.8]{obr/window.png}
+\label{obr:gui}
+\caption{Objekty uživatelského rozhraní Oracle Forms aplikace}
 \end{figure}
-Plátno je objekt, na který je nakresleno celé GUI formuláře, tedy všechny viditelné objekty. Může mít prakticky jakoukoli velikost. Okno ohraničuje plochu plátna, která bude zobrazena. View řídí, jak bude plátno v určité době zobrazeno v okně.\\
-TODO přepsat
+
+
+Plátno je objekt, na který je nakresleno celé GUI formuláře, tedy všechny viditelné objekty.  Okno ohraničuje plochu plátna, která bude zobrazena. Plátno je zobrazeno v okně. Blok sdružuje jednotlivé položky, které se vztahují ke stejnému databázovému objektu.
 \subsection*{Seznam hodnot}
-Seznam hodnot je prvek uživatelského rozhraní, který uživateli nabízí výběr hodnot. Výběr může být na základě pevně daných dat či dotazem z databáze.
+Seznam hodnot je prvek uživatelského rozhraní, který uživateli nabízí výběr hodnot. Výběr může být na základě pevně daných dat či dotazem do databáze.
 
-
-\newpage
 \section{Důležité formuláře}
-
+V této jsou popsány formuláře pro vybranou funčnost systému. 
+ Konktrétně se jedná o formuláře pro zápis příchodů a odchodů na pracovistě a vykazování provedené práce.
 \subsection{Zápis příchodů a odchodů}
 \begin{figure}[H]
   \centering
@@ -197,30 +202,51 @@ Seznam hodnot je prvek uživatelského rozhraní, který uživateli nabízí vý
 \label{obr:att}
 \caption{Formulář pro zápis příchodů a odchodů}
 \end{figure}
-\begin{itemize}
+
+\begin{itemize}[noitemsep,nolistsep]
 \item Položky bloku pro zápis docházky
 \begin{description}[noitemsep,nolistsep]
-\item [Kód] Identifikátor zaměstnance.
-\item [Heslo] Heslo zaměstnance. Pokud heslo nemá tak prázdné pole.
-\item [Druh] Druh události - příchod či odchod. Kód události.
-\item [Popis] Doplní se automaticky podle kódu události.
-\item [Poznámka] Volitelná poznámka.
-\item [Datum] Datum události.
-\item [Čas] Čas události.
+\item [Kód] - identifikátor zaměstnance.
+\item [Heslo] - heslo zaměstnance. Pokud heslo nemá tak prázdné pole.
+\item [Druh]  - druh události, příchod či odchod. Kód události.
+\item [Popis] - doplní se automaticky podle kódu události.
+\item [Poznámka] - volitelná poznámka.
+\item [Datum] - datum události.
+\item [Čas] - čas události.
 \end{description}
-\item Pole \emph{Denní záznamy} Zobrazuje denní docházku formou strukturovaného řetězce.
-\item Pole s tlačítky Umožňuje akce které nejsou pro potřeby cílové aplikace relevantní.
+\item Pole \emph{Denní záznamy} - zobrazuje denní docházku formou strukturovaného řetězce.
+\item Pole s tlačítky - umožňuje akce, které nejsou pro potřeby cílové aplikace relevantní.
 \end{itemize}
 
 \newpage
-\subsection{Výkazy práce}
+\subsection{Výkaz práce}
 \begin{figure}[H]
   \centering
   \includegraphics[scale=0.7]{obr/VX42.png}
 \label{obr:rep}
 \caption{Formulář pro pracovní výkazy}
 \end{figure}
-[TODO popsat z pohledu uzivatele]
+
+\begin{itemize}[noitemsep,nolistsep]
+\item Položky bloku \emph{Uživatel} zobrazují identifikaci uživatele. Dále jsou zde statistiky stavů, ve kterých se nachází výkaz. V posledním řádku je zobrazen měsíční součet odpracovaného a vykázaného času.
+\item V bloku \emph{Datum} je zobrazen měsíční kalendář.
+\item V bloku \emph{Výkaz práce - hodiny} jsou výkazy pro zvolený den:
+\begin{description}[noitemsep,nolistsep]
+\item [Stav výkazu] - vypsaný, potvrzený, schválený, uzavřený.
+\item [Zakázka] - identifikace zakázky.
+\item [Pracoviště] - identifikace pracoviště.
+\item [Hlášení] - chybové hlášení, které bylo podnětem pro tento úkol.
+\item [Organizace] - identifikace organizace.
+\item [Popis činnosti] - zaměstnancův popis odvedené činnosti.
+\end{description}
+\item V bloku \emph{Výkaz práce - Km} jsou výkazy jízd pro zvolený den:
+\begin{description}[noitemsep,nolistsep]
+\item [Auto] - identifikace vozidla.
+\item [Km] - počet ujetých km.
+\end{description}
+\item Pole se statistikami zobrazuje denní součet odpracované doby, vykázané doby, ujetých km. 
+\item Pole s tlačítky - jediná relevantní akce je změna zobrazovaného měsíce.
+\end{itemize}
 
 \chapter{Analýza}
 
@@ -287,7 +313,7 @@ Zaměstnanec a jeho příslušnost k pracovnímu oddělení, funkce, vedoucí pr
 \item Osoba\\
 Podrobnější informace o osobě zaměstnance, jméno, pracovní zkratka.
 \item Den\\
-Rozlišení pracovních dnů a svátků.
+Den ke kterému se váže výkaz či záznam. Slouží k rozlišení pracovních dnů a svátků.
 \end{itemize}
 
 \subsection{Práce s datumem a časem}
@@ -363,9 +389,8 @@ Diagram \ref{obr:syncup} podrobněji rozepisuje průběh odeslání požadavku n
 \caption{Diagram aktivit pro odeslání požadavku na server}
 \label{obr:syncup}
 \end{figure}
-
-Diagram \ref{obr:syncup} podrobněji rozepisuje průběh přijetí záznamu ze serveru.
-TODO popsat kolizi
+\newpage
+Diagram \ref{obr:syncdown} podrobněji rozepisuje průběh přijetí záznamu ze serveru.
 \begin{figure}[H]
   \centering
   \includegraphics[scale=0.7]{visio/syncdown.pdf}
@@ -628,6 +653,7 @@ Uživatelské rozhraní aplikace klade důraz na přehlednost, ergonomii a časo
 
 \subsection{Návrhy na vylepšení}
 
+[TODO  pozn. původní ambice byla možnost zadávat i výkazy práce prostřednictvím mobilního klienta, vzhledem k tomu, že by bylo nutné provést úpravy v současném systému se od tohoto upustilo, kniha jízd]
 \section{Komponenty Android aplikace}
 
 \subsection{Aktivita}
@@ -670,9 +696,9 @@ Ukládat stav aktivity je vhodné protože systém může zničit aktivitu z dů
 
 \begin{itemize}[]
 \item \textbf{onSaveInstanceState(Bundle)}\\
-Metoda je volána před tím než je aktivita zničena (před provedením \emph{onStop()}. Do objektu \emph{Bundle} by měla být uložena všechna data, která jsou nutná pro obnovu předchozího stavu aktivity. Data jsou ukládána ve formátu klíč-hodnota. Metoda není volána v situaci kdy uživatel explicitně ukončil aktivitu. Na začátku metody je nutné zavolat metodu rodiče, aby mohl být uložen stav prvků UI pomocí defaultní implementace.
+Metoda je volána před tím než je aktivita zničena (před provedením \emph{onStop()}. Do objektu \emph{Bundle} by měla být uložena všechna data, která jsou nutná pro obnovu předchozího stavu aktivity. Data jsou ukládána ve formátu klíč-hodnota. Metoda není volána v situaci, kdy uživatel explicitně ukončil aktivitu. Na začátku metody je nutné zavolat metodu rodiče, aby mohl být uložen stav prvků UI pomocí defaultní implementace.
 \item \textbf{onRestoreInstanceState(Bundle)}\\
-Metoda je volána (po provedením \emph{onStart()} v případě, že aktivita byla znovuobnovena z předchozího uloženého stavu.Na začátku metody je nutné zavolat metodu rodiče, aby mohl být obnoven stav prvků UI pomocí defaultní implementace.
+Metoda je volána (po provedením \emph{onStart()}) v případě, že aktivita byla znovuobnovena z předchozího uloženého stavu.Na začátku metody je nutné zavolat metodu rodiče, aby mohl být obnoven stav prvků UI pomocí defaultní implementace.
 \end{itemize}
 
 
@@ -726,7 +752,7 @@ Na diagramu \ref{obr:andauth} je zobrazen průběh vytvoření účtu, který je
 \label{obr:andauth}
 \end{figure}
 
-\begin{figure}
+\begin{figure}[H]
 \centering
 \begin{minipage}{.5\textwidth}
   \centering
@@ -755,7 +781,7 @@ int color = settings.getInt("color", defaultColor);
 \end{lstlisting}
 
 \noindent
-Změny nastavení se provádějí pomocí \emph{SharedPreferences.Editor} rozhraní, které se postará aby data zůstala konsistentní a řídí transkační zpracování.
+Změny nastavení se provádějí pomocí \emph{SharedPreferences.Editor} rozhraní, které se postará aby data zůstala konsistentní a řídí transkační zpracování.\\
 \begin{lstlisting}
 SharedPreferences settings = PreferenceManager.getDefaultSharedPreferences(context);
 SharedPreferences.Editor editor = settings.edit();
@@ -766,7 +792,7 @@ editor.commit();
 \subsection*{Interní úložiště}
 Soubory lze ukládat v interní paměti zařízení. Tyto soubory jsou defaultně přístupné pouze pro aplikace, která je vytvořila a při odinstalování jsou automaticky smazány.
 \subsection*{Externí úložiště}
-Další možností pro ukládání souborů je externí úložiště (např. SD karta).  Toto úložiště je sdílené a mohou být editována i mimo aplikaci.
+Další možností pro ukládání souborů je externí úložiště (např. SD karta).  Toto úložiště je sdílené a data mohou být editována i mimo aplikaci.
 \subsection*{SQLite databáze}
 Data lze ukládat persistentně pomocí SQLite databáze. Vytvořená databáze je dostupná jakkékoli třídě v aplikaci, ale není přístupná mimo aplikaci, která jí vytořila. SQLite databázi detailněji popisuji v kapitole \ref{sqlite}.
 
@@ -828,6 +854,8 @@ knihovny, cloudové řešení, vlastní komponenty
 \item[\parbox{30mm}{IMIS}] Integrovaný manažerský informační systém
 \item[\parbox{30mm}{ERP}] Enterprise Resource Planning 
 \item[\parbox{30mm}{PL/SQL}] Procedural Language/Structured Query Language
+\item[\parbox{30mm}{DML}] Data manipulation language
+\item[\parbox{30mm}{CRUD}] Create, read, update and delete
 %\item[\parbox{30mm}{}]
 \end{list}
 
