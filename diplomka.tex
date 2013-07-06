@@ -249,9 +249,10 @@ V této jsou popsány formuláře pro vybranou funčnost systému.
 \end{itemize}
 
 \chapter{Analýza}
-
+TOTO Deployment diagram?
+TODO doplnit
 \section{Architektura}
-Při návrhu architektury jsem se rozhodoval mezi třemi variantami: přímé spojení Android aplikace ke vzdálené databázi pomocí JDBC, synchronizaci dat se vzdálenou databází pomocí Oracle Database Mobile Server a nakonec využití webové služby, která by sloužila jako rozhraní mezi klientskou aplikací a databázovým serverem.
+Při návrhu architektury jsem se rozhodoval mezi třemi variantami: přímé spojení Android aplikace ke vzdálené databázi pomocí JDBC, synchronizaci dat se vzdálenou databází pomocí Oracle Database Mobile Server a nakonec s využitím webové služby, která by sloužila jako rozhraní mezi klientskou aplikací a databázovým serverem.
 
 \subsection{Přímé připojení k databázi}
 Přestože příme připojení k Oracle databázi pomocí JDBC je možné, tuto variantu jsem zamítl. Připojení pomocí JDBC je primárně určeno pro stabilní síťové připojení, které má malou odezvu a nízkou ztrátu paketů. Využití JDBC by přineslo problémy v podobě špatné odezvy aplikace, kvůli znovu navazování spojení a vytváření nových databázových relací, které musely být v důsledku ztráty konektivity ukončeny.\\ \indent
@@ -288,8 +289,55 @@ TODO schema komunikace -HHTP, JDBC
 \section{Výběr typu webové služby}
 
 \subsection{Representational State Transfer}
+Representational State Transfer\cite{rest} (REST) je architektonický styl pro distribuovaný systém. Architektura využívá těchto vlastností:
+\begin{description}
+\item [Klient-server] Využívá se architektura klient-server z důvodu rozdělení zodpovědností pro komponenty systému (\emph{Separation of concerns}). Klient je zodpovědný za uživatelské rozhraní, díky tomu je získána větší přenositelnost na jiné platformy. Na straně serveru, který je zodpovědný za datovou vrstvu, se získá výhoda větší škálovatelnosti. 
+\item [Bezestavost] Komunikace probíhá bezestavově. Každý požadavek musí obsahovat všechny informace nutné k jeho vyřízení. Pokud je nutné pamatovat si stav, je to zodpovědností klienta. Díky tomu se zvyšuje spolehlivost systému, protože to usnadňuje zotavení se ze stavu částečného selhání. Také se zvyšuje škálovatelnost, protože server si nemusí udržovat informaci o stavu a díky tomu potřebuje méně zdrojů. Rovněž je snažší takový server implementovat.
+\item [Mezipaměť] Data přijímaná jako odpověd ze serveru musí být označena, zda mohou být uložena do mezipaměti klienta či nikoli. Pokud jsou uložena, klient je může využít opakovaně. Díky tomu je snížen počet interakcí. 
+\item [Jednotné rozhraní] Zdroje jsou identifikovány pomocí URI, které ale nezávisí na tom jakým způsobem budou data vrácena klientovi. Každý požadavek na server obsahuje informaci jakým způsobem mají být data zpracována (pomocí MIME hlavičky HTTP požadavku).  
+\item [Vícevrstevný systém] Klient nemusí získávat data přímo ze serveru na který se obrací. Server může fungovat jako prostředník, který je sám v roli klienta vůči jinému uzlu systému. Rozdělení systému do více vrstev může být využito k zapouzdření zastaralých služeb, k ochraně nových služeb před zastarlými klienty či zjednodušení kompoment díky sdílení zřídka využívaných služeb. Jiným přínosem může být zlepšení škálovatelnosti díky rozložení zátěže mezi více uzlů na stejné vrstvě systému.
+\item [Kód na požádání] Server může klientovi poskytovat kód, který je spustitelný na straně klienta a přinést tak další funkcionalitu.
+\end{description}
+
+
+RESTful
+A RESTful web API (also called a RESTful web service) is a web API implemented using HTTP and REST principles. It is a collection of resources, with four defined aspects:
+\begin{itemize}
+\item the base URI for the web API
+\item the Internet media type of the data supported by the web API. This is often JSON but can be any other valid Internet media type provided that it is a valid hypertext standard.
+\item the set of operations supported by the web API using HTTP methods (e.g., GET, PUT, POST, or DELETE).
+\begin{itemize}
+\item 
+\item
+\item
+\item
+\end{itemize}
+\item The API must be hypertext driven.
+\end{itemize}
 
 \subsection{Simple Object Access Protocol}
+Simple Object Access Protocol (SOAP) je standardizovaný protokol pro výměnu dat mezi webovými službami. Protokol řídí výměnu zpráv mezi poskytovatelem a konzumentem služby. Komunikace probíhá většinou pomocí HTTP protokolu, který je použit z důvodu lepší prostupnosti přes zabezpečující síťové prvky.\\ \indent
+Existuje několik různých druhů šablon pro komunikaci na protokolu SOAP. Nejznámější z nich je RPC šablona, kde jeden z účastníků komunikace funguje jako klient a druhý jako server. Server odpovídá na požadavky klienta.\\ \indent
+Na obr. \ref{obr:soap} je znázorněn vztah základních technologií používaných u webové služby využívající SOAP protokol.
+\begin{figure}[H]
+  \centering
+  \includegraphics[scale=0.8]{obr/komunikace-webservices.png}
+\caption{Vztah tří základních technologií (SOAP, WSDL a UDDI) webových služeb\cite{websluzby}}
+\label{obr:soap}
+\end{figure}
+
+\begin{description}
+\item [Webová služba] Poskytovatel služby. Ke službě se přistupuje pomocí \emph{endpoint} URL. \emph{Endpoint} URL definuje umístění služby, kde poskytovatel očekává příchozí požadavky.
+\item [Klient] Konzument služby, který si v UDDI registru vyhledá požadovanou službu. Poté sestaví zprávu podle specifikace a kontaktuje poskytovatele.
+\item [UDDI\cite{uddi}] (Universal Description, Discovery, and Integration) registr je místo, které poskytuje informace o dostupných službách a jejich poskytovatelích. 
+\item [WSDL\cite{wsdl}] (Web Services Description Language) je jazyk, kterým je popisována funkcionalita poskytovaná webovou službou. WSDL soubor poskytuje strojově čitelný popis toho, jak může být služba volána, jaké parametry očekává a jaké datové struktury vrací.
+
+which states what service methods are available, which objects are used as
+return types and method parameters, and what is the structure of such objects.
+\end{description}
+
+\subsection{Srovnání a výběr}
+rest auth pri kazdem pozadavku
 
 \section{Datová vrstva}
 V této kapitole analyzuji datovou vrstvu systému. 
@@ -506,7 +554,7 @@ Použil jsem první řešení protože je shoduje se způsobem ověřování v s
 Je nutné dívat se na pravidlo dobrovolného hesla jako na firemní pravidlo, které může být kdykoli zrušeno. V případě zrušení tohoto pravidla by se z největší pravděpodobností uplatnilo ověřování proti LDAP adresáři. 
 
 \chapter{Webová služba}
-
+JAX-RS citace
 \section{REST}
 Při návrhu REST služby jsem nejprve identifikoval všechny zdroje, které webová služba zpřístupňuje. Jedná se o údaje o docházce zaměstnanců, výkazech práce a zaměstnancích samotných. Posledním zdrojem je možnost testovat komunikaci s webovou službou. \par
 Zdroj pro docházku zaměstnaců tzn. jejich příchody a odchody (označované jako události) a poskytované služby zobrazuje tabulka \ref{tab:urievents}. Služba umožňuje operace CRUD na datovém zdroji zaměstnanců a dále zjištění součtu doby v zaměstnání.
@@ -623,7 +671,7 @@ Parametry:\begin{itemize}[noitemsep,nolistsep]
 \chapter{Android aplikace}
 
 \section{Funkcionalita}
-[TODO ještě upřesnit]
+[TODO ještě upřesnit+UML use case?]
 Na základě analýzy současného systému a potřeb zaměstnanců byla vybrána k implementaci následující funkčnost: 
 \paragraph{Docházka}
 \begin{itemize}
@@ -856,6 +904,7 @@ knihovny, cloudové řešení, vlastní komponenty
 \item[\parbox{30mm}{PL/SQL}] Procedural Language/Structured Query Language
 \item[\parbox{30mm}{DML}] Data manipulation language
 \item[\parbox{30mm}{CRUD}] Create, read, update and delete
+\item[\parbox{30mm}{UDDI}] Universal Description, Discovery, and Integration
 %\item[\parbox{30mm}{}]
 \end{list}
 

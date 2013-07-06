@@ -8,6 +8,12 @@
 \providecommand{\selectlanguage}[1]{\relax}
 \providecommand{\eprint}[2][]{\url{#2}}
 
+\bibitem{rest}
+Fielding, R.~T.: Architectural Styles and the Design of Network-based Software
+  Architectures. [online], [cit. 2013-7-6].
+\newline\urlprefix\url{http://www.ics.uci.edu/~fielding/pubs/dissertation/top.%
+htm}
+
 \bibitem{accman}
 http://developer.android.com/: The Developer's Guide. [online], [cit.
   2013-7-2].
@@ -24,5 +30,18 @@ http://technet.microsoft.com/: Migrating Oracle Forms. [online], [cit.
 http://www.oracle.com/: Oracle Forms. [online], [cit. 2013-7-5].
 \newline\urlprefix\url{http://www.oracle.com/technetwork/developer-tools/forms%
 /overview/index.html}
+
+\bibitem{websluzby}
+Kosek, J.: Využití webových služeb a protokolu SOAP při komunikaci.
+  [online], [cit. 2013-7-6].
+\newline\urlprefix\url{http://www.kosek.cz/diplomka/html/websluzby.html}
+
+\bibitem{uddi}
+OASIS: UDDI. [online], [cit. 2013-7-6].
+\newline\urlprefix\url{http://uddi.xml.org/uddi-101}
+
+\bibitem{wsdl}
+W3C: Web Services Description Language (WSDL) 1.1. [online], [cit. 2013-7-6].
+\newline\urlprefix\url{http://www.w3.org/TR/wsdl}
 
 \end{thebibliography}
