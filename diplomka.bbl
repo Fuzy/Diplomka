@@ -40,6 +40,11 @@ Kosek, J.: Využití webových služeb a protokolu SOAP při komunikaci.
 OASIS: UDDI. [online], [cit. 2013-7-6].
 \newline\urlprefix\url{http://uddi.xml.org/uddi-101}
 
+\bibitem{mobile}
+Oracle: Oracle Database Mobile Server. [online], [cit. 2013-7-7].
+\newline\urlprefix\url{http://www.oracle.com/technetwork/products/database-mob%
+ile-server/overview/index.html}
+
 \bibitem{wsdl}
 W3C: Web Services Description Language (WSDL) 1.1. [online], [cit. 2013-7-6].
 \newline\urlprefix\url{http://www.w3.org/TR/wsdl}
