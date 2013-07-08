@@ -184,7 +184,7 @@ Při pohledu na uživatelské rozhraní se Oracle Forms aplikace skládá z těc
   \centering
   \includegraphics[scale=0.8]{obr/window.png}
 \label{obr:gui}
-\caption{Objekty uživatelského rozhraní Oracle Forms aplikace}
+\caption{Objekty uživatelského rozhraní Oracle Forms aplikace\cite{microsoft}}
 \end{figure}
 
 
@@ -266,7 +266,17 @@ Server je možné spustit na serverech Oracle WebLogic Server a Oracle Glassfish
 Jako použitou architekturu jsem zvolil použití webové služby, která bude fungovat jako rozhraní mezi klientskou aplikací a databázovým serverem. Android klient v této architektuře funguje jako tenký klient spravující jen část funkčnosti z původního tlustého klienta. Business logika je umístěna na straně webové služby. Díky tomu že, webová služba bude umístěna v blízkosti firemní databáze, dojde k minimalizace odezev při zajištění business logiky systému. Mezi klientem a webovou službou se přenášejí pouzy data, která jsou opravdu nutná. \\ \indent
 Z pohledu rozšiřitelnosti systému o další mobilní platformy se toto řešení jeví rovněž výhodně. Business logika by nebyla implementována ani na klientských aplikacích jiných platforem. Při změne logiky bude potřeba úpravy v kódu pouze na straně webové služby. Cílová architektura je vyobrazena na obrázku \ref{obr:deployment}.
 
+\newpage
 \subsection{Zvolená architektura}
+Android aplikace funguje jako tenký klient, který se připojuje k webové službě. Webová služba přistupuje k samotné databázi. Jednotlivé komponenty jsou popsány níže:
+
+TODO popsat vnořené komponenty
+\begin{itemize}
+\item Android - podporovaný od API 10, obsahuje persistentní úložiště, obsahuje záznamy o docházce, úložiště se bude automaticky synchronizovat ve stavu online s databázovým serverem prostřednictvím webové služby
+\item Webová služba - je implemetovaná v Java EE 6, je v souladu s RESTful principy s využitím Java API pro RESTful Webové služby (JAX-RS) 1.1,  jako produkční aplikační server bude použit GlassFish 4
+\item Databázový server - hostuje databázi Oracle 10g, která obsahuje data ke kterým Android aplikace přistupuje, navíc obsahuje databázové procedury a funkce, které jsou součástí bussines logiky používané v současném systému
+\end{itemize}
+Diagram zobrazující uvedené komponenty je na obr. \ref{obr:deployment}:
 \begin{figure}[H]
   \centering
   \includegraphics[scale=0.7]{visio/deployment.pdf}
@@ -274,19 +284,7 @@ Z pohledu rozšiřitelnosti systému o další mobilní platformy se toto řeše
 \label{obr:deployment}
 \end{figure}
 
-TOTO Deployment diagram
-
-%\section{Architektura (smazat)}
-Android aplikace funguje jako tenký klient, který se připojuje k webové službě. Webová služba používá REST architekturu a přistupuje k samotné databázi.
-
-\begin{itemize}
-\item Webová služba - Java EE 6, aplikační server GlassFish
-\item Databáze - Oracle 10g, obsahuje navíc databázové procedury, které se používají v současných formulářích  
-\item Android - obsahuje persistentní úložiště, obsahuje záznamy o docházce, úložiště se bude automaticky synchronizovat ve stavu online s databázovým serverem prostřednictvím webové služby
-\end{itemize}
-TODO prepsat srozumitelneji
-TODO schema komunikace -HHTP, JDBC
-
+\newpage
 \section{Výběr typu webové služby}
 
 \subsection{Representational State Transfer}
@@ -364,6 +362,9 @@ Podrobnější informace o osobě zaměstnance, jméno, pracovní zkratka.
 Den ke kterému se váže výkaz či záznam. Slouží k rozlišení pracovních dnů a svátků.
 \end{itemize}
 
+\subsection{Datový model v mobilní aplikaci}
+klient neřeší referenční integritu
+
 \subsection{Práce s datumem a časem}
 Při návrhu datového modelu jsem řešil problém pomocí jakého datového typu vyjadřovat údaj o čase či datu. V Oracle databázi je použit datový typ Date. SQLite databáze nabízí tři způsoby jako ukládat informaci o čase:
 \begin{itemize}
@@ -384,52 +385,57 @@ Také jsem se ujistil, že rozsah typu long je pro potřeby aplikace dostačují
 
 \begin{table}[H]
 \centering
-\begin{tabular}{| c | c | c | c |}
+\begin{tabular}{| p{2.5cm} | c | c | c |}
 \hline
 Datový typ &  Minimální hodnota & Maximální hodnota & Přesnost \\ \hline
-Oracle Date &   January 1, 4712 BCE  &  December 31, 4712 CE &  sekundy \\ \hline
-SQLite INTEGER &    &  &  sekundy \\ \hline
-Java long & 2.12.292269055 BC   & 17.8.292278994 AD &  milisekundy \\ \hline
+Oracle Date &   January 1, 4712 BCE  &  December 31, 4712 CE &  s \\ \hline
+\parbox[c][1cm][c]{5cm}{SQLite\\ INTEGER} &  2.12.292269055 BC  & 17.8.292278994 AD &  ms \\ \hline
+Java long & 2.12.292269055 BC   & 17.8.292278994 AD &  ms \\ \hline
 \end{tabular}
 \caption{Datové typy reprezentující časový údaj}
 \label{tab:cas}
 \end{table}
+%\parbox[pos][height][inner-pos]{width}{text}
 
 \subsection{Výhrady k datové vrstvě}
-
+Při práci s datovou vrstvou aplikace jsem vyhodnotil některé vlastnosti jako důsledek špatného návrhu datového schématu.
 \subsubsection*{Tabulka bez primárního klíče}
 Tabulka pro evidenci docházkových události neobsahuje primární klíč. To je velký problém, protože klient měnící data potřebuje jednoznačně identifikovat záznam. Absenci primárního klíče lze vyřešit indetifikací záznamu pomocí pseudosloupce ROWID. Hodnota ROWID se skládá z těchto hodnot:
 \begin{itemize}[noitemsep,nolistsep]
 \item číslo datového objektu 
 \item číslo datového bloku v souboru, kde se záznam nachází
 \item pozice řádku v datovém bloku 
-\item číslo datového souboru, kde se záznam nachází. Číslo souboru je relativní vzhledem k \emph{tablespace} 
+\item číslo datového souboru, kde se záznam nachází. Číslo souboru je relativní vzhledem k tabulkovému prostoru 
 \end{itemize}
-Pomocí ROWID lze tedy jednoznačně identifikovat záznam. Bohužel kvůli k tomu, že jeho hodnota je relativní vzhledem k \emph{tablespace}, tak jeho použití jako unikátního identifikátoru může selhat v těchto situacích:
+Pomocí ROWID lze tedy jednoznačně identifikovat záznam. Bohužel kvůli k tomu, že jeho hodnota je relativní vzhledem k tabulkovému prostoru, tak jeho použití jako unikátního identifikátoru může selhat v těchto situacích:
 \begin{itemize}[noitemsep,nolistsep]
-\item migrace
-\item smazání
+\item záznam je fyzicky přemístěn do jiného tabulkového prostoru či jiné databáze, v tom případě bude vygenerován nový ROWID a záznam uložený na klientovi bude odkazovat na neexistující umístění či v horším případě na existující ale jiný záznam
+\item pokud uživatel smaže záznam prostřednictvím jiného klienta zatímco má záznam uložený na svém mobilním zařízení, může rovněž dojít k situaci, kdy záznam uložený na klientovi bude odkazovat na neexistující umístění nebo na existující ale jiný záznam 
 \end{itemize}
 
-Vhodným řešením by byla změna databázového schématu tabulky pro záznam docházkových událostí a to přidáním primárního klíče.
+Vhodným řešením by byla změna databázového schématu tabulky pro záznam docházkových událostí a to přidáním primárního klíče. Vzhledem k tomu že se se záznamy pro docházku po zpracování aktuální měsíce již dále nepracuje, tak případná změna starších dat nemůže napáchat reálné škody. 
 \subsubsection*{Schéma pro docházku}
-+ snazsi zamezit chybnemu vstupu
+Záznam o příchodu či odchodu reprezentuje vždy jeden záznam pro každou z těchto událostí. Při práci s těmito daty na aplikační vrstvě je nutné vždy spárovat příchody a odchody týkající se pro daného zaměstnance. Je na zvážení zda nemohlo být datové schéma navržené lépe např. příchod či odchod by představoval jeden záznam v tabulce nebo pokud by každý ochod odkazoval na příslušný příchod. Kromě jednoduššího zpracování na aplikační vrstvě by bylo rovněž snažší kontrola chybného vstupu kdy zaměstnanec omyem zadá dva příchody či odchody následující po sobě. Taková kontrola se v současnosti v systému neprovádí.
 
 \subsubsection*{Datum a čas odděleně}
+Datum a čas docházkové události se uchovává odděleně kdy každá z těchto hodnot má svůj příslušný sloupec. Je na zvážení zda tyto údaje neměly být ukládány jako jedna hodnota.
 
 \subsubsection*{Čas jako reálné číslo}
+Jako špatné rozhodnutí hodnotím skutečnost, že údaj o čase je reprezentován jako reálné číslo nabývající hodnot <0.0, 24.0>.  Tento fakt přináší komplikace při převodu čísla na hodiny a minuty. Údaj o čase by mohl být reprezentován jako celé číslo představující minuty.
 
 \section{Business logika}
 existuje někajá možnost převodu formsů do javy - oracle adf - co to je, co to resi, proc to neresi muj problem\\
 prijde to do webove sluzby - duvody
-\subsection{Triggery}
+\subsection{Triggery formuláře}
 jen ty, jejichž funkčnost bude muset být implementována.
 \begin{itemize}
 \item On-Delete, On-Insert, On-Update, Pre-Delete, Pre-Insert, Pre-Update
 \item When-Validate-Item
 \end{itemize}
 
-\subsection{Databázové balíčky a uložené procedury}
+\subsection{Databázové triggery}
+
+\subsection{Databázové uložené funkce a  procedury}
 ukázky volání z javy
 \subsection{Forms knihovny}
 
@@ -690,7 +696,7 @@ Parametry:\begin{itemize}[noitemsep,nolistsep]
 \chapter{Android aplikace}
 
 \section{Funkcionalita}
-[TODO ještě upřesnit+UML use case?]
+[TODO ještě upřesnit+UML use case?, cinnost apliakce online/offline]
 Na základě analýzy současného systému a potřeb zaměstnanců byla vybrána k implementaci následující funkčnost: 
 \paragraph{Docházka}
 \begin{itemize}
@@ -899,17 +905,8 @@ knihovny, cloudové řešení, vlastní komponenty
 
 \chapter{Testování}
 [TODO testovaci scenare synchronizace]
-\section{O čem psát...}
-\begin{enumerate}
-\item pripraveno webove sluzby na dalsi mobilni platformy
-\item cinnost apliakce online/offline
-\item flow diagramy pro ruzne cinnosti
-\item pristupova prava
-\item uspora pesistentni pameti na strane androida
-\item chybove reporty a opravy na aplikaci v ostrem prostredi, obrazek + ukazka
-\item perioda automatickeho mazani dat
-\item datovy model schema
-\end{enumerate}
+
+výchozí zdroj: http://developer.android.com/tools/testing/testing\_android.html
 
 \chapter{Závěr}
 

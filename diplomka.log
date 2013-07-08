@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-1.40.10 (MiKTeX 2.8) (preloaded format=pdflatex 2013.4.14)  7 JUL 2013 21:38
+This is pdfTeX, Version 3.1415926-1.40.10 (MiKTeX 2.8) (preloaded format=pdflatex 2013.4.14)  8 JUL 2013 14:26
 entering extended mode
 **C:/MojeData/Škola/DP/Dokument/diplomka.tex
 (C:/MojeData/Škola/DP/Dokument/diplomka.tex
@@ -615,37 +615,37 @@ o-stupný pro platfromy
 
 [12
 
-]
+] [13]
 
 pdfTeX warning: pdflatex (file C:/MojeData/Škola/DP/Dokument/visio/deployment.p
 df): PDF inclusion: found PDF version <1.5>, but at most version <1.4> allowed
-<visio/deployment.pdf, id=153, 598.48593pt x 285.31593pt>
+<visio/deployment.pdf, id=157, 598.48593pt x 285.31593pt>
 File: visio/deployment.pdf Graphic file (type pdf)
 
 <use visio/deployment.pdf>
-Package pdftex.def Info: visio/deployment.pdf used on input line 272.
+Package pdftex.def Info: visio/deployment.pdf used on input line 282.
 (pdftex.def)             Requested size: 418.93729pt x 199.71979pt.
 
-Overfull \hbox (28.93729pt too wide) in paragraph at lines 272--273
+Overfull \hbox (28.93729pt too wide) in paragraph at lines 282--283
  [][] 
  []
 
-[13] [14 <C:/MojeData/Škola/DP/Dokument/visio/deployment.pdf>] [15]
-<obr/komunikace-webservices.png, id=186, 457.10776pt x 251.7405pt>
+[14 <C:/MojeData/Škola/DP/Dokument/visio/deployment.pdf>] [15]
+<obr/komunikace-webservices.png, id=188, 457.10776pt x 251.7405pt>
 File: obr/komunikace-webservices.png Graphic file (type png)
 
 <use obr/komunikace-webservices.png>
-Package pdftex.def Info: obr/komunikace-webservices.png used on input line 324.
+Package pdftex.def Info: obr/komunikace-webservices.png used on input line 322.
 
 (pdftex.def)             Requested size: 365.68669pt x 201.39265pt.
 
-Overfull \hbox (2.94676pt too wide) in paragraph at lines 319--327
+Overfull \hbox (2.94676pt too wide) in paragraph at lines 317--325
 []\T1/aer/m/n/12 Existuje n¥-ko-lik r·z-ných druh· ²a-b-lon pro ko-mu-ni-kaci n
 a pro-to-kolu SOAP.
  []
 
 [16]
-Overfull \hbox (3.5321pt too wide) in paragraph at lines 332--333
+Overfull \hbox (3.5321pt too wide) in paragraph at lines 330--331
 []\T1/aer/m/n/12 (Universal De-scrip-tion, Dis-co-very, and In-te-gration) re-g
 istr je místo,
  []
@@ -654,114 +654,119 @@ istr je místo,
 
 pdfTeX warning: pdflatex (file C:/MojeData/Škola/DP/Dokument/visio/object.pdf):
  PDF inclusion: found PDF version <1.5>, but at most version <1.4> allowed
-<visio/object.pdf, id=194, 598.48593pt x 285.31593pt>
+<visio/object.pdf, id=196, 598.48593pt x 285.31593pt>
 File: visio/object.pdf Graphic file (type pdf)
  <use visio/object.pdf>
-Package pdftex.def Info: visio/object.pdf used on input line 349.
+Package pdftex.def Info: visio/object.pdf used on input line 347.
 (pdftex.def)             Requested size: 418.93729pt x 199.71979pt.
 
-Overfull \hbox (28.93729pt too wide) in paragraph at lines 349--350
+Overfull \hbox (28.93729pt too wide) in paragraph at lines 347--348
  [][] 
  []
 
 [18 <C:/MojeData/Škola/DP/Dokument/visio/object.pdf>]
-Overfull \hbox (27.26987pt too wide) in paragraph at lines 370--371
+Overfull \hbox (27.26987pt too wide) in paragraph at lines 371--372
 []\T1/aer/bx/n/12 TEXT \T1/aer/m/n/12 podle ISO8601 normy ve for-mátu "YYYY-MM-
 DD HH:MM:SS.SSS". 
  []
 
 [19]
-Overfull \hbox (44.33234pt too wide) in paragraph at lines 387--394
+Overfull \hbox (71.1319pt too wide) in paragraph at lines 392--392
+[]|$[]$| 
+ []
+
+
+Overfull \hbox (2.83318pt too wide) in paragraph at lines 388--395
  [][] 
  []
 
-[20] [21]
+[20] [21] [22]
 
 pdfTeX warning: pdflatex (file C:/MojeData/Škola/DP/Dokument/visio/sync.pdf): P
 DF inclusion: found PDF version <1.5>, but at most version <1.4> allowed
-<visio/sync.pdf, id=221, 512.66531pt x 370.38374pt>
+<visio/sync.pdf, id=227, 512.66531pt x 370.38374pt>
 File: visio/sync.pdf Graphic file (type pdf)
  <use visio/sync.pdf>
-Package pdftex.def Info: visio/sync.pdf used on input line 446.
+Package pdftex.def Info: visio/sync.pdf used on input line 452.
 (pdftex.def)             Requested size: 358.86327pt x 259.26685pt.
 
-[22]
+[23]
 
 pdfTeX warning: pdflatex (file C:/MojeData/Škola/DP/Dokument/visio/syncup.pdf):
  PDF inclusion: found PDF version <1.5>, but at most version <1.4> allowed
-<visio/syncup.pdf, id=226, 598.48593pt x 484.81125pt>
+<visio/syncup.pdf, id=232, 598.48593pt x 484.81125pt>
 File: visio/syncup.pdf Graphic file (type pdf)
  <use visio/syncup.pdf>
-Package pdftex.def Info: visio/syncup.pdf used on input line 455.
+Package pdftex.def Info: visio/syncup.pdf used on input line 461.
 (pdftex.def)             Requested size: 418.93729pt x 339.36555pt.
 
-Overfull \hbox (28.93729pt too wide) in paragraph at lines 455--456
+Overfull \hbox (28.93729pt too wide) in paragraph at lines 461--462
  [][] 
  []
 
-[23 <C:/MojeData/Škola/DP/Dokument/visio/sync.pdf>] [24 <C:/MojeData/Škola/DP/D
+[24 <C:/MojeData/Škola/DP/Dokument/visio/sync.pdf>] [25 <C:/MojeData/Škola/DP/D
 okument/visio/syncup.pdf>]
 
 pdfTeX warning: pdflatex (file C:/MojeData/Škola/DP/Dokument/visio/syncdown.pdf
 ): PDF inclusion: found PDF version <1.5>, but at most version <1.4> allowed
-<visio/syncdown.pdf, id=267, 456.20438pt x 171.64125pt>
+<visio/syncdown.pdf, id=274, 456.20438pt x 171.64125pt>
 File: visio/syncdown.pdf Graphic file (type pdf)
 
 <use visio/syncdown.pdf>
-Package pdftex.def Info: visio/syncdown.pdf used on input line 463.
+Package pdftex.def Info: visio/syncdown.pdf used on input line 469.
 (pdftex.def)             Requested size: 319.34087pt x 120.14804pt.
- [25 <C:/MojeData/Škola/DP/Dokument/visio/syncdown.pdf>] [26]
+ [26 <C:/MojeData/Škola/DP/Dokument/visio/syncdown.pdf>] [27]
 Kapitola 4.
-[27
+[28
 
-] [28]
+] [29]
 
 pdfTeX warning: pdflatex (file C:/MojeData/Škola/DP/Dokument/visio/auth.pdf): P
 DF inclusion: found PDF version <1.5>, but at most version <1.4> allowed
-<visio/auth.pdf, id=295, 456.20438pt x 313.9228pt>
+<visio/auth.pdf, id=301, 456.20438pt x 313.9228pt>
 File: visio/auth.pdf Graphic file (type pdf)
  <use visio/auth.pdf>
-Package pdftex.def Info: visio/auth.pdf used on input line 518.
+Package pdftex.def Info: visio/auth.pdf used on input line 524.
 (pdftex.def)             Requested size: 364.96399pt x 251.13857pt.
 
 
 pdfTeX warning: pdflatex (file C:/MojeData/Škola/DP/Dokument/visio/auth_ldap.pd
 f): PDF inclusion: found PDF version <1.5>, but at most version <1.4> allowed
-<visio/auth_ldap.pdf, id=297, 456.20438pt x 313.9228pt>
+<visio/auth_ldap.pdf, id=303, 456.20438pt x 313.9228pt>
 File: visio/auth_ldap.pdf Graphic file (type pdf)
 
 <use visio/auth_ldap.pdf>
-Package pdftex.def Info: visio/auth_ldap.pdf used on input line 527.
+Package pdftex.def Info: visio/auth_ldap.pdf used on input line 533.
 (pdftex.def)             Requested size: 364.96399pt x 251.13857pt.
- [29 <C:/MojeData/Škola/DP/Dokument/visio/auth.pdf>]
-[30 <C:/MojeData/Škola/DP/Dokument/visio/auth_ldap.pdf>]
-LaTeX Font Info:    Try loading font information for T1+aett on input line 538.
+ [30 <C:/MojeData/Škola/DP/Dokument/visio/auth.pdf>]
+[31 <C:/MojeData/Škola/DP/Dokument/visio/auth_ldap.pdf>]
+LaTeX Font Info:    Try loading font information for T1+aett on input line 544.
 
 
 ("C:\Program Files\MikTex\tex\latex\ae\t1aett.fd"
 File: t1aett.fd 1997/11/16 Font definitions for T1/aett.
-) [31] [32]
+) [32] [33]
 Kapitola 5.
-[33
+[34
 
-] [34] [35] [36]
+] [35] [36] [37]
 Kapitola 6.
-[37
+[38
 
-] [38] [39] [40] [41]
-Overfull \hbox (17.27571pt too wide) in paragraph at lines 804--806
+] [39] [40] [41] [42]
+Overfull \hbox (17.27571pt too wide) in paragraph at lines 810--812
 []\T1/aer/bx/n/12 addAccountExplicitly(Account ac-count, String password, Bundl
 e
  []
 
 
-Overfull \hbox (5.4796pt too wide) in paragraph at lines 808--810
+Overfull \hbox (5.4796pt too wide) in paragraph at lines 814--816
 []\T1/aer/bx/n/12 setAuthToken(Account ac-count, String au-th-To-ken-Type, Stri
 ng
  []
 
 
-Overfull \hbox (12.82321pt too wide) in paragraph at lines 810--812
+Overfull \hbox (12.82321pt too wide) in paragraph at lines 816--818
 []\T1/aer/bx/n/12 String:getPassword(Account ac-count)/setPassword(Account ac-
  []
 
@@ -769,53 +774,59 @@ Overfull \hbox (12.82321pt too wide) in paragraph at lines 810--812
 
 pdfTeX warning: pdflatex (file C:/MojeData/Škola/DP/Dokument/visio/andauth.pdf)
 : PDF inclusion: found PDF version <1.5>, but at most version <1.4> allowed
-<visio/andauth.pdf, id=365, 569.87906pt x 569.87906pt>
+<visio/andauth.pdf, id=371, 569.87906pt x 569.87906pt>
 File: visio/andauth.pdf Graphic file (type pdf)
  <use visio/andauth.pdf>
-Package pdftex.def Info: visio/andauth.pdf used on input line 817.
+Package pdftex.def Info: visio/andauth.pdf used on input line 823.
 (pdftex.def)             Requested size: 398.91261pt x 398.91261pt.
 
-Overfull \hbox (8.91261pt too wide) in paragraph at lines 817--818
+Overfull \hbox (8.91261pt too wide) in paragraph at lines 823--824
  [][] 
  []
 
-[42] <scr/setting.png, id=371, 722.7pt x 1284.8pt>
+[43] <scr/setting.png, id=377, 722.7pt x 1284.8pt>
 File: scr/setting.png Graphic file (type png)
  <use scr/setting.png>
-Package pdftex.def Info: scr/setting.png used on input line 826.
+Package pdftex.def Info: scr/setting.png used on input line 832.
 (pdftex.def)             Requested size: 146.25pt x 259.99414pt.
 
-<scr/addacc.png, id=372, 722.7pt x 1284.8pt>
+<scr/addacc.png, id=378, 722.7pt x 1284.8pt>
 File: scr/addacc.png Graphic file (type png)
  <use scr/addacc.png>
-Package pdftex.def Info: scr/addacc.png used on input line 832.
+Package pdftex.def Info: scr/addacc.png used on input line 838.
 (pdftex.def)             Requested size: 146.25pt x 259.99414pt.
- [43 <C:/MojeData/Škola/DP/Dokument/visio/andauth.pdf>]
-Underfull \hbox (badness 10000) in paragraph at lines 843--845
+ [44 <C:/MojeData/Škola/DP/Dokument/visio/andauth.pdf>]
+Underfull \hbox (badness 10000) in paragraph at lines 849--851
 
  []
 
-[44 <C:/MojeData/Škola/DP/Dokument/scr/setting.png (PNG copy)> <C:/MojeData/Ško
+[45 <C:/MojeData/Škola/DP/Dokument/scr/setting.png (PNG copy)> <C:/MojeData/Ško
 la/DP/Dokument/scr/addacc.png (PNG copy)>]
-Overfull \hbox (5.541pt too wide) in paragraph at lines 850--852
+Overfull \hbox (5.541pt too wide) in paragraph at lines 856--858
 \T1/aer/m/n/12 Zm¥ny na-sta-vení se pro-vá-d¥jí po-mocí \T1/aer/m/it/12 Sha-red
 -Pre-fe-ren-ces.Editor \T1/aer/m/n/12 roz-hraní, které
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 850--852
+Underfull \hbox (badness 10000) in paragraph at lines 856--858
 
  []
 
-[45] [46] [47]
+[46] [47] [48]
 Kapitola 7.
-[48
+
+Overfull \hbox (34.745pt too wide) in paragraph at lines 909--910
+[]\T1/aer/m/n/12 výchozí zdroj: http://developer.android.com/tools/testing/test
+ing_android.html 
+ []
+
+[49
 
 ]
 Kapitola 8.
-[49
+[50
 
-] (C:\MojeData\Škola\DP\Dokument\diplomka.bbl [50
+] (C:\MojeData\Škola\DP\Dokument\diplomka.bbl [51
 
 ]
 Overfull \hbox (13.38263pt too wide) in paragraph at lines 12--16
@@ -847,40 +858,40 @@ Overfull \hbox (179.91737pt too wide) in paragraph at lines 44--47
 atabase-mobile-server/overview/index.html 
  []
 
-) [51
+) [52
 
 ]
 P\v {r}\'{\i }loha A.
-<scr/time_doch.png, id=408, 722.7pt x 1284.8pt>
+<scr/time_doch.png, id=413, 722.7pt x 1284.8pt>
 File: scr/time_doch.png Graphic file (type png)
  <use scr/time_doch.png>
-Package pdftex.def Info: scr/time_doch.png used on input line 940.
+Package pdftex.def Info: scr/time_doch.png used on input line 937.
 (pdftex.def)             Requested size: 216.81166pt x 385.44298pt.
 
-<scr/graf_doch.png, id=409, 1284.8pt x 722.7pt>
+<scr/graf_doch.png, id=414, 1284.8pt x 722.7pt>
 File: scr/graf_doch.png Graphic file (type png)
  <use scr/graf_doch.png>
-Package pdftex.def Info: scr/graf_doch.png used on input line 946.
+Package pdftex.def Info: scr/graf_doch.png used on input line 943.
 (pdftex.def)             Requested size: 385.44298pt x 216.81166pt.
 
-[52
+[53
 
  <C:/MojeData/Škola/DP/Dokument/scr/time_doch.png (PNG copy)>]
-<scr/ucet.png, id=413, 722.7pt x 1284.8pt>
+<scr/ucet.png, id=418, 722.7pt x 1284.8pt>
 File: scr/ucet.png Graphic file (type png)
  <use scr/ucet.png>
-Package pdftex.def Info: scr/ucet.png used on input line 952.
+Package pdftex.def Info: scr/ucet.png used on input line 949.
 (pdftex.def)             Requested size: 216.81166pt x 385.44298pt.
- [53 <C:/MojeData/Škola/DP/Dokument/scr/graf_doch.png (PNG copy)>]
-<scr/network.png, id=417, 722.7pt x 1284.8pt>
+ [54 <C:/MojeData/Škola/DP/Dokument/scr/graf_doch.png (PNG copy)>]
+<scr/network.png, id=422, 722.7pt x 1284.8pt>
 File: scr/network.png Graphic file (type png)
  <use scr/network.png>
-Package pdftex.def Info: scr/network.png used on input line 958.
+Package pdftex.def Info: scr/network.png used on input line 955.
 (pdftex.def)             Requested size: 216.81166pt x 385.44298pt.
- [54 <C:/MojeData/Škola/DP/Dokument/scr/ucet.png (PNG copy)>] [55 <C:/MojeData/
+ [55 <C:/MojeData/Škola/DP/Dokument/scr/ucet.png (PNG copy)>] [56 <C:/MojeData/
 Škola/DP/Dokument/scr/network.png (PNG copy)>]
 P\v {r}\'{\i }loha B.
-[56
+[57
 
 ] (C:\MojeData\Škola\DP\Dokument\diplomka.aux)
 
@@ -909,9 +920,9 @@ ex/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Program Files/MikTex/fonts/type
 onts/cm/cmr17.pfb><C:/Program Files/MikTex/fonts/type1/public/amsfonts/cm/cmsy1
 0.pfb><C:/Program Files/MikTex/fonts/type1/public/amsfonts/cm/cmti12.pfb><C:/Pr
 ogram Files/MikTex/fonts/type1/public/amsfonts/cm/cmtt12.pfb>
-Output written on diplomka.pdf (62 pages, 1593408 bytes).
+Output written on diplomka.pdf (63 pages, 1606635 bytes).
 PDF statistics:
- 456 PDF objects out of 1000 (max. 8388607)
+ 461 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  111 words of extra memory for PDF output out of 10000 (max. 10000000)
 
