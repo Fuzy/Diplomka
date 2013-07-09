@@ -753,37 +753,73 @@ Parametry:\begin{itemize}[noitemsep,nolistsep]
 \chapter{Android aplikace}
 
 \section{Funkcionalita}
-[TODO ještě upřesnit+UML use case?, cinnost apliakce online/offline]
-Na základě analýzy současného systému a potřeb zaměstnanců byla vybrána k implementaci následující funkčnost: 
+[TODO co uz bylo ve starem, co v novem]
+Na základě současného systému a potřeb zaměstnanců byla vybrána k implementaci následující funkčnost: 
+
 \paragraph{Docházka}
-\begin{itemize}
-\item Přehledné zobrazení událostí docházky daného zaměstnance
-\item Uživatel má možnost přidávat, ediovat a mazat svoje události
-\item Aplikace zajišťuje automatickou synchronzaci těchto údajů s firemní databází
-\item Zobrazení poměru typů docházkových událostí za dané období
-\end{itemize}
-\paragraph{Aktuální přítomnost na pracovišti}
-\begin{itemize}
-\item Zobrazení seznamu zaměstnanců aktuálně přítomných na pracovišti
-\item Uživatel má možnost spravovat seznam svých "oblíbených" zaměstnanců a tento seznam zobrazovat přednostně
-\end{itemize}
-\paragraph{Výkazy práce}
-\begin{itemize}
-\item Zobrazení poměru typů zakázek za dané období
-\item Zobrazení vývoje vývoje daného typu zakázky v daném období 
-\item Možnost zobrazení těchto údajů i za jiné zaměstnance
+\begin{itemize}[noitemsep,nolistsep]
+\item Zobrazení událostí docházky daného zaměstnance pomocí denní časové osy
+\item Zobrazení událostí docházky daného zaměstnance pomocí seznamu
+\item Uživatel má možnost přidávat, editovat a mazat svoje události
+\item Aplikace zajišťuje automatickou synchronizaci těchto údajů s firemní databází
+\item Zobrazení poměru typů docházkových událostí za dané období pro vybraného zaměstnance
+\item Zobrazení vývoje daného typu události v daném období pro vybraného zaměstnance
+\item Zobrazení souhrných statistik událostí za dané období pro vybraného zaměstnance
 \end{itemize}
 
+\paragraph{Výkazy práce}
+\begin{itemize}[noitemsep,nolistsep]
+\item Zobrazení seznamu výkazů za dané období pro vybraného zaměstnance
+\item Zobrazení poměru typů zakázek za dané období pro vybraného zaměstnance
+\item Zobrazení vývoje daného typu zakázky v daném období pro vybraného zaměstnance
+\item Zobrazení souhrných statistik výkazů za dané období pro vybraného zaměstnance
+\end{itemize}
+
+\newpage
+\paragraph{Aktuální přítomnost na pracovišti}
+\begin{itemize}[noitemsep,nolistsep]
+\item Zobrazení seznamu všech zaměstnanců a jejich poslední docházkové události  (aktuální stav přítomnosti či nepřítomnosti na pracovišti)
+\item Uživatel má možnost spravovat seznam svých oblíbených zaměstnanců a tento seznam zobrazovat přednostně
+\end{itemize}
+
+\paragraph{Widgety}
+\begin{itemize}[noitemsep,nolistsep]
+\item Widget pro rychlé zadání docházkové události
+\item Widget pro zobrazení poslední docházkové události vybraného zaměstnance (aktuální stav přítomnosti či nepřítomnosti na pracovišti)
+\end{itemize}
+
+\paragraph{Notifikace}
+\begin{itemize}[noitemsep,nolistsep]
+\item Notifikace při opomenutí zadání příchodu či odchodu
+\end{itemize}
+
+\paragraph{Online vs offline}\mbox{}\\ \\ \indent
+Veškeré výše zmíněné funkce jsou dostupné jak v režimu online tak i offline. Rozdíl je v tom, že v režimu offline nemusí aplikace pracovat s aktuálními daty.
+
 \subsection{Nastavení a konfigurovatelnost}
-Aplikace si musí pamatovat údaje nutné pro snadnou obsluhu tzn. uživatelské jméno a heslo, adresu umístění webové služby a tyto údaje jsou konfigurovatelné.\\
-Dále aplikace umožní uživateli konfigurovat vzhled některých kompoment, jako je barva typu události v docházce a typu záznamu ve výkazech.
+Zařízení si musí pamatovat údaje nutné pro snadnou obsluhu tzn. uživatelské jméno a heslo. V následujícím seznamu je výčet všech konfigurovatelných vlastností aplikace:
+
+\begin{itemize}[noitemsep,nolistsep]
+\item Parametry připojení k webové službě (doména a port)
+\item Povolení automatické synchronizace pouze při WIFI připojení
+\item Perioda synchronizace vlastních docházkových událostí
+\item Perioda synchronizace widget pro zobrazení vybraných zaměstnanců
+\item Perioda synchronizace seznamu zaměstnanců
+\item Upozornění na chybějící příchod (vypnout či zapnout)
+\item Upozornění na chybějící odchod (vypnout či zapnout)
+\item Časová prodleva pro upozornění na chybějící událost docházky
+\item Barva typu docházkové události
+\item Barva typu zakázky
+\end{itemize}
 
 \subsection{Uživatelská přívětivost}
 Uživatelské rozhraní aplikace klade důraz na přehlednost, ergonomii a časově efektivní obsluhu.
 
 \subsection{Návrhy na vylepšení}
+Původní ambicí byla možnost zadavání výkazů práce. Vzhledem k tomu, že taková funkčnost by vyžadovala změny v současném systému, bylo od tohoto záměru upuštěno. Kromě zadávání výkazů práce by bylo možné rovněž vykazovat do knihy jízd.\\ \indent
+Velikým přínosem by byla možnost vytváření šablon pro často opakované výkazy, která by uživateli ušetřila nezanedbatelné množství času.\\ \indent
+Posledním vylepšením by byla možnost rychlého zavolání přímo z profilu vybraného zaměstnance.
 
-[TODO  pozn. původní ambice byla možnost zadávat i výkazy práce prostřednictvím mobilního klienta, vzhledem k tomu, že by bylo nutné provést úpravy v současném systému se od tohoto upustilo, kniha jízd]
 \section{Komponenty Android aplikace}
 
 \subsection{Aktivita}
@@ -856,7 +892,6 @@ Metoda je volána (po provedením \emph{onStart()}) v případě, že aktivita b
 \begin{enumerate}
 \item sync architektura - komponenty
 \end{enumerate}
-
 
 
 \section{Uživatelský účet}
@@ -946,6 +981,8 @@ RestaTemplates - springframework
 persmission v manifestu, vypsat a vysvětlit
 
 \section{9png grafika}
+
+\section{Notifikace}
 
 \section{GPS}
 

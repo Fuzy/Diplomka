@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-1.40.10 (MiKTeX 2.8) (preloaded format=pdflatex 2013.4.14)  9 JUL 2013 16:45
+This is pdfTeX, Version 3.1415926-1.40.10 (MiKTeX 2.8) (preloaded format=pdflatex 2013.4.14)  9 JUL 2013 23:04
 entering extended mode
 **C:/MojeData/Škola/DP/Dokument/diplomka.tex
 (C:/MojeData/Škola/DP/Dokument/diplomka.tex
@@ -785,20 +785,25 @@ Kapitola 5.
 Kapitola 6.
 [39
 
-] [40] [41] [42] [43]
-Overfull \hbox (17.27571pt too wide) in paragraph at lines 867--869
+]
+Underfull \hbox (badness 10000) in paragraph at lines 796--798
+
+ []
+
+[40] [41] [42] [43] [44]
+Overfull \hbox (17.27571pt too wide) in paragraph at lines 902--904
 []\T1/aer/bx/n/12 addAccountExplicitly(Account ac-count, String password, Bundl
 e
  []
 
 
-Overfull \hbox (5.4796pt too wide) in paragraph at lines 871--873
+Overfull \hbox (5.4796pt too wide) in paragraph at lines 906--908
 []\T1/aer/bx/n/12 setAuthToken(Account ac-count, String au-th-To-ken-Type, Stri
 ng
  []
 
 
-Overfull \hbox (12.82321pt too wide) in paragraph at lines 873--875
+Overfull \hbox (12.82321pt too wide) in paragraph at lines 908--910
 []\T1/aer/bx/n/12 String:getPassword(Account ac-count)/setPassword(Account ac-
  []
 
@@ -806,59 +811,59 @@ Overfull \hbox (12.82321pt too wide) in paragraph at lines 873--875
 
 pdfTeX warning: pdflatex (file C:/MojeData/Škola/DP/Dokument/visio/andauth.pdf)
 : PDF inclusion: found PDF version <1.5>, but at most version <1.4> allowed
-<visio/andauth.pdf, id=376, 569.87906pt x 569.87906pt>
+<visio/andauth.pdf, id=379, 569.87906pt x 569.87906pt>
 File: visio/andauth.pdf Graphic file (type pdf)
  <use visio/andauth.pdf>
-Package pdftex.def Info: visio/andauth.pdf used on input line 880.
+Package pdftex.def Info: visio/andauth.pdf used on input line 915.
 (pdftex.def)             Requested size: 398.91261pt x 398.91261pt.
 
-Overfull \hbox (8.91261pt too wide) in paragraph at lines 880--881
+Overfull \hbox (8.91261pt too wide) in paragraph at lines 915--916
  [][] 
  []
 
-[44] <scr/setting.png, id=381, 722.7pt x 1284.8pt>
+[45] <scr/setting.png, id=384, 722.7pt x 1284.8pt>
 File: scr/setting.png Graphic file (type png)
  <use scr/setting.png>
-Package pdftex.def Info: scr/setting.png used on input line 889.
+Package pdftex.def Info: scr/setting.png used on input line 924.
 (pdftex.def)             Requested size: 146.25pt x 259.99414pt.
 
-<scr/addacc.png, id=382, 722.7pt x 1284.8pt>
+<scr/addacc.png, id=385, 722.7pt x 1284.8pt>
 File: scr/addacc.png Graphic file (type png)
  <use scr/addacc.png>
-Package pdftex.def Info: scr/addacc.png used on input line 895.
+Package pdftex.def Info: scr/addacc.png used on input line 930.
 (pdftex.def)             Requested size: 146.25pt x 259.99414pt.
- [45 <C:/MojeData/Škola/DP/Dokument/visio/andauth.pdf>]
-Underfull \hbox (badness 10000) in paragraph at lines 906--908
+ [46 <C:/MojeData/Škola/DP/Dokument/visio/andauth.pdf>]
+Underfull \hbox (badness 10000) in paragraph at lines 941--943
 
  []
 
-[46 <C:/MojeData/Škola/DP/Dokument/scr/setting.png (PNG copy)> <C:/MojeData/Ško
+[47 <C:/MojeData/Škola/DP/Dokument/scr/setting.png (PNG copy)> <C:/MojeData/Ško
 la/DP/Dokument/scr/addacc.png (PNG copy)>]
-Overfull \hbox (5.541pt too wide) in paragraph at lines 913--915
+Overfull \hbox (5.541pt too wide) in paragraph at lines 948--950
 \T1/aer/m/n/12 Zm¥ny na-sta-vení se pro-vá-d¥jí po-mocí \T1/aer/m/it/12 Sha-red
 -Pre-fe-ren-ces.Editor \T1/aer/m/n/12 roz-hraní, které
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 913--915
+Underfull \hbox (badness 10000) in paragraph at lines 948--950
 
  []
 
-[47] [48] [49]
+[48] [49] [50]
 Kapitola 7.
 
-Overfull \hbox (34.745pt too wide) in paragraph at lines 966--967
+Overfull \hbox (34.745pt too wide) in paragraph at lines 1003--1004
 []\T1/aer/m/n/12 výchozí zdroj: http://developer.android.com/tools/testing/test
 ing_android.html 
  []
 
-[50
+[51
 
 ]
 Kapitola 8.
-[51
+[52
 
-] (C:\MojeData\Škola\DP\Dokument\diplomka.bbl [52
+] (C:\MojeData\Škola\DP\Dokument\diplomka.bbl [53
 
 ]
 Overfull \hbox (13.38263pt too wide) in paragraph at lines 12--16
@@ -902,40 +907,40 @@ Overfull \hbox (179.91737pt too wide) in paragraph at lines 49--52
 atabase-mobile-server/overview/index.html 
  []
 
-) [53
+) [54
 
 ]
 P\v {r}\'{\i }loha A.
-<scr/time_doch.png, id=417, 722.7pt x 1284.8pt>
+<scr/time_doch.png, id=420, 722.7pt x 1284.8pt>
 File: scr/time_doch.png Graphic file (type png)
  <use scr/time_doch.png>
-Package pdftex.def Info: scr/time_doch.png used on input line 1003.
+Package pdftex.def Info: scr/time_doch.png used on input line 1040.
 (pdftex.def)             Requested size: 216.81166pt x 385.44298pt.
 
-<scr/graf_doch.png, id=418, 1284.8pt x 722.7pt>
+<scr/graf_doch.png, id=421, 1284.8pt x 722.7pt>
 File: scr/graf_doch.png Graphic file (type png)
  <use scr/graf_doch.png>
-Package pdftex.def Info: scr/graf_doch.png used on input line 1009.
+Package pdftex.def Info: scr/graf_doch.png used on input line 1046.
 (pdftex.def)             Requested size: 385.44298pt x 216.81166pt.
 
-[54
+[55
 
  <C:/MojeData/Škola/DP/Dokument/scr/time_doch.png (PNG copy)>]
-<scr/ucet.png, id=422, 722.7pt x 1284.8pt>
+<scr/ucet.png, id=426, 722.7pt x 1284.8pt>
 File: scr/ucet.png Graphic file (type png)
  <use scr/ucet.png>
-Package pdftex.def Info: scr/ucet.png used on input line 1015.
+Package pdftex.def Info: scr/ucet.png used on input line 1052.
 (pdftex.def)             Requested size: 216.81166pt x 385.44298pt.
- [55 <C:/MojeData/Škola/DP/Dokument/scr/graf_doch.png (PNG copy)>]
-<scr/network.png, id=427, 722.7pt x 1284.8pt>
+ [56 <C:/MojeData/Škola/DP/Dokument/scr/graf_doch.png (PNG copy)>]
+<scr/network.png, id=430, 722.7pt x 1284.8pt>
 File: scr/network.png Graphic file (type png)
  <use scr/network.png>
-Package pdftex.def Info: scr/network.png used on input line 1021.
+Package pdftex.def Info: scr/network.png used on input line 1058.
 (pdftex.def)             Requested size: 216.81166pt x 385.44298pt.
- [56 <C:/MojeData/Škola/DP/Dokument/scr/ucet.png (PNG copy)>] [57 <C:/MojeData/
+ [57 <C:/MojeData/Škola/DP/Dokument/scr/ucet.png (PNG copy)>] [58 <C:/MojeData/
 Škola/DP/Dokument/scr/network.png (PNG copy)>]
 P\v {r}\'{\i }loha B.
-[58
+[59
 
 ] (C:\MojeData\Škola\DP\Dokument\diplomka.aux)
 
@@ -950,10 +955,10 @@ LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 5721 strings out of 495324
- 78716 string characters out of 3182598
+ 5719 strings out of 495324
+ 78690 string characters out of 3182598
  176733 words of memory out of 3000000
- 8787 multiletter control sequences out of 15000+200000
+ 8785 multiletter control sequences out of 15000+200000
  48932 words of font info for 96 fonts, out of 3000000 for 9000
  5 hyphenation exceptions out of 8191
  36i,16n,43p,982b,1756s stack positions out of 5000i,500n,10000p,200000b,50000s
@@ -965,9 +970,9 @@ onts/cm/cmr17.pfb><C:/Program Files/MikTex/fonts/type1/public/amsfonts/cm/cmr8.
 pfb><C:/Program Files/MikTex/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Prog
 ram Files/MikTex/fonts/type1/public/amsfonts/cm/cmti12.pfb><C:/Program Files/Mi
 kTex/fonts/type1/public/amsfonts/cm/cmtt12.pfb>
-Output written on diplomka.pdf (64 pages, 1628780 bytes).
+Output written on diplomka.pdf (65 pages, 1631483 bytes).
 PDF statistics:
- 468 PDF objects out of 1000 (max. 8388607)
+ 471 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  111 words of extra memory for PDF output out of 10000 (max. 10000000)
 
