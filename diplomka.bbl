@@ -40,6 +40,11 @@ Kosek, J.: Využití webových služeb a protokolu SOAP při komunikaci.
 OASIS: UDDI. [online], [cit. 2013-7-6].
 \newline\urlprefix\url{http://uddi.xml.org/uddi-101}
 
+\bibitem{limitation}
+Oracle: Oracle® Database JDBC Developer's Guide. [online], [cit. 2013-7-9].
+\newline\urlprefix\url{http://docs.oracle.com/cd/E11882\_01/java.112/e16548/ap%
+xref.htm}
+
 \bibitem{mobile}
 Oracle: Oracle Database Mobile Server. [online], [cit. 2013-7-7].
 \newline\urlprefix\url{http://www.oracle.com/technetwork/products/database-mob%
