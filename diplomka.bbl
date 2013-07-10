@@ -1,4 +1,4 @@
-\begin{thebibliography}{1}
+\begin{thebibliography}{10}
 \providecommand{\url}[1]{\texttt{#1}}
 \providecommand{\urlprefix}{URL }
 \expandafter\ifx\csname urlstyle\endcsname\relax
@@ -35,6 +35,11 @@ http://www.oracle.com/: Oracle Forms. [online], [cit. 2013-7-5].
 Kosek, J.: Využití webových služeb a protokolu SOAP při komunikaci.
   [online], [cit. 2013-7-6].
 \newline\urlprefix\url{http://www.kosek.cz/diplomka/html/websluzby.html}
+
+\bibitem{config}
+Lockwood, A.: ANDROID DESIGN PATTERNS. [online], [cit. 2013-7-10].
+\newline\urlprefix\url{http://www.androiddesignpatterns.com/2013/04/retaining-%
+objects-across-config-changes.html}
 
 \bibitem{uddi}
 OASIS: UDDI. [online], [cit. 2013-7-6].

@@ -591,6 +591,7 @@ Alternativním řešením by bylo ověřování uživatelů pomocí LDAP adresá
 \caption{Diagram aktivit při úspěšné autentizaci}
 \label{obr:authldap}
 \end{figure}
+\vspace{-6mm}
 \subsection{LDAP}
  Directory Access Protocol (LDAP) je internetový protokol definující přístup k distribuované adresářové službě. Podle tohoto protokolu jsou jednotlivé položky na serveru ukládány formou záznamů a uspořádány do stromové struktury. Protokol LDAP je byl navržen v souladu  se sadou standartů X.500 vyvinutých pro adresářové služby v počítačových sítích. Protokol LDAP je jejich odlehčenou verzí.\\ \indent
 Aplikace funguje na bázi klient-server. Klient se při komunikaci se serverem autentizuje. Prostřednictvím klienta lze přidávat, modifikovat a mazat záznamy na serveru.
@@ -750,6 +751,15 @@ Parametry:\begin{itemize}[noitemsep,nolistsep]
 
 \section{web.xml}
 
+\section{REST}
+RestaTemplates - springframework= jak to vola klient...
+\begin{enumerate}
+\item REST operace - davkove vs jednotlive
+\item REST, tabulka URI, 
+\end{enumerate}
+
+\section{Klienti jiných platforem?}
+
 \chapter{Android aplikace}
 
 \section{Funkcionalita}
@@ -813,8 +823,7 @@ Zařízení si musí pamatovat údaje nutné pro snadnou obsluhu tzn. uživatels
 \end{itemize}
 
 \subsection{Uživatelská přívětivost}
-Uživatelské rozhraní aplikace klade důraz na přehlednost, ergonomii a časově efektivní obsluhu.
-
+Uživatelské rozhraní aplikace klade důraz na přehlednost, ergonomii a časově efektivní obsluhu.[TODO jeste neco vymyslet]
 \subsection{Návrhy na vylepšení}
 Původní ambicí byla možnost zadavání výkazů práce. Vzhledem k tomu, že taková funkčnost by vyžadovala změny v současném systému, bylo od tohoto záměru upuštěno. Kromě zadávání výkazů práce by bylo možné rovněž vykazovat do knihy jízd.\\ \indent
 Velikým přínosem by byla možnost vytváření šablon pro často opakované výkazy, která by uživateli ušetřila nezanedbatelné množství času.\\ \indent
@@ -822,7 +831,7 @@ Posledním vylepšením by byla možnost rychlého zavolání přímo z profilu 
 
 \section{Komponenty Android aplikace}
 
-\subsection{Aktivita}
+\subsection{Activity}
 Aktivita představuje jednu obrazovku s uživatelským rozhraním. Každá akvitita umožňuje nějakou funkčnost. Příkladem aktivit použitých v implementované aplikaci může být zobrazení denní docházky uživatele, kalendář umožňující výběr data, přidání a editace docházkové události nebo uživatelské nastavení.
 
 \subsubsection*{Životní cyklus aktivity}
@@ -866,33 +875,86 @@ Metoda je volána před tím než je aktivita zničena (před provedením \emph{
 \item \textbf{onRestoreInstanceState(Bundle)}\\
 Metoda je volána (po provedením \emph{onStart()}) v případě, že aktivita byla znovuobnovena z předchozího uloženého stavu.Na začátku metody je nutné zavolat metodu rodiče, aby mohl být obnoven stav prvků UI pomocí defaultní implementace.
 \end{itemize}
-
+[TODO UML class diagram]
 
 \subsection{Fragment}
-\subsection{Služba}
+Fragment představuje komponentu uživatelského rozhraní, která je součástí aktivity. Aktivita může obsahovat více fragmentů a fragment může být využíván ve více aktivitách. Jedná se tedy o modul umožňující nějakou funkčnost, který má vlastní životní cyklus, přijímá události z uživatelského rozhraní a může být přidán či odstraněn z aktivity během její činnosti. Fragment musí být vždy součástí nějaké aktivity a je přímo ovlivňován životním cyklem hostující aktivity.\\ \indent
+K vytvoření fragmentu je nutné oddědit od třídy \emph{android.app.Fragment}. 
+
+\subsubsection*{Metody životního cyklu fragmentu}
+Tato třída je podobná třídě aktivity s tím rozdílem, že obsahuje několik metod životního cyklu navíc:
+\begin{itemize}[]
+\item \textbf{onAttach()}\\
+Metoda je volána jakmile je fragment přiřazen k aktivitě. 
+\item \textbf{onCreateView()}\\
+Volána poté co je fragment vytvořen. Fragment který má uživatelské rozhraní musí vrátit objekt \emph{View}, který obsahuje uživatelské rozhraní pro tento fragment.
+\item \textbf{onActivityCreated()}\\
+Volána ve chvíli, kdy je vytvořena hostující aktivita.
+\item \textbf{onDestroyView()}\\
+Volána ve cvhíli, kdy je uživatelské rozhraní fragment odstraňováno.
+\item \textbf{onDetach()}\\
+Volána ve chvíli, kdy je fragment odstraňován z aktivity.
+\end{itemize}
+[TODO priklady fragmentu z projektu]
+\subsubsection*{Provádění transakcí}
+Fragment je možné přidávat, mazat či nahrazovat jinou v rámci rodičovské aktivity. Ty akce se nazývají transakce a provádějí se pomocí třídy \emph{FragmentTransaction}.V následující ukázce kódu je současný fragment v aktivitě nahrazen fragmentem \emph{PieChartFragment} zobrazující koláčový graf. Ukázka je ze třídy \emph{ChartActivity}:
+
+\begin{lstlisting}
+FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
+PieChartFragment pieFragment = new PieChartFragment();
+ft.replace(R.id.displayChart, pieFragment, FRAG_PIE);
+ft.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_CLOSE);
+ft.commit();
+\end{lstlisting}
+
+\subsubsection*{Změna konfigurace s využitím fragmentu}
+Další uplatnění fragmentů se nachází v ošetření situace, kdy se v důsledku rotace zařízení změní poloha displeje. V případě kdy aktivita spouští asynchronní úkol (\emph{Asynctask} \ref{sec:asynctask}) a uživatel otočí displej, aktivita bude restartována. V momentě kdy \emph{Asynctask} dokončí svůj úkol bude jeho výsledek zasílat staré instanci aktivity, která v té chvíli už neexistuje. Kromě toho nově vytvořená aktivita spustí znovu ten samý \emph{Asynctask}. Obojí je samozřejmě nežádoucí. Řešením tohoto problému je využít fragment jako hostitele pro \emph{Asynctask} a nastavit metodou fragmentu \emph{setRetainInstance (true)} vlastnost, že fragment nebude restartován při restartu jeho hostitelské aktivity\cite{config}. 
+[TODO odkazat se na tridy v projektu nebo dat ukazku do prilohy]
+
+\subsection{Async task}
+\label{sec:asynctask}
+\emph{AsyncTask} je komponenta sloužící k provedení operace paralelně k UI (User Interface) vláknu. Třída umožňuje provedení operace na pozadí a publikování jejích výsledků na UI vlákně bez manipulace s vlákny. 
+\subsubsection*{Generické parametry pro \emph{AsyncTask}}
+\begin{enumerate}[noitemsep,nolistsep]
+\item \textbf{Params} typ parametrů předaných úkolu před provedením.
+\item \textbf{Progress} typ jednotek pro průběh operace publikovaných během výpočtu na pozdaí.
+\item \textbf{Result} typ pro výsledek výpočtu. 
+\end{enumerate}
+
+\subsubsection*{Metody \emph{AsyncTask}}
+\emph{AsyncTask} využívá těchto metod:
+\begin{itemize}[]
+\item \textbf{onPreExecute()}\\
+volána na UI (User Interface) vlákně před tím, než je úkol spuštěn. Metoda louží k přípravě asynchronní akce např. zobrazení dialogu s průběhem akce.
+\item \textbf{doInBackground(Params...)}\\
+provádí se ve vlastním vlákně na pozadí. Vrací výsledek svojí akce. Může oznamovat průběh akce pomocí \emph{ publishProgress(Progress...)}.
+\item \textbf{onProgressUpdate(Progress...)}\\
+volána na UI vlákně. Slouží k zobrazení průběhu akce zatímco úkol na pozadí je stále prováděn.
+\item \textbf{onPostExecute(Result)}\\
+volána na UI vlákně po tom, co je úkol na pozadí dokončen. Výsledek akce na pozadí je předán jako parametr.
+\end{itemize}
+
+\emph{AsyncTask} komponenty jsou vhodné pro krátké operace (max jednotky sekund), které přímo ovliňují chování uživatelského rozhraní. Příkladem takové operace může být stažení dat, která mají být zobrazena okamžitě jakmile jsou dostupná. Taková akce musí být provedena asynchronně jinak by docházelo k efektu zamrzání uživatelského rozhraní.
+[TODO priklady AsyncTask z projektu]
+
+\subsection{Service}
 + restart zařízení?
+
 \subsection{Content provider}
+
 \subsection{Broadcast receiver}
 
-\begin{enumerate}
-\item komponenty pro sync a auth, provazani s android ucetm
-\item CursorLoader
-\item Async task
-\item  nestandartni UI
-\item modifilkace adapterview
-\item cutom UI - viewgroup
-\item widgety
-\item alarmanager
-\item handler - hlavni vlakno
-\item activity - dedicnost
-\end{enumerate}
-+ nejaka ukazka konkretniho pouziti
+
+\subsection{Cursor loader}
+
+
+
+\subsection{Alarm manager}
+
+\section{Vlastní  komponenta UI }
++ 9png grafika
 
 \section{Komponenty pro synchronizaci}
-\begin{enumerate}
-\item sync architektura - komponenty
-\end{enumerate}
-
 
 \section{Uživatelský účet}
 Android poskytuje správu účtů pro online služby. Uživatel zadá svoje přihlašovací údaje při vytvoření účtu a dává tak aplikaci svolení k využívání tohoto účtu.\\ \indent
@@ -961,18 +1023,11 @@ Další možností pro ukládání souborů je externí úložiště (např. SD 
 \subsection*{SQLite databáze}
 Data lze ukládat persistentně pomocí SQLite databáze. Vytvořená databáze je dostupná jakkékoli třídě v aplikaci, ale není přístupná mimo aplikaci, která jí vytořila. SQLite databázi detailněji popisuji v kapitole \ref{sqlite}.
 
-\section{SQLite}
-\label{sqlite}
+%\subsection{SQLite}
+%\label{sqlite}
 [TODO]je treba resit delku dat napriklad stringu?, dynamic typing
+[TODO rozepsat podrobneji]
 
-V knihovnách pro Forms aplikace se nachází další kód, který bude nutné přepsat do webové služby.
-
-\section{REST}
-RestaTemplates - springframework
-\begin{enumerate}
-\item REST operace - davkove vs jednotlive
-\item REST, tabulka URI, 
-\end{enumerate}
 
 \section{Struktura projektu}
 (jen ty pouzite)
@@ -980,24 +1035,21 @@ RestaTemplates - springframework
 \section{Manifest + oprávnění}
 persmission v manifestu, vypsat a vysvětlit
 
-\section{9png grafika}
+\section{Widgety}
 
 \section{Notifikace}
 
-\section{GPS}
+\section{GPS + mapy}
 
-\section{Zpětná kompatibilita}
-
-\section{Budoucí rozšiřitelnost}
+\section{Zpětná kompatibilita + support balíček?}
 
 \section{Vytváření grafů}
 knihovny, cloudové řešení, vlastní komponenty
 
-\section{Chybové reporty}
+\section{Distribuce a chybové reporty}
 
-\section{Distribuce}
 
-\chapter{Testování}
+\chapter{Testování?}
 [TODO testovaci scenare synchronizace]
 
 výchozí zdroj: http://developer.android.com/tools/testing/testing\_android.html
