@@ -922,7 +922,7 @@ Další uplatnění fragmentů se nachází v ošetření situace, kdy se v důs
 \end{enumerate}
 
 \subsubsection*{Metody \emph{AsyncTask}}
-\emph{AsyncTask} využívá těchto metod:
+Třída \emph{AsyncTask} využívá těchto metod:
 \begin{itemize}[]
 \item \textbf{onPreExecute()}\\
 volána na UI (User Interface) vlákně před tím, než je úkol spuštěn. Metoda louží k přípravě asynchronní akce např. zobrazení dialogu s průběhem akce.
@@ -935,7 +935,7 @@ volána na UI vlákně po tom, co je úkol na pozadí dokončen. Výsledek akce 
 \end{itemize}
 
 \emph{AsyncTask} komponenty jsou vhodné pro krátké operace (max jednotky sekund), které přímo ovliňují chování uživatelského rozhraní. Příkladem takové operace může být stažení dat, která mají být zobrazena okamžitě jakmile jsou dostupná. Taková akce musí být provedena asynchronně jinak by docházelo k efektu zamrzání uživatelského rozhraní.
-[TODO priklady AsyncTask z projektu]
+[TODO priklady AsyncTask z projektu+diagram trid]
 
 \subsection{Service}
 + restart zařízení?
@@ -943,18 +943,40 @@ volána na UI vlákně po tom, co je úkol na pozadí dokončen. Výsledek akce 
 \subsection{Content provider}
 
 \subsection{Broadcast receiver}
+Komponenta \emph{Broadcast receiver} slouží jako posluchač systémové či aplikační události. Všichni registrovaní posluchači jsou informováni jakmile událost nastane. Objekt musí být registrován pomocí \emph{android.content.Context.registerReceiver()} metody kontextu k poslechu události specifikované pomocí filtru událostí \emph{android.content.IntentFilter}. Událost může být vyvolána systémem (např. připojení nabíječky, změna stavu připojení k síti) nebo může být vytvořena aplikací. Nejdůležitější metoda této třídy:
+\begin{itemize}[]
+\item \textbf{onReceive(Context context, Intent intent)}\\
+Metoda je volána ve chvíli kdy je přijata očekávaná událost. Životnost objektu po dokončení této metody končí.
+\end{itemize}
+[TODO priklad z applikace]
+\subsection{Loader}
+Třída \emph{android.content.Loader<D>} slouží k asynchronnímu načtení dat pro aktivitu či fragment. Monitoruje zdroj svých dat a automaticky se aktualizuje v momentě změny těchto dat. Loader spolupracuje s třídami \emph{	android.app.LoaderManager}, která řídí činnost všech Loader objektů patřících dané aktivitě či fragmentu. Aktivita či fragment musí implementovat rozhraní \emph{android.app.LoaderManager.LoaderCallbacks<D>}, které obsahuje tyto callback metody:
 
-
-\subsection{Cursor loader}
-
+\begin{itemize}[]
+\item \textbf{onCreateLoader (int id, Bundle args)}\\
+Určená pro inicializaci Loader objektu s daným \emph{id}.
+\item \textbf{onLoadFinished (Loader<D> loader, D data)}\\
+Volána po načtení dat. Poskytuje objekt s načtenými daty.
+\item \textbf{onLoaderReset (Loader<D> loader)}\\
+Volána v případě kdy Loader byl resetován. Určena pro zrušení všech referencí na zdrojový objekt s daty.
+\end{itemize}
 
 
 \subsection{Alarm manager}
+Třída \emph{android.app.AlarmManager} je určená pro případy kdy má nějaká akce proběhnout v určený čas a to i v případě kdy aplikace není spuštěna. Ve chvíli kdy je akce prováděna \emph{AlarmManager} drží zámek CPU do té doby než akce skončí. Volitelně lze nastavit, zda se má kvůli provedení akce vzbudit zařízení z režimu spánku.
+\begin{itemize}[]
+\item \textbf{setRepeating(int type, long triggerAtMillis, long intervalMillis, PendingIntent operation)}\\
+Naplánuje pravidelně se opakující akci.
+\item \textbf{set(int type, long triggerAtMillis, PendingIntent operation)}\\
+Naplánuje akci na učitý čas.
+\end{itemize}
 
-\section{Vlastní  komponenta UI }
+[TODO ukázka kódu + popis pouziti]
+\section{Vlastní  komponenta UI}
 + 9png grafika
 
 \section{Komponenty pro synchronizaci}
+synadapter+diagram
 
 \section{Uživatelský účet}
 Android poskytuje správu účtů pro online služby. Uživatel zadá svoje přihlašovací údaje při vytvoření účtu a dává tak aplikaci svolení k využívání tohoto účtu.\\ \indent
@@ -997,7 +1019,7 @@ Na diagramu \ref{obr:andauth} je zobrazen průběh vytvoření účtu, který je
 
 
 
-
+[TODO obr s aktivitou]
 \section{Ukládání dat}
 Android umožňuje několik způsobů jak persistentně ukládat data aplikace. Programátor by měl vzít v úvahu, zda data mají být soukromá či dostupná i ostatním aplikacím a také velikost těchto dat. 
 \subsection*{Sdílené preference} Ukládá primitivní datové typy ve tvaru klíč-hodnota. Slouží k uložení nastavení specifických pro aplikaci. K těmto se přistupuje pomocí \emph{SharedPreferences} rozhraní. Data jsou ukládána persistentně. \\ V aplikaci používám toto úložiště pro nastavení síťového připojení, barevného nastavení pro typy docházkových událostí a další uživatelsky měnitelné hodnoty.\\ \\
@@ -1049,8 +1071,11 @@ knihovny, cloudové řešení, vlastní komponenty
 \section{Distribuce a chybové reporty}
 
 
-\chapter{Testování?}
+\chapter{Testování? cca 2stranky}
 [TODO testovaci scenare synchronizace]
+[TODO napsat aspon nejaky junit testy - zamerene na jednotlive kompomenty?, test UI manualne, test sync manualne]
+[TODO testy pro webovou sluzbu]
+casovy plan 2 - 3 dny
 
 výchozí zdroj: http://developer.android.com/tools/testing/testing\_android.html
 

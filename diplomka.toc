@@ -76,25 +76,25 @@
 \contentsline {subsection}{\numberline {6.2.2}Fragment}{44}
 \contentsline {subsection}{\numberline {6.2.3}Async task}{45}
 \contentsline {subsection}{\numberline {6.2.4}Service}{46}
-\contentsline {subsection}{\numberline {6.2.5}Content provider}{47}
-\contentsline {subsection}{\numberline {6.2.6}Broadcast receiver}{47}
-\contentsline {subsection}{\numberline {6.2.7}Cursor loader}{47}
+\contentsline {subsection}{\numberline {6.2.5}Content provider}{46}
+\contentsline {subsection}{\numberline {6.2.6}Broadcast receiver}{46}
+\contentsline {subsection}{\numberline {6.2.7}Loader}{47}
 \contentsline {subsection}{\numberline {6.2.8}Alarm manager}{47}
-\contentsline {section}{\numberline {6.3}Vlastn\IeC {\'\i } komponenta UI }{47}
-\contentsline {section}{\numberline {6.4}Komponenty pro synchronizaci}{47}
-\contentsline {section}{\numberline {6.5}U\IeC {\v z}ivatelsk\IeC {\'y} \IeC {\'u}\IeC {\v c}et}{47}
-\contentsline {section}{\numberline {6.6}Ukl\IeC {\'a}d\IeC {\'a}n\IeC {\'\i } dat}{50}
-\contentsline {section}{\numberline {6.7}Struktura projektu}{52}
-\contentsline {section}{\numberline {6.8}Manifest + opr\IeC {\'a}vn\IeC {\v e}n\IeC {\'\i }}{52}
-\contentsline {section}{\numberline {6.9}Widgety}{52}
-\contentsline {section}{\numberline {6.10}Notifikace}{52}
-\contentsline {section}{\numberline {6.11}GPS + mapy}{52}
-\contentsline {section}{\numberline {6.12}Zp\IeC {\v e}tn\IeC {\'a} kompatibilita + support bal\IeC {\'\i }\IeC {\v c}ek?}{52}
-\contentsline {section}{\numberline {6.13}Vytv\IeC {\'a}\IeC {\v r}en\IeC {\'\i } graf\IeC {\r u}}{52}
-\contentsline {section}{\numberline {6.14}Distribuce a chybov\IeC {\'e} reporty}{52}
-\contentsline {chapter}{\numberline {7}Testov\IeC {\'a}n\IeC {\'\i }?}{53}
-\contentsline {chapter}{\numberline {8}Z\IeC {\'a}v\IeC {\v e}r}{54}
-\contentsline {chapter}{Seznam zkratek}{55}
-\contentsline {chapter}{Literatura}{57}
-\contentsline {chapter}{\numberline {A}U\IeC {\v z}ivatelsk\IeC {\'a} dokumentace}{58}
-\contentsline {chapter}{\numberline {B}Manifest?}{62}
+\contentsline {section}{\numberline {6.3}Vlastn\IeC {\'\i } komponenta UI}{48}
+\contentsline {section}{\numberline {6.4}Komponenty pro synchronizaci}{48}
+\contentsline {section}{\numberline {6.5}U\IeC {\v z}ivatelsk\IeC {\'y} \IeC {\'u}\IeC {\v c}et}{48}
+\contentsline {section}{\numberline {6.6}Ukl\IeC {\'a}d\IeC {\'a}n\IeC {\'\i } dat}{51}
+\contentsline {section}{\numberline {6.7}Struktura projektu}{53}
+\contentsline {section}{\numberline {6.8}Manifest + opr\IeC {\'a}vn\IeC {\v e}n\IeC {\'\i }}{53}
+\contentsline {section}{\numberline {6.9}Widgety}{53}
+\contentsline {section}{\numberline {6.10}Notifikace}{53}
+\contentsline {section}{\numberline {6.11}GPS + mapy}{53}
+\contentsline {section}{\numberline {6.12}Zp\IeC {\v e}tn\IeC {\'a} kompatibilita + support bal\IeC {\'\i }\IeC {\v c}ek?}{53}
+\contentsline {section}{\numberline {6.13}Vytv\IeC {\'a}\IeC {\v r}en\IeC {\'\i } graf\IeC {\r u}}{53}
+\contentsline {section}{\numberline {6.14}Distribuce a chybov\IeC {\'e} reporty}{53}
+\contentsline {chapter}{\numberline {7}Testov\IeC {\'a}n\IeC {\'\i }? cca 2stranky}{54}
+\contentsline {chapter}{\numberline {8}Z\IeC {\'a}v\IeC {\v e}r}{55}
+\contentsline {chapter}{Seznam zkratek}{56}
+\contentsline {chapter}{Literatura}{58}
+\contentsline {chapter}{\numberline {A}U\IeC {\v z}ivatelsk\IeC {\'a} dokumentace}{59}
+\contentsline {chapter}{\numberline {B}Manifest?}{63}
