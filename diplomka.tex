@@ -16,7 +16,7 @@
 
 %\usepackage[pdftex]{graphicx}
 
-\lstset{language=Java,keywordstyle=\color{blue}, commentstyle=\color{Green},stringstyle=\color{red},showstringspaces=false,breaklines=true,tabsize=3,basicstyle=\footnotesize}
+\lstset{language=Java,keywordstyle=\color{blue}, commentstyle=\color{green},stringstyle=\color{red},showstringspaces=false,breaklines=true,tabsize=3,basicstyle=\footnotesize}
 
 
 
@@ -938,9 +938,55 @@ volána na UI vlákně po tom, co je úkol na pozadí dokončen. Výsledek akce 
 [TODO priklady AsyncTask z projektu+diagram trid]
 
 \subsection{Service}
-+ restart zařízení?
+\emph{Service} neboli služba je komponenta aplikace, která provádí dlouhotrvající operaci na pozadí a neposkytuje uživatelské rozhraní. Služba může být spuštěna vlastní aplikací, z jiné aplikace či systémovou komponentou.  Služba běží v hlavním vlákně hostujícího procesu. Služby lze klasifikovat na dva typy:
 
+\begin{description}[]
+\item \textbf{Started}\\
+Spuštěná služba, je taková služba, která byla spuštěna voláním metody \emph{startService()} kontextu komponenty. Služba běží na pozadí dokud neskončí svojí činnost, a to i tehdy pokud byla spouštějící komponenta zničena. Služba typicka provádí nějakou operaci, bez interakce se spouštějící komponentou a po dokončení se sama zničí. Metody životního cyklu služby jsou: 
+\begin{itemize}[]
+\item \textbf{onCreate()}\\
+Volána ve chvíli kdy je služba vytvořena. Je určena k počáteční inicializaci.
+\item \textbf{onStartCommand()}\\
+Volána ve chvíli kdy je služba spuštěna. Metodou \emph{stopSelf()} se může služba sama ukončit.
+\item \textbf{onDestroy()}\\
+Volána systémem ve chvíli, kdy je služba ničena. Určena pro uvolnění zdrojů.
+\end{itemize}
+\item \textbf{Bound}\\
+Připoutaná (angl. bound) služba, je taková služba, ke které se komponenta připoutala voláním \emph{bindService()}. Připoutaná služba poskytuje klient-server rozhraní, které umožnuje komunikaci s touto službou pomocí meziprocesové komunikace. Služba běží pouze pokud je k ní nějaká komponenta svázaná. Ke službě může být připoutáno více komponent, jakmile se všechny odpoutají, je služba zničena. Metody životního cyklu služby jsou kromě \emph{onCreate()}, \emph{onDestroy()} tyto:
+\begin{itemize}[]
+\item \textbf{onBind()}\\
+Volána systémem ve chvíli, kdy se jiná komponenta chce ke službě přivázat voláním \emph{bindService()}. Vrací objekt \emph{IBinder}, který představuje rozhraní pro komunikaci.
+\item \textbf{onUnbind()}\\
+Komponenta klienta se odpoutává od služby.
+\end{itemize}
+\end{description}
+[TODO priklady v projektu]
 \subsection{Content provider}
+\emph{Content provider} je jedna ze základních komponent pro tvorbu Android aplikace. Komponenta řídí přístup k centrálnímu úložišti dat představující SQLite databázi. \emph{Content provider} zapouzdřuje data a poskytuje je ostatním aplikacím pomocí \emph{android.content.ContentResolver} rozhraní. Pokud data aplikace nemají být přístupná i jiným aplikacím, není této komponenty potřeba a je možné přistupovat k datům přímo pomocí třídy \emph{android.database.sqlite.SQLiteDatabase}. Důležité metody této komponenty jsou::
+
+\begin{itemize}[]
+\item \textbf{query()}\\
+Provádí dotaz do úložiště a vrací výsledek dotazu.
+\item \textbf{insert()}\\
+Vlkádá data do úložiště.
+\item \textbf{update()}\\
+Aktualizuje existující data v úložišti.
+\item \textbf{delete()}\\
+Maže data z úložiště.
+\item \textbf{getType()}\\
+Vrací MIME typ dat obsažených v úložišti.
+\end{itemize}
+
+\subsection*{Přístup pomocí URI}
+Umístění dat je specifikováno pomocí URI. Ukázka URI použitého v aplikaci:
+\begin{verbatim}
+content://user_dictionary/words
+\end{verbatim}
+\begin{itemize}[noitemsep,nolistsep]
+\item \textbf{content://} představuje schéma
+\item \textbf{dictionary} symbolické jméno úložiště tzv. \emph{authority}
+\item \textbf{words} název tabulky
+\end{itemize}
 
 \subsection{Broadcast receiver}
 Komponenta \emph{Broadcast receiver} slouží jako posluchač systémové či aplikační události. Všichni registrovaní posluchači jsou informováni jakmile událost nastane. Objekt musí být registrován pomocí \emph{android.content.Context.registerReceiver()} metody kontextu k poslechu události specifikované pomocí filtru událostí \emph{android.content.IntentFilter}. Událost může být vyvolána systémem (např. připojení nabíječky, změna stavu připojení k síti) nebo může být vytvořena aplikací. Nejdůležitější metoda této třídy:
@@ -972,12 +1018,21 @@ Naplánuje akci na učitý čas.
 \end{itemize}
 
 [TODO ukázka kódu + popis pouziti]
-\section{Vlastní  komponenta UI}
-+ 9png grafika
 
 \section{Komponenty pro synchronizaci}
-synadapter+diagram
-
+Pro synchronizaci je klíčovou komponentou třída \emph{android.content.\\AbstractThreadedSyncAdapter}. Třída provádí akci na pozadí ve vlastním vlákně. Synchronizace je vyvolána systémovou komponentou \emph{android.content.SyncManager}, v závislosti konkrétním nastavení pro konkrétní adaptér. Odpadá tak starost s práci s vlákny a k využití této komponenty stačí implementovat metodu \emph{onPerformSync()}:
+\begin{itemize}[]
+\item \textbf{onPerformSync(Account account, Bundle extras, String authority, ContentProviderClient provider, SyncResult syncResult)}\\
+\begin{itemize}[]
+\item  \textbf{account} účet, který je synchronizován
+\item  \textbf{extras} parametry specifické pro tento adaptér
+\item  \textbf{authority} \emph{authority}, pro kterou je požadována synchronizace
+\item  \textbf{provider} instance \emph{ContentProviderClient}, která odkazuje na \emph{ContentProvider} pro tuto \emph{authority}
+\item  \textbf{syncResult} určeno pro výsledek synchronizace, který bude předán komponentě \emph{SyncManager}
+\end{itemize}
+\end{itemize}
+[TODO priklad z applikace]
+[TODO diagram komponent]
 \section{Uživatelský účet}
 Android poskytuje správu účtů pro online služby. Uživatel zadá svoje přihlašovací údaje při vytvoření účtu a dává tak aplikaci svolení k využívání tohoto účtu.\\ \indent
 Různé online služby mohou využívat odlišný způsob pro autentizaci. Android manažer účtů využívá kompomentu \emph{authenticator} \cite{accman}, která je obvykle poskytována třetí stranou - poskytovatelem dané služby. Příkladem služby, která poskytuje vlastní \emph{authenticator} je např. Google, Facebook a Microsoft Exchange.\\ \indent
@@ -1044,6 +1099,7 @@ Soubory lze ukládat v interní paměti zařízení. Tyto soubory jsou defaultn�
 Další možností pro ukládání souborů je externí úložiště (např. SD karta).  Toto úložiště je sdílené a data mohou být editována i mimo aplikaci.
 \subsection*{SQLite databáze}
 Data lze ukládat persistentně pomocí SQLite databáze. Vytvořená databáze je dostupná jakkékoli třídě v aplikaci, ale není přístupná mimo aplikaci, která jí vytořila. SQLite databázi detailněji popisuji v kapitole \ref{sqlite}.
+[TODO citace]
 
 %\subsection{SQLite}
 %\label{sqlite}
@@ -1051,11 +1107,8 @@ Data lze ukládat persistentně pomocí SQLite databáze. Vytvořená databáze 
 [TODO rozepsat podrobneji]
 
 
-\section{Struktura projektu}
-(jen ty pouzite)
-
-\section{Manifest + oprávnění}
-persmission v manifestu, vypsat a vysvětlit
+\section{Vlastní  komponenta UI}
++ 9png grafika
 
 \section{Widgety}
 
@@ -1063,13 +1116,53 @@ persmission v manifestu, vypsat a vysvětlit
 
 \section{GPS + mapy}
 
+\begin{itemize}[noitemsep,nolistsep]
+\item  \textbf{READ\_GSERVICES}
+\end{itemize}
+
+\begin{itemize}[noitemsep,nolistsep]
+\item  \textbf{MAPS\_RECEIVE}
+\end{itemize}
+
 \section{Zpětná kompatibilita + support balíček?}
 
 \section{Vytváření grafů}
 knihovny, cloudové řešení, vlastní komponenty
 
-\section{Distribuce a chybové reporty}
+\section{Oprávnění}
+V operačním systému Android běží každá aplikace ve svém \emph{sandboxu}, což je bezpečnostní mechanismus, který slouží pro oddělování běžících procesů. Pokud chce aplikace přístup k k systémovým zdrojům, datům jiné aplikace či soukromým datům uživatele musí o to explicitně požádat. To se děje prostřednictvím oprávnění (angl. permissions) staticky deklarovaných v pomocí tagu \emph{<uses-permission>} v souboru manifestu (AndroidManifest.xml). Při instalaci aplikace je uživateli zobrazen seznam všech těchto oprávnění, které aplikace požaduje a bez jeho souhlasu nemůže být aplikace naistalována. Níže je seznam všech oprávnění, které aplikace vyžaduje:
+[TODO jeste ty pro mapy]
+\begin{itemize}%[noitemsep,nolistsep]
+\item  \textbf{ACCESS\_FINE\_LOCATION}\\
+Povoluje aplikaci přístup k přesné pozici ze zdrojů GPS, vysílačů operátora či Wi-Fi.
+\item  \textbf{ACCESS\_NETWORK\_STATE}\\
+Povoluje aplikaci přístup k informaci o sítích.
+\item  \textbf{AUTHENTICATE\_ACCOUNTS}\\
+Povoluje aplikaci autentizovat vlastní účty.
+\item  \textbf{GET\_ACCOUNTS}\\
+Povoluje aplikaci přístup k seznamu účtů v zařízení.
+\item  \textbf{INTERNET}\\
+Povoluje aplikaci přístup k síťovým službám.
+\item  \textbf{MANAGE\_ACCOUNTS}\\
+Povoluje aplikaci přístup ke správě účtu uživatele.
+\item  \textbf{READ\_SYNC\_SETTINGS}\\
+Povoluje aplikaci přístup k číst nastavení pro synchronizaci.
+\item  \textbf{READ\_SYNC\_STATS}\\
+Povoluje aplikaci přístup ke čtení statistik synchronizace.
+Allows applications to read the sync stats
+\item  \textbf{USE\_CREDENTIALS}\\
+Povoluje aplikaci přístup ke přihlašovacím údajům uživatele.
+\item  \textbf{VIBRATE}\\
+Povoluje aplikaci požadovat vibraci zařízení.
+\item  \textbf{WRITE\_EXTERNAL\_STORAGE}\\
+Povoluje aplikaci přístup ke sdílenému úložišti.
+\item  \textbf{WRITE\_SYNC\_SETTINGS}\\
+Povoluje aplikaci měnit nastavení pro synchronizaci.
+\end{itemize}
 
+
+\section{Distribuce a chybové reporty}
++podepsani
 
 \chapter{Testování? cca 2stranky}
 [TODO testovaci scenare synchronizace]
