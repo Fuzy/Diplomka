@@ -89,11 +89,11 @@
 \contentsline {section}{\numberline {6.9}GPS + mapy}{55}
 \contentsline {section}{\numberline {6.10}Zp\IeC {\v e}tn\IeC {\'a} kompatibilita + support bal\IeC {\'\i }\IeC {\v c}ek?}{55}
 \contentsline {section}{\numberline {6.11}Vytv\IeC {\'a}\IeC {\v r}en\IeC {\'\i } graf\IeC {\r u}}{55}
-\contentsline {section}{\numberline {6.12}Opr\IeC {\'a}vn\IeC {\v e}n\IeC {\'\i }}{55}
-\contentsline {section}{\numberline {6.13}Distribuce a chybov\IeC {\'e} reporty}{57}
-\contentsline {chapter}{\numberline {7}Testov\IeC {\'a}n\IeC {\'\i }? cca 2stranky}{58}
-\contentsline {chapter}{\numberline {8}Z\IeC {\'a}v\IeC {\v e}r}{59}
-\contentsline {chapter}{Seznam zkratek}{60}
-\contentsline {chapter}{Literatura}{62}
-\contentsline {chapter}{\numberline {A}U\IeC {\v z}ivatelsk\IeC {\'a} dokumentace}{63}
-\contentsline {chapter}{\numberline {B}Manifest?}{67}
+\contentsline {section}{\numberline {6.12}Opr\IeC {\'a}vn\IeC {\v e}n\IeC {\'\i }}{57}
+\contentsline {section}{\numberline {6.13}Distribuce a chybov\IeC {\'e} reporty}{58}
+\contentsline {chapter}{\numberline {7}Testov\IeC {\'a}n\IeC {\'\i }? cca 2stranky}{59}
+\contentsline {chapter}{\numberline {8}Z\IeC {\'a}v\IeC {\v e}r}{60}
+\contentsline {chapter}{Seznam zkratek}{61}
+\contentsline {chapter}{Literatura}{63}
+\contentsline {chapter}{\numberline {A}U\IeC {\v z}ivatelsk\IeC {\'a} dokumentace}{64}
+\contentsline {chapter}{\numberline {B}Manifest?}{68}

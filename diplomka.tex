@@ -575,21 +575,21 @@ Webová služba je tedy umístěna na serveru uvnitř firemní sítě. Pokud kli
 prostřednictvím sítě VPN.
 
 \section{Autentizace proti databázi}
-Klient i server jsou součástí jedné VPN sítě, která zajišťuje důvěryhodný komunikační kanál.  Klient posílá na server HTTP požadavek jehož součástí je autentizační hlavička nesoucí uživatelské jméno a heslo. Webová služba ověří jméno a heslo pomocí databázové procedury. Jméno a heslo uživatele je uloženo v databázi. Implementované řešení je znázorněno na obr. \ref{obr:auth} který zobrazuje sekveční UML diagram v případě úspěšné autentizace.
+Klient i server jsou součástí jedné VPN sítě, která zajišťuje důvěryhodný komunikační kanál.  Klient posílá na server HTTP požadavek jehož součástí je autentizační hlavička nesoucí uživatelské jméno a heslo. Webová služba ověří jméno a heslo pomocí databázové procedury. Jméno a heslo uživatele je uloženo v databázi. Implementované řešení je znázorněno na obr. \ref{fig:auth} který zobrazuje sekveční UML diagram v případě úspěšné autentizace.
 \begin{figure}[H]
   \centering
   \includegraphics[scale=0.8]{visio/auth.pdf}
 \caption{Diagram aktivit při úspěšné autentizaci}
-\label{obr:auth}
+\label{fig:auth}
 \end{figure}
 
 \section{Autentizace proti LDAP}
-Alternativním řešením by bylo ověřování uživatelů pomocí LDAP adresáře. Organizace již LDAP používá v některých dalších firemních systémech. Toto řešení se liší v tom, že dotaz na ověření identity uživatele probíhá k LDAP adresáři a nikoli k databázi. Implementované řešení je znázorněno na obr. \ref{obr:authldap}, který zobrazuje sekveční UML diagram v případě úspěšné autentizace.
+Alternativním řešením by bylo ověřování uživatelů pomocí LDAP adresáře. Organizace již LDAP používá v některých dalších firemních systémech. Toto řešení se liší v tom, že dotaz na ověření identity uživatele probíhá k LDAP adresáři a nikoli k databázi. Implementované řešení je znázorněno na obr. \ref{fig:authldap}, který zobrazuje sekveční UML diagram v případě úspěšné autentizace.
 \begin{figure}[H]
   \centering
   \includegraphics[scale=0.8]{visio/auth_ldap.pdf}
 \caption{Diagram aktivit při úspěšné autentizaci}
-\label{obr:authldap}
+\label{fig:authldap}
 \end{figure}
 \vspace{-6mm}
 \subsection{LDAP}
@@ -1127,7 +1127,23 @@ Data lze ukládat persistentně pomocí SQLite databáze. Vytvořená databáze 
 \section{Zpětná kompatibilita + support balíček?}
 
 \section{Vytváření grafů}
-knihovny, cloudové řešení, vlastní komponenty
+Pro potřebu přehledného zobrazení statistik jsem se rozhodl využít grafy. Konkrétně koláčový graf pro zobrazení poměrů typů docházkových událostí či zakázek a sloupcový graf pro zobrazení jejich vývoje v čase.
+
+\subsection*{Implementace vlastní komponenty}
+Implementace vlastních komponent pro grafy by bylo velice časově náročné a proto jsem tuto variantu zamítl.
+
+\subsection*{Využití cloudového řešení}
+Jako cloudové řešení se nabízí Google Charts API\cite{googlecharts}. Google Charts API poskytuje Javascriptové knihovny, pro vygenerování grafu. Aplikace stáhne knihovny, které potřebuje pro požadový graf, vytvoří objekt grafu, naplní ho daty, upraví jeho parametry a nakonec ho umístí do \emph{android.webkit.WebView} komponenty, která slouží k zobrazení webového obsahu. Nevýhoda použití Google Charts API spočívá v nedostupnosti jakýchkoli grafů při nedostupnosti síťového připojení. Na obr. \ref{fig:gcharts} je ukázka grafu.
+\begin{figure}[H]
+  \centering
+  \includegraphics[scale=0.5]{obr/gcharts.png}
+\caption{Ukázka grafu vytvořeného Google Charts API}
+\label{fig:gcharts}
+\end{figure}
+\subsection*{Použití knihovny třetí strany}
+Jako nejlepší řešení jsem vyhodnotil použití knihovny třetí strany konkrétně AChartEngine \cite{achartengine} ve verzi 1.1.0. Výhoda tohoto řešení spočívá v tom, že s grafy lze pracovat i pokud je zařízení mimo dosah sítě.
+[TODO obr z aplikace]
+
 
 \section{Oprávnění}
 V operačním systému Android běží každá aplikace ve svém \emph{sandboxu}, což je bezpečnostní mechanismus, který slouží pro oddělování běžících procesů. Pokud chce aplikace přístup k k systémovým zdrojům, datům jiné aplikace či soukromým datům uživatele musí o to explicitně požádat. To se děje prostřednictvím oprávnění (angl. permissions) staticky deklarovaných v pomocí tagu \emph{<uses-permission>} v souboru manifestu (AndroidManifest.xml). Při instalaci aplikace je uživateli zobrazen seznam všech těchto oprávnění, které aplikace požaduje a bez jeho souhlasu nemůže být aplikace naistalována. Níže je seznam všech oprávnění, které aplikace vyžaduje:
@@ -1168,7 +1184,7 @@ Povoluje aplikaci měnit nastavení pro synchronizaci.
 [TODO testovaci scenare synchronizace]
 [TODO napsat aspon nejaky junit testy - zamerene na jednotlive kompomenty?, test UI manualne, test sync manualne]
 [TODO testy pro webovou sluzbu]
-casovy plan 2 - 3 dny
+casovy plan 2 dny
 
 výchozí zdroj: http://developer.android.com/tools/testing/testing\_android.html
 

@@ -8,6 +8,14 @@
 \providecommand{\selectlanguage}[1]{\relax}
 \providecommand{\eprint}[2][]{\url{#2}}
 
+\bibitem{achartengine}
+AChartEngine. [online], [cit. 2013-7-12].
+\newline\urlprefix\url{http://www.achartengine.org/}
+
+\bibitem{googlecharts}
+Google Charts. [online], [cit. 2013-7-12].
+\newline\urlprefix\url{https://developers.google.com/chart/}
+
 \bibitem{rest}
 Fielding, R.~T.: Architectural Styles and the Design of Network-based Software
   Architectures. [online], [cit. 2013-7-6].

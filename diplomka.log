@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-1.40.10 (MiKTeX 2.8) (preloaded format=pdflatex 2013.4.14)  11 JUL 2013 23:18
+This is pdfTeX, Version 3.1415926-1.40.10 (MiKTeX 2.8) (preloaded format=pdflatex 2013.4.14)  12 JUL 2013 11:25
 entering extended mode
 **C:/MojeData/Škola/DP/Dokument/diplomka.tex
 (C:/MojeData/Škola/DP/Dokument/diplomka.tex
@@ -898,98 +898,105 @@ Overfull \hbox (2.16524pt too wide) in paragraph at lines 1127--1127
 []\T1/aer/bx/n/17.28 Zp¥tná kom-pa-ti-bi-lita + sup-port ba-lí-£ek? 
  []
 
-[55] [56] [57]
+<obr/gcharts.png, id=421, 583.42969pt x 475.02469pt>
+File: obr/gcharts.png Graphic file (type png)
+ <use obr/gcharts.png>
+Package pdftex.def Info: obr/gcharts.png used on input line 1139.
+(pdftex.def)             Requested size: 291.71413pt x 237.51175pt.
+
+[55] [56 <C:/MojeData/Škola/DP/Dokument/obr/gcharts.png (PNG copy)>] [57]
+[58]
 Kapitola 7.
 
-Overfull \hbox (34.745pt too wide) in paragraph at lines 1173--1174
+Overfull \hbox (34.745pt too wide) in paragraph at lines 1189--1190
 []\T1/aer/m/n/12 výchozí zdroj: http://developer.android.com/tools/testing/test
 ing_android.html 
  []
 
-[58
+[59
 
 ]
 Kapitola 8.
-[59
+[60
 
-] (C:\MojeData\Škola\DP\Dokument\diplomka.bbl [60
+] (C:\MojeData\Škola\DP\Dokument\diplomka.bbl [61
 
 ]
-Overfull \hbox (19.25055pt too wide) in paragraph at lines 12--16
+Overfull \hbox (19.25055pt too wide) in paragraph at lines 20--24
 \T1/aer/m/n/12 URL \T1/aett/m/n/12 http://www.ics.uci.edu/ fielding/pubs/disser
 tation/top.htm 
  []
 
 
-Overfull \hbox (124.10576pt too wide) in paragraph at lines 18--22
+Overfull \hbox (124.10576pt too wide) in paragraph at lines 26--30
 \T1/aer/m/n/12 URL \T1/aett/m/n/12 http://developer.android.com/reference/andro
 id/accounts/AccountManager.html 
  []
 
 
-Overfull \hbox (124.10576pt too wide) in paragraph at lines 24--28
+Overfull \hbox (124.10576pt too wide) in paragraph at lines 32--36
 \T1/aer/m/n/12 URL \T1/aett/m/n/12 http://www.oracle.com/technetwork/developer-
 tools/forms/overview/index.html 
  []
 
 
-Overfull \hbox (124.10576pt too wide) in paragraph at lines 30--33
+Overfull \hbox (124.10576pt too wide) in paragraph at lines 38--41
 \T1/aer/m/n/12 URL \T1/aett/m/n/12 http://www.oracle.com/technetwork/developer-
 tools/forms/overview/index.html 
  []
 
 
-Overfull \hbox (210.4571pt too wide) in paragraph at lines 40--43
+Overfull \hbox (210.4571pt too wide) in paragraph at lines 48--51
 \T1/aer/m/n/12 URL \T1/aett/m/n/12 http://www.androiddesignpatterns.com/2013/04
 /retaining-objects-across-config-changes.html 
  []
 
 
-Overfull \hbox (43.92236pt too wide) in paragraph at lines 49--52
+Overfull \hbox (43.92236pt too wide) in paragraph at lines 57--60
 \T1/aer/m/n/12 URL \T1/aett/m/n/12 http://docs.oracle.com/cd/E11882_01/java.112
 /e16548/apxref.htm 
  []
 
+[62
 
-Overfull \hbox (185.7853pt too wide) in paragraph at lines 54--57
+]
+Overfull \hbox (185.7853pt too wide) in paragraph at lines 62--65
 \T1/aer/m/n/12 URL \T1/aett/m/n/12 http://www.oracle.com/technetwork/products/d
 atabase-mobile-server/overview/index.html 
  []
 
-[61
-
-]) [62]
+) [63]
 P\v {r}\'{\i }loha A.
-<scr/time_doch.png, id=448, 722.7pt x 1284.8pt>
+<scr/time_doch.png, id=452, 722.7pt x 1284.8pt>
 File: scr/time_doch.png Graphic file (type png)
  <use scr/time_doch.png>
-Package pdftex.def Info: scr/time_doch.png used on input line 1210.
+Package pdftex.def Info: scr/time_doch.png used on input line 1226.
 (pdftex.def)             Requested size: 216.81166pt x 385.44298pt.
 
-<scr/graf_doch.png, id=449, 1284.8pt x 722.7pt>
+<scr/graf_doch.png, id=453, 1284.8pt x 722.7pt>
 File: scr/graf_doch.png Graphic file (type png)
  <use scr/graf_doch.png>
-Package pdftex.def Info: scr/graf_doch.png used on input line 1216.
+Package pdftex.def Info: scr/graf_doch.png used on input line 1232.
 (pdftex.def)             Requested size: 385.44298pt x 216.81166pt.
 
-[63
+[64
 
  <C:/MojeData/Škola/DP/Dokument/scr/time_doch.png (PNG copy)>]
-<scr/ucet.png, id=453, 722.7pt x 1284.8pt>
+<scr/ucet.png, id=457, 722.7pt x 1284.8pt>
 File: scr/ucet.png Graphic file (type png)
  <use scr/ucet.png>
-Package pdftex.def Info: scr/ucet.png used on input line 1222.
+Package pdftex.def Info: scr/ucet.png used on input line 1238.
 (pdftex.def)             Requested size: 216.81166pt x 385.44298pt.
- [64 <C:/MojeData/Škola/DP/Dokument/scr/graf_doch.png (PNG copy)>]
-<scr/network.png, id=457, 722.7pt x 1284.8pt>
+ [65 <C:/MojeData/Škola/DP/Dokument/scr/graf_doch.png (PNG copy)>]
+<scr/network.png, id=461, 722.7pt x 1284.8pt>
 File: scr/network.png Graphic file (type png)
  <use scr/network.png>
-Package pdftex.def Info: scr/network.png used on input line 1228.
+Package pdftex.def Info: scr/network.png used on input line 1244.
 (pdftex.def)             Requested size: 216.81166pt x 385.44298pt.
- [65 <C:/MojeData/Škola/DP/Dokument/scr/ucet.png (PNG copy)>] [66 <C:/MojeData/
+ [66 <C:/MojeData/Škola/DP/Dokument/scr/ucet.png (PNG copy)>] [67 <C:/MojeData/
 Škola/DP/Dokument/scr/network.png (PNG copy)>]
 P\v {r}\'{\i }loha B.
-[67
+[68
 
 ] (C:\MojeData\Škola\DP\Dokument\diplomka.aux)
 
@@ -1004,10 +1011,10 @@ LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 5738 strings out of 495324
- 78970 string characters out of 3182598
+ 5746 strings out of 495324
+ 79101 string characters out of 3182598
  177733 words of memory out of 3000000
- 8801 multiletter control sequences out of 15000+200000
+ 8808 multiletter control sequences out of 15000+200000
  51445 words of font info for 99 fonts, out of 3000000 for 9000
  5 hyphenation exceptions out of 8191
  36i,16n,43p,982b,1144s stack positions out of 5000i,500n,10000p,200000b,50000s
@@ -1021,9 +1028,9 @@ cmr12.pfb><C:/Program Files/MikTex/fonts/type1/public/amsfonts/cm/cmr17.pfb><C:
 /MikTex/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Program Files/MikTex/font
 s/type1/public/amsfonts/cm/cmti12.pfb><C:/Program Files/MikTex/fonts/type1/publ
 ic/amsfonts/cm/cmtt12.pfb>
-Output written on diplomka.pdf (73 pages, 1670745 bytes).
+Output written on diplomka.pdf (74 pages, 1700833 bytes).
 PDF statistics:
- 506 PDF objects out of 1000 (max. 8388607)
+ 510 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
- 111 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 116 words of extra memory for PDF output out of 10000 (max. 10000000)
 
