@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-1.40.10 (MiKTeX 2.8) (preloaded format=pdflatex 2013.4.14)  15 JUL 2013 15:57
+This is pdfTeX, Version 3.1415926-1.40.10 (MiKTeX 2.8) (preloaded format=pdflatex 2013.4.14)  15 JUL 2013 22:39
 entering extended mode
 **C:/MojeData/Škola/DP/Dokument/diplomka.tex
 (C:/MojeData/Škola/DP/Dokument/diplomka.tex
@@ -928,40 +928,39 @@ File: obr/widgetact.png Graphic file (type png)
 <use obr/widgetact.png>
 Package pdftex.def Info: obr/widgetact.png used on input line 1185.
 (pdftex.def)             Requested size: 271.01183pt x 91.09007pt.
-
-Overfull \hbox (2.16524pt too wide) in paragraph at lines 1202--1202
+ [57 <C:/MojeData/Škola/DP/Dokument/obr/widgetatt.png (PNG copy)> <C:/MojeData/
+Škola/DP/Dokument/obr/widgetemp.png (PNG copy)> <C:/MojeData/Škola/DP/Dokument/
+obr/widgetact.png (PNG copy)>]
+Overfull \hbox (2.16524pt too wide) in paragraph at lines 1222--1222
 []\T1/aer/bx/n/17.28 Zp¥tná kom-pa-ti-bi-lita + sup-port ba-lí-£ek? 
  []
 
-[57 <C:/MojeData/Škola/DP/Dokument/obr/widgetatt.png (PNG copy)> <C:/MojeData/Š
-kola/DP/Dokument/obr/widgetemp.png (PNG copy)> <C:/MojeData/Škola/DP/Dokument/o
-br/widgetact.png (PNG copy)>]
-<obr/gcharts.png, id=434, 583.42969pt x 475.02469pt>
+[58] <obr/gcharts.png, id=437, 583.42969pt x 475.02469pt>
 File: obr/gcharts.png Graphic file (type png)
- <use obr/gcharts.png>
-Package pdftex.def Info: obr/gcharts.png used on input line 1214.
-(pdftex.def)             Requested size: 291.71413pt x 237.51175pt.
 
-[58] [59 <C:/MojeData/Škola/DP/Dokument/obr/gcharts.png (PNG copy)>]
-Underfull \hbox (badness 10000) in paragraph at lines 1257--1258
+<use obr/gcharts.png>
+Package pdftex.def Info: obr/gcharts.png used on input line 1234.
+(pdftex.def)             Requested size: 291.71413pt x 237.51175pt.
+ [59] [60 <C:/MojeData/Škola/DP/Dokument/obr/gcharts.png (PNG copy)>]
+Underfull \hbox (badness 10000) in paragraph at lines 1277--1278
 
  []
 
-[60] [61] [62]
+[61] [62] [63]
 Kapitola 7.
 
-Overfull \hbox (34.745pt too wide) in paragraph at lines 1315--1316
+Overfull \hbox (34.745pt too wide) in paragraph at lines 1335--1336
 []\T1/aer/m/n/12 výchozí zdroj: http://developer.android.com/tools/testing/test
 ing_android.html 
  []
 
-[63
+[64
 
 ]
 Kapitola 8.
-[64
+[65
 
-] (C:\MojeData\Škola\DP\Dokument\diplomka.bbl [65
+] (C:\MojeData\Škola\DP\Dokument\diplomka.bbl [66
 
 ]
 Overfull \hbox (6.91464pt too wide) in paragraph at lines 24--27
@@ -999,7 +998,7 @@ Overfull \hbox (210.4571pt too wide) in paragraph at lines 57--60
 /retaining-objects-across-config-changes.html 
  []
 
-[66
+[67
 
 ]
 Overfull \hbox (43.92236pt too wide) in paragraph at lines 66--69
@@ -1013,38 +1012,38 @@ Overfull \hbox (185.7853pt too wide) in paragraph at lines 71--74
 atabase-mobile-server/overview/index.html 
  []
 
-) [67]
+) [68]
 P\v {r}\'{\i }loha A.
-<scr/time_doch.png, id=468, 722.7pt x 1284.8pt>
+<scr/time_doch.png, id=471, 722.7pt x 1284.8pt>
 File: scr/time_doch.png Graphic file (type png)
  <use scr/time_doch.png>
-Package pdftex.def Info: scr/time_doch.png used on input line 1352.
+Package pdftex.def Info: scr/time_doch.png used on input line 1372.
 (pdftex.def)             Requested size: 216.81166pt x 385.44298pt.
 
-<scr/graf_doch.png, id=469, 1284.8pt x 722.7pt>
+<scr/graf_doch.png, id=472, 1284.8pt x 722.7pt>
 File: scr/graf_doch.png Graphic file (type png)
  <use scr/graf_doch.png>
-Package pdftex.def Info: scr/graf_doch.png used on input line 1358.
+Package pdftex.def Info: scr/graf_doch.png used on input line 1378.
 (pdftex.def)             Requested size: 385.44298pt x 216.81166pt.
 
-[68
+[69
 
  <C:/MojeData/Škola/DP/Dokument/scr/time_doch.png (PNG copy)>]
-<scr/ucet.png, id=473, 722.7pt x 1284.8pt>
+<scr/ucet.png, id=476, 722.7pt x 1284.8pt>
 File: scr/ucet.png Graphic file (type png)
  <use scr/ucet.png>
-Package pdftex.def Info: scr/ucet.png used on input line 1364.
+Package pdftex.def Info: scr/ucet.png used on input line 1384.
 (pdftex.def)             Requested size: 216.81166pt x 385.44298pt.
- [69 <C:/MojeData/Škola/DP/Dokument/scr/graf_doch.png (PNG copy)>]
-<scr/network.png, id=477, 722.7pt x 1284.8pt>
+ [70 <C:/MojeData/Škola/DP/Dokument/scr/graf_doch.png (PNG copy)>]
+<scr/network.png, id=480, 722.7pt x 1284.8pt>
 File: scr/network.png Graphic file (type png)
  <use scr/network.png>
-Package pdftex.def Info: scr/network.png used on input line 1370.
+Package pdftex.def Info: scr/network.png used on input line 1390.
 (pdftex.def)             Requested size: 216.81166pt x 385.44298pt.
- [70 <C:/MojeData/Škola/DP/Dokument/scr/ucet.png (PNG copy)>] [71 <C:/MojeData/
+ [71 <C:/MojeData/Škola/DP/Dokument/scr/ucet.png (PNG copy)>] [72 <C:/MojeData/
 Škola/DP/Dokument/scr/network.png (PNG copy)>]
 P\v {r}\'{\i }loha B.
-[72
+[73
 
 ] (C:\MojeData\Škola\DP\Dokument\diplomka.aux)
 
@@ -1076,9 +1075,9 @@ cmr12.pfb><C:/Program Files/MikTex/fonts/type1/public/amsfonts/cm/cmr17.pfb><C:
 /MikTex/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Program Files/MikTex/font
 s/type1/public/amsfonts/cm/cmti12.pfb><C:/Program Files/MikTex/fonts/type1/publ
 ic/amsfonts/cm/cmtt12.pfb>
-Output written on diplomka.pdf (78 pages, 1747326 bytes).
+Output written on diplomka.pdf (79 pages, 1750680 bytes).
 PDF statistics:
- 525 PDF objects out of 1000 (max. 8388607)
+ 529 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  131 words of extra memory for PDF output out of 10000 (max. 10000000)
 

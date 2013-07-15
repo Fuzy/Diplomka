@@ -1187,7 +1187,23 @@ V aplikaci jsou k dispozici dva typy widget komponent. Widget pro rychlé zadán
 \label{fig:widgetact}
 \end{figure}
 
-\section{GPS + mapy}
+\section{Získávání geografické polohy zařízení}
+V Androidu existují dvě možnosti zjišťování polohy zařízení. První možností je zjištění pozice pomocí GPS, která má vysokou přesnost, ale funguje pouze v otevřených prostorech, má pomalou odezvu a rychle spotřebovává baterii. Druhou možností je získávání pozice pomocí sítě (sítě operátorů a WI-FI), která funguje jak uvnitř tak v otevřených prostorech, má rychlou odezvu, spotřebovává méně baterie, ale není tak přesná. Je možné použít v aplikaci ke zjišťování polohy pouze jeden z těchto zdrojů nebo kombinaci obou.
+\subsection*{Kvalita získané polohy}
+Získávání přesné polohy zařízení je komplikovaná záležitost. Do kvality získané polohy se podílejí tyto faktory:
+\begin{itemize}[]
+\item \textbf{Velké množství zdrojů polohy}\\
+Informaci o poloze lze získávat z GPS, vysílačů operátora, či Wi-Fi. Vyhodnocení informací o poloze z těchto zdrojů je vždy kompromisem mezi přesností, rychlostí a spotřebovanou baterií.
+\item \textbf{Pohyb uživatele}\\
+Kvůli pohybu živatele nemusí být získaná poloha v daný okamžik aktuální.
+\item \textbf{Měnící se přesnost}\\
+Z důvodu různé přesnosti získané polohy nemusí být nejnovější údaj zdaleka ten nejlepší.
+\end{itemize}
+[TODO +příklad použití, alg detekce prit/neprit], android dulezite tridy
+
+
+\section{Google Maps Android API}
+
 
 \begin{itemize}[noitemsep,nolistsep]
 \item  \textbf{READ\_GSERVICES}
@@ -1198,6 +1214,10 @@ V aplikaci jsou k dispozici dva typy widget komponent. Widget pro rychlé zadán
 \end{itemize}
 
 \section{Notifikace}
+Notifikace je zpráva zobrazená uživateli mimo uživatelské rozhraní aplikace. Notifikace je po vytvoření zobrazena v notifikační oblasti obrazovky zařízení. Po rozbalení notifikační lišty lze vidět detailní popis notifikace a také na ní lze kliknout.
+\\ \indent
+V aplikaci je pomocí notifikace oznámeno uživateli, že zapoměl zadat příchod či odchod na pracoviště. To je kontrolováno na pozadí a proto je uživatel informován tímto způsobem. Při kliknutí je puštěna aktivita umožnující přidání docházkové události.
+[TODO obr]
 
 \section{Zpětná kompatibilita + support balíček?}
 význam support package, nějaký příklad proč ho v mojí aplikaci potřebuji
