@@ -829,7 +829,36 @@ Původní ambicí byla možnost zadavání výkazů práce. Vzhledem k tomu, že
 Velikým přínosem by byla možnost vytváření šablon pro často opakované výkazy, která by uživateli ušetřila nezanedbatelné množství času.\\ \indent
 Posledním vylepšením by byla možnost rychlého zavolání přímo z profilu vybraného zaměstnance.
 
-\section{Výběr podporovaných verzí Android zařízení}
+\section{Výběr podporovaných verzí Android API}
+Aplikace podporuje operační systémy od verze 2.3.3. Jak je vidět z tabulky \ref{tab:share} aplikace podporuje více než 95\% trhu. Jako hlavní vývojové zařízení byl použit smartphone Google Nexus s operační systémem ve verzi 4.2.2.
+
+
+\begin{table}[H]\footnotesize
+\begin{center}
+  \begin{tabular}{| l | c | r | c |}
+    \hline
+Verze&Kódové označení&API&Podíl uživatelů[\%]\\ \hline
+  1.6&Donut&4&0.1\\ \hline
+2.1&Eclair&7&1.4\\ \hline
+2.2&Froyo&8&3.1\\ \hline
+2.3.3 -2.3.7&Gingerbread&10&34.1\\ \hline
+3.2&Honeycomb&13&0.1\\ \hline
+4.0.3 -4.0.4&Ice Cream Sandwich&15&23.3\\ \hline
+4.1.x&Jelly Bean&16&32.3\\ \hline
+4.2.x&Jelly Bean&17&5.6\\ \hline
+  \end{tabular}
+\end{center}
+\caption{Poměr verzí zařízení na trhu k 8.7.2013\cite{share}}
+\label{tab:share}
+\end{table}
+
+
+%\begin{figure}[H]
+ % \centering
+%  \includegraphics[scale=0.9]{obr/share.png}
+%\caption{Poměr verzí zařízení na trhu k 8.7.2013}
+%\label{fig:share}
+%\end{figure}
 
 \section{Komponenty Android aplikace}
 
@@ -963,6 +992,10 @@ Komponenta klienta se odpoutává od služby.
 \end{itemize}
 \end{description}
 [TODO priklady v projektu]
+
+\subsection{Intent}
+
+
 \subsection{Content provider}
 \emph{Content provider} je jedna ze základních komponent pro tvorbu Android aplikace. Komponenta řídí přístup k centrálnímu úložišti dat představující SQLite databázi. \emph{Content provider} zapouzdřuje data a poskytuje je ostatním aplikacím pomocí \emph{android.content.ContentResolver} rozhraní. Pokud data aplikace nemají být přístupná i jiným aplikacím, není této komponenty potřeba a je možné přistupovat k datům přímo pomocí třídy \emph{android.database.sqlite.SQLiteDatabase}. Důležité metody této komponenty jsou::
 
@@ -1035,6 +1068,7 @@ Pro synchronizaci je klíčovou komponentou třída \emph{android.content.\\Abst
 \end{itemize}
 [TODO priklad z applikace]
 [TODO diagram komponent]
+
 \section{Uživatelský účet}
 Android poskytuje správu účtů pro online služby. Uživatel zadá svoje přihlašovací údaje při vytvoření účtu a dává tak aplikaci svolení k využívání tohoto účtu.\\ \indent
 Různé online služby mohou využívat odlišný způsob pro autentizaci. Android manažer účtů využívá kompomentu \emph{authenticator} \cite{accman}, která je obvykle poskytována třetí stranou - poskytovatelem dané služby. Příkladem služby, která poskytuje vlastní \emph{authenticator} je např. Google, Facebook a Microsoft Exchange.\\ \indent
@@ -1050,12 +1084,12 @@ Přidá autentizační token do cache paměti pro daný účet.
 Získání uloženého hesla pro účet./Nastavení hesla.
 \end{itemize}
 
-Na diagramu \ref{obr:andauth} je zobrazen průběh vytvoření účtu, který je použit v implementované aplikaci. Jakmile uživatel v sekci \emph{Nastavení->Účty} (obr. \ref{obr:setting}) zvolí přidání nového účtu a následně zvolí typ účtu (obr. \ref{obr:addacc}), manažer účtů spustí službu \emph{AutheticationService}. Služba vytvoří instanci třídy \emph{AccountAuthenticator} - \emph{authenticator} komponenty. \emph{AccountManager} následně volá metodu \emph{addAccount()}, která zkontroluje zda již účet daného typu existuje. Pokud ne, vrací objekt \emph{Bundle} obsahující \emph{Intent} s klíčem \emph{AccountManager.KEY\_INTENT} označující, že bude nutná interakce s uživatelem. Následně je spuštěna aktivita \emph{AuthenticatorActivity} vyzývající uživatele, aby zadal svoje přihlašovací údaje. Po potvrzení je vytvořen účet (obr. \ref{obr:setting}).
+Na diagramu \ref{fig:andauth} je zobrazen průběh vytvoření účtu, který je použit v implementované aplikaci. Jakmile uživatel v sekci \emph{Nastavení->Účty} (obr. \ref{fig:setting}) zvolí přidání nového účtu a následně zvolí typ účtu (obr. \ref{fig:addacc}), manažer účtů spustí službu \emph{AutheticationService}. Služba vytvoří instanci třídy \emph{AccountAuthenticator} - \emph{authenticator} komponenty. \emph{AccountManager} následně volá metodu \emph{addAccount()}, která zkontroluje zda již účet daného typu existuje. Pokud ne, vrací objekt \emph{Bundle} obsahující \emph{Intent} s klíčem \emph{AccountManager.KEY\_INTENT} označující, že bude nutná interakce s uživatelem. Následně je spuštěna aktivita \emph{AuthenticatorActivity} vyzývající uživatele, aby zadal svoje přihlašovací údaje. Po potvrzení je vytvořen účet (obr. \ref{fig:setting}).
 \begin{figure}[H]
   \centering
   \includegraphics[scale=0.7]{visio/andauth.pdf}
 \caption{Sekvenční diagram zobrazující průběh vytvoření účtu}
-\label{obr:andauth}
+\label{fig:andauth}
 \end{figure}
 
 \begin{figure}[H]
@@ -1064,13 +1098,13 @@ Na diagramu \ref{obr:andauth} je zobrazen průběh vytvoření účtu, který je
   \centering
   \includegraphics[width=.75\linewidth]{scr/setting.png}
   \captionof{figure}{Nastavení}
-  \label{obr:setting}
+  \label{fig:setting}
 \end{minipage}%
 \begin{minipage}{.5\textwidth}
   \centering
   \includegraphics[width=.75\linewidth]{scr/addacc.png}
   \captionof{figure}{Přidání účtu}
-  \label{obr:addacc}
+  \label{fig:addacc}
 \end{minipage}
 \end{figure}
 
@@ -1113,6 +1147,45 @@ Data lze ukládat persistentně pomocí SQLite databáze. Vytvořená databáze 
 + 9png grafika
 
 \section{Widgety}
+Widget je malá aplikace, která může být zobrazena na hostiteli widget, typicky na domácí obrazovce (angl. homescreen) Android zařízení. Widget běží v rámci procesu svého hostitele.\\ \indent
+K vytvoření widgety jsou zapotřebí \emph{android.appwidget.AppWidgetProviderInfo} objekt obsahující metadata,  implementace třídy \emph{android.appwidget.AppWidgetProvider} definující chování prvku, layout definující vzhled prvku a 
+volitelně i konfigurační aktivita, která bude spuštěna při vytvoření nové widget prvku. 
+Zde je výčet nejdůležitějších metod třídy \emph{AppWidgetProvider}:
+\begin{itemize}[]
+\item \textbf{onDeleted()}\\
+Volána ve chvíli, kdy je widget smazán ze svého hostitele.
+\item \textbf{onDisabled()}\\
+Volána ve chvíli, kdy je poslední instance widgety smazána ze svého hostitele.
+\item \textbf{onEnabled()}\\
+Volána ve chvíli, kdy je vytvořena první instance widgetu.
+\item \textbf{onUpdate()}\\
+Volána pokaždé kdy mám být widget aktualizován, což nastane v případě kdy uplyne perioda (definována v metadatech) nebo při přijetí \emph{Intent} objektu vytvořeného za účelem aktualizace widgetu. 
+\end{itemize}
+
+V aplikaci jsou k dispozici dva typy widget komponent. Widget pro rychlé zadání docházkové události je zobrazen na obr. \ref{fig:widgetatt}. Widget pro zobrazení přítomnosti (poslední docházkové události) vybraného uživatele je zobrazen na obr. \ref{fig:widgetemp} a jeho konfigurační aktivita pro výběr zaměstnance je na obr. \ref{fig:widgetact}.
+\begin{figure}[H]
+\centering
+
+\begin{minipage}{.45\textwidth}
+  \centering
+  \includegraphics[width=.9\linewidth]{obr/widgetatt.png}
+  \captionof{figure}{Widget pro zadání docházky}
+  \label{fig:widgetatt}
+\end{minipage}\hfill%
+\begin{minipage}{.45\textwidth}
+  \centering
+  \includegraphics[width=.9\linewidth]{obr/widgetemp.png}
+  \captionof{figure}{Widget s přítomností zaměstnance}
+  \label{fig:widgetemp}
+\end{minipage}
+\end{figure}
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[scale=0.5]{obr/widgetact.png}
+\caption{Aktivita pro výběr zaměstnance pro widget \ref{fig:widgetemp}}
+\label{fig:widgetact}
+\end{figure}
 
 \section{GPS + mapy}
 
