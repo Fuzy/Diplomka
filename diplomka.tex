@@ -829,6 +829,8 @@ Původní ambicí byla možnost zadavání výkazů práce. Vzhledem k tomu, že
 Velikým přínosem by byla možnost vytváření šablon pro často opakované výkazy, která by uživateli ušetřila nezanedbatelné množství času.\\ \indent
 Posledním vylepšením by byla možnost rychlého zavolání přímo z profilu vybraného zaměstnance.
 
+\section{Výběr podporovaných verzí Android zařízení}
+
 \section{Komponenty Android aplikace}
 
 \subsection{Activity}
@@ -1112,8 +1114,6 @@ Data lze ukládat persistentně pomocí SQLite databáze. Vytvořená databáze 
 
 \section{Widgety}
 
-\section{Notifikace}
-
 \section{GPS + mapy}
 
 \begin{itemize}[noitemsep,nolistsep]
@@ -1124,8 +1124,10 @@ Data lze ukládat persistentně pomocí SQLite databáze. Vytvořená databáze 
 \item  \textbf{MAPS\_RECEIVE}
 \end{itemize}
 
-\section{Zpětná kompatibilita + support balíček?}
+\section{Notifikace}
 
+\section{Zpětná kompatibilita + support balíček?}
+význam support package, nějaký příklad proč ho v mojí aplikaci potřebuji
 \section{Vytváření grafů}
 Pro potřebu přehledného zobrazení statistik jsem se rozhodl využít grafy. Konkrétně koláčový graf pro zobrazení poměrů typů docházkových událostí či zakázek a sloupcový graf pro zobrazení jejich vývoje v čase.
 
@@ -1165,7 +1167,8 @@ Povoluje aplikaci přístup ke správě účtu uživatele.
 Povoluje aplikaci přístup k číst nastavení pro synchronizaci.
 \item  \textbf{READ\_SYNC\_STATS}\\
 Povoluje aplikaci přístup ke čtení statistik synchronizace.
-Allows applications to read the sync stats
+\item  \textbf{RECEIVE\_BOOT\_COMPLETED}\\
+Povoluje aplikaci získat oznámí při restartu zařízení.
 \item  \textbf{USE\_CREDENTIALS}\\
 Povoluje aplikaci přístup ke přihlašovacím údajům uživatele.
 \item  \textbf{VIBRATE}\\
@@ -1177,8 +1180,58 @@ Povoluje aplikaci měnit nastavení pro synchronizaci.
 \end{itemize}
 
 
-\section{Distribuce a chybové reporty}
-+podepsani
+\section{Distribuce aplikace}
+Vzhledem k tomu, že aplikace je určena pro použití v soukromé společnosti, je základním požadavkem její neveřejná distribuce. Standartní cesta publikováním aplikace na Google play tedy není vhodná a namísto ní jsem zvolil alternativní službu Appkilt Market\cite{appkilt}. Služba Appkilt umožňuje soukromou distribuci aplikace pomocí www odkazu ke stažení aplikace. Mimo to ještě umožnuje automatickou aktualizaci aplikace po vydání nové verze a reportování chyb na účet vývojáře. \\ \\Zde je výčet parametrů bezplatné verze služby:
+\begin{itemize}[noitemsep,nolistsep]
+\item 500 stažení za měsíc
+\item 100 chybových reportů za měsíc
+\item 1 účet administrátor
+\end{itemize}
+
+\subsection*{Verze aplikace}
+Informace o verzi aplikace je nutná aby bylo možné provádět aktualizace. Verze aplikace se definuje pomocí atributů v souboru manifestu:
+\begin{itemize}[noitemsep,nolistsep]
+\item \textbf{android:versionCode}
+Celočíselná hodnota reprezentující verzi aplikačního kódu, relativní k ostatním verzím. Hodnota by měla být zvýšena při každém vydání nové aplikace a díky tomu mohla být provedena aktualizace.
+\item \textbf{android:versionName}
+Řetězcová reprezentace verze určená pro uživatele. 
+\end{itemize}
+
+\subsection*{Aktualizace aplikace}
+K tomu aby bylo možné využívat funkci automatické aktualizace je nutné přidat následující kód do každé aktivity aplikace, kde má být prováděna kontrola dostupnosti nové verze. Předpokladem je přítomnost potřebné knihovny \emph{AppKiltLib.jar} v projektu.
+\begin{lstlisting}
+@Override
+protected void onPause() { 
+	super.onPause();
+
+	AppKilt.onUpdateableActivityPause();
+}
+
+@Override
+protected void onResume() {
+	super.onResume();
+	
+	AppKilt.onUpdateableActivityResume(this);
+}
+\end{lstlisting}
+
+\subsection*{Podepsání aplikace}
+Android systém vyžaduje aby všechny instalované aplikace byly digitálně podepsány certifikátem, který patří vývojáři aplikace. Soukromý klíč si vygeneruje sám vývojář pomocí dostupných prostředků. Před vydáním aplikace je nutné podepsat distribuovaný balík tímto soukromým klíčem.
+
+\subsection*{Reportování chyb}
+K tomu aby bylo možné využívat funkci reportování chyb je nutné přidat do projektu vlastní implementaci třídy \emph{android.app.Application} a v ní volat funkci \emph{AppKilt.init(this, "ID")}, kde řetězce \emph{ID} bude nahrazen skutečným identifikátorem přiděleným aplikaci službou AppKlit. Předpokladem je přítomnost potřebné knihovny \emph{AppKiltLib.jar} v projektu. Nevýhodou je skutečnost, že chybový report je odesílán pouze pokud je zařízení připojeno k síti v momentě kdy dojde k chybě v aplikaci, jinak se tato informace ztratí. 
+\begin{lstlisting}
+public class MyApplication extends Application {
+
+	@Override
+	public void onCreate() {
+		super.onCreate();
+		
+		AppKilt.init(this, "ID");
+	}
+}
+\end{lstlisting}
+
 
 \chapter{Testování? cca 2stranky}
 [TODO testovaci scenare synchronizace]
