@@ -1316,7 +1316,6 @@ public class MyApplication extends Application {
 
 \chapter{Uživatelská dokumentace}
 \section{Docházka}
-[TODO daytimeline 2x na stejnych datech, casova osa, neukonceno]
 
 \begin{figure}[H]
 \begin{minipage}{.45\textwidth}
@@ -1328,11 +1327,11 @@ public class MyApplication extends Application {
 \begin{minipage}{.45\textwidth}
 \centering
   \includegraphics[width=.9\linewidth]{scr/daytimelinealt.png}
-  \caption{Seznam docházkových událostí pro zvolený den řazených dle času}
+  \caption{Seznam docházkových událostí pro zvolený den řazený dle času}
   \label{fig:daytimelinealt}
 \end{minipage}
 \end{figure}
-Hlavní obrazovka aplikace zobrazuje grafický přehled docházkových událostí pro daný den (obr. \ref{fig:daytimeline}). Zobrazuje se blok jakkékoli přítomnosti a blok vybrané nepřítomnosti (oběd, služebně, lékař). Na obrázku je zobrazena přítomnost v práci od 8-12 hod následována odchodem na oběd ve 12 hod, příchodem z oběda ve 13 hod a následně dosud nukončená přítomnost v práci. Alternativně lze události docházky zobrazit jako seznam jednostlivých událostí (obr. \ref{fig:daytimelinealt}). Každá položka je ohraničena rámečkem jehož barva reprezentuje stav synchronizace.
+Hlavní obrazovka aplikace zobrazuje grafický přehled docházkových událostí pro daný den (obr. \ref{fig:daytimeline}). Zobrazuje se blok jakkékoli přítomnosti a blok vybrané nepřítomnosti (oběd, služebně, lékař). Na obrázku je zobrazena přítomnost v práci od 8-12 hod následována odchodem na oběd ve 12 hod, příchodem z oběda ve 13 hod a následně dosud neukončená přítomnost v práci. Alternativně lze události docházky zobrazit jako seznam jednotlivých událostí (obr. \ref{fig:daytimelinealt}). Každá položka je ohraničena rámečkem jehož barva reprezentuje stav synchronizace.\newpage
 \noindent
 Barvy rámečku:
 \begin{itemize}[noitemsep,nolistsep]
@@ -1356,10 +1355,10 @@ Barvy rámečku:
   \label{fig:delete}
 \end{minipage}
 \end{figure}
-Tlačítkem se znakem '\emph{+}' (\ref{fig:daytimeline} či \ref{fig:daytimelinealt}) lze zadat lze zadat novou událost. Na obrazovce \ref{fig:edit} lze zvolit parametry události (čas, typ, poznámka) a rovněz lze události smazat pomocí tlačítka '\emph{popelnice}'. Mazání se potvrzuje pomocí dialogu (\ref{fig:delete}). Zadané údaje lze uložit pomocí tlačítka '\emph{disketa}' 
+Tlačítkem se znakem '\emph{+}' (\ref{fig:daytimeline} či \ref{fig:daytimelinealt}) lze zadat novou událost. Na obrazovce \ref{fig:edit} lze zvolit parametry události (čas, typ, poznámka) a rovněz lze události smazat pomocí tlačítka \emph{Smazat}. Mazání se potvrzuje pomocí dialogu (\ref{fig:delete}). Zadané údaje lze uložit pomocí tlačítka \emph{Uložit}. 
 
 \section{Menu}
-Pomocí tlačítka v horním pravém rohu ('\emph{trojice čtverců}' lze zobrazit menu aplikace (obr. \ref{fig:menu}).
+Pomocí tlačítka \emph{Menu} v horním pravém rohu lze zobrazit menu aplikace (obr. \ref{fig:menu}).
 
 \begin{figure}[H]
 \centering
@@ -1380,22 +1379,51 @@ Pomocí tlačítka v horním pravém rohu ('\emph{trojice čtverců}' lze zobraz
 \begin{itemize}[noitemsep,nolistsep]
 \item  \textbf{Přidat}\\ přidání události (obr. \ref{fig:edit})
 \item  \textbf{Synchronizace}\\ okamžitá synchronizace událostí docházky se serverem
-\item  \textbf{Kalendář}\\ zobrazí kalendář pro výběr dne pro který se zobrazí docházka (obr. \ref{fig:calendar})
+\item  \textbf{Kalendář}\\ zobrazí kalendář pro výběr dne, pro který se zobrazí docházka (obr. \ref{fig:calendar})
 \item  \textbf{Alternativní zobrazení}\\přepínání mezi obrazovkami \ref{fig:daytimeline} a \ref{fig:daytimelinealt}
 \item  \textbf{Graf docházka}\\zobrazení grafů a statistik docházky (viz. sekce \ref{sec:charts})
-\item  \textbf{Graf výkazy}\\podobně jako \emph{Graf docházka}
-\item  \textbf{Výkazy}\\zobrazenívýkazů práce (viz. sekce \ref{sec:records})
+\item  \textbf{Graf výkazy}\\podobně jako \emph{Graf docházka}\\
+\item  \textbf{Výkazy}\\zobrazení výkazů práce (viz. sekce \ref{sec:records})
 \item  \textbf{Aktualizovat zaměstnance}\\aktualizuje seznam zaměstnanců, který se používá pro rozbalovací nabídku s volbou zaměstnance
-\item  \textbf{Přítomní zaměstnanci}\\zozbrazení seznamu zaměstnanců a jejich stav přítomnosti (viz. sekce \ref{sec:emps})
+\item  \textbf{Přítomní zaměstnanci}\\zobrazení seznamu zaměstnanců a jejich stav přítomnosti (viz. sekce \ref{sec:emps})
 \item  \textbf{Nastavení}\\zobrazí možnosti nastavení (viz. sekce \ref{sec:settings})
 \end{itemize}
 
+
 \section{Ovládací panel}
 \label{sec:panel}
+\begin{figure}[H]
+  \centering
+  \includegraphics[scale=0.7]{obr/panel.png}
+  \caption{Panel pro vývěr data a zaměstnance}
+  \label{fig:panel}
+\end{figure}
+
+\begin{itemize}
+\item \textbf{Pole pro počáteční datum období} - vyplňuje se pomocí tlačítek
+\item \textbf{Pole pro konečné datum období} - vyplňuje se pomocí tlačítek
+\item \textbf{Rozbalovací nabídka pro výběr zaměstnance} - zobrazí všechny zaměstnance
+\item \textbf{Zaškrtávací pole pro selekci zaměstnanců} - po zaškrtnutí zobrazí pouze přímé podřízené uživatele
+\item \textbf{Tlačítko pro výběr data}
+\begin{itemize}[noitemsep,nolistsep]
+\item  \textbf{Krátký stisk} - zadá dnešní datum do označeného pole
+\item  \textbf{Dlouhý stisk} - zobrazí kalendář pro výběr data, které vyplní do označeného pole
+\end{itemize}
+\item \textbf{Tlačítko pro výběr dne}
+\begin{itemize}[noitemsep,nolistsep]
+\item  \textbf{Krátký stisk} - zadá dnešní den
+\item  \textbf{Dlouhý stisk} -  zobrazí kalendář pro výběr dne
+\end{itemize}
+\item \textbf{Tlačítko pro výběr měsíce}
+\begin{itemize}[noitemsep,nolistsep]
+\item  \textbf{Krátký stisk} - zadá aktuální měsíc
+\item  \textbf{Dlouhý stisk} - zobrazí kalendář pro výběr měsíce
+\end{itemize}
+\end{itemize}
 
 \section{Grafy s statistiky}
 \label{sec:charts}
-Modul pro grafy a statistiky je dostupný jak pro docházku tak pro výkazy. Zobrazuje data pro vybraného uživatele za daného období. Lze prohlížet data uložená offline (od předchozího dotazu) nebo aktuální data pomocí tlačíka '\emph{Aktualizovat}'. Mezi jednotlivými obrazovkami lze přepínat pomocí tlačítka '\emph{Přepnout zobrazení}'. Ovládací panel pro volbu zaměstnance a období je popsán v sekci \ref{sec:panel}
+Modul pro grafy a statistiky je dostupný jak pro docházku tak pro výkazy. Zobrazuje data pro vybraného uživatele za dané období. Lze prohlížet data uložená offline (od předchozího dotazu) nebo aktuální data pomocí tlačíka \emph{Aktualizovat}. Mezi jednotlivými obrazovkami lze přepínat pomocí tlačítka \emph{Přepnout zobrazení}. Ovládací panel pro volbu zaměstnance a období je popsán v sekci \ref{sec:panel}
 \begin{itemize}[noitemsep,nolistsep]
 \item \textbf{Koláčový graf}\\ zobrazuje poměr jednotlivých typů událostí docházky či typů zakázek (obr. \ref{fig:piechart})
 \item \textbf{Sloupcový graf}\\zobrazuje vývoj jednotlivých typů událostí docházky či typů zakázek po jednotlivých dnech (obr. \ref{fig:stackchart})
@@ -1426,7 +1454,7 @@ Modul pro grafy a statistiky je dostupný jak pro docházku tak pro výkazy. Zob
 
 \section{Výkazy}
 \label{sec:records}
-Obrazovka zobrazuje seznam pracovních výkazů (obr. \ref{fig:records}). Zobrazuje data pro vybraného uživatele za daného období. Lze prohlížet data uložená offline (od předchozího dotazu) nebo aktuální data pomocí tlačíka '\emph{Aktualizovat}'. Po kliknutí na záznam lze zobrazit detail výkazu (obr. \ref{fig:record}). V obdélníkovém rámečku v pravo nahoře je zobrazen rozdíl mezi odpracovaným a vykázaným časem. Po kliknutí lze zobrazit detailní informace. Tyto údaje jsou stahovány ze serveru při každém požadavku, neukládají se persistentně na straně Android aplikace.
+Obrazovka zobrazuje seznam pracovních výkazů (obr. \ref{fig:records}). Zobrazuje data pro vybraného uživatele za daného období. Lze prohlížet data uložená offline (od předchozího dotazu) nebo aktuální data pomocí tlačíka \emph{Aktualizovat}. Po kliknutí na záznam lze zobrazit detail výkazu (obr. \ref{fig:record}). V obdélníkovém rámečku v pravo nahoře je zobrazen rozdíl mezi odpracovaným a vykázaným časem. Po kliknutí lze zobrazit detailní informace. Tyto údaje jsou stahovány ze serveru při každém požadavku, neukládají se persistentně na straně Android aplikace.
 %\vspace{-1 mm}
 \begin{figure}[H]
   \centering
@@ -1444,7 +1472,7 @@ Obrazovka zobrazuje seznam pracovních výkazů (obr. \ref{fig:records}). Zobraz
 
 \section{Přítomnost zaměstnanců}
 \label{sec:emps}
-Zobrazuje seznam zaměstnanců a jejich stav přítomnosti (poslední docházkovou událost) (obr. \ref{fig:emps}). Při řazení záznamů mají přednost přítomní před nepřítomnými a oblíbení před těmi, které si uživatel neoznačil jako oblíbené, dále se řadí se podle abecedních názvů kódů pracovníků. Lze prohlížet data uložená offline (od předchozího dotazu) nebo aktuální data pomocí tlačíka '\emph{Aktualizovat}'. Po kliknutí na záznam zaměstnance lze zobrazit jeho detailní profil (obr. \ref{fig:emp}). Na profilu zaměstnance lze kliknutí na ikonu '\emph{hvězda}' měnit status oblíbenosti.
+Zobrazuje seznam zaměstnanců a jejich stav přítomnosti (poslední docházkovou událost) (obr. \ref{fig:emps}). Při řazení záznamů mají přednost přítomní před nepřítomnými a oblíbení před těmi, které si uživatel neoznačil jako oblíbené, dále se řadí se podle abecedních názvů kódů pracovníků. Lze prohlížet data uložená offline (od předchozího dotazu) nebo aktuální data pomocí tlačíka \emph{Aktualizovat}. Po kliknutí na záznam zaměstnance lze zobrazit jeho detailní profil (obr. \ref{fig:emp}). Na profilu zaměstnance lze kliknutím na ikonu s motivem hvězdy měnit status oblíbenosti.
 
 \begin{figure}[H]
 \centering
@@ -1464,18 +1492,18 @@ Zobrazuje seznam zaměstnanců a jejich stav přítomnosti (poslední docházkov
 
 
 \section{Vytvoření účtu}
-Uživatelský účet lze vytvořit v nastavení Android zařízení v sekci '\emph{Nastavení}' a dále tlačítko '\emph{Přidat účet}' nebo potvrzením dialogu s výzvou k přidání účtu v aplikaci. Po výběru účtu  '\emph{Imisoid}' je zobrazena obrazovka (obr. \ref{fig:accact}) pro přidání přihlašovacích údajů. Předpokladem je fungující připojení k serveru pro aplikaci (\ref{fig:network}). Po úspěšném vytvoření účtu se zobrazí dialog \ref{fig:accokdialog})
+Uživatelský účet lze vytvořit v nastavení Android zařízení v sekci \emph{Nastavení} a dále volba \emph{Přidat účet} nebo potvrzením dialogu s výzvou k přidání účtu v aplikaci. Po výběru účtu  \emph{Imisoid} je zobrazena obrazovka (obr. \ref{fig:accact}) pro zadání přihlašovacích údajů. Předpokladem je fungující připojení k serveru pro aplikaci (\ref{fig:network}). Po úspěšném vytvoření účtu se zobrazí dialog (obr. \ref{fig:accokdialog}).
 \begin{figure}[H]
 \centering
 \begin{minipage}{.45\textwidth}
   \centering
-  \includegraphics[width=.9\linewidth]{scr/setting.png}
+  \includegraphics[width=.75\linewidth]{scr/setting.png}
   \captionof{figure}{Nastavení}
   \label{fig:setting}
 \end{minipage}\hfill%
 \begin{minipage}{.45\textwidth}
   \centering
-  \includegraphics[width=.9\linewidth]{scr/addacc.png}
+  \includegraphics[width=.75\linewidth]{scr/addacc.png}
   \captionof{figure}{Přidání účtu}
   \label{fig:addacc}
 \end{minipage}
@@ -1485,13 +1513,13 @@ Uživatelský účet lze vytvořit v nastavení Android zařízení v sekci '\em
 \centering
 \begin{minipage}{.45\textwidth}
   \centering
-  \includegraphics[width=.9\linewidth]{scr/accact.png}
+  \includegraphics[width=.75\linewidth]{scr/accact.png}
   \captionof{figure}{Zadání přihlašovacíh údajů}
   \label{fig:accact}
 \end{minipage}\hfill%
 \begin{minipage}{.45\textwidth}
   \centering
-  \includegraphics[width=.9\linewidth]{scr/accokdialog.png}
+  \includegraphics[width=.75\linewidth]{scr/accokdialog.png}
   \captionof{figure}{Potvrzení vytvoření účtu}
   \label{fig:accokdialog}
 \end{minipage}
@@ -1500,26 +1528,26 @@ Uživatelský účet lze vytvořit v nastavení Android zařízení v sekci '\em
 
 
 \section{Notifikace}
-
+Při opomenutí zadání příchodu či odchodu se zobrazí notifikace \emph{Chybí odchod} či \emph{Chybí příchod} (obr. \ref{fig:notif}). Předpokladem je, že uživatel má tuto funkci zapnutou v nastavení aplikace (viz sekce \ref{sec:settings}). Pokud uživatel má tuto funkci zapnutou, ale nemá nastavenou geografickou polohu pracoviště (viz sekce \ref{sec:location}), která je k tomu nutná, zobrazí se notifikace  (obr. \ref{fig:notifnotset}).
 \begin{figure}[H]
 \centering
 \begin{minipage}{.45\textwidth}
   \centering
   \includegraphics[width=.9\linewidth]{scr/notif.png}
-   \caption{}
-  \label{fig:}
+   \caption{Notifikace pro chybějící odchod}
+  \label{fig:notif}
 \end{minipage}\hfill%
 \begin{minipage}{.45\textwidth}
    \centering
  \includegraphics[width=.9\linewidth]{scr/notifnotset.png}
-  \caption{}
-  \label{fig:}
+  \caption{Notifikace upozorňující na nenastavenou polohu}
+  \label{fig:notifnotset}
 \end{minipage}
 \end{figure}
 
-
+\newpage
 \section{Widgety}
-
+K dispozici jsou dva typy widget. Widget pro rychlé zadání příchodu či odchodu na pracoviště (obr. \ref{fig:widgetatt}) a widget zobrazující poslední událost vybraného zaměstnance (obr. \ref{fig:widgetemp}). Oba widgety lze nalézt v seznamu widget Android zařízení (obr. \ref{fig:widgetadd}). V případě přidání widgety pro událost zaměstnance se zobrazí obrazovka (obr. \ref{fig:widgetact}) s výběrem zaměstnance.
 \begin{figure}[H]
 \centering
 
@@ -1536,19 +1564,19 @@ Uživatelský účet lze vytvořit v nastavení Android zařízení v sekci '\em
   \label{fig:widgetemp}
 \end{minipage}
 \end{figure}
-
+\vspace{-3 mm}
 \begin{figure}[H]
 \centering
 \begin{minipage}{.45\textwidth}
   \centering
   \includegraphics[width=.9\linewidth]{scr/widgetact.png}
-  \captionof{figure}{Widget pro zadání docházky}
+  \captionof{figure}{Obrazovka pro výběr zaměstnance}
   \label{fig:widgetact}
 \end{minipage}\hfill%
 \begin{minipage}{.45\textwidth}
   \centering
   \includegraphics[width=.9\linewidth]{scr/widgetadd.png}
-  \captionof{figure}{Widget s přítomností zaměstnance}
+  \captionof{figure}{Nalezení widgetů aplikace}
   \label{fig:widgetadd}
 \end{minipage}
 \end{figure}
@@ -1556,6 +1584,8 @@ Uživatelský účet lze vytvořit v nastavení Android zařízení v sekci '\em
 
 \section{Nastavení}
 \label{sec:settings}
+
+
 
 \begin{figure}[H]
 \centering
@@ -1573,37 +1603,76 @@ Uživatelský účet lze vytvořit v nastavení Android zařízení v sekci '\em
 \end{minipage}
 \end{figure}
 
+\begin{itemize}
+\item \textbf{Datový přenos}
+\begin{itemize}[noitemsep,nolistsep]
+\item  \textbf{Povolit synchronizaci}\\ automatická synchronizace pouze při WIFI připojení nebo při jakémkoli aktivním datovém přenosu 
+\end{itemize}
+\item \textbf{Perioda synchronizace}
+\begin{itemize}[noitemsep,nolistsep]
+\item  \textbf{Vlastní docházka}\\ perioda sycnchronizace vlastních docházkových událostí
+\end{itemize}
+\item \textbf{Perioda aktualizace}
+\begin{itemize}[noitemsep,nolistsep]
+\item  \textbf{Widgety pro přítomnost} \\ perioda aktualizace posledních docházkových událostí uživatelů, pro které je používán widget 
+\item  \textbf{Seznam zaměstnanců}\\ perioda aktualizace seznamu zaměstnanců
+\end{itemize}
+\item \textbf{Upozornění při opomenutí}
+\begin{itemize}[noitemsep,nolistsep]
+\item  \textbf{Chybějící příchod} \\upozorňovat na chybějící příchod
+\item  \textbf{Chybějící odchod} \\upozorňovat na chybějící odchod
+\item  \textbf{Perioda} \\perioda kontroly docházky, pokud je perioda nastavena na 60 min, znamená to, že uživatel bude upozorněn nejříve za 30 min a nejpozději za 60 min
+\end{itemize}
+\item \textbf{Ostatní}
+\begin{itemize}[noitemsep,nolistsep]
+\item  \textbf{Připojení k serveru} \\nastavení připojení k serveru (viz sekce \ref{sec:network})
+\item  \textbf{Barvy pro docházku a výkazy} \\nastavení barev pro typy docházkových událostí a zakázek (viz sekce \ref{sec:colors})
+\item  \textbf{Poloha pracoviště} \\nastavení geografické polohy pracoviště (viz sekce \ref{sec:location})
+\end{itemize}
+\end{itemize}
 
+\newpage
 \subsection{Síťové připojení}
+\label{sec:network}
+Na obrazovce pro nastavení připojení k serveru (obr. \ref{fig:network}) se musí zadat doména a port cílového serveru. Po zadání těchto údajú lze příslušným tlačítkem otestovat spojení. Výsledek testu je znázorněn pomocí ikon (zelená - spojení úspěšné, červený křížek - spojení neúspěšné, červený otazník - stav neznámý).
+
 \begin{figure}[H]
   \centering
   \includegraphics[scale=0.25]{scr/network.png}
-    \caption{}
+    \caption{Nastavení připojení k serveru}
   \label{fig:network}
 \end{figure}
 
+\newpage
 \subsection{Poloha pracoviště}
+\label{sec:location}
+Na  obrazovce pro nastavení geografické polohy (obr. \ref{fig:location}) lze nastavit polohu pracoviště a radius vymezující plochu pracoviště. Po kliknutí na tlačítko \emph{Získej polohu} se načte aktuální poloha. Kliknutím na libovolné místo na obrazovce lze tuto polohu upravit. Zvolená poloha se poté uloží pomocí tlačítka  \emph{Uložit}.
+
 \begin{figure}[H]
   \centering
   \includegraphics[scale=0.25]{scr/location.png}
-  \caption{}
-  \label{fig:}
+  \caption{Nastavení geografické polohy}
+  \label{fig:location}
 \end{figure}
 
+\newpage
 \subsection{Nastavení barev typů událostí a zakázek}
+\label{sec:colors}
+Na obrazovce pro nastavení barev (obr. \ref{fig:colors}) lze nastavit barvy typů docházkových událostí a typů zakázek. Po kliknutí na vybranou položku se zobrazí dialog (obr. \ref{fig:changecolor}), kde se na barevné kružnici zvolí požadovaná barva. Poté se kliknutím na středové kolečko tato volba potvrdí.
+
 \begin{figure}[H]
 \centering
-\begin{minipage}{.5\textwidth}
+\begin{minipage}{.45\textwidth}
   \centering
   \includegraphics[width=.9\linewidth]{scr/colors.png}
-   \caption{}
-  \label{fig:}
-\end{minipage}%
-\begin{minipage}{.5\textwidth}
+   \caption{Přehled všech typů docházky a zakázek}
+  \label{fig:colors}
+\end{minipage}\hfill%
+\begin{minipage}{.45\textwidth}
    \centering
  \includegraphics[width=.9\linewidth]{scr/changecolor.png}
-   \caption{}
-  \label{fig:}
+   \caption{Dialog pro změnu barvy}
+  \label{fig:changecolor}
 \end{minipage}
 \end{figure}
 

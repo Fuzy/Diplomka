@@ -99,14 +99,14 @@
 \contentsline {section}{\numberline {A.1}Doch\IeC {\'a}zka}{66}
 \contentsline {section}{\numberline {A.2}Menu}{68}
 \contentsline {section}{\numberline {A.3}Ovl\IeC {\'a}dac\IeC {\'\i } panel}{69}
-\contentsline {section}{\numberline {A.4}Grafy s statistiky}{69}
-\contentsline {section}{\numberline {A.5}V\IeC {\'y}kazy}{71}
-\contentsline {section}{\numberline {A.6}P\IeC {\v r}\IeC {\'\i }tomnost zam\IeC {\v e}stnanc\IeC {\r u}}{72}
-\contentsline {section}{\numberline {A.7}Vytvo\IeC {\v r}en\IeC {\'\i } \IeC {\'u}\IeC {\v c}tu}{73}
+\contentsline {section}{\numberline {A.4}Grafy s statistiky}{70}
+\contentsline {section}{\numberline {A.5}V\IeC {\'y}kazy}{72}
+\contentsline {section}{\numberline {A.6}P\IeC {\v r}\IeC {\'\i }tomnost zam\IeC {\v e}stnanc\IeC {\r u}}{73}
+\contentsline {section}{\numberline {A.7}Vytvo\IeC {\v r}en\IeC {\'\i } \IeC {\'u}\IeC {\v c}tu}{74}
 \contentsline {section}{\numberline {A.8}Notifikace}{76}
-\contentsline {section}{\numberline {A.9}Widgety}{76}
+\contentsline {section}{\numberline {A.9}Widgety}{77}
 \contentsline {section}{\numberline {A.10}Nastaven\IeC {\'\i }}{78}
-\contentsline {subsection}{\numberline {A.10.1}S\IeC {\'\i }\IeC {\v t}ov\IeC {\'e} p\IeC {\v r}ipojen\IeC {\'\i }}{79}
-\contentsline {subsection}{\numberline {A.10.2}Poloha pracovi\IeC {\v s}t\IeC {\v e}}{80}
-\contentsline {subsection}{\numberline {A.10.3}Nastaven\IeC {\'\i } barev typ\IeC {\r u} ud\IeC {\'a}lost\IeC {\'\i } a zak\IeC {\'a}zek}{81}
-\contentsline {chapter}{\numberline {B}Manifest?}{82}
+\contentsline {subsection}{\numberline {A.10.1}S\IeC {\'\i }\IeC {\v t}ov\IeC {\'e} p\IeC {\v r}ipojen\IeC {\'\i }}{80}
+\contentsline {subsection}{\numberline {A.10.2}Poloha pracovi\IeC {\v s}t\IeC {\v e}}{81}
+\contentsline {subsection}{\numberline {A.10.3}Nastaven\IeC {\'\i } barev typ\IeC {\r u} ud\IeC {\'a}lost\IeC {\'\i } a zak\IeC {\'a}zek}{82}
+\contentsline {chapter}{\numberline {B}Manifest?}{83}
