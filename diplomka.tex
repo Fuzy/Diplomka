@@ -1149,7 +1149,7 @@ V aplikaci jsou k dispozici dva typy widget komponent. Widget pro rychlé zadán
 \section{Získávání geografické polohy zařízení}
 V Androidu existují dvě možnosti zjišťování polohy zařízení. První možností je zjištění pozice pomocí GPS, která má vysokou přesnost, ale funguje pouze v otevřených prostorech, má pomalou odezvu a rychle spotřebovává baterii. Druhou možností je získávání pozice pomocí sítě (sítě operátorů a WI-FI), která funguje jak uvnitř tak v otevřených prostorech, má rychlou odezvu, spotřebovává méně baterie, ale není tak přesná. Je možné použít v aplikaci ke zjišťování polohy pouze jeden z těchto zdrojů nebo kombinaci obou.
 \subsection*{Kvalita získané polohy}
-Získávání přesné polohy zařízení je komplikovaná záležitost. Do kvality získané polohy se podílejí tyto faktory:
+Získávání přesné polohy zařízení je komplikovaná záležitost. Do kvality získané polohy se promítají tyto faktory:
 \begin{itemize}[]
 \item \textbf{Velké množství zdrojů polohy}\\
 Informaci o poloze lze získávat z GPS, vysílačů operátora, či Wi-Fi. Vyhodnocení informací o poloze z těchto zdrojů je vždy kompromisem mezi přesností, rychlostí a spotřebovanou baterií.
@@ -1158,10 +1158,15 @@ Kvůli pohybu živatele nemusí být získaná poloha v daný okamžik aktuáln�
 \item \textbf{Měnící se přesnost}\\
 Z důvodu různé přesnosti získané polohy nemusí být nejnovější údaj zdaleka ten nejlepší.
 \end{itemize}
-[TODO +příklad použití, alg detekce prit/neprit], android dulezite tridy
+\noindent
+K využití služeb pro získání polohy zařízení je určena třída\\ \emph{android.location.LocationManager}, která obsahuje metodu:
+\begin{itemize}[]
+\item \textbf{requestLocationUpdates()}\\
+Slouží k registraci posluchače získávajícího aktualizace s informacemi o současné poloze. Jako jeden z parametrů je defiován zdroj polohy (GPS nebo síť).
+\end{itemize}
 
 
-\section{Google Maps Android API}
+\section{Google Maps Android API v2}
 
 
 \begin{itemize}[noitemsep,nolistsep]
@@ -1176,10 +1181,10 @@ Z důvodu různé přesnosti získané polohy nemusí být nejnovější údaj z
 Notifikace je zpráva zobrazená uživateli mimo uživatelské rozhraní aplikace. Notifikace je po vytvoření zobrazena v notifikační oblasti obrazovky zařízení. Po rozbalení notifikační lišty lze vidět detailní popis notifikace a také na ní lze kliknout.
 \\ \indent
 V aplikaci je pomocí notifikace oznámeno uživateli, že zapoměl zadat příchod či odchod na pracoviště. To je kontrolováno na pozadí a proto je uživatel informován tímto způsobem. Při kliknutí je puštěna aktivita umožnující přidání docházkové události.
-[TODO obr]
+Ukázky notifikací jsou na obr. \ref{fig:notif} a \ref{fig:notifnotset}.
 
 \section{Vytváření grafů}
-Pro potřebu přehledného zobrazení statistik jsem se rozhodl využít grafy. Konkrétně koláčový graf pro zobrazení poměrů typů docházkových událostí či zakázek a sloupcový graf pro zobrazení jejich vývoje v čase.
+Pro potřebu přehledného zobrazení statistik jsem se rozhodl využít grafy. Konkrétně koláčový graf pro zobrazení poměrů typů docházkových událostí či zakázek a sloupcový graf pro zobrazení jejich vývoje v čase. Při hledání vhodného řešení poskytující grafové komponenty jsem uvažoval následující varianty:
 
 \subsection*{Implementace vlastní komponenty}
 Implementace vlastních komponent pro grafy by bylo velice časově náročné a proto jsem tuto variantu zamítl.
@@ -1192,14 +1197,29 @@ Jako cloudové řešení se nabízí Google Charts API\cite{googlecharts}. Googl
 \caption{Ukázka grafu vytvořeného Google Charts API}
 \label{fig:gcharts}
 \end{figure}
+
 \subsection*{Použití knihovny třetí strany}
-Jako nejlepší řešení jsem vyhodnotil použití knihovny třetí strany konkrétně AChartEngine \cite{achartengine} ve verzi 1.1.0. Výhoda tohoto řešení spočívá v tom, že s grafy lze pracovat i pokud je zařízení mimo dosah sítě.
-[TODO obr z aplikace]
+Jako nejlepší řešení jsem vyhodnotil použití knihovny třetí strany konkrétně AChartEngine\cite{achartengine} ve verzi 1.1.0. Výhoda tohoto řešení spočívá v tom, že s grafy lze pracovat i pokud je zařízení mimo dosah sítě. Ukázky použitých grafů jsou na obr. \ref{fig:achartspie} a  \ref{fig:achartsstack}.
+\begin{figure}[H]
+\centering
+\begin{minipage}{.48\textwidth}
+  \centering
+  \includegraphics[width=1\linewidth]{obr/achartspie.png}
+ \caption{Koláčový graf knihovny AChartEngine}
+  \label{fig:achartspie}
+\end{minipage}\hfill%
+\begin{minipage}{.48\textwidth}
+   \centering
+ \includegraphics[width=1\linewidth]{obr/achartsstack.png}
+   \caption{Sloupcový graf knihovny AChartEngine}
+  \label{fig:achartsstack}
+\end{minipage}
+\end{figure}
 
 
 \section{Oprávnění}
-V operačním systému Android běží každá aplikace ve svém \emph{sandboxu}, což je bezpečnostní mechanismus, který slouží pro oddělování běžících procesů. Pokud chce aplikace přístup k k systémovým zdrojům, datům jiné aplikace či soukromým datům uživatele musí o to explicitně požádat. To se děje prostřednictvím oprávnění (angl. permissions) staticky deklarovaných v pomocí tagu \emph{<uses-permission>} v souboru manifestu (AndroidManifest.xml). Při instalaci aplikace je uživateli zobrazen seznam všech těchto oprávnění, které aplikace požaduje a bez jeho souhlasu nemůže být aplikace naistalována. Níže je seznam všech oprávnění, které aplikace vyžaduje:
-[TODO jeste ty pro mapy]
+V operačním systému Android běží každá aplikace ve svém \emph{sandboxu}, což je bezpečnostní mechanismus, který slouží pro oddělování běžících procesů. Pokud chce aplikace přístup k systémovým zdrojům, datům jiné aplikace či soukromým datům uživatele musí o to explicitně požádat. To se děje prostřednictvím oprávnění (angl. permissions) staticky deklarovaných pomocí tagu \emph{<uses-permission>} v souboru manifestu (AndroidManifest.xml). Při instalaci aplikace je uživateli zobrazen seznam všech těchto oprávnění, které aplikace požaduje a bez jeho souhlasu nemůže být aplikace nainstalována. Níže je seznam všech oprávnění, které aplikace vyžaduje:
+
 \begin{itemize}%[noitemsep,nolistsep]
 \item  \textbf{ACCESS\_FINE\_LOCATION}\\
 Povoluje aplikaci přístup k přesné pozici ze zdrojů GPS, vysílačů operátora či Wi-Fi.
@@ -1213,14 +1233,18 @@ Povoluje aplikaci přístup k seznamu účtů v zařízení.
 Povoluje aplikaci přístup k síťovým službám.
 \item  \textbf{MANAGE\_ACCOUNTS}\\
 Povoluje aplikaci přístup ke správě účtu uživatele.
+\item  \textbf{MAPS\_RECEIVE}\\
+Oprávnění deklarované v samotné aplikaci zajištující, že jiná aplikace nemůže neoprávněně přistupovat ke službám Google Maps Android API v2 poskytovaným pro tuto aplikaci.
+\item  \textbf{READ\_GSERVICES}\\
+Povoluje aplikaci přístup ke Google webovým službám.
 \item  \textbf{READ\_SYNC\_SETTINGS}\\
-Povoluje aplikaci přístup k číst nastavení pro synchronizaci.
+Povoluje aplikaci přístup ke čtení nastavení pro synchronizaci.
 \item  \textbf{READ\_SYNC\_STATS}\\
 Povoluje aplikaci přístup ke čtení statistik synchronizace.
 \item  \textbf{RECEIVE\_BOOT\_COMPLETED}\\
-Povoluje aplikaci získat oznámí při restartu zařízení.
+Povoluje aplikaci získat oznámení při restartu zařízení.
 \item  \textbf{USE\_CREDENTIALS}\\
-Povoluje aplikaci přístup ke přihlašovacím údajům uživatele.
+Povoluje aplikaci přístup k přihlašovacím údajům uživatele.
 \item  \textbf{VIBRATE}\\
 Povoluje aplikaci požadovat vibraci zařízení.
 \item  \textbf{WRITE\_EXTERNAL\_STORAGE}\\
@@ -1248,7 +1272,7 @@ Celočíselná hodnota reprezentující verzi aplikačního kódu, relativní k 
 \end{itemize}
 
 \subsection*{Aktualizace aplikace}
-K tomu aby bylo možné využívat funkci automatické aktualizace je nutné přidat následující kód do každé aktivity aplikace, kde má být prováděna kontrola dostupnosti nové verze. Předpokladem je přítomnost potřebné knihovny \emph{AppKiltLib.jar} v projektu.
+K tomu aby bylo možné využívat funkci automatické aktualizace je nutné přidat následující kód do každé aktivity aplikace, kde má být prováděna kontrola dostupnosti nové verze. Předpokladem je přítomnost potřebné knihovny \emph{AppKiltLib.jar} v projektu. Při zjištění nové verze aplikace je uživatel vyzván dialogem (obr. \ref{fig:confirm}) k instalaci nové verze. Následně je zobrazen seznam oprávnění požadovaný aplikací a uživatel je vyzván k akceptaci (obr. \ref{fig:install}).
 \begin{lstlisting}
 @Override
 protected void onPause() { 
@@ -1265,11 +1289,26 @@ protected void onResume() {
 }
 \end{lstlisting}
 
+\begin{figure}[H]
+\begin{minipage}{.45\textwidth}
+\centering
+  \includegraphics[width=.9\linewidth]{scr/confirm.png}
+  \caption{Dialog s nabídkou aktualizace aplikace}
+  \label{fig:confirm}
+\end{minipage}\hfill%
+\begin{minipage}{.45\textwidth}
+\centering
+  \includegraphics[width=.9\linewidth]{scr/install.png}
+  \caption{Seznam oprávnění zobrazený při instalaci aplikace}
+  \label{fig:install}
+\end{minipage}
+\end{figure}
+
 \subsection*{Podepsání aplikace}
-Android systém vyžaduje aby všechny instalované aplikace byly digitálně podepsány certifikátem, který patří vývojáři aplikace. Soukromý klíč si vygeneruje sám vývojář pomocí dostupných prostředků. Před vydáním aplikace je nutné podepsat distribuovaný balík tímto soukromým klíčem.
+Android systém vyžaduje, aby všechny instalované aplikace byly digitálně podepsány certifikátem, který patří vývojáři aplikace. Soukromý klíč si vygeneruje sám vývojář pomocí dostupných prostředků. Před vydáním aplikace je nutné podepsat distribuovaný balík tímto soukromým klíčem.
 
 \subsection*{Reportování chyb}
-K tomu aby bylo možné využívat funkci reportování chyb je nutné přidat do projektu vlastní implementaci třídy \emph{android.app.Application} a v ní volat funkci \emph{AppKilt.init(this, "ID")}, kde řetězce \emph{ID} bude nahrazen skutečným identifikátorem přiděleným aplikaci službou AppKlit. Předpokladem je přítomnost potřebné knihovny \emph{AppKiltLib.jar} v projektu. Nevýhodou je skutečnost, že chybový report je odesílán pouze pokud je zařízení připojeno k síti v momentě kdy dojde k chybě v aplikaci, jinak se tato informace ztratí. 
+K tomu aby bylo možné využívat funkci reportování chyb je nutné přidat do projektu vlastní implementaci třídy \emph{android.app.Application} a v ní volat funkci \emph{AppKilt.init(this, "ID")}, kde řetězce \emph{ID} bude nahrazen skutečným identifikátorem přiděleným aplikaci službou AppKlit. Předpokladem je přítomnost potřebné knihovny \emph{AppKiltLib.jar} v projektu. Nevýhodou je skutečnost, že chybový report je odesílán pouze pokud je zařízení připojeno k síti v momentě, kdy dojde k chybě v aplikaci, jinak se tato informace ztratí. 
 \begin{lstlisting}
 public class MyApplication extends Application {
 
@@ -1281,6 +1320,16 @@ public class MyApplication extends Application {
 	}
 }
 \end{lstlisting}
+
+\begin{itemize}[noitemsep,nolistsep]
+\item Název vyjímky (např. java.lang.RuntimeException: Unable to destroy activity {imis.client/imis.client.ui.activities.LocationSettingsActivity}: \\java.lang.NullPointerException)
+\item Počet zaznamenání chyby
+\item Čas prvního zaznamenání
+\item Čas posledního zaznamenání
+\item Výpis zásobníku volání (angl. stack trace)
+
+
+\end{itemize}
 
 \chapter{Závěr}
 
