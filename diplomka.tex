@@ -1071,8 +1071,8 @@ Pro synchronizaci je klíčovou komponentou třída \emph{android.content.\\Abst
 
 \section{Uživatelský účet}
 Android poskytuje správu účtů pro online služby. Uživatel zadá svoje přihlašovací údaje při vytvoření účtu a dává tak aplikaci svolení k využívání tohoto účtu.\\ \indent
-Různé online služby mohou využívat odlišný způsob pro autentizaci. Android manažer účtů využívá kompomentu \emph{authenticator} \cite{accman}, která je obvykle poskytována třetí stranou - poskytovatelem dané služby. Příkladem služby, která poskytuje vlastní \emph{authenticator} je např. Google, Facebook a Microsoft Exchange.\\ \indent
-Nejdůležitější třída pro práci s účty je \emph{AccountManager}. Zde je výčet nejdůležitějších metod:
+Různé online služby mohou využívat odlišný způsob pro autentizaci. Android manažer účtů využívá kompomentu \emph{authenticator}\cite{accman}, která je obvykle poskytována třetí stranou - poskytovatelem dané služby. Příkladem služby, která poskytuje vlastní \emph{authenticator} je např. Google, Facebook a Microsoft Exchange.\\ \indent
+Nejdůležitější třída pro práci s účty je \emph{	android.accounts.AccountManager}. Zde je výčet nejdůležitějších metod:
 \begin{itemize}[]
 \item \textbf{addAccountExplicitly(Account account, String password, Bundle userdata)}\\
 Vytvoří nový účet.
@@ -1084,7 +1084,7 @@ Přidá autentizační token do cache paměti pro daný účet.
 Získání uloženého hesla pro účet./Nastavení hesla.
 \end{itemize}
 
-Na diagramu \ref{fig:andauth} je zobrazen průběh vytvoření účtu, který je použit v implementované aplikaci. Jakmile uživatel v sekci \emph{Nastavení->Účty} (obr. \ref{fig:setting}) zvolí přidání nového účtu a následně zvolí typ účtu (obr. \ref{fig:addacc}), manažer účtů spustí službu \emph{AutheticationService}. Služba vytvoří instanci třídy \emph{AccountAuthenticator} - \emph{authenticator} komponenty. \emph{AccountManager} následně volá metodu \emph{addAccount()}, která zkontroluje zda již účet daného typu existuje. Pokud ne, vrací objekt \emph{Bundle} obsahující \emph{Intent} s klíčem \emph{AccountManager.KEY\_INTENT} označující, že bude nutná interakce s uživatelem. Následně je spuštěna aktivita \emph{AuthenticatorActivity} vyzývající uživatele, aby zadal svoje přihlašovací údaje. Po potvrzení je vytvořen účet (obr. \ref{fig:setting}).
+Na diagramu \ref{fig:andauth} je zobrazen průběh vytvoření účtu, který je použit v implementované aplikaci. Jakmile uživatel v sekci \emph{Nastavení->Účty} (obr. \ref{fig:setting}) zvolí přidání nového účtu a následně zvolí typ účtu (obr. \ref{fig:addacc}), manažer účtů spustí službu \emph{AutheticationService}. Služba vytvoří instanci třídy \emph{AccountAuthenticator} - \emph{authenticator} komponenty. \emph{AccountManager} následně volá metodu \emph{addAccount()}, která zkontroluje zda již účet daného typu existuje. Pokud ne vrací objekt \emph{Bundle} obsahující \emph{Intent} s klíčem \emph{AccountManager.KEY\_INTENT} označující, že bude nutná interakce s uživatelem. Následně je spuštěna aktivita \emph{AuthenticatorActivity} vyzývající uživatele, aby zadal svoje přihlašovací údaje. Po potvrzení je vytvořen účet (obr. \ref{fig:setting}).
 \begin{figure}[H]
   \centering
   \includegraphics[scale=0.7]{visio/andauth.pdf}
@@ -1096,7 +1096,7 @@ Na diagramu \ref{fig:andauth} je zobrazen průběh vytvoření účtu, který je
 
 \section{Ukládání dat}
 Android umožňuje několik způsobů jak persistentně ukládat data aplikace. Programátor by měl vzít v úvahu, zda data mají být soukromá či dostupná i ostatním aplikacím a také velikost těchto dat. 
-\subsection*{Sdílené preference} Ukládá primitivní datové typy ve tvaru klíč-hodnota. Slouží k uložení nastavení specifických pro aplikaci. K těmto se přistupuje pomocí \emph{SharedPreferences} rozhraní. Data jsou ukládána persistentně. \\ V aplikaci používám toto úložiště pro nastavení síťového připojení, barevného nastavení pro typy docházkových událostí a další uživatelsky měnitelné hodnoty.\\ \\
+\subsection*{Sdílené preference} Ukládá primitivní datové typy ve tvaru klíč-hodnota. Slouží k uložení nastavení specifických pro aplikaci. K těmto se přistupuje pomocí \emph{android.content.-\\SharedPreferences} rozhraní. Data jsou ukládána persistentně. V aplikaci používám toto úložiště pro nastavení síťového připojení, barevného nastavení pro typy docházkových událostí a další uživatelsky měnitelné hodnoty.\\ \\
 Objekty se získávají pomocí příslušné get metody:
 \begin{lstlisting}
 SharedPreferences settings = PreferenceManager.getDefaultSharedPreferences(context);
@@ -1104,7 +1104,7 @@ int color = settings.getInt("color", defaultColor);
 \end{lstlisting}
 
 \noindent
-Změny nastavení se provádějí pomocí \emph{SharedPreferences.Editor} rozhraní, které se postará aby data zůstala konsistentní a řídí transkační zpracování.\\
+Změny nastavení se provádějí pomocí \emph{SharedPreferences.Editor} rozhraní, které se postará aby data zůstala konsistentní a řídí transakční zpracování.\\
 \begin{lstlisting}
 SharedPreferences settings = PreferenceManager.getDefaultSharedPreferences(context);
 SharedPreferences.Editor editor = settings.edit();
@@ -1113,24 +1113,19 @@ editor.commit();
 \end{lstlisting}
 
 \subsection*{Interní úložiště}
-Soubory lze ukládat v interní paměti zařízení. Tyto soubory jsou defaultně přístupné pouze pro aplikace, která je vytvořila a při odinstalování jsou automaticky smazány.
+Soubory lze ukládat v interní paměti zařízení. Tyto soubory jsou defaultně přístupné pouze pro aplikaci, která je vytvořila a při odinstalování jsou automaticky smazány.
 \subsection*{Externí úložiště}
 Další možností pro ukládání souborů je externí úložiště (např. SD karta).  Toto úložiště je sdílené a data mohou být editována i mimo aplikaci.
 \subsection*{SQLite databáze}
-Data lze ukládat persistentně pomocí SQLite databáze. Vytvořená databáze je dostupná jakkékoli třídě v aplikaci, ale není přístupná mimo aplikaci, která jí vytořila. SQLite databázi detailněji popisuji v kapitole \ref{sqlite}.
-[TODO citace]
-
-%\subsection{SQLite}
-%\label{sqlite}
-[TODO]je treba resit delku dat napriklad stringu?, dynamic typing
-[TODO rozepsat podrobneji]
-
+Data lze ukládat persistentně pomocí SQLite\cite{sqlite} databáze. Vytvořená databáze je dostupná jakkékoli třídě v aplikaci, ale není přístupná mimo aplikaci, která jí vytořila. \\ \indent
+SQLite databáze nepoužívá vlastní proces jako serverové databáze. Databázi představuje jeden soubor na disku, se kterým pracuje proces aplikace. K použití databáze nejsou potřeba další balíky knihoven. Použití databáze nevyžaduje instalaci. Transakce jsou podporovány a splňují vlastnosti ACID (Atomicity, Consistency, Isolation, Durability) a to i v případě kdy je operační systém mobilního zařízení neočekávaně ukončen. Databáze používá dynamické typování. \\ \indent
+SQLite databáze je v aplikaci použita pro persistentní ukládání dat o událostech docházky, výkazech a zaměstnancích.
 
 
 \section{Widgety}
-Widget je malá aplikace, která může být zobrazena na hostiteli widget, typicky na domácí obrazovce (angl. homescreen) Android zařízení. Widget běží v rámci procesu svého hostitele.\\ \indent
-K vytvoření widgety jsou zapotřebí \emph{android.appwidget.AppWidgetProviderInfo} objekt obsahující metadata,  implementace třídy \emph{android.appwidget.AppWidgetProvider} definující chování prvku, layout definující vzhled prvku a 
-volitelně i konfigurační aktivita, která bude spuštěna při vytvoření nové widget prvku. 
+Widget je malá aplikace, která může být zobrazena na hostiteli widget typicky na domácí obrazovce (angl. homescreen) Android zařízení. Widget běží v rámci procesu svého hostitele.\\ \indent
+K vytvoření widgety jsou zapotřebí \emph{android.appwidget.AppWidgetProvid-\\erInfo} objekt obsahující metadata,  implementace třídy \emph{android.appwidget.A-\\ppWidgetProvider} definující chování prvku, layout definující vzhled prvku a 
+volitelně i konfigurační aktivita, která bude spuštěna při vytvoření nové widget komponenty. 
 Zde je výčet nejdůležitějších metod třídy \emph{AppWidgetProvider}:
 \begin{itemize}[]
 \item \textbf{onDeleted()}\\
@@ -1140,10 +1135,10 @@ Volána ve chvíli, kdy je poslední instance widgety smazána ze svého hostite
 \item \textbf{onEnabled()}\\
 Volána ve chvíli, kdy je vytvořena první instance widgetu.
 \item \textbf{onUpdate()}\\
-Volána pokaždé kdy mám být widget aktualizován, což nastane v případě kdy uplyne perioda (definována v metadatech) nebo při přijetí \emph{Intent} objektu vytvořeného za účelem aktualizace widgetu. 
+Volána pokaždé kdy má být widget aktualizován, což nastane v případě kdy uplyne perioda (definována v metadatech) nebo při přijetí \emph{Intent} objektu vytvořeného za účelem aktualizace widgetu. 
 \end{itemize}
-
-V aplikaci jsou k dispozici dva typy widget komponent. Widget pro rychlé zadání docházkové události je zobrazen na obr. \ref{fig:widgetatt}. Widget pro zobrazení přítomnosti (poslední docházkové události) vybraného uživatele je zobrazen na obr. \ref{fig:widgetemp} a jeho konfigurační aktivita pro výběr zaměstnance je na obr. \ref{fig:widgetact}.
+\subsection*{Použití v aplikaci}
+V aplikaci jsou k dispozici dva typy widget komponent. Widget pro rychlé zadání docházkové události je zobrazen na obr. \ref{fig:widgetatt}. Widget pro zobrazení přítomnosti (poslední docházkové události) vybraného uživatele je zobrazena na obr. \ref{fig:widgetemp} a jeho konfigurační aktivita pro výběr zaměstnance je na obr. \ref{fig:widgetact}.
 
 
 \section{Získávání geografické polohy zařízení}
@@ -1165,18 +1160,23 @@ K využití služeb pro získání polohy zařízení je určena třída\\ \emph
 Slouží k registraci posluchače získávajícího aktualizace s informacemi o současné poloze. Jako jeden z parametrů je defiován zdroj polohy (GPS nebo síť).
 \end{itemize}
 
+\subsection*{Použití v aplikaci}
+V aplikaci je funkce získání polohy použita pro zjištění zda se uživatel nachází či nenachází v prostorách pracoviště. Uživatel si nejprve nastaví polohu pracoviště pomocí příslušné obrazovky (obr. \ref{fig:location}). Aplikace periodicky kontroluje polohu zařízení a sleduje poslední docházkovou aktivitu. Pokud se uživatel nachází na pracovišti a nemá zadaný příchod nebo se nenachází na pracovišti a nemá zadaný odchod, aplikace ho upozorní pomocí notifikací (obr. \ref{fig:notif}). Uživatel tuto funkci může chápat jako zásah do soukromý a může ji vypnout. Získaná data o poloze se využívají pouze k upozornění uživatele.
 
 \section{Google Maps Android API v2}
+Google Maps Android API\cite{map} je služba poskytovaná společností Google umožňující využívat data Google Maps na Android zařízení. API automaticky zajišťuje přístup k serverům Google Maps, stažení a zobrazení mapy a odezvu na uživatelova gesta na zobrazené mapě. \\ \indent
+API je součástí balíku Google Play services SDK\cite{play}. Před použitím map v aplikaci je nejprve nutné tento balík nainstalovat a získat API klíč nutný k tomu, aby aplikace mohla přistupovat k této službě. Vývojář si nejprve vytvoří klíč pro svojí aplikaci, poté zažádá prostřednictvím Google APIs Console ve svém Google účtu o klíč určený pro přístup ke službě. \\ \indent
+Pro využití map v aplikaci je nejdůležitější třída\\ \emph{com.google.android.gms.maps.GoogleMap} umožňující zobrazení mapy, nastavení zobrazené polohy, měnit typ mapy nebo animovat zobrazení. Ukázka mapy zobrazené pomocí této služby je na obr. \ref{fig:map}.
 
+\begin{figure}[H]
+  \centering
+  \includegraphics[scale=0.43]{scr/map.png}
+\caption{Ukázka mapy získané pomocí Google Maps Android API v2}
+\label{fig:map}
+\end{figure}
 
-\begin{itemize}[noitemsep,nolistsep]
-\item  \textbf{READ\_GSERVICES}
-\end{itemize}
-
-\begin{itemize}[noitemsep,nolistsep]
-\item  \textbf{MAPS\_RECEIVE}
-\end{itemize}
-
+\subsection*{Použití v aplikaci}
+V aplikaci jsou mapy použiti pro zobrazení aktuální polohy zařízení na obrazovce pro nastavení geografické polohy pracoviště.
 \section{Notifikace}
 Notifikace je zpráva zobrazená uživateli mimo uživatelské rozhraní aplikace. Notifikace je po vytvoření zobrazena v notifikační oblasti obrazovky zařízení. Po rozbalení notifikační lišty lze vidět detailní popis notifikace a také na ní lze kliknout.
 \\ \indent
@@ -1338,6 +1338,7 @@ public class MyApplication extends Application {
 
 \begin{list}{}{\setlength{\leftmargin}{30mm}
 \setlength{\labelwidth}{30mm} \setlength{\labelsep}{0mm} }
+\item[\parbox{30mm}{ACID}] Atomicity, Consistency, Isolation, Durability,
 \item[\parbox{30mm}{CRUD}] Create, read, update and delete
 \item[\parbox{30mm}{DML}] Data manipulation language
 \item[\parbox{30mm}{ERP}] Enterprise Resource Planning 

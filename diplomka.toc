@@ -88,25 +88,25 @@
 \contentsline {section}{\numberline {6.7}Widgety}{55}
 \contentsline {section}{\numberline {6.8}Z\IeC {\'\i }sk\IeC {\'a}v\IeC {\'a}n\IeC {\'\i } geografick\IeC {\'e} polohy za\IeC {\v r}\IeC {\'\i }zen\IeC {\'\i }}{56}
 \contentsline {section}{\numberline {6.9}Google Maps Android API v2}{57}
-\contentsline {section}{\numberline {6.10}Notifikace}{57}
-\contentsline {section}{\numberline {6.11}Vytv\IeC {\'a}\IeC {\v r}en\IeC {\'\i } graf\IeC {\r u}}{57}
-\contentsline {section}{\numberline {6.12}Opr\IeC {\'a}vn\IeC {\v e}n\IeC {\'\i }}{59}
-\contentsline {section}{\numberline {6.13}Distribuce aplikace}{60}
-\contentsline {chapter}{\numberline {7}Z\IeC {\'a}v\IeC {\v e}r}{64}
-\contentsline {chapter}{Seznam zkratek}{65}
-\contentsline {chapter}{Literatura}{67}
-\contentsline {chapter}{\numberline {A}U\IeC {\v z}ivatelsk\IeC {\'a} dokumentace}{68}
-\contentsline {section}{\numberline {A.1}Doch\IeC {\'a}zka}{68}
-\contentsline {section}{\numberline {A.2}Menu}{70}
-\contentsline {section}{\numberline {A.3}Ovl\IeC {\'a}dac\IeC {\'\i } panel}{71}
-\contentsline {section}{\numberline {A.4}Grafy s statistiky}{72}
-\contentsline {section}{\numberline {A.5}V\IeC {\'y}kazy}{74}
-\contentsline {section}{\numberline {A.6}P\IeC {\v r}\IeC {\'\i }tomnost zam\IeC {\v e}stnanc\IeC {\r u}}{75}
-\contentsline {section}{\numberline {A.7}Vytvo\IeC {\v r}en\IeC {\'\i } \IeC {\'u}\IeC {\v c}tu}{76}
-\contentsline {section}{\numberline {A.8}Notifikace}{78}
-\contentsline {section}{\numberline {A.9}Widgety}{79}
-\contentsline {section}{\numberline {A.10}Nastaven\IeC {\'\i }}{80}
-\contentsline {subsection}{\numberline {A.10.1}S\IeC {\'\i }\IeC {\v t}ov\IeC {\'e} p\IeC {\v r}ipojen\IeC {\'\i }}{82}
-\contentsline {subsection}{\numberline {A.10.2}Poloha pracovi\IeC {\v s}t\IeC {\v e}}{83}
-\contentsline {subsection}{\numberline {A.10.3}Nastaven\IeC {\'\i } barev typ\IeC {\r u} ud\IeC {\'a}lost\IeC {\'\i } a zak\IeC {\'a}zek}{84}
-\contentsline {chapter}{\numberline {B}Manifest?}{85}
+\contentsline {section}{\numberline {6.10}Notifikace}{58}
+\contentsline {section}{\numberline {6.11}Vytv\IeC {\'a}\IeC {\v r}en\IeC {\'\i } graf\IeC {\r u}}{59}
+\contentsline {section}{\numberline {6.12}Opr\IeC {\'a}vn\IeC {\v e}n\IeC {\'\i }}{61}
+\contentsline {section}{\numberline {6.13}Distribuce aplikace}{62}
+\contentsline {chapter}{\numberline {7}Z\IeC {\'a}v\IeC {\v e}r}{66}
+\contentsline {chapter}{Seznam zkratek}{67}
+\contentsline {chapter}{Literatura}{69}
+\contentsline {chapter}{\numberline {A}U\IeC {\v z}ivatelsk\IeC {\'a} dokumentace}{70}
+\contentsline {section}{\numberline {A.1}Doch\IeC {\'a}zka}{70}
+\contentsline {section}{\numberline {A.2}Menu}{72}
+\contentsline {section}{\numberline {A.3}Ovl\IeC {\'a}dac\IeC {\'\i } panel}{73}
+\contentsline {section}{\numberline {A.4}Grafy s statistiky}{74}
+\contentsline {section}{\numberline {A.5}V\IeC {\'y}kazy}{76}
+\contentsline {section}{\numberline {A.6}P\IeC {\v r}\IeC {\'\i }tomnost zam\IeC {\v e}stnanc\IeC {\r u}}{77}
+\contentsline {section}{\numberline {A.7}Vytvo\IeC {\v r}en\IeC {\'\i } \IeC {\'u}\IeC {\v c}tu}{78}
+\contentsline {section}{\numberline {A.8}Notifikace}{80}
+\contentsline {section}{\numberline {A.9}Widgety}{81}
+\contentsline {section}{\numberline {A.10}Nastaven\IeC {\'\i }}{82}
+\contentsline {subsection}{\numberline {A.10.1}S\IeC {\'\i }\IeC {\v t}ov\IeC {\'e} p\IeC {\v r}ipojen\IeC {\'\i }}{84}
+\contentsline {subsection}{\numberline {A.10.2}Poloha pracovi\IeC {\v s}t\IeC {\v e}}{85}
+\contentsline {subsection}{\numberline {A.10.3}Nastaven\IeC {\'\i } barev typ\IeC {\r u} ud\IeC {\'a}lost\IeC {\'\i } a zak\IeC {\'a}zek}{86}
+\contentsline {chapter}{\numberline {B}Manifest?}{87}

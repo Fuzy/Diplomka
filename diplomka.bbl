@@ -20,10 +20,24 @@ AppKilt Market. [online], [cit. 2013-7-12].
 Google Charts. [online], [cit. 2013-7-12].
 \newline\urlprefix\url{https://developers.google.com/chart/}
 
+\bibitem{map}
+Google Maps Android API v2. [online], [cit. 2013-7-18].
+\newline\urlprefix\url{https://developers.google.com/maps/documentation/androi%
+d/}
+
+\bibitem{play}
+Google Play Services. [online], [cit. 2013-7-18].
+\newline\urlprefix\url{http://developer.android.com/google/play-services/index%
+.html}
+
 \bibitem{share}
 Platform Versions. [online], [cit. 2013-7-15].
 \newline\urlprefix\url{http://developer.android.com/about/dashboards/index.htm%
 l}
+
+\bibitem{sqlite}
+SQLite. [online], [cit. 2013-7-18].
+\newline\urlprefix\url{http://www.sqlite.org/}
 
 \bibitem{rest}
 Fielding, R.~T.: Architectural Styles and the Design of Network-based Software
