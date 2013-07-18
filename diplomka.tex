@@ -906,7 +906,54 @@ Metoda je volána před tím než je aktivita zničena (před provedením \emph{
 \item \textbf{onRestoreInstanceState(Bundle)}\\
 Metoda je volána (po provedením \emph{onStart()}) v případě, že aktivita byla znovuobnovena z předchozího uloženého stavu.Na začátku metody je nutné zavolat metodu rodiče, aby mohl být obnoven stav prvků UI pomocí defaultní implementace.
 \end{itemize}
-[TODO UML class diagram]
+
+
+\subsubsection*{Aktivity použité v aplikaci}
+Diagram \ref{fig:activityuml} zobrazuje UML diagram tříd pro aktivity použité v aplikaci.
+\begin{figure}[H]
+  \centering
+  \includegraphics[scale=0.7]{visio/activity2.pdf}
+\caption{UML diagram tříd pro aktivity aplikace}
+\label{fig:activityuml}
+\end{figure}
+
+Výčet všech aktivit použitých v aplikaci (všechny aktivity mají v názvu příponu \emph{Activity}):
+\begin{itemize}[noitemsep,nolistsep]
+\item \textbf{Async}\\
+Abstraktní třída obsahující metody společné pro aktivity provádějící asynchronní požadavek k serveru.
+\item \textbf{Authenticator}\\ 
+Aktivita pro zadání přihlašovacích údajů uživatele (obr. \ref{fig:accact}).
+\item \textbf{Control}\\
+Abstraktní třída obsahující metody společné pro aktivity pracující s ovládacím panelem pro výběr zaměstnance a období.
+\item \textbf{DayTimeline}\\
+Aktivita zobrazující denní docházku (obr. \ref{fig:daytimeline} a \ref{fig:daytimelinealt})
+\item \textbf{NetworkSettings}\\ 
+Aktivita pro nastavení síťového připojení (obr. \ref{fig:network}).
+\item \textbf{PresentEmployees}\\
+Aktivita zobrazující seznam přítomných zaměstnanců (obr. \ref{fig:emps}).
+\item \textbf{Chart}\\
+Abstraktní třída obsahující metody společné pro aktivity zobrazující grafy a statistiky.
+\item \textbf{EventsChart}\\
+Aktivita zobrazující grafy a statistiky pro události docházky (obr. \ref{fig:piechart}, \ref{fig:stackchart}, \ref{fig:stats}).
+\item \textbf{RecordsChart}\\
+Aktivita zobrazující grafy a statistiky pro výkazy práce.
+\item \textbf{RecordsList}\\
+Aktivita zobrazující výkazy práce (obr. \ref{fig:records}).
+\item \textbf{Calendar}\\
+Aktivita zobrazující kalendář  (obr. \ref{fig:calendar}).
+\item \textbf{EmployeeDetail}\\
+Aktivita zobrazující profil zaměstnance (obr. \ref{fig:emp}).
+\item \textbf{EventEditor}\\
+Aktivita pro editaci události docházky (obr. \ref{fig:edit}).
+\item \textbf{InfoColor}\\
+Aktivita pro nastavení barev typů události docházky a zakázek (obr. \ref{fig:colors}).
+\item \textbf{LocationSettings}\\
+Aktivita pro nastavení polohy zaměstnance (obr. \ref{fig:location}).
+\item \textbf{RecordDetail}\\
+Aktivita zobrazující profil zaměstnance (obr. \ref{fig:record}).
+\item \textbf{Settings}\\
+Aktivita pro nastavení aplikace (obr. \ref{fig:settings1}, \ref{fig:settings2}).
+\end{itemize}
 
 \subsection{Fragment}
 Fragment představuje komponentu uživatelského rozhraní, která je součástí aktivity. Aktivita může obsahovat více fragmentů a fragment může být využíván ve více aktivitách. Jedná se tedy o modul umožňující nějakou funkčnost, který má vlastní životní cyklus, přijímá události z uživatelského rozhraní a může být přidán či odstraněn z aktivity během její činnosti. Fragment musí být vždy součástí nějaké aktivity a je přímo ovlivňován životním cyklem hostující aktivity.\\ \indent
@@ -926,7 +973,7 @@ Volána ve cvhíli, kdy je uživatelské rozhraní fragment odstraňováno.
 \item \textbf{onDetach()}\\
 Volána ve chvíli, kdy je fragment odstraňován z aktivity.
 \end{itemize}
-[TODO priklady fragmentu z projektu]
+
 \subsubsection*{Provádění transakcí}
 Fragment je možné přidávat, mazat či nahrazovat jinou v rámci rodičovské aktivity. Ty akce se nazývají transakce a provádějí se pomocí třídy \emph{FragmentTransaction}.V následující ukázce kódu je současný fragment v aktivitě nahrazen fragmentem \emph{PieChartFragment} zobrazující koláčový graf. Ukázka je ze třídy \emph{ChartActivity}:
 
@@ -941,6 +988,38 @@ ft.commit();
 \subsubsection*{Změna konfigurace s využitím fragmentu}
 Další uplatnění fragmentů se nachází v ošetření situace, kdy se v důsledku rotace zařízení změní poloha displeje. V případě kdy aktivita spouští asynchronní úkol (\emph{Asynctask} \ref{sec:asynctask}) a uživatel otočí displej, aktivita bude restartována. V momentě kdy \emph{Asynctask} dokončí svůj úkol bude jeho výsledek zasílat staré instanci aktivity, která v té chvíli už neexistuje. Kromě toho nově vytvořená aktivita spustí znovu ten samý \emph{Asynctask}. Obojí je samozřejmě nežádoucí. Řešením tohoto problému je využít fragment jako hostitele pro \emph{Asynctask} a nastavit metodou fragmentu \emph{setRetainInstance (true)} vlastnost, že fragment nebude restartován při restartu jeho hostitelské aktivity\cite{config}. 
 [TODO odkazat se na tridy v projektu nebo dat ukazku do prilohy]
+
+\subsubsection*{Fragmenty použité v aplikaci}
+
+Diagram \ref{fig:fragmentsuml} zobrazuje UML diagram tříd pro fragmenty použité v aplikaci.
+\begin{figure}[H]
+  \centering
+  \includegraphics[scale=0.8]{visio/fragments.pdf}
+\caption{UML diagram tříd pro aktivity aplikace}
+\label{fig:fragmentsuml}
+\end{figure}
+
+Výčet všech fragmentů použitých v aplikaci (všechny fragmenty mají v názvu příponu \emph{Fragment}):
+\begin{itemize}[noitemsep,nolistsep]
+\item \textbf{Chart}\\
+Abstraktní třída obsahující metody společné pro všechny fragmenty použité pro zobrazení grafů a statistik.
+\item \textbf{PieChart}\\
+Fragment zobrazující koláčový graf.
+\item \textbf{StackedBar}\\
+Fragment zobrazující sloupcový graf.
+\item \textbf{Statistics}\\
+Fragment zobrazující statistiky.
+\item \textbf{DayTimelineBlocks}\\
+Fragment zobrazující denní docházku v podobě bloků přítomnosti a nepřítomnosti.
+\item \textbf{DayTimelineList}\\
+Fragment zobrazující seznam denních událostí docházky.
+\item \textbf{RecordDetail}\\
+Fragment zobrazující detail výkazu práce.
+\item \textbf{Settings}\\
+Fragment zobrazující nastavení aplikace.
+\item \textbf{Task}\\
+Fragment zobrazující dialog použitý ve všech aktivitách provádějících asynchronní požadavek na server.
+\end{itemize}
 
 \subsection{Async task}
 \label{sec:asynctask}
@@ -1642,14 +1721,14 @@ K dispozici jsou dva typy widget. Widget pro rychlé zadání příchodu či odc
 \begin{minipage}{.45\textwidth}
   \centering
   \includegraphics[width=.9\linewidth]{scr/settings1.png}
-   \caption{}
-  \label{fig:}
+   \caption{Nastavení aplikace}
+  \label{fig:settings1}
 \end{minipage}\hfill%
 \begin{minipage}{.45\textwidth}
    \centering
  \includegraphics[width=.9\linewidth]{scr/settings2.png}
-   \caption{}
-  \label{fig:}
+   \caption{Nastavení aplikace pokr.}
+  \label{fig:settings2}
 \end{minipage}
 \end{figure}
 
