@@ -752,13 +752,8 @@ Parametry:\begin{itemize}[noitemsep,nolistsep]
 \section{web.xml}
 
 \section{REST}
-RestaTemplates - springframework= jak to vola klient...
-\begin{enumerate}
-\item REST operace - davkove vs jednotlive
-\item REST, tabulka URI, 
-\end{enumerate}
+RestaTemplates - springframework= jak to vola klient..., Klienti jiných platforem
 
-\section{Klienti jiných platforem?}
 
 \chapter{Android aplikace}
 
@@ -987,7 +982,6 @@ ft.commit();
 
 \subsubsection*{Změna konfigurace s využitím fragmentu}
 Další uplatnění fragmentů se nachází v ošetření situace, kdy se v důsledku rotace zařízení změní poloha displeje. V případě kdy aktivita spouští asynchronní úkol (\emph{Asynctask} \ref{sec:asynctask}) a uživatel otočí displej, aktivita bude restartována. V momentě kdy \emph{Asynctask} dokončí svůj úkol bude jeho výsledek zasílat staré instanci aktivity, která v té chvíli už neexistuje. Kromě toho nově vytvořená aktivita spustí znovu ten samý \emph{Asynctask}. Obojí je samozřejmě nežádoucí. Řešením tohoto problému je využít fragment jako hostitele pro \emph{Asynctask} a nastavit metodou fragmentu \emph{setRetainInstance (true)} vlastnost, že fragment nebude restartován při restartu jeho hostitelské aktivity\cite{config}. 
-[TODO odkazat se na tridy v projektu nebo dat ukazku do prilohy]
 
 \subsubsection*{Fragmenty použité v aplikaci}
 
@@ -1045,7 +1039,32 @@ volána na UI vlákně po tom, co je úkol na pozadí dokončen. Výsledek akce 
 \end{itemize}
 
 \emph{AsyncTask} komponenty jsou vhodné pro krátké operace (max jednotky sekund), které přímo ovliňují chování uživatelského rozhraní. Příkladem takové operace může být stažení dat, která mají být zobrazena okamžitě jakmile jsou dostupná. Taková akce musí být provedena asynchronně jinak by docházelo k efektu zamrzání uživatelského rozhraní.
-[TODO priklady AsyncTask z projektu+diagram trid]
+
+\subsubsection*{Třídy AsyncTask použité v aplikaci}
+
+Diagram \ref{fig:async} zobrazuje UML diagram tříd pro AsyncTask třídy použité v aplikaci.
+\begin{figure}[H]
+  \centering
+  \includegraphics[scale=0.7]{visio/async.pdf}
+\caption{UML diagram tříd pro AsyncTask třídy použité v aplikaci}
+\label{fig:async}
+\end{figure}
+
+Výčet všech AsyncTask tříd použitých v aplikaci:
+\begin{itemize}[noitemsep,nolistsep]
+\item \textbf{NetworkingAsyncTask}\\
+Abstraktní třída obsahující metody společné pro všechny třídy provádějící asynchronní požadavek k serveru.
+\item \textbf{AuthEmployee}\\
+Asynchronní úkol provádějící požadavek na autentizace zaměstnance. Používá se pouze ve chvíli kdy si uživatel vytváří svůj účet.
+\item \textbf{GetListOfEmployees}\\
+Asynchronní úkol provádějící požadavek na získání seznamu zaměstnanců.
+\item \textbf{GetListOfEvents}\\
+Asynchronní úkol provádějící požadavek na získání seznamu docházkových událostí uživatele.
+\item \textbf{GetListOfRecords}\\
+Asynchronní úkol provádějící požadavek na získání seznamu výkazů.
+\item \textbf{TestConnection}\\
+Asynchronní úkol provádějící test spojení se serverem.
+\end{itemize}
 
 \subsection{Service}
 \emph{Service} neboli služba je komponenta aplikace, která provádí dlouhotrvající operaci na pozadí a neposkytuje uživatelské rozhraní. Služba může být spuštěna vlastní aplikací, z jiné aplikace či systémovou komponentou.  Služba běží v hlavním vlákně hostujícího procesu. Služby lze klasifikovat na dva typy:
@@ -1070,9 +1089,16 @@ Volána systémem ve chvíli, kdy se jiná komponenta chce ke službě přiváza
 Komponenta klienta se odpoutává od služby.
 \end{itemize}
 \end{description}
-[TODO priklady v projektu]
+\subsection*{Použití v aplikaci}
+V aplikaci se komponenty služby používají pro synchronizaci docházkových událostí uživatele, aktualizaci seznamu zaměstnanců a widget komponent pro vybrané zaměstnance a také pro kontrolu chybějící docházkové události.
 
 \subsection{Intent}
+Objekt třídy \emph{android.content.Intent} obsahuje abstraktní popis operace, která má být provedena. Objekt \emph{Intent} se používá pro spuštění jiné aktivity, spuštění služby či zaslání události komponentě Broadcast receiver (viz sekce \ref{sec:broadcast}). Může být rovněž použit pro komunikaci mezi komponentami aplikace či dokonce různých aplikací. Objekt \emph{Intent} nese informace o:
+
+\begin{itemize}[]
+\item \textbf{akce}\\ Akce která má být provedena.
+\item \textbf{data}\\ Data důležitá pro provedení operace.
+\end{itemize}
 
 
 \subsection{Content provider}
@@ -1103,12 +1129,15 @@ content://user_dictionary/words
 \end{itemize}
 
 \subsection{Broadcast receiver}
+\label{sec:broadcast}
 Komponenta \emph{Broadcast receiver} slouží jako posluchač systémové či aplikační události. Všichni registrovaní posluchači jsou informováni jakmile událost nastane. Objekt musí být registrován pomocí \emph{android.content.Context.registerReceiver()} metody kontextu k poslechu události specifikované pomocí filtru událostí \emph{android.content.IntentFilter}. Událost může být vyvolána systémem (např. připojení nabíječky, změna stavu připojení k síti) nebo může být vytvořena aplikací. Nejdůležitější metoda této třídy:
 \begin{itemize}[]
 \item \textbf{onReceive(Context context, Intent intent)}\\
 Metoda je volána ve chvíli kdy je přijata očekávaná událost. Životnost objektu po dokončení této metody končí.
 \end{itemize}
-[TODO priklad z applikace]
+\subsection*{Použití v aplikaci}
+V aplikaci jsou tyto komponenty použity pro aktualizaci widget komponent či přijetí události o restartu systému a následnému spuštění některých služeb.
+
 \subsection{Loader}
 Třída \emph{android.content.Loader<D>} slouží k asynchronnímu načtení dat pro aktivitu či fragment. Monitoruje zdroj svých dat a automaticky se aktualizuje v momentě změny těchto dat. Loader spolupracuje s třídami \emph{	android.app.LoaderManager}, která řídí činnost všech Loader objektů patřících dané aktivitě či fragmentu. Aktivita či fragment musí implementovat rozhraní \emph{android.app.LoaderManager.LoaderCallbacks<D>}, které obsahuje tyto callback metody:
 
@@ -1130,8 +1159,8 @@ Naplánuje pravidelně se opakující akci.
 \item \textbf{set(int type, long triggerAtMillis, PendingIntent operation)}\\
 Naplánuje akci na učitý čas.
 \end{itemize}
-
-[TODO ukázka kódu + popis pouziti]
+\subsection*{Použití v aplikaci}
+V aplikaci je komponenta použita pro plánování periodické kontroly chybějící události docházky uživatele.
 
 \section{Komponenty pro synchronizaci}
 Pro synchronizaci je klíčovou komponentou třída \emph{android.content.\\AbstractThreadedSyncAdapter}. Třída provádí akci na pozadí ve vlastním vlákně. Synchronizace je vyvolána systémovou komponentou \emph{android.content.SyncManager}, v závislosti konkrétním nastavení pro konkrétní adaptér. Odpadá tak starost s práci s vlákny a k využití této komponenty stačí implementovat metodu \emph{onPerformSync()}:
