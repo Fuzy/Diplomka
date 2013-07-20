@@ -858,7 +858,7 @@ Verze&Kódové označení&API&Podíl uživatelů[\%]\\ \hline
 \section{Komponenty Android aplikace}
 
 \subsection{Activity}
-Aktivita představuje jednu obrazovku s uživatelským rozhraním. Každá akvitita umožňuje nějakou funkčnost. Příkladem aktivit použitých v implementované aplikaci může být zobrazení denní docházky uživatele, kalendář umožňující výběr data, přidání a editace docházkové události nebo uživatelské nastavení.
+Aktivita představuje jednu obrazovku umožňující nějakou funkčnost a interakci s uživatelem prostřednictvím uživatelského rozhraní. 
 
 \subsubsection*{Životní cyklus aktivity}
 Aktivita se může nacházet ve třech stavech:
@@ -897,9 +897,9 @@ Ukládat stav aktivity je vhodné protože systém může zničit aktivitu z dů
 
 \begin{itemize}[]
 \item \textbf{onSaveInstanceState(Bundle)}\\
-Metoda je volána před tím než je aktivita zničena (před provedením \emph{onStop()}. Do objektu \emph{Bundle} by měla být uložena všechna data, která jsou nutná pro obnovu předchozího stavu aktivity. Data jsou ukládána ve formátu klíč-hodnota. Metoda není volána v situaci, kdy uživatel explicitně ukončil aktivitu. Na začátku metody je nutné zavolat metodu rodiče, aby mohl být uložen stav prvků UI pomocí defaultní implementace.
+Metoda je volána před tím než je aktivita zničena (před provedením \emph{onStop()}). Do objektu \emph{Bundle} by měla být uložena všechna data, která jsou nutná pro obnovu předchozího stavu aktivity. Data jsou ukládána ve formátu klíč-hodnota. Metoda není volána v situaci, kdy uživatel explicitně ukončil aktivitu. Na začátku metody je nutné zavolat metodu rodiče, aby mohl být uložen stav prvků UI pomocí defaultní implementace.
 \item \textbf{onRestoreInstanceState(Bundle)}\\
-Metoda je volána (po provedením \emph{onStart()}) v případě, že aktivita byla znovuobnovena z předchozího uloženého stavu.Na začátku metody je nutné zavolat metodu rodiče, aby mohl být obnoven stav prvků UI pomocí defaultní implementace.
+Metoda je volána (po provedením \emph{onStart()}) v případě, že aktivita byla znovuobnovena z předchozího uloženého stavu. Na začátku metody je nutné zavolat metodu rodiče, aby mohl být obnoven stav prvků UI pomocí defaultní implementace.
 \end{itemize}
 
 
@@ -951,7 +951,7 @@ Aktivita pro nastavení aplikace (obr. \ref{fig:settings1}, \ref{fig:settings2})
 \end{itemize}
 
 \subsection{Fragment}
-Fragment představuje komponentu uživatelského rozhraní, která je součástí aktivity. Aktivita může obsahovat více fragmentů a fragment může být využíván ve více aktivitách. Jedná se tedy o modul umožňující nějakou funkčnost, který má vlastní životní cyklus, přijímá události z uživatelského rozhraní a může být přidán či odstraněn z aktivity během její činnosti. Fragment musí být vždy součástí nějaké aktivity a je přímo ovlivňován životním cyklem hostující aktivity.\\ \indent
+Fragment představuje komponentu uživatelského rozhraní, která je součástí aktivity. Aktivita může obsahovat více fragmentů a fragment může být využíván ve více aktivitách. Jedná se tedy o modul umožňující nějakou funkčnost, který má vlastní životní cyklus, přijímá události z uživatelského rozhraní a může být přidán či odstraněn z aktivity během její činnosti. Fragment musí být vždy součástí nějaké aktivity a je přímo ovlivňován životním cyklem hostující aktivity.
 K vytvoření fragmentu je nutné oddědit od třídy \emph{android.app.Fragment}. 
 
 \subsubsection*{Metody životního cyklu fragmentu}
@@ -964,13 +964,13 @@ Volána poté co je fragment vytvořen. Fragment který má uživatelské rozhra
 \item \textbf{onActivityCreated()}\\
 Volána ve chvíli, kdy je vytvořena hostující aktivita.
 \item \textbf{onDestroyView()}\\
-Volána ve cvhíli, kdy je uživatelské rozhraní fragment odstraňováno.
+Volána ve chvíli, kdy je uživatelské rozhraní fragmentu odstraňováno.
 \item \textbf{onDetach()}\\
 Volána ve chvíli, kdy je fragment odstraňován z aktivity.
 \end{itemize}
 
 \subsubsection*{Provádění transakcí}
-Fragment je možné přidávat, mazat či nahrazovat jinou v rámci rodičovské aktivity. Ty akce se nazývají transakce a provádějí se pomocí třídy \emph{FragmentTransaction}.V následující ukázce kódu je současný fragment v aktivitě nahrazen fragmentem \emph{PieChartFragment} zobrazující koláčový graf. Ukázka je ze třídy \emph{ChartActivity}:
+Fragment je možné přidávat, mazat či nahrazovat jiným fragmentem v rámci rodičovské aktivity. Taková akce se nazývá transakce a provádí se pomocí třídy \emph{FragmentTransaction}. V následující ukázce kódu je současný fragment v aktivitě nahrazen fragmentem \emph{PieChartFragment} zobrazující koláčový graf. Ukázka je ze třídy \emph{ChartActivity}:
 
 \begin{lstlisting}
 FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
@@ -1020,25 +1020,25 @@ Fragment zobrazující dialog použitý ve všech aktivitách provádějících 
 \emph{AsyncTask} je komponenta sloužící k provedení operace paralelně k UI (User Interface) vláknu. Třída umožňuje provedení operace na pozadí a publikování jejích výsledků na UI vlákně bez manipulace s vlákny. 
 \subsubsection*{Generické parametry pro \emph{AsyncTask}}
 \begin{enumerate}[noitemsep,nolistsep]
-\item \textbf{Params} typ parametrů předaných úkolu před provedením.
-\item \textbf{Progress} typ jednotek pro průběh operace publikovaných během výpočtu na pozdaí.
-\item \textbf{Result} typ pro výsledek výpočtu. 
+\item \textbf{Params} - typ parametrů předaných úkolu před provedením
+\item \textbf{Progress} - typ jednotek pro průběh operace publikovaných během výpočtu na pozadí
+\item \textbf{Result} - typ pro výsledek výpočtu
 \end{enumerate}
 
 \subsubsection*{Metody \emph{AsyncTask}}
 Třída \emph{AsyncTask} využívá těchto metod:
 \begin{itemize}[]
 \item \textbf{onPreExecute()}\\
-volána na UI (User Interface) vlákně před tím, než je úkol spuštěn. Metoda louží k přípravě asynchronní akce např. zobrazení dialogu s průběhem akce.
+Volána na UI (User Interface) vlákně před tím, než je úkol spuštěn. Metoda slouží k přípravě asynchronní akce např. zobrazení dialogu s průběhem akce.
 \item \textbf{doInBackground(Params...)}\\
-provádí se ve vlastním vlákně na pozadí. Vrací výsledek svojí akce. Může oznamovat průběh akce pomocí \emph{ publishProgress(Progress...)}.
+Provádí se ve vlastním vlákně na pozadí. Vrací výsledek svojí akce. Může oznamovat průběh akce pomocí \emph{ publishProgress(Progress...)}.
 \item \textbf{onProgressUpdate(Progress...)}\\
-volána na UI vlákně. Slouží k zobrazení průběhu akce zatímco úkol na pozadí je stále prováděn.
+Volána na UI vlákně. Slouží k zobrazení průběhu akce zatímco úkol na pozadí je stále prováděn.
 \item \textbf{onPostExecute(Result)}\\
-volána na UI vlákně po tom, co je úkol na pozadí dokončen. Výsledek akce na pozadí je předán jako parametr.
+Volána na UI vlákně po tom, co je úkol na pozadí dokončen. Výsledek akce na pozadí je předán jako parametr.
 \end{itemize}
 
-\emph{AsyncTask} komponenty jsou vhodné pro krátké operace (max jednotky sekund), které přímo ovliňují chování uživatelského rozhraní. Příkladem takové operace může být stažení dat, která mají být zobrazena okamžitě jakmile jsou dostupná. Taková akce musí být provedena asynchronně jinak by docházelo k efektu zamrzání uživatelského rozhraní.
+\emph{AsyncTask} komponenty jsou vhodné pro krátké operace (max jednotky sekund), které přímo ovlivňují chování uživatelského rozhraní. Příkladem takové operace může být stažení dat, která mají být zobrazena okamžitě jakmile jsou dostupná. Taková akce musí být provedena asynchronně jinak by docházelo k efektu zamrzání uživatelského rozhraní.
 
 \subsubsection*{Třídy AsyncTask použité v aplikaci}
 
@@ -1055,7 +1055,7 @@ Výčet všech AsyncTask tříd použitých v aplikaci:
 \item \textbf{NetworkingAsyncTask}\\
 Abstraktní třída obsahující metody společné pro všechny třídy provádějící asynchronní požadavek k serveru.
 \item \textbf{AuthEmployee}\\
-Asynchronní úkol provádějící požadavek na autentizace zaměstnance. Používá se pouze ve chvíli kdy si uživatel vytváří svůj účet.
+Asynchronní úkol provádějící požadavek na autentizace zaměstnance. Používá se pouze ve chvíli, kdy si uživatel vytváří svůj účet.
 \item \textbf{GetListOfEmployees}\\
 Asynchronní úkol provádějící požadavek na získání seznamu zaměstnanců.
 \item \textbf{GetListOfEvents}\\
@@ -1074,14 +1074,14 @@ Asynchronní úkol provádějící test spojení se serverem.
 Spuštěná služba, je taková služba, která byla spuštěna voláním metody \emph{startService()} kontextu komponenty. Služba běží na pozadí dokud neskončí svojí činnost, a to i tehdy pokud byla spouštějící komponenta zničena. Služba typicka provádí nějakou operaci, bez interakce se spouštějící komponentou a po dokončení se sama zničí. Metody životního cyklu služby jsou: 
 \begin{itemize}[]
 \item \textbf{onCreate()}\\
-Volána ve chvíli kdy je služba vytvořena. Je určena k počáteční inicializaci.
+Volána ve chvíli, kdy je služba vytvořena. Je určena k počáteční inicializaci.
 \item \textbf{onStartCommand()}\\
-Volána ve chvíli kdy je služba spuštěna. Metodou \emph{stopSelf()} se může služba sama ukončit.
+Volána ve chvíli, kdy je služba spuštěna. Metodou \emph{stopSelf()} se může služba sama ukončit.
 \item \textbf{onDestroy()}\\
 Volána systémem ve chvíli, kdy je služba ničena. Určena pro uvolnění zdrojů.
 \end{itemize}
 \item \textbf{Bound}\\
-Připoutaná (angl. bound) služba, je taková služba, ke které se komponenta připoutala voláním \emph{bindService()}. Připoutaná služba poskytuje klient-server rozhraní, které umožnuje komunikaci s touto službou pomocí meziprocesové komunikace. Služba běží pouze pokud je k ní nějaká komponenta svázaná. Ke službě může být připoutáno více komponent, jakmile se všechny odpoutají, je služba zničena. Metody životního cyklu služby jsou kromě \emph{onCreate()}, \emph{onDestroy()} tyto:
+Připoutaná (angl. bound) služba, je taková služba, ke které se komponenta připoutala voláním \emph{bindService()}. Připoutaná služba poskytuje klient-server rozhraní, které umožňuje komunikaci s touto službou pomocí meziprocesové komunikace. Služba běží pouze pokud je k ní nějaká komponenta svázaná. Ke službě může být připoutáno více komponent, jakmile se všechny odpoutají, je služba zničena. Metody životního cyklu služby jsou kromě \emph{onCreate()}, \emph{onDestroy()} tyto:
 \begin{itemize}[]
 \item \textbf{onBind()}\\
 Volána systémem ve chvíli, kdy se jiná komponenta chce ke službě přivázat voláním \emph{bindService()}. Vrací objekt \emph{IBinder}, který představuje rozhraní pro komunikaci.
@@ -1102,13 +1102,13 @@ Objekt třídy \emph{android.content.Intent} obsahuje abstraktní popis operace,
 
 
 \subsection{Content provider}
-\emph{Content provider} je jedna ze základních komponent pro tvorbu Android aplikace. Komponenta řídí přístup k centrálnímu úložišti dat představující SQLite databázi. \emph{Content provider} zapouzdřuje data a poskytuje je ostatním aplikacím pomocí \emph{android.content.ContentResolver} rozhraní. Pokud data aplikace nemají být přístupná i jiným aplikacím, není této komponenty potřeba a je možné přistupovat k datům přímo pomocí třídy \emph{android.database.sqlite.SQLiteDatabase}. Důležité metody této komponenty jsou::
+\emph{Content provider} je jedna ze základních komponent pro tvorbu Android aplikace. Komponenta řídí přístup k centrálnímu úložišti dat představující SQLite databázi. \emph{Content provider} zapouzdřuje data a poskytuje je ostatním aplikacím pomocí \emph{android.content.ContentResolver} rozhraní. Pokud data aplikace nemají být přístupná i jiným aplikacím, není této komponenty potřeba a je možné přistupovat k datům přímo pomocí třídy \emph{android.database.sqlite.SQ-LiteDatabase}. Důležité metody této komponenty jsou:
 
 \begin{itemize}[]
 \item \textbf{query()}\\
 Provádí dotaz do úložiště a vrací výsledek dotazu.
 \item \textbf{insert()}\\
-Vlkádá data do úložiště.
+Vkládá data do úložiště.
 \item \textbf{update()}\\
 Aktualizuje existující data v úložišti.
 \item \textbf{delete()}\\
@@ -1130,10 +1130,10 @@ content://user_dictionary/words
 
 \subsection{Broadcast receiver}
 \label{sec:broadcast}
-Komponenta \emph{Broadcast receiver} slouží jako posluchač systémové či aplikační události. Všichni registrovaní posluchači jsou informováni jakmile událost nastane. Objekt musí být registrován pomocí \emph{android.content.Context.registerReceiver()} metody kontextu k poslechu události specifikované pomocí filtru událostí \emph{android.content.IntentFilter}. Událost může být vyvolána systémem (např. připojení nabíječky, změna stavu připojení k síti) nebo může být vytvořena aplikací. Nejdůležitější metoda této třídy:
+Komponenta \emph{Broadcast receiver} slouží jako posluchač systémové či aplikační události. Všichni registrovaní posluchači jsou informováni jakmile událost nastane. Objekt musí být registrován pomocí \emph{android.content.Context.register-Receiver()} metody kontextu k poslechu události specifikované pomocí filtru událostí \emph{android.content.IntentFilter}. Událost může být vyvolána systémem (např. připojení nabíječky, změna stavu připojení k síti) nebo může být vytvořena aplikací. Nejdůležitější metoda této třídy:
 \begin{itemize}[]
 \item \textbf{onReceive(Context context, Intent intent)}\\
-Metoda je volána ve chvíli kdy je přijata očekávaná událost. Životnost objektu po dokončení této metody končí.
+Metoda je volána ve chvíli, kdy je přijata očekávaná událost. Životnost objektu po dokončení této metody končí.
 \end{itemize}
 \subsection*{Použití v aplikaci}
 V aplikaci jsou tyto komponenty použity pro aktualizaci widget komponent či přijetí události o restartu systému a následnému spuštění některých služeb.
@@ -1152,18 +1152,18 @@ Volána v případě kdy Loader byl resetován. Určena pro zrušení všech ref
 
 
 \subsection{Alarm manager}
-Třída \emph{android.app.AlarmManager} je určená pro případy kdy má nějaká akce proběhnout v určený čas a to i v případě kdy aplikace není spuštěna. Ve chvíli kdy je akce prováděna \emph{AlarmManager} drží zámek CPU do té doby než akce skončí. Volitelně lze nastavit, zda se má kvůli provedení akce vzbudit zařízení z režimu spánku.
+Třída \emph{android.app.AlarmManager} je určená pro případy, kdy má nějaká akce proběhnout v určený čas a to i v případě kdy aplikace není spuštěna. Ve chvíli kdy je akce prováděna \emph{AlarmManager} drží zámek CPU do té doby než akce skončí. Volitelně lze nastavit, zda se má kvůli provedení akce vzbudit zařízení z režimu spánku.
 \begin{itemize}[]
 \item \textbf{setRepeating(int type, long triggerAtMillis, long intervalMillis, PendingIntent operation)}\\
 Naplánuje pravidelně se opakující akci.
 \item \textbf{set(int type, long triggerAtMillis, PendingIntent operation)}\\
-Naplánuje akci na učitý čas.
+Naplánuje akci na určitý čas.
 \end{itemize}
 \subsection*{Použití v aplikaci}
 V aplikaci je komponenta použita pro plánování periodické kontroly chybějící události docházky uživatele.
 
 \section{Komponenty pro synchronizaci}
-Pro synchronizaci je klíčovou komponentou třída \emph{android.content.\\AbstractThreadedSyncAdapter}. Třída provádí akci na pozadí ve vlastním vlákně. Synchronizace je vyvolána systémovou komponentou \emph{android.content.SyncManager}, v závislosti konkrétním nastavení pro konkrétní adaptér. Odpadá tak starost s práci s vlákny a k využití této komponenty stačí implementovat metodu \emph{onPerformSync()}:
+Pro synchronizaci je klíčovou komponentou třída \emph{android.content.\\AbstractThreadedSyncAdapter}. Třída provádí akci na pozadí ve vlastním vlákně. Synchronizace je vyvolána systémovou komponentou \emph{android.content.SyncMan-ager}, v závislosti na konkrétním nastavení pro konkrétní adaptér. Odpadá tak starost o práci s vlákny a k využití této komponenty stačí implementovat metodu \emph{onPerformSync()}:
 \begin{itemize}[]
 \item \textbf{onPerformSync(Account account, Bundle extras, String authority, ContentProviderClient provider, SyncResult syncResult)}\\
 \begin{itemize}[]
@@ -1174,8 +1174,9 @@ Pro synchronizaci je klíčovou komponentou třída \emph{android.content.\\Abst
 \item  \textbf{syncResult} určeno pro výsledek synchronizace, který bude předán komponentě \emph{SyncManager}
 \end{itemize}
 \end{itemize}
-[TODO priklad z applikace]
-[TODO diagram komponent]
+
+\subsection*{Použití v aplikaci}
+V aplikaci je komponenta použita pro synchronizaci vlastních událostí docházky uživatele, aktualizaci poslední události docházky ostatních uživatelů a aktualizaci seznamu zaměstnanců.
 
 \section{Uživatelský účet}
 Android poskytuje správu účtů pro online služby. Uživatel zadá svoje přihlašovací údaje při vytvoření účtu a dává tak aplikaci svolení k využívání tohoto účtu.\\ \indent

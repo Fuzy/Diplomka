@@ -59,7 +59,6 @@
 \contentsline {section}{\numberline {5.2}Filtry}{38}
 \contentsline {section}{\numberline {5.3}web.xml}{38}
 \contentsline {section}{\numberline {5.4}REST}{38}
-\contentsline {section}{\numberline {5.5}Klienti jin\IeC {\'y}ch platforem?}{38}
 \contentsline {chapter}{\numberline {6}Android aplikace}{39}
 \contentsline {section}{\numberline {6.1}Funkcionalita}{39}
 \contentsline {paragraph}{Doch\IeC {\'a}zka}{39}
@@ -81,7 +80,7 @@
 \contentsline {subsection}{\numberline {6.3.6}Content provider}{52}
 \contentsline {subsection}{\numberline {6.3.7}Broadcast receiver}{53}
 \contentsline {subsection}{\numberline {6.3.8}Loader}{54}
-\contentsline {subsection}{\numberline {6.3.9}Alarm manager}{55}
+\contentsline {subsection}{\numberline {6.3.9}Alarm manager}{54}
 \contentsline {section}{\numberline {6.4}Komponenty pro synchronizaci}{55}
 \contentsline {section}{\numberline {6.5}U\IeC {\v z}ivatelsk\IeC {\'y} \IeC {\'u}\IeC {\v c}et}{56}
 \contentsline {section}{\numberline {6.6}Ukl\IeC {\'a}d\IeC {\'a}n\IeC {\'\i } dat}{58}
