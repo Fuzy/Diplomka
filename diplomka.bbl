@@ -35,6 +35,14 @@ Platform Versions. [online], [cit. 2013-7-15].
 \newline\urlprefix\url{http://developer.android.com/about/dashboards/index.htm%
 l}
 
+\bibitem{jersey}
+RESTful Web Services in Java. [online], [cit. 2013-7-6].
+\newline\urlprefix\url{https://jersey.java.net/}
+
+\bibitem{springandroid}
+SPRING FOR ANDROID. [online], [cit. 2013-7-6].
+\newline\urlprefix\url{http://www.springsource.org/spring-android}
+
 \bibitem{sqlite}
 SQLite. [online], [cit. 2013-7-18].
 \newline\urlprefix\url{http://www.sqlite.org/}
@@ -61,6 +69,10 @@ http://technet.microsoft.com/: Migrating Oracle Forms. [online], [cit.
 http://www.oracle.com/: Oracle Forms. [online], [cit. 2013-7-5].
 \newline\urlprefix\url{http://www.oracle.com/technetwork/developer-tools/forms%
 /overview/index.html}
+
+\bibitem{jaxrs}
+Java.net: Java API for RESTful Services (JAX-RS). [online], [cit. 2013-7-6].
+\newline\urlprefix\url{http://jax-rs-spec.java.net/}
 
 \bibitem{websluzby}
 Kosek, J.: Využití webových služeb a protokolu SOAP při komunikaci.

@@ -13,10 +13,11 @@
 \usepackage{array}
 \usepackage{caption}
 \usepackage{subcaption}
+\usepackage{longtable}
 
 %\usepackage[pdftex]{graphicx}
 
-\lstset{language=Java,keywordstyle=\color{blue}, commentstyle=\color{green},stringstyle=\color{red},showstringspaces=false,breaklines=true,tabsize=3,basicstyle=\footnotesize}
+\lstset{language=Java,keywordstyle=\color{blue}, commentstyle=\color{green},stringstyle=\color{red},showstringspaces=false,breaklines=true,tabsize=3,basicstyle=\footnotesize,captionpos=b}
 
 
 
@@ -637,123 +638,189 @@ Použil jsem první řešení protože je shoduje se způsobem ověřování v s
 Je nutné dívat se na pravidlo dobrovolného hesla jako na firemní pravidlo, které může být kdykoli zrušeno. V případě zrušení tohoto pravidla by se z největší pravděpodobností uplatnilo ověřování proti LDAP adresáři. 
 
 \chapter{Webová služba}
-JAX-RS citace
-\section{REST}
+[TODO napsat pro se implementuje]
+Webová služba je implementována v souladu s REST architekturou. Server využívá knihovny Jersey\cite{jersey}, která je referenční implementací JAX-RS 1.1\cite{jaxrs}.
+
+
+\section{Návrh REST URI}
 Při návrhu REST služby jsem nejprve identifikoval všechny zdroje, které webová služba zpřístupňuje. Jedná se o údaje o docházce zaměstnanců, výkazech práce a zaměstnancích samotných. Posledním zdrojem je možnost testovat komunikaci s webovou službou. \par
-Zdroj pro docházku zaměstnaců tzn. jejich příchody a odchody (označované jako události) a poskytované služby zobrazuje tabulka \ref{tab:urievents}. Služba umožňuje operace CRUD na datovém zdroji zaměstnanců a dále zjištění součtu doby v zaměstnání.
+Poskytované služby pro zdroj docházky zaměstnaců tzn. jejich příchody a odchody zobrazuje tabulka \ref{tab:urievents}. Služba umožňuje operace CRUD na datovém zdroji zaměstnanců a dále zjištění součtu doby v zaměstnání.
 
 \definecolor{Gray}{gray}{0.9}
 \renewcommand{\arraystretch}{1.5}
-\begin{table}[H]
+
 \begin{center}
-\begin{tabular}{| m{2cm} |  m{10cm} |}
+\begin{longtable}[H]{| m{2cm} |  m{10cm} |}
 \hline
 \rowcolor{Gray}
 GET & events/\{icp\}?from=\{from\}\&to=\{to\} \\ \hline
-&  \parbox{10cm}{Získá všechny události zaměstnance za dané období\\
+
+&  \parbox{10cm}{\vspace{5 mm}Získá všechny události zaměstnance za dané období\\
 Parametry:\begin{itemize}[noitemsep,nolistsep]
 \item icp - identifikátor zaměstnance
 \item from - datum začátku období
 \item to - datum konce období
-\end{itemize}} \\ \hline
+\end{itemize}
+\vspace{5 mm}} \\ \hline
 \rowcolor{Gray}
 DELETE  & events/\{rowid\} \\  \hline
-&  \parbox{10cm}{Smaže danou událost\\
+&  \parbox{10cm}{\vspace{5 mm}Smaže danou událost\\
 Parametry:\begin{itemize}[noitemsep,nolistsep]
 \item rowid - identifikátor události
-\end{itemize}} \\ \hline
+\end{itemize}
+\vspace{5 mm}} \\ \hline
 \rowcolor{Gray}
 POST  & events \\  \hline
-&  \parbox{10cm}{Vytvoří událost, používá se bez parametrů protože identifikátor pro událost vytváří server
-} \\ \hline
+&  \parbox{10cm}{\vspace{5 mm}Vytvoří událost, používá se bez parametrů protože identifikátor pro událost vytváří server
+\vspace{5 mm}} \\ \hline
 \rowcolor{Gray}
-PUT  & events/\{rowid\} \\ 
-&  \parbox{10cm}{Aktualizuje danou událost\\
+PUT  & events/\{rowid\} \\  \hline
+&  \parbox{10cm}{\vspace{5 mm}Aktualizuje danou událost\\
 Parametry:\begin{itemize}[noitemsep,nolistsep]
 \item rowid - identifikátor události
-\end{itemize}} \\ \hline
+\end{itemize}
+\vspace{5 mm}} \\ \hline
 \rowcolor{Gray}
-GET & events/sum/\{icp\}?from=\{from\}\&to=\{to\} \\ \hline
-&  \parbox{10cm}{Získá součet přítomnosti zaměstnance za dané období\\
+GET & events/time/\{icp\}?from=\{from\}\&to=\{to\} \\ \hline
+&  \parbox{10cm}{\vspace{5 mm}Získá součet přítomnosti zaměstnance za dané období\\
 Parametry:\begin{itemize}[noitemsep,nolistsep]
 \item icp - identifikátor zaměstnance
 \item from - datum začátku období
 \item to - datum konce období
-\end{itemize}} \\ \hline
-\end{tabular}
-\end{center}
+\end{itemize}
+\vspace{5 mm}} \\ \hline
 \caption{Služby pro události docházky}
 \label{tab:urievents}
-\end {table}
+\end {longtable}
+\end{center}
 
 \noindent
-Zdroj pro údaje o zaměstnancích
-\begin{table}[H]
+Poskytované služby pro zdroj s údaji o zaměstnancích zobrazuje tabulka \ref{tab:uriemps}. Umožňuje získat základní údaje o zaměstnancích a také jejich poslední docházkovou událost.
+
 \begin{center}
-\begin{tabular}{| m{2cm} |  m{10cm} |}
+\begin{longtable}[H]{| m{2cm} |  m{10cm} |}
 \hline
 \rowcolor{Gray}
 GET  & employees/\{icp\} \\ \hline
-&  \parbox{10cm}{Získá údaje o zaměstnaci identifikovém pomocí parametru\\
+&  \parbox{10cm}{\vspace{5 mm}Získá údaje o zaměstnaci identifikovém pomocí parametru\\
 Parametry:\begin{itemize}[noitemsep,nolistsep]
 \item icp - identifikátor zaměstnance
-\end{itemize}} \\ \hline
-\hline
+\end{itemize}
+\vspace{5 mm}} \\ \hline
 \rowcolor{Gray}
 GET  & employees/all/\{icp\} \\ \hline
-&  \parbox{10cm}{Získá seznam všech zaměstnanců, kteří jsou aktuálně v zaměstnaneckém poměru, obsahuje informaci zda jsou tito zaměstnanci podřízení, vzhledem k zaměstnanci identifikovém pomocí parametru\\
+&  \parbox{10cm}{\vspace{5 mm}Získá seznam všech zaměstnanců, kteří jsou aktuálně v zaměstnaneckém poměru, obsahuje informaci zda jsou tito zaměstnanci podřízení, vzhledem k zaměstnanci identifikovém pomocí parametru\\
 Parametry:\begin{itemize}[noitemsep,nolistsep]
 \item icp - identifikátor zaměstnance
-\end{itemize}} \\ \hline
+\end{itemize}
+\vspace{5 mm}} \\ \hline
 \rowcolor{Gray}
 GET  & employees/lastevents \\ 
-&  \parbox{10cm}{Získá poslední událost v docházce všech zaměstnanců, kteří jsou aktuálně v zaměstnaneckém poměru}\\
+&  \parbox{10cm}{\vspace{5 mm}Získá poslední událost v docházce všech zaměstnanců, kteří jsou aktuálně v zaměstnaneckém poměru
+\vspace{5 mm}}\\
 \hline
 \rowcolor{Gray}
 GET  & employees/lastevents/\{icp\} \\ 
-&  \parbox{10cm}{Získá poslední událost v docházce zaměstnance identifikovém pomocí parametru}\\
+&  \parbox{10cm}{\vspace{5 mm}Získá poslední událost v docházce zaměstnance identifikovém pomocí parametru
+\vspace{5 mm}}\\
 \hline
-\end{tabular}
-\end{center}
 \caption{Služby pro zaměstnance}
 \label{tab:uriemps}
-\end{table}
-\noindent
+\end{longtable}
+\end{center}
 
-Zdroj výkazy práce
+\noindent
+Poskytované služby pro zdroj s výkazy práce zobrazuje tabulka \ref{tab:urirecords}. Umožňuje získat výpis výkazů práce a součet vykázané doby.
 \begin{table}[H]
 \begin{center}
 \begin{tabular}{| m{2cm} |  m{10cm} |}
 \hline
 \rowcolor{Gray}
 GET  &records/\{kodpra\}?from=\{from\}\&to=\{to\} \\ 
-&  \parbox{10cm}{Získá všechny výkazy práce zaměstnance za dané období\\
+&  \parbox{10cm}{\vspace{5 mm}Získá všechny výkazy práce zaměstnance za dané období\\
 Parametry:\begin{itemize}[noitemsep,nolistsep]
 \item kodpra - identifikátor zaměstnance (zkratka)
 \item from - datum začátku období
 \item to - datum konce období
-\end{itemize}} \\ \hline
+\end{itemize}
+\vspace{5 mm}} \\ \hline
 \rowcolor{Gray}
-GET & records/sum/\{icp\}?from=\{from\}\&to=\{to\} \\ \hline
-&  \parbox{10cm}{Získá součet vykázaného času zaměstnance za dané období\\
+GET & records/time/\{icp\}?from=\{from\}\&to=\{to\} \\ \hline
+&  \parbox{10cm}{\vspace{5 mm}Získá součet vykázaného času zaměstnance za dané období\\
 Parametry:\begin{itemize}[noitemsep,nolistsep]
 \item icp - identifikátor zaměstnance
 \item from - datum začátku období
 \item to - datum konce období
-\end{itemize}} \\ \hline
+\end{itemize}
+\vspace{5 mm}} \\ \hline
 \end{tabular}
 \end{center}
 \caption{Služby pro výkazy práce}
 \label{tab:urirecords}
 \end{table}
 
-\section{Filtry}
 
-\section{web.xml}
 
-\section{REST}
-RestaTemplates - springframework= jak to vola klient..., Klienti jiných platforem
+\section{Implementace}
+\subsection{Použití JAX-RS}
+Java API for RESTful Services (JAX-RS) je API navržené pro snadný vývoj aplikací využívajících REST architekturu. API využívá anotace jazyka Java, které definují zdroje a operace nad těmito zdroji. Na základě těchto anotací jsou vygenerovány třídy a artifakty, které jsou součástí aplikace. Zde je výčet anotací použitých v aplikaci:
 
+\begin{itemize}[noitemsep,nolistsep]
+\item GET, POST, PUT, DELETE\\
+Metoda s touto anotací zpracuje příslušný HTTP požadavek.
+\item Path\\
+Anotace specifikuje URL, na kterém bude metoda provedena. Hodnota anotace je relativní vůči umístění Java třídy. 
+\item Provider\\
+Anotace označuje třídy, které rozšiřují JAX-RS prostředí běhu. Jedná se o \emph{Entity Providers} - řídí mapování datových reprezentací na ekvivalentní Java objekty, \emph{Exception Providers} - řídí mapování Java vyjímek na instance třídy \emph{ Response} JAX-RS prostředí.
+\item PathParam\\
+Určuje parametr, který je extrahován z hierarchické části URI.
+\item QueryParam\\
+Určuje parametr, který je extrahován z dotazovací části URI.
+\item Consumes\\
+Pomocí anotace je specifikován MIME typ reprezentace zdroje, který server dokáže zpracovat při klientovu požadavku.
+\item Produces\\
+Pomocí anotace je specifikován MIME typ reprezentace zdroje použitého při odpovědi na klientův požadavek.
+\end{itemize}
+
+
+\begin{lstlisting}[language=Java, caption={Ukázka použití},]
+@Path("/events")
+public class EventsProvider {
+
+  @GET
+  @Path("{username}")
+  @Produces(MediaType.APPLICATION_JSON + ";charset=utf-8")
+  public Response getEventsForUser(@PathParam("username") String username, @QueryParam("from") String from, @QueryParam("to") String to) throws Exception {
+      ...
+   }
+}
+\end{lstlisting}
+%\subsection{Filtry požadavků?}
+%\subsection{Mapování vyjímek?}
+
+\section{Komunikace s klientem}
+Na straně Android aplikace jsem použil knihovnu Spring pro Android \cite{springandroid}. Klíčovou třídou této knihovny je \emph{org.springframework.web.client.RestTemplate}, která usnadňuje komunikaci s HTTP serverem a vynucuje si dodržování RESTful principů. Třída spravuje HTTP spojení a extrahuje výsledek požadavku.\\ \indent
+Ukázka použití této třídy se nachází ve výpisu kódu \ref{lis:rest}. Nejdříve je nutné vytvořit HTTP hlavičku. V hlavičce se nastaví parametry: 
+\begin{itemize}[noitemsep,nolistsep]
+\item Autentizace: Zde je použita HTTP Basic autentizace vytvořením instance \emph{HttpAuthentication}. V instanci jsou nastaveny přihlašovací údaje uživatele.
+\item Typ dat v požadavku: Datový typ, který je použit v požadavku. Vyskytuje se pouze u některých HTTP metod. V aplikaci se používá pouze typ JSON.
+\item Typ dat v odpovědi: Seznam datových typů, které mohou být přijaty. V implementované aplikaci se jedná pouze o typ JSON.
+\end{itemize}
+Vytvořený objekt hlavičky je následně předán v konstruktoru objektu \emph{HttpEntity}. Dále je nutné vytvořit instanci \emph{RestTemplate}. Zde je nutné nastavit \emph{HttpComponentsClientHttpRequestFactory} objekt, který je zodpovědný za vytváření HTTP spojení a konvertor obsahu \emph{MappingJacksonHttpMessageConverter} zodpovědný za převod Java objektu na JSON řetězec určený k odeslání. Posledním úkolem je nastavit požadovanou HTTP metodu, nastavit url cílové služby společně s parametry a nastavit objekt očekávaný jako odpověď. Poždavek se provede pomocí metody \emph{exchange()}. Ukázka ve výpisu \ref{lis:rest} představuje požadavek na získání seznamu zaměstnanců ze serveru.
+
+\begin{lstlisting}[language=Java, caption={Ukázka použití},label={lis:rest}]
+HttpHeaders requestHeaders = new HttpHeaders();
+HttpAuthentication authHeader = AuthenticationUtil.createAuthHeader(context);
+requestHeaders.setAuthorization(authHeader);
+requestHeaders.setAccept(Collections.singletonList(MediaType.APPLICATION_JSON));
+HttpEntity<Object> entity = new HttpEntity<>(requestHeaders);
+
+RestTemplate restTemplate = new RestTemplate();
+restTemplate.setRequestFactory(new HttpComponentsClientHttpRequestFactory(HttpClientFactory.getThreadSafeClient()));
+restTemplate.getMessageConverters().add(new MappingJacksonHttpMessageConverter());
+
+ResponseEntity<Employee[]> response = restTemplate.exchange(url, HttpMethod.GET, entity, Employee[].class, icp);
+\end{lstlisting}
 
 \chapter{Android aplikace}
 
@@ -1441,6 +1508,7 @@ public class MyApplication extends Application {
 \end{itemize}
 
 \chapter{Závěr}
+nutnost udelat webovou sluzbu, moznosti vylepseni
 
 \chapter*{Seznam zkratek} 
 \addcontentsline{toc}{chapter}{Seznam zkratek}
@@ -1836,6 +1904,9 @@ Na obrazovce pro nastavení barev (obr. \ref{fig:colors}) lze nastavit barvy typ
 \end{figure}
 
 
+\chapter{Testovací dokumentace}
+
 \chapter{Manifest?}
+
 
 \end{document}
