@@ -1516,10 +1516,13 @@ public class MyApplication extends Application {
 \end{itemize}
 
 \chapter{Závěr}
-[Závěr – poslední číslovaná kapitola. Měla by obsahovat stručnou rekapitulaci dosažených výsledků, jejich porovnání s původními představami, zhodnocení, jak byly splněny cíle práce, rekapitulace vlastního autorského přínosu, doporučení pro další práce obdobného charakteru.
-Stejně jako u úvodu by její rozsah neměl přesáhnout jednu stranu textu. Máte-li hodně dosažených výsledků, dejte je do předposlední kapitoly s názvem Dosažené výsledky.
-Z přečtení závěru by mělo být čtenáři zřejmé, jak byly splněny cíle práce.]
-[nutnost udelat webovou sluzbu, moznosti vylepseni]
+Cílem práce bylo vybrat a implementovat zvolenou funkčnost současného systému pro evidenci docházky a výkazů práce IMIS používaného ve společnosti CCA Group a.s. pro mobilní zařízení na platformě Android. Mobilní aplikace má sloužit zejména zaměstnancům, kteří se při svojí práci často pohybují mimo pracoviště.
+\\ \indent
+Vytvořená aplikace umožňuje efektivnější provádění některých funkcí současného systému jako je zadávání docházky zaměstnance. Dále přináší i nové funkce jako jsou přehledné grafické zobrazení reportů pro docházku a výkazy práce určené zejména pro nadřízené či upozornění při opomenutí zadání docházky. Aplikace tedy nachází uplatnění nejen pro zaměstnance na služebních cestách, ale i v každodenní pracovní činnosti.
+\\ \indent
+Architektura současného systému používá tlustého klienta připojujícího se k firemní databázi. Potřebná bussines logika se nachází částečně na straně klientské aplikace a z části na straně databáze. Logiku vyskytující se na straně klienta bylo nutné implementovat do webové služby, která slouží jako rozhraní mezi mobilní aplikací a databází organizace. Výběr architektury s použitím RESTful webové služby je výhodný pro případ budoucí implementace aplikací jiných mobilních platforem. Rovněž je výhodný z hlediska budoucích změn v systému, které by byly provedeny na straně webové služby bez zásahu do klientských aplikací.
+\\ \indent
+Možnost rozšíření práce spatřuji zejména v přídání možnosti zadávat výkazy práce, což je funkce, která nebyla vzhledem k nutnosti změn v současném systému organizace implementována. Pokud by měl uživatel možnost vytvářet si šablony pro opakující se akce, mohl by provádět každodenní výkazy práce efektivněji a organizace by díky tomu mohla snížit náklady na režijní činnosti.
 
 \chapter*{Seznam zkratek} 
 \addcontentsline{toc}{chapter}{Seznam zkratek}
