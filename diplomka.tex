@@ -193,6 +193,7 @@ Při pohledu na uživatelské rozhraní se Oracle Forms aplikace skládá z těc
 
 
 Plátno je objekt, na který je nakresleno celé GUI formuláře, tedy všechny viditelné objekty.  Okno ohraničuje plochu plátna, která bude zobrazena. Plátno je zobrazeno v okně. Blok sdružuje jednotlivé položky, které se vztahují ke stejnému databázovému objektu.
+\vspace{-3mm}
 \subsection*{Seznam hodnot}
 Seznam hodnot je prvek uživatelského rozhraní, který uživateli nabízí výběr hodnot. Výběr může být na základě pevně daných dat či dotazem do databáze.
 
@@ -256,6 +257,7 @@ V této jsou popsány formuláře pro vybranou funčnost systému.
 V této kapitole se zabývám analýzou současného systému a návrhem cílové aplikace. Nejprve popíšu zvolenou architekturu a s tím související výběr typu webové služby. Dále popisuji datovou vrstvu jak současného systému tak i cílové aplikace a popisuju některé výhrady k datové vrstvě současného systému. Popisuji kde všude se nachází bussines logika relevantní pro funkčnost cílové aplikace a možnosti využití současného kódu. Popisuji způsob synchronizace dat mezi klientskou aplikací a podnikovou databází. Nakonec zmiňuji některé aspekty týkající se uživatelského rozhraní cílové aplikace.
 
 \section{Architektura}
+\label{sec:architecture}
 Při návrhu architektury jsem se rozhodoval mezi třemi variantami: přímé spojení Android aplikace ke vzdálené databázi pomocí JDBC, synchronizaci dat se vzdálenou databází pomocí Oracle Database Mobile Server a nakonec s využitím webové služby, která by sloužila jako rozhraní mezi klientskou aplikací a databázovým serverem.
 
 \subsection{Přímé připojení k databázi}
@@ -640,12 +642,12 @@ Použil jsem první řešení protože je shoduje se způsobem ověřování v s
 Je nutné dívat se na pravidlo dobrovolného hesla jako na firemní pravidlo, které může být kdykoli zrušeno. V případě zrušení tohoto pravidla by se z největší pravděpodobností uplatnilo ověřování proti LDAP adresáři. 
 
 \chapter{Webová služba}
-[TODO napsat pro se implementuje]
-Webová služba je implementována v souladu s REST architekturou. Server využívá knihovny Jersey\cite{jersey}, která je referenční implementací JAX-RS 1.1\cite{jaxrs}.
+Na základě analýzy v sekci \ref{sec:architecture} byla identifikována nutnost vytvoření webové služby, která dosud v systému neexistuje. Webová služba je implementována v souladu s REST architekturou. 
 
 
 \section{Návrh REST URI}
-Při návrhu REST služby jsem nejprve identifikoval všechny zdroje, které webová služba zpřístupňuje. Jedná se o údaje o docházce zaměstnanců, výkazech práce a zaměstnancích samotných. Posledním zdrojem je možnost testovat komunikaci s webovou službou. \par
+Při návrhu REST služby jsem nejprve identifikoval všechny zdroje, které webová služba zpřístupňuje. Jedná se o údaje o docházce zaměstnanců, výkazech práce a zaměstnancích samotných. 
+ \par
 Poskytované služby pro zdroj docházky zaměstnaců tzn. jejich příchody a odchody zobrazuje tabulka \ref{tab:urievents}. Služba umožňuje operace CRUD na datovém zdroji zaměstnanců a dále zjištění součtu doby v zaměstnání.
 
 \definecolor{Gray}{gray}{0.9}
@@ -675,6 +677,8 @@ Parametry:\begin{itemize}[noitemsep,nolistsep]
 POST  & events \\  \hline
 &  \parbox{10cm}{\vspace{5 mm}Vytvoří událost, používá se bez parametrů protože identifikátor pro událost vytváří server
 \vspace{5 mm}} \\ \hline
+\newpage
+\hline
 \rowcolor{Gray}
 PUT  & events/\{rowid\} \\  \hline
 &  \parbox{10cm}{\vspace{5 mm}Aktualizuje danou událost\\
@@ -704,14 +708,14 @@ Poskytované služby pro zdroj s údaji o zaměstnancích zobrazuje tabulka \ref
 \hline
 \rowcolor{Gray}
 GET  & employees/\{icp\} \\ \hline
-&  \parbox{10cm}{\vspace{5 mm}Získá údaje o zaměstnaci identifikovém pomocí parametru\\
+&  \parbox{10cm}{\vspace{5 mm}Získá údaje o zaměstnanci identifikovaném pomocí parametru\\
 Parametry:\begin{itemize}[noitemsep,nolistsep]
 \item icp - identifikátor zaměstnance
 \end{itemize}
 \vspace{5 mm}} \\ \hline
 \rowcolor{Gray}
 GET  & employees/all/\{icp\} \\ \hline
-&  \parbox{10cm}{\vspace{5 mm}Získá seznam všech zaměstnanců, kteří jsou aktuálně v zaměstnaneckém poměru, obsahuje informaci zda jsou tito zaměstnanci podřízení, vzhledem k zaměstnanci identifikovém pomocí parametru\\
+&  \parbox{10cm}{\vspace{5 mm}Získá seznam všech zaměstnanců, kteří jsou aktuálně v zaměstnaneckém poměru, obsahuje informaci zda jsou tito zaměstnanci podřízení vzhledem k zaměstnanci identifikovaném pomocí parametru\\
 Parametry:\begin{itemize}[noitemsep,nolistsep]
 \item icp - identifikátor zaměstnance
 \end{itemize}
@@ -723,7 +727,7 @@ GET  & employees/lastevents \\
 \hline
 \rowcolor{Gray}
 GET  & employees/lastevents/\{icp\} \\ 
-&  \parbox{10cm}{\vspace{5 mm}Získá poslední událost v docházce zaměstnance identifikovém pomocí parametru
+&  \parbox{10cm}{\vspace{5 mm}Získá poslední událost v docházce zaměstnance identifikovaném pomocí parametru
 \vspace{5 mm}}\\
 \hline
 \caption{Služby pro zaměstnance}
@@ -764,6 +768,8 @@ Parametry:\begin{itemize}[noitemsep,nolistsep]
 
 
 \section{Implementace}
+Při implementaci byla použita knihovna Jersey\cite{jersey} na straně serveru, která je referenční implementací JAX-RS 1.1\cite{jaxrs}. Na straně klienta byla použita knihovna Spring pro Android.
+
 \subsection{Použití JAX-RS}
 Java API for RESTful Services (JAX-RS) je API navržené pro snadný vývoj aplikací využívajících REST architekturu. API využívá anotace jazyka Java, které definují zdroje a operace nad těmito zdroji. Na základě těchto anotací jsou vygenerovány třídy a artifakty, které jsou součástí aplikace. Zde je výčet anotací použitých v aplikaci:
 
@@ -773,7 +779,7 @@ Metoda s touto anotací zpracuje příslušný HTTP požadavek.
 \item Path\\
 Anotace specifikuje URL, na kterém bude metoda provedena. Hodnota anotace je relativní vůči umístění Java třídy. 
 \item Provider\\
-Anotace označuje třídy, které rozšiřují JAX-RS prostředí běhu. Jedná se o \emph{Entity Providers} - řídí mapování datových reprezentací na ekvivalentní Java objekty, \emph{Exception Providers} - řídí mapování Java vyjímek na instance třídy \emph{ Response} JAX-RS prostředí.
+Anotace označuje třídy, které rozšiřují JAX-RS prostředí běhu. Jedná se o \emph{Entity Providers} - řídí mapování datových reprezentací na ekvivalentní Java objekty, \emph{Exception Providers} - řídí mapování Java vyjímek na instance třídy \emph{Response} JAX-RS prostředí.
 \item PathParam\\
 Určuje parametr, který je extrahován z hierarchické části URI.
 \item QueryParam\\
@@ -783,9 +789,9 @@ Pomocí anotace je specifikován MIME typ reprezentace zdroje, který server dok
 \item Produces\\
 Pomocí anotace je specifikován MIME typ reprezentace zdroje použitého při odpovědi na klientův požadavek.
 \end{itemize}
-
-
-\begin{lstlisting}[language=Java, caption={Ukázka použití},]
+Ve výpisu kódu \ref{lis:jaxrs} je ukázka použití pro získání seznamu docházkových událostí uživatele.
+\newpage
+\begin{lstlisting}[language=Java, caption={Ukázka použití JAX-RS},label={lis:jaxrs}]
 @Path("/events")
 public class EventsProvider {
 
@@ -808,9 +814,9 @@ Ukázka použití této třídy se nachází ve výpisu kódu \ref{lis:rest}. Ne
 \item Typ dat v požadavku: Datový typ, který je použit v požadavku. Vyskytuje se pouze u některých HTTP metod. V aplikaci se používá pouze typ JSON.
 \item Typ dat v odpovědi: Seznam datových typů, které mohou být přijaty. V implementované aplikaci se jedná pouze o typ JSON.
 \end{itemize}
-Vytvořený objekt hlavičky je následně předán v konstruktoru objektu \emph{HttpEntity}. Dále je nutné vytvořit instanci \emph{RestTemplate}. Zde je nutné nastavit \emph{HttpComponentsClientHttpRequestFactory} objekt, který je zodpovědný za vytváření HTTP spojení a konvertor obsahu \emph{MappingJacksonHttpMessageConverter} zodpovědný za převod Java objektu na JSON řetězec určený k odeslání. Posledním úkolem je nastavit požadovanou HTTP metodu, nastavit url cílové služby společně s parametry a nastavit objekt očekávaný jako odpověď. Poždavek se provede pomocí metody \emph{exchange()}. Ukázka ve výpisu \ref{lis:rest} představuje požadavek na získání seznamu zaměstnanců ze serveru.
+Vytvořený objekt hlavičky je následně předán v konstruktoru objektu \emph{HttpEntity}. Dále je nutné vytvořit instanci \emph{RestTemplate}. Zde je nutné nastavit \emph{HttpComponentsClientHttpRequestFactory} objekt, který je zodpovědný za vytváření HTTP spojení a konvertor obsahu \emph{MappingJacksonHttpMessageConverter} zodpovědný za převod Java objektu na JSON řetězec určený k odeslání. Posledním úkolem je nastavit požadovanou HTTP metodu, nastavit URL cílové služby společně s parametry a nastavit objekt očekávaný jako odpověď. Poždavek se provede pomocí metody \emph{exchange()}. Ukázka ve výpisu \ref{lis:rest} představuje požadavek na získání seznamu zaměstnanců ze serveru.
 
-\begin{lstlisting}[language=Java, caption={Ukázka použití},label={lis:rest}]
+\begin{lstlisting}[language=Java, caption={Ukázka použití RestTemplate},label={lis:rest}]
 HttpHeaders requestHeaders = new HttpHeaders();
 HttpAuthentication authHeader = AuthenticationUtil.createAuthHeader(context);
 requestHeaders.setAuthorization(authHeader);

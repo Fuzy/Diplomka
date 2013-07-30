@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-1.40.10 (MiKTeX 2.8) (preloaded format=pdflatex 2013.4.14)  30 JUL 2013 08:52
+This is pdfTeX, Version 3.1415926-1.40.10 (MiKTeX 2.8) (preloaded format=pdflatex 2013.4.14)  30 JUL 2013 10:12
 entering extended mode
 **C:/MojeData/Škola/DP/Dokument/diplomka.tex
 (C:/MojeData/Škola/DP/Dokument/diplomka.tex
@@ -588,32 +588,32 @@ File: obr/window.png Graphic file (type png)
 Package pdftex.def Info: obr/window.png used on input line 189.
 (pdftex.def)             Requested size: 202.35626pt x 190.31123pt.
 
-[9 <C:/MojeData/Škola/DP/Dokument/obr/window.png>]
-<obr/BD27.png, id=142, 604.50844pt x 373.395pt>
+<obr/BD27.png, id=138, 604.50844pt x 373.395pt>
 File: obr/BD27.png Graphic file (type png)
  <use obr/BD27.png>
-Package pdftex.def Info: obr/BD27.png used on input line 205.
+Package pdftex.def Info: obr/BD27.png used on input line 206.
 (pdftex.def)             Requested size: 423.15302pt x 261.37471pt.
 
-Overfull \hbox (33.15302pt too wide) in paragraph at lines 205--206
+Overfull \hbox (33.15302pt too wide) in paragraph at lines 206--207
  [][] 
  []
 
-[10 <C:/MojeData/Škola/DP/Dokument/obr/BD27.png (PNG copy)>]
+[9 <C:/MojeData/Škola/DP/Dokument/obr/window.png>] [10 <C:/MojeData/Škola/DP/Do
+kument/obr/BD27.png (PNG copy)>]
 <obr/VX42.png, id=146, 602.25pt x 372.64218pt>
 File: obr/VX42.png Graphic file (type png)
  <use obr/VX42.png>
-Package pdftex.def Info: obr/VX42.png used on input line 229.
+Package pdftex.def Info: obr/VX42.png used on input line 230.
 (pdftex.def)             Requested size: 421.57211pt x 260.84775pt.
 
-Overfull \hbox (31.57211pt too wide) in paragraph at lines 229--230
+Overfull \hbox (31.57211pt too wide) in paragraph at lines 230--231
  [][] 
  []
 
 [11 <C:/MojeData/Škola/DP/Dokument/obr/VX42.png (PNG copy)>]
 Kapitola 3.
 
-Overfull \hbox (4.61766pt too wide) in paragraph at lines 266--269
+Overfull \hbox (4.61766pt too wide) in paragraph at lines 268--271
 \T1/aer/m/n/12 správu za-°í-zení nut-nou k syn-chro-ni-zaci. Tento kli-ent je d
 o-stupný pro platfromy
  []
@@ -628,10 +628,10 @@ df): PDF inclusion: found PDF version <1.5>, but at most version <1.4> allowed
 File: visio/deployment.pdf Graphic file (type pdf)
 
 <use visio/deployment.pdf>
-Package pdftex.def Info: visio/deployment.pdf used on input line 285.
+Package pdftex.def Info: visio/deployment.pdf used on input line 287.
 (pdftex.def)             Requested size: 418.93729pt x 199.71979pt.
 
-Overfull \hbox (28.93729pt too wide) in paragraph at lines 285--286
+Overfull \hbox (28.93729pt too wide) in paragraph at lines 287--288
  [][] 
  []
 
@@ -640,17 +640,17 @@ Overfull \hbox (28.93729pt too wide) in paragraph at lines 285--286
 File: obr/komunikace-webservices.png Graphic file (type png)
 
 <use obr/komunikace-webservices.png>
-Package pdftex.def Info: obr/komunikace-webservices.png used on input line 325.
+Package pdftex.def Info: obr/komunikace-webservices.png used on input line 327.
 
 (pdftex.def)             Requested size: 365.68669pt x 201.39265pt.
 
-Overfull \hbox (2.94676pt too wide) in paragraph at lines 320--328
+Overfull \hbox (2.94676pt too wide) in paragraph at lines 322--330
 []\T1/aer/m/n/12 Existuje n¥-ko-lik r·z-ných druh· ²a-b-lon pro ko-mu-ni-kaci n
 a pro-to-kolu SOAP.
  []
 
 [16]
-Overfull \hbox (10.276pt too wide) in paragraph at lines 333--334
+Overfull \hbox (10.276pt too wide) in paragraph at lines 335--336
 []\T1/aer/m/n/12 (Universal De-scrip-tion, Dis-co-very, and In-te-gration) re-g
 istr je místo,
  []
@@ -662,61 +662,61 @@ pdfTeX warning: pdflatex (file C:/MojeData/Škola/DP/Dokument/visio/object.pdf):
 <visio/object.pdf, id=196, 598.48593pt x 285.31593pt>
 File: visio/object.pdf Graphic file (type pdf)
  <use visio/object.pdf>
-Package pdftex.def Info: visio/object.pdf used on input line 347.
+Package pdftex.def Info: visio/object.pdf used on input line 349.
 (pdftex.def)             Requested size: 359.09433pt x 171.19087pt.
 
 [18 <C:/MojeData/Škola/DP/Dokument/visio/object.pdf>]
-Overfull \hbox (7.16808pt too wide) in paragraph at lines 360--361
+Overfull \hbox (7.16808pt too wide) in paragraph at lines 362--363
 []\T1/aer/m/n/12 Zam¥stnanec a jeho p°í-slu²-nost k pra-cov-nímu od-d¥-lení, fu
 nkce,
  []
 
 
-Overfull \hbox (1.62387pt too wide) in paragraph at lines 362--363
+Overfull \hbox (1.62387pt too wide) in paragraph at lines 364--365
 []\T1/aer/m/n/12 Podrobn¥j²í in-for-mace o osob¥ za-m¥st-nance, jméno, pra-covn
 í zkratka. 
  []
 
 
-Overfull \hbox (4.25185pt too wide) in paragraph at lines 376--378
+Overfull \hbox (4.25185pt too wide) in paragraph at lines 378--380
 []\T1/aer/m/n/12 Lokální da-ta-báze za-m¥st-nanc·, kde se uklá-dají zá-kladní ú
 daje
  []
 
 [19]
-Overfull \hbox (27.26987pt too wide) in paragraph at lines 386--387
+Overfull \hbox (27.26987pt too wide) in paragraph at lines 388--389
 []\T1/aer/bx/n/12 TEXT \T1/aer/m/n/12 podle ISO8601 normy ve for-mátu "YYYY-MM-
 DD HH:MM:SS.SSS". 
  []
 
 
-Overfull \hbox (71.1319pt too wide) in paragraph at lines 407--407
+Overfull \hbox (71.1319pt too wide) in paragraph at lines 409--409
 []|$[]$| 
  []
 
 
-Overfull \hbox (2.83318pt too wide) in paragraph at lines 403--410
+Overfull \hbox (2.83318pt too wide) in paragraph at lines 405--412
  [][] 
  []
 
 [20] [21]
-Overfull \hbox (9.34502pt too wide) in paragraph at lines 452--453
+Overfull \hbox (9.34502pt too wide) in paragraph at lines 454--455
 \T1/aer/m/n/12 im-ple-men-to-vat tri-g-gery pra-cu-jící na da-to-vém bloku a va
 -li-da£ní tri-g-gery. Ostatní
  []
 
 [22]
-Overfull \hbox (3.09975pt too wide) in paragraph at lines 456--457
+Overfull \hbox (3.09975pt too wide) in paragraph at lines 458--459
 []\T1/aer/m/n/12 On-Delete, On-Insert, On-Update, Pre-Delete,
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 464--465
+Underfull \hbox (badness 10000) in paragraph at lines 466--467
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 477--478
+Underfull \hbox (badness 10000) in paragraph at lines 479--480
 
  []
 
@@ -727,12 +727,12 @@ DF inclusion: found PDF version <1.5>, but at most version <1.4> allowed
 <visio/sync.pdf, id=234, 512.66531pt x 370.38374pt>
 File: visio/sync.pdf Graphic file (type pdf)
  <use visio/sync.pdf>
-Package pdftex.def Info: visio/sync.pdf used on input line 511.
+Package pdftex.def Info: visio/sync.pdf used on input line 513.
 (pdftex.def)             Requested size: 358.86327pt x 259.26685pt.
 
 [25]
 
-LaTeX Warning: Reference `fig:syncup' on page 26 undefined on input line 516.
+LaTeX Warning: Reference `fig:syncup' on page 26 undefined on input line 518.
 
 
 
@@ -742,7 +742,7 @@ pdfTeX warning: pdflatex (file C:/MojeData/Škola/DP/Dokument/visio/syncdown.pdf
 File: visio/syncdown.pdf Graphic file (type pdf)
 
 <use visio/syncdown.pdf>
-Package pdftex.def Info: visio/syncdown.pdf used on input line 521.
+Package pdftex.def Info: visio/syncdown.pdf used on input line 523.
 (pdftex.def)             Requested size: 319.34087pt x 120.14804pt.
 
 
@@ -751,10 +751,10 @@ pdfTeX warning: pdflatex (file C:/MojeData/Škola/DP/Dokument/visio/syncup.pdf):
 <visio/syncup.pdf, id=242, 598.48593pt x 484.81125pt>
 File: visio/syncup.pdf Graphic file (type pdf)
  <use visio/syncup.pdf>
-Package pdftex.def Info: visio/syncup.pdf used on input line 528.
+Package pdftex.def Info: visio/syncup.pdf used on input line 530.
 (pdftex.def)             Requested size: 418.93729pt x 339.36555pt.
 
-Overfull \hbox (28.93729pt too wide) in paragraph at lines 528--529
+Overfull \hbox (28.93729pt too wide) in paragraph at lines 530--531
  [][] 
  []
 
@@ -771,7 +771,7 @@ DF inclusion: found PDF version <1.5>, but at most version <1.4> allowed
 <visio/auth.pdf, id=305, 456.20438pt x 313.9228pt>
 File: visio/auth.pdf Graphic file (type pdf)
  <use visio/auth.pdf>
-Package pdftex.def Info: visio/auth.pdf used on input line 584.
+Package pdftex.def Info: visio/auth.pdf used on input line 586.
 (pdftex.def)             Requested size: 364.96399pt x 251.13857pt.
 
 
@@ -781,11 +781,11 @@ f): PDF inclusion: found PDF version <1.5>, but at most version <1.4> allowed
 File: visio/auth_ldap.pdf Graphic file (type pdf)
 
 <use visio/auth_ldap.pdf>
-Package pdftex.def Info: visio/auth_ldap.pdf used on input line 593.
+Package pdftex.def Info: visio/auth_ldap.pdf used on input line 595.
 (pdftex.def)             Requested size: 364.96399pt x 251.13857pt.
  [31 <C:/MojeData/Škola/DP/Dokument/visio/auth.pdf>]
 [32 <C:/MojeData/Škola/DP/Dokument/visio/auth_ldap.pdf>]
-LaTeX Font Info:    Try loading font information for T1+aett on input line 605.
+LaTeX Font Info:    Try loading font information for T1+aett on input line 607.
 
 
 ("C:\Program Files\MikTex\tex\latex\ae\t1aett.fd"
@@ -793,26 +793,26 @@ File: t1aett.fd 1997/11/16 Font definitions for T1/aett.
 ) [33] [34]
 Kapitola 5.
 
-Underfull \vbox (badness 10000) detected at line 696
+Underfull \vbox (badness 10000) detected at line 700
  []
 
 [35
 
 ]
-Underfull \vbox (badness 10000) detected at line 731
+Underfull \vbox (badness 10000) detected at line 735
  []
 
-[36] [37]
+[36] [37] [38]
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <7> on input line 794.
+(Font)              <7> on input line 800.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <5> on input line 794.
- [38] [39] [40]
+(Font)              <5> on input line 800.
+ [39] [40]
 Kapitola 6.
 [41
 
 ]
-Underfull \hbox (badness 10000) in paragraph at lines 870--872
+Underfull \hbox (badness 10000) in paragraph at lines 876--878
 
  []
 
@@ -824,10 +824,10 @@ f): PDF inclusion: found PDF version <1.5>, but at most version <1.4> allowed
 File: visio/activity2.pdf Graphic file (type pdf)
 
 <use visio/activity2.pdf>
-Package pdftex.def Info: visio/activity2.pdf used on input line 979.
+Package pdftex.def Info: visio/activity2.pdf used on input line 985.
 (pdftex.def)             Requested size: 405.76317pt x 304.58586pt.
 
-Overfull \hbox (15.76317pt too wide) in paragraph at lines 979--980
+Overfull \hbox (15.76317pt too wide) in paragraph at lines 985--986
  [][] 
  []
 
@@ -839,7 +839,7 @@ f): PDF inclusion: found PDF version <1.5>, but at most version <1.4> allowed
 File: visio/fragments.pdf Graphic file (type pdf)
 
 <use visio/fragments.pdf>
-Package pdftex.def Info: visio/fragments.pdf used on input line 1060.
+Package pdftex.def Info: visio/fragments.pdf used on input line 1066.
 (pdftex.def)             Requested size: 387.24727pt x 167.4257pt.
  [50 <C:/MojeData/Škola/DP/Dokument/visio/fragments.pdf>] [51]
 
@@ -848,52 +848,52 @@ PDF inclusion: found PDF version <1.5>, but at most version <1.4> allowed
 <visio/async.pdf, id=415, 536.0025pt x 164.11313pt>
 File: visio/async.pdf Graphic file (type pdf)
  <use visio/async.pdf>
-Package pdftex.def Info: visio/async.pdf used on input line 1117.
+Package pdftex.def Info: visio/async.pdf used on input line 1123.
 (pdftex.def)             Requested size: 375.19919pt x 114.87839pt.
 
 [52 <C:/MojeData/Škola/DP/Dokument/visio/async.pdf>] [53]
-Overfull \hbox (3.30894pt too wide) in paragraph at lines 1174--1175
+Overfull \hbox (3.30894pt too wide) in paragraph at lines 1180--1181
 \T1/aer/m/n/12 apli-ka-cím po-mocí \T1/aer/m/it/12 an-droid.content.ContentReso
 lver \T1/aer/m/n/12 roz-hraní. Po-kud data apli-
  []
 
 
-Overfull \hbox (0.51338pt too wide) in paragraph at lines 1174--1175
+Overfull \hbox (0.51338pt too wide) in paragraph at lines 1180--1181
 \T1/aer/m/n/12 je moºné p°i-stu-po-vat k da-t·m p°ímo po-mocí t°ídy \T1/aer/m/i
 t/12 android.database.sqlite.SQ-
  []
 
 [54] [55] [56]
-Overfull \hbox (12.249pt too wide) in paragraph at lines 1235--1236
+Overfull \hbox (12.249pt too wide) in paragraph at lines 1241--1242
 \T1/aer/m/it/12 AbstractThreadedSyncAdapter\T1/aer/m/n/12 . T°ída pro-vádí akci
  na po-zadí ve vlast-ním vlákn¥.
  []
 
 
-Overfull \hbox (12.33313pt too wide) in paragraph at lines 1235--1236
+Overfull \hbox (12.33313pt too wide) in paragraph at lines 1241--1242
 \T1/aer/m/n/12 Syn-chro-ni-zace je vy-vo-lána sys-té-mo-vou kom-po-nen-tou \T1/
 aer/m/it/12 android.content.SyncMan-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1237--1238
+Underfull \hbox (badness 10000) in paragraph at lines 1243--1244
 
  []
 
 [57]
-Overfull \hbox (17.27571pt too wide) in paragraph at lines 1255--1257
+Overfull \hbox (17.27571pt too wide) in paragraph at lines 1261--1263
 []\T1/aer/bx/n/12 addAccountExplicitly(Account ac-count, String password, Bundl
 e
  []
 
 
-Overfull \hbox (5.4796pt too wide) in paragraph at lines 1259--1261
+Overfull \hbox (5.4796pt too wide) in paragraph at lines 1265--1267
 []\T1/aer/bx/n/12 setAuthToken(Account ac-count, String au-th-To-ken-Type, Stri
 ng
  []
 
 
-Overfull \hbox (12.82321pt too wide) in paragraph at lines 1261--1263
+Overfull \hbox (12.82321pt too wide) in paragraph at lines 1267--1269
 []\T1/aer/bx/n/12 String:getPassword(Account ac-count)/setPassword(Account ac-
  []
 
@@ -904,26 +904,26 @@ pdfTeX warning: pdflatex (file C:/MojeData/Škola/DP/Dokument/visio/andauth.pdf)
 <visio/andauth.pdf, id=443, 569.87906pt x 569.87906pt>
 File: visio/andauth.pdf Graphic file (type pdf)
  <use visio/andauth.pdf>
-Package pdftex.def Info: visio/andauth.pdf used on input line 1268.
+Package pdftex.def Info: visio/andauth.pdf used on input line 1274.
 (pdftex.def)             Requested size: 398.91261pt x 398.91261pt.
 
-Overfull \hbox (8.91261pt too wide) in paragraph at lines 1268--1269
+Overfull \hbox (8.91261pt too wide) in paragraph at lines 1274--1275
  [][] 
  []
 
 [58] [59 <C:/MojeData/Škola/DP/Dokument/visio/andauth.pdf>]
-Underfull \hbox (badness 10000) in paragraph at lines 1277--1279
+Underfull \hbox (badness 10000) in paragraph at lines 1283--1285
 
  []
 
 
-Overfull \hbox (5.541pt too wide) in paragraph at lines 1284--1286
+Overfull \hbox (5.541pt too wide) in paragraph at lines 1290--1292
 \T1/aer/m/n/12 Zm¥ny na-sta-vení se pro-vá-d¥jí po-mocí \T1/aer/m/it/12 Sha-red
 -Pre-fe-ren-ces.Editor \T1/aer/m/n/12 roz-hraní, které
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1284--1286
+Underfull \hbox (badness 10000) in paragraph at lines 1290--1292
 
  []
 
@@ -931,50 +931,50 @@ Underfull \hbox (badness 10000) in paragraph at lines 1284--1286
 File: scr/map.png Graphic file (type png)
 
 <use scr/map.png>
-Package pdftex.def Info: scr/map.png used on input line 1351.
+Package pdftex.def Info: scr/map.png used on input line 1357.
 (pdftex.def)             Requested size: 386.50146pt x 159.9093pt.
  [64 <C:/MojeData/Škola/DP/Dokument/scr/map.png (PNG copy)>]
 <obr/gcharts.png, id=473, 583.42969pt x 475.02469pt>
 File: obr/gcharts.png Graphic file (type png)
  <use obr/gcharts.png>
-Package pdftex.def Info: obr/gcharts.png used on input line 1374.
+Package pdftex.def Info: obr/gcharts.png used on input line 1380.
 (pdftex.def)             Requested size: 291.71413pt x 237.51175pt.
 
 [65] <obr/achartspie.png, id=477, 518.6878pt x 389.20406pt>
 File: obr/achartspie.png Graphic file (type png)
 
 <use obr/achartspie.png>
-Package pdftex.def Info: obr/achartspie.png used on input line 1385.
+Package pdftex.def Info: obr/achartspie.png used on input line 1391.
 (pdftex.def)             Requested size: 187.19833pt x 140.46968pt.
 
 <obr/achartsstack.png, id=478, 544.28343pt x 411.78844pt>
 File: obr/achartsstack.png Graphic file (type png)
 
 <use obr/achartsstack.png>
-Package pdftex.def Info: obr/achartsstack.png used on input line 1391.
+Package pdftex.def Info: obr/achartsstack.png used on input line 1397.
 (pdftex.def)             Requested size: 187.19833pt x 141.62732pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 1392--1392
+Underfull \hbox (badness 10000) in paragraph at lines 1398--1398
 []\T1/aer/m/n/12 Obrázek 6.8: |Sloup-cový graf
  []
 
 [66 <C:/MojeData/Škola/DP/Dokument/obr/gcharts.png (PNG copy)> <C:/MojeData/Ško
 la/DP/Dokument/obr/achartspie.png (PNG copy)> <C:/MojeData/Škola/DP/Dokument/ob
 r/achartsstack.png (PNG copy)>] [67]
-Underfull \hbox (badness 10000) in paragraph at lines 1436--1437
+Underfull \hbox (badness 10000) in paragraph at lines 1442--1443
 
  []
 
 [68] <scr/confirm.png, id=489, 722.7pt x 1284.8pt>
 File: scr/confirm.png Graphic file (type png)
  <use scr/confirm.png>
-Package pdftex.def Info: scr/confirm.png used on input line 1473.
+Package pdftex.def Info: scr/confirm.png used on input line 1479.
 (pdftex.def)             Requested size: 157.94785pt x 280.79445pt.
 
 <scr/install.png, id=490, 722.7pt x 1284.8pt>
 File: scr/install.png Graphic file (type png)
  <use scr/install.png>
-Package pdftex.def Info: scr/install.png used on input line 1479.
+Package pdftex.def Info: scr/install.png used on input line 1485.
 (pdftex.def)             Requested size: 157.94785pt x 280.79445pt.
  [69]
 [70 <C:/MojeData/Škola/DP/Dokument/scr/confirm.png (PNG copy)> <C:/MojeData/Ško
@@ -1051,10 +1051,10 @@ P\v {r}\'{\i }loha A.
 <scr/daytimeline.png, id=514, 722.7pt x 1284.8pt>
 File: scr/daytimeline.png Graphic file (type png)
  <use scr/daytimeline.png>
-Package pdftex.def Info: scr/daytimeline.png used on input line 1555.
+Package pdftex.def Info: scr/daytimeline.png used on input line 1561.
 (pdftex.def)             Requested size: 157.94785pt x 280.79445pt.
 
-Underfull \hbox (badness 3199) in paragraph at lines 1556--1556
+Underfull \hbox (badness 3199) in paragraph at lines 1562--1562
 []\T1/aer/m/n/12 Obrázek A.1: |Gra-fický p°e-hled
  []
 
@@ -1062,7 +1062,7 @@ Underfull \hbox (badness 3199) in paragraph at lines 1556--1556
 File: scr/daytimelinealt.png Graphic file (type png)
 
 <use scr/daytimelinealt.png>
-Package pdftex.def Info: scr/daytimelinealt.png used on input line 1561.
+Package pdftex.def Info: scr/daytimelinealt.png used on input line 1567.
 (pdftex.def)             Requested size: 157.94785pt x 280.79445pt.
  [76
 
@@ -1071,29 +1071,29 @@ ola/DP/Dokument/scr/daytimelinealt.png (PNG copy)>] <scr/edit.png, id=519, 722.
 7pt x 1284.8pt>
 File: scr/edit.png Graphic file (type png)
  <use scr/edit.png>
-Package pdftex.def Info: scr/edit.png used on input line 1579.
+Package pdftex.def Info: scr/edit.png used on input line 1585.
 (pdftex.def)             Requested size: 157.94785pt x 280.79445pt.
 
 <scr/delete.png, id=520, 722.7pt x 1284.8pt>
 File: scr/delete.png Graphic file (type png)
  <use scr/delete.png>
-Package pdftex.def Info: scr/delete.png used on input line 1585.
+Package pdftex.def Info: scr/delete.png used on input line 1591.
 (pdftex.def)             Requested size: 157.94785pt x 280.79445pt.
 
 <scr/menu.png, id=521, 722.7pt x 1284.8pt>
 File: scr/menu.png Graphic file (type png)
  <use scr/menu.png>
-Package pdftex.def Info: scr/menu.png used on input line 1599.
+Package pdftex.def Info: scr/menu.png used on input line 1605.
 (pdftex.def)             Requested size: 157.94785pt x 280.79445pt.
 
 <scr/calendar.png, id=522, 722.7pt x 1284.8pt>
 File: scr/calendar.png Graphic file (type png)
  <use scr/calendar.png>
-Package pdftex.def Info: scr/calendar.png used on input line 1605.
+Package pdftex.def Info: scr/calendar.png used on input line 1611.
 (pdftex.def)             Requested size: 157.94785pt x 280.79445pt.
  [77 <C:/MojeData/Škola/DP/Dokument/scr/edit.png (PNG copy)> <C:/MojeData/Škola
 /DP/Dokument/scr/delete.png (PNG copy)>]
-Underfull \hbox (badness 10000) in paragraph at lines 1617--1618
+Underfull \hbox (badness 10000) in paragraph at lines 1623--1624
 
  []
 
@@ -1102,25 +1102,25 @@ DP/Dokument/scr/calendar.png (PNG copy)>]
 <obr/panel.png, id=529, 273.27094pt x 187.45032pt>
 File: obr/panel.png Graphic file (type png)
  <use obr/panel.png>
-Package pdftex.def Info: obr/panel.png used on input line 1629.
+Package pdftex.def Info: obr/panel.png used on input line 1635.
 (pdftex.def)             Requested size: 191.28833pt x 131.21431pt.
  [79 <C:/MojeData/Škola/DP/Dokument/obr/panel.png (PNG copy)>]
 <scr/piechart.png, id=534, 1284.8pt x 722.7pt>
 File: scr/piechart.png Graphic file (type png)
  <use scr/piechart.png>
-Package pdftex.def Info: scr/piechart.png used on input line 1667.
+Package pdftex.def Info: scr/piechart.png used on input line 1673.
 (pdftex.def)             Requested size: 321.19922pt x 180.67455pt.
  [80]
 <scr/stackchart.png, id=538, 1284.8pt x 722.7pt>
 File: scr/stackchart.png Graphic file (type png)
  <use scr/stackchart.png>
-Package pdftex.def Info: scr/stackchart.png used on input line 1674.
+Package pdftex.def Info: scr/stackchart.png used on input line 1680.
 (pdftex.def)             Requested size: 321.19922pt x 180.67455pt.
 
 <scr/stats.png, id=539, 1284.8pt x 722.7pt>
 File: scr/stats.png Graphic file (type png)
  <use scr/stats.png>
-Package pdftex.def Info: scr/stats.png used on input line 1681.
+Package pdftex.def Info: scr/stats.png used on input line 1687.
 (pdftex.def)             Requested size: 321.19922pt x 180.67455pt.
  [81 <C:/MojeData/Škola/DP/Dokument/scr/piechart.png (PNG copy)> <C:/MojeData/Š
 kola/DP/Dokument/scr/stackchart.png (PNG copy)>] <scr/records.png, id=543, 1284
@@ -1128,38 +1128,38 @@ kola/DP/Dokument/scr/stackchart.png (PNG copy)>] <scr/records.png, id=543, 1284
 File: scr/records.png Graphic file (type png)
 
 <use scr/records.png>
-Package pdftex.def Info: scr/records.png used on input line 1693.
+Package pdftex.def Info: scr/records.png used on input line 1699.
 (pdftex.def)             Requested size: 321.19922pt x 180.67455pt.
  <scr/record.png, id=544, 722.7pt x 1284.8pt>
 File: scr/record.png Graphic file (type png)
 
 <use scr/record.png>
-Package pdftex.def Info: scr/record.png used on input line 1700.
+Package pdftex.def Info: scr/record.png used on input line 1706.
 (pdftex.def)             Requested size: 180.67455pt x 321.19922pt.
  [82 <C:/MojeData/Škola/DP/Dokument/scr/stats.png (PNG copy)> <C:/MojeData/Škol
 a/DP/Dokument/scr/records.png (PNG copy)>]
 <scr/emps.png, id=548, 722.7pt x 1284.8pt>
 File: scr/emps.png Graphic file (type png)
  <use scr/emps.png>
-Package pdftex.def Info: scr/emps.png used on input line 1713.
+Package pdftex.def Info: scr/emps.png used on input line 1719.
 (pdftex.def)             Requested size: 157.94785pt x 280.79445pt.
 
 <scr/emp.png, id=549, 722.7pt x 1284.8pt>
 File: scr/emp.png Graphic file (type png)
  <use scr/emp.png>
-Package pdftex.def Info: scr/emp.png used on input line 1719.
+Package pdftex.def Info: scr/emp.png used on input line 1725.
 (pdftex.def)             Requested size: 157.94785pt x 280.79445pt.
  [83 <C:/MojeData/Škola/DP/Dokument/scr/record.png (PNG copy)>]
 <scr/setting.png, id=553, 722.7pt x 1284.8pt>
 File: scr/setting.png Graphic file (type png)
  <use scr/setting.png>
-Package pdftex.def Info: scr/setting.png used on input line 1732.
+Package pdftex.def Info: scr/setting.png used on input line 1738.
 (pdftex.def)             Requested size: 131.6241pt x 233.99864pt.
 
 <scr/addacc.png, id=554, 722.7pt x 1284.8pt>
 File: scr/addacc.png Graphic file (type png)
  <use scr/addacc.png>
-Package pdftex.def Info: scr/addacc.png used on input line 1738.
+Package pdftex.def Info: scr/addacc.png used on input line 1744.
 (pdftex.def)             Requested size: 131.6241pt x 233.99864pt.
  [84 <C:/MojeData/Škola/DP/Dokument/scr/emps.png (PNG copy)> <C:/MojeData/Škola
 /DP/Dokument/scr/emp.png (PNG copy)>] <scr/accact.png, id=558, 722.7pt x 1284.8
@@ -1167,25 +1167,25 @@ pt>
 File: scr/accact.png Graphic file (type png)
 
 <use scr/accact.png>
-Package pdftex.def Info: scr/accact.png used on input line 1748.
+Package pdftex.def Info: scr/accact.png used on input line 1754.
 (pdftex.def)             Requested size: 131.6241pt x 233.99864pt.
  <scr/accokdialog.png, id=559, 722.7pt x 1284.8pt>
 File: scr/accokdialog.png Graphic file (type png)
 
 <use scr/accokdialog.png>
-Package pdftex.def Info: scr/accokdialog.png used on input line 1754.
+Package pdftex.def Info: scr/accokdialog.png used on input line 1760.
 (pdftex.def)             Requested size: 131.6241pt x 233.99864pt.
  <scr/notif.png, id=560, 722.7pt x 1284.8pt>
 File: scr/notif.png Graphic file (type png)
 
 <use scr/notif.png>
-Package pdftex.def Info: scr/notif.png used on input line 1768.
+Package pdftex.def Info: scr/notif.png used on input line 1774.
 (pdftex.def)             Requested size: 157.94785pt x 280.79445pt.
  <scr/notifnotset.png, id=561, 722.7pt x 1284.8pt>
 File: scr/notifnotset.png Graphic file (type png)
 
 <use scr/notifnotset.png>
-Package pdftex.def Info: scr/notifnotset.png used on input line 1774.
+Package pdftex.def Info: scr/notifnotset.png used on input line 1780.
 (pdftex.def)             Requested size: 157.94785pt x 280.79445pt.
  [85 <C:/MojeData/Škola/DP/Dokument/scr/setting.png (PNG copy)> <C:/MojeData/Šk
 ola/DP/Dokument/scr/addacc.png (PNG copy)> <C:/MojeData/Škola/DP/Dokument/scr/a
@@ -1195,37 +1195,37 @@ a/Škola/DP/Dokument/scr/notifnotset.png (PNG copy)>]
 <obr/widgetatt.png, id=569, 228.855pt x 135.50626pt>
 File: obr/widgetatt.png Graphic file (type png)
  <use obr/widgetatt.png>
-Package pdftex.def Info: obr/widgetatt.png used on input line 1788.
+Package pdftex.def Info: obr/widgetatt.png used on input line 1794.
 (pdftex.def)             Requested size: 157.94785pt x 93.52422pt.
 
 <obr/widgetemp.png, id=570, 225.09094pt x 137.01187pt>
 File: obr/widgetemp.png Graphic file (type png)
  <use obr/widgetemp.png>
-Package pdftex.def Info: obr/widgetemp.png used on input line 1794.
+Package pdftex.def Info: obr/widgetemp.png used on input line 1800.
 (pdftex.def)             Requested size: 157.94785pt x 96.14598pt.
 
 <scr/widgetact.png, id=571, 722.7pt x 1284.8pt>
 File: scr/widgetact.png Graphic file (type png)
  <use scr/widgetact.png>
-Package pdftex.def Info: scr/widgetact.png used on input line 1804.
+Package pdftex.def Info: scr/widgetact.png used on input line 1810.
 (pdftex.def)             Requested size: 157.94785pt x 280.79445pt.
 
 <scr/widgetadd.png, id=572, 722.7pt x 1284.8pt>
 File: scr/widgetadd.png Graphic file (type png)
  <use scr/widgetadd.png>
-Package pdftex.def Info: scr/widgetadd.png used on input line 1810.
+Package pdftex.def Info: scr/widgetadd.png used on input line 1816.
 (pdftex.def)             Requested size: 157.94785pt x 280.79445pt.
 
 <scr/settings1.png, id=573, 722.7pt x 1284.8pt>
 File: scr/settings1.png Graphic file (type png)
  <use scr/settings1.png>
-Package pdftex.def Info: scr/settings1.png used on input line 1826.
+Package pdftex.def Info: scr/settings1.png used on input line 1832.
 (pdftex.def)             Requested size: 157.94785pt x 280.79445pt.
 
 <scr/settings2.png, id=574, 722.7pt x 1284.8pt>
 File: scr/settings2.png Graphic file (type png)
  <use scr/settings2.png>
-Package pdftex.def Info: scr/settings2.png used on input line 1832.
+Package pdftex.def Info: scr/settings2.png used on input line 1838.
 (pdftex.def)             Requested size: 157.94785pt x 280.79445pt.
 
 [87 <C:/MojeData/Škola/DP/Dokument/obr/widgetatt.png (PNG copy)> <C:/MojeData/Š
@@ -1236,25 +1236,25 @@ PNG copy)>] [88 <C:/MojeData/Škola/DP/Dokument/scr/settings1.png (PNG copy)> <C
 <scr/network.png, id=584, 722.7pt x 1284.8pt>
 File: scr/network.png Graphic file (type png)
  <use scr/network.png>
-Package pdftex.def Info: scr/network.png used on input line 1873.
+Package pdftex.def Info: scr/network.png used on input line 1879.
 (pdftex.def)             Requested size: 180.67455pt x 321.19922pt.
  [90 <C:/MojeData/Škola/DP/Dokument/scr/network.png (PNG copy)>]
 <scr/location.png, id=588, 722.7pt x 1284.8pt>
 File: scr/location.png Graphic file (type png)
  <use scr/location.png>
-Package pdftex.def Info: scr/location.png used on input line 1885.
+Package pdftex.def Info: scr/location.png used on input line 1891.
 (pdftex.def)             Requested size: 180.67455pt x 321.19922pt.
  [91 <C:/MojeData/Škola/DP/Dokument/scr/location.png (PNG copy)>]
 <scr/colors.png, id=593, 722.7pt x 1284.8pt>
 File: scr/colors.png Graphic file (type png)
  <use scr/colors.png>
-Package pdftex.def Info: scr/colors.png used on input line 1899.
+Package pdftex.def Info: scr/colors.png used on input line 1905.
 (pdftex.def)             Requested size: 157.94785pt x 280.79445pt.
 
 <scr/changecolor.png, id=594, 722.7pt x 1284.8pt>
 File: scr/changecolor.png Graphic file (type png)
  <use scr/changecolor.png>
-Package pdftex.def Info: scr/changecolor.png used on input line 1905.
+Package pdftex.def Info: scr/changecolor.png used on input line 1911.
 (pdftex.def)             Requested size: 157.94785pt x 280.79445pt.
 
 [92 <C:/MojeData/Škola/DP/Dokument/scr/colors.png (PNG copy)> <C:/MojeData/Škol
@@ -1276,13 +1276,13 @@ LaTeX Warning: There were undefined references.
 
  ) 
 Here is how much of TeX's memory you used:
- 6136 strings out of 495324
- 85368 string characters out of 3182598
- 184466 words of memory out of 3000000
- 9161 multiletter control sequences out of 15000+200000
+ 6138 strings out of 495324
+ 85397 string characters out of 3182598
+ 193466 words of memory out of 3000000
+ 9163 multiletter control sequences out of 15000+200000
  51445 words of font info for 99 fonts, out of 3000000 for 9000
  5 hyphenation exceptions out of 8191
- 36i,16n,43p,981b,1802s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 36i,16n,43p,981b,1173s stack positions out of 5000i,500n,10000p,200000b,50000s
 <C:/Program Files/MikTex/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Progra
 m Files/MikTex/fonts/type1/public/amsfonts/cm/cmbxti10.pfb><C:/Program Files/Mi
 kTex/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Program Files/MikTex/fonts/t
@@ -1294,7 +1294,7 @@ es/MikTex/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Program Files/MikTex/font
 s/type1/public/amsfonts/cm/cmsy10.pfb><C:/Program Files/MikTex/fonts/type1/publ
 ic/amsfonts/cm/cmti12.pfb><C:/Program Files/MikTex/fonts/type1/public/amsfonts/
 cm/cmtt12.pfb>
-Output written on diplomka.pdf (100 pages, 4353252 bytes).
+Output written on diplomka.pdf (100 pages, 4353862 bytes).
 PDF statistics:
  645 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
