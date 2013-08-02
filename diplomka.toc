@@ -38,7 +38,7 @@
 \contentsline {subsection}{\numberline {3.4.1}Triggery formul\IeC {\'a}\IeC {\v r}e}{23}
 \contentsline {subsection}{\numberline {3.4.2}Datab\IeC {\'a}zov\IeC {\'e} triggery}{23}
 \contentsline {subsection}{\numberline {3.4.3}Datab\IeC {\'a}zov\IeC {\'e} ulo\IeC {\v z}en\IeC {\'e} funkce a procedury}{23}
-\contentsline {subsubsection}{Funkce vracej\IeC {\'\i }c\IeC {\'\i } typ BOOLEAN}{23}
+\contentsline {subsubsection}{Funkce vracej\IeC {\'\i }c\IeC {\'\i } typ BOOLEAN}{24}
 \contentsline {subsection}{\numberline {3.4.4}Forms knihovny}{24}
 \contentsline {subsection}{\numberline {3.4.5}Shrnut\IeC {\'\i }}{24}
 \contentsline {section}{\numberline {3.5}Synchronizace dat}{25}
@@ -77,10 +77,10 @@
 \contentsline {subsection}{\numberline {6.3.3}Async task}{51}
 \contentsline {subsection}{\numberline {6.3.4}Service}{53}
 \contentsline {subsection}{\numberline {6.3.5}Intent}{54}
-\contentsline {subsection}{\numberline {6.3.6}Content provider}{54}
-\contentsline {subsection}{\numberline {6.3.7}Broadcast receiver}{55}
+\contentsline {subsection}{\numberline {6.3.6}Content provider}{55}
+\contentsline {subsection}{\numberline {6.3.7}Broadcast receiver}{56}
 \contentsline {subsection}{\numberline {6.3.8}Loader}{56}
-\contentsline {subsection}{\numberline {6.3.9}Alarm manager}{56}
+\contentsline {subsection}{\numberline {6.3.9}Alarm manager}{57}
 \contentsline {section}{\numberline {6.4}Komponenty pro synchronizaci}{57}
 \contentsline {section}{\numberline {6.5}U\IeC {\v z}ivatelsk\IeC {\'y} \IeC {\'u}\IeC {\v c}et}{58}
 \contentsline {section}{\numberline {6.6}Ukl\IeC {\'a}d\IeC {\'a}n\IeC {\'\i } dat}{60}

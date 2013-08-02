@@ -9,6 +9,7 @@
 \usepackage{graphicx}
 \usepackage{multirow}
 \usepackage{color, colortbl}
+\usepackage{xcolor}
 \usepackage{enumitem}
 \usepackage{array}
 \usepackage{caption}
@@ -16,8 +17,12 @@
 \usepackage{longtable}
 
 %\usepackage[pdftex]{graphicx}
-
-\lstset{language=Java,keywordstyle=\color{blue}, commentstyle=\color{green},stringstyle=\color{red},showstringspaces=false,breaklines=true,tabsize=3,basicstyle=\footnotesize,captionpos=b}
+\DeclareCaptionFont{white}{\color{white}}
+\DeclareCaptionFormat{listing}{\colorbox{gray}{\parbox{\textwidth}{#1#2#3}}}
+\captionsetup[lstlisting]{format=listing,labelfont=white,textfont=white}
+\renewcommand\lstlistingname{Ukázka kódu}
+\renewcommand\lstlistlistingname{Ukázka kódu}
+%\lstset{language=Java,keywordstyle=\color{blue}, %commentstyle=\color{green},stringstyle=\color{red},showstringspaces=false,breaklines=true,tabsize=3,basicstyle=\footnotesize,captionpos=b}
 
 
 
@@ -45,9 +50,14 @@ Prohlašuji, že jsem diplomovou práci vypracoval samostatně a výhradně s~po
 V Plzni dne \today
 \vskip 0.7em
 \hskip 9cm Martin Kadlec
+\chapter*{Poděkování}
+\thispagestyle{empty}
+Na tomto místě bych chtěl poděkovat Ing. Jiřímu Jansovi a Ing. Ladislavovi Pešičkovi za čas věnovaný konzultacím a podnětné návrhy při zpracování mojí diplomové práce.
 \chapter*{Abstract}
 \thispagestyle{empty}
-Text of abstract.
+\textbf{Attendance and work records for the IMIS system on Android platform}\\ \\
+This thesis deals with design and implementation of mobile application for attendance and work records in company. Thesis analyzes architecture of current system and finds a way how to integratie new application to it. Thesis presents development of a RESTful web service on Java EE server and creation of an Android RESTful web service client, while respecting requirements of users and funcionality of present system.
+%Attendance and work records for the IMIS system on Android platform
 \pagestyle{empty}
 \tableofcontents
 \pagestyle{fancy}
@@ -203,7 +213,7 @@ V této jsou popsány formuláře pro vybranou funčnost systému.
 \subsection{Zápis příchodů a odchodů}
 \begin{figure}[H]
   \centering
-  \includegraphics[scale=0.7]{obr/BD27.png}
+  \includegraphics[scale=0.65]{obr/BD27.png}
 \caption{Formulář pro zápis příchodů a odchodů}
 \label{fig:att}
 \end{figure}
@@ -227,7 +237,7 @@ V této jsou popsány formuláře pro vybranou funčnost systému.
 \subsection{Výkaz práce}
 \begin{figure}[H]
   \centering
-  \includegraphics[scale=0.7]{obr/VX42.png}
+  \includegraphics[scale=0.65]{obr/VX42.png}
 \caption{Formulář pro pracovní výkazy}
 \label{fig:rep}
 \end{figure}
@@ -284,7 +294,7 @@ Android aplikace funguje jako tenký klient, který se připojuje k webové slu�
 %Diagram zobrazující uvedené komponenty je na obr. \ref{obr:deployment}:
 \begin{figure}[H]
   \centering
-  \includegraphics[scale=0.7]{visio/deployment.pdf}
+  \includegraphics[scale=0.65]{visio/deployment.pdf}
 \caption{Diagram nasazení}
 \label{fig:deployment}
 \end{figure}
@@ -385,7 +395,8 @@ Data budou ukládané ve třech tabulkách SQLite databáze. Datový model nebud
 \subsection{Práce s datumem a časem}
 Při návrhu datového modelu jsem řešil problém pomocí jakého datového typu vyjadřovat údaj o čase či datu. V Oracle databázi je použit datový typ Date. SQLite databáze nabízí tři způsoby jako ukládat informaci o čase:
 \begin{itemize}
-\item \textbf{TEXT} podle ISO8601 normy ve formátu "YYYY-MM-DD HH:MM:SS.SSS".
+\item \textbf{TEXT} podle ISO8601 normy ve formátu\\
+"YYYY-MM-DD HH:MM:SS.SSS".
 \item \textbf{REAL} podle Juliánského kalendáře, počet dní od poledne 24. Listopadu roku 4714 před kristem (Greenwichského času).
 \item \textbf{INTEGER} jako Unix Time, počet sekund 1970-01-01 00:00:00 UTC.
 \end{itemize}
@@ -465,12 +476,13 @@ Databázové triggery se provádějí při definovaných událostech jako vlože
 \subsection{Databázové uložené funkce a  procedury}
 Funkce a procedury uložené v Oracle databázi lze volat z aplikace prostředky jazyka Java. Slouží k tomu rozhraní \emph{java.sql.CallableStatement}. Ukázka volání uložené funkce z Javy:\\
 
-\begin{lstlisting}
+\begin{lstlisting}[label=lis:call, caption=Volání uložené procedury]
 CallableStatement callableStatement = conn.prepareCall(
 "{? = call IMISOID_HESLO_WRAPPER(?, ?)}");
 callableStatement.setString(2, icp);
 callableStatement.setString(3, heslo);
-callableStatement.registerOutParameter(1, OracleTypes.NUMBER);
+callableStatement.registerOutParameter(1, 
+OracleTypes.NUMBER);
 callableStatement.executeUpdate();
 BigDecimal bool = callableStatement.getBigDecimal(1);
 \end{lstlisting}
@@ -478,8 +490,9 @@ BigDecimal bool = callableStatement.getBigDecimal(1);
 \subsubsection{Funkce vracející typ BOOLEAN}
 Problém nastává pokud uložená funkce vrací typ BOOLEAN. Ovladač databáze Oracle JDBC nepodporuje typ BOOLEAN jako návratový datový typ \cite{limitation}. Řešením je použití obalující procedury, která zpracuje výsledek volané procedury vracející BOOLEAN, ale sama vrací podporovaný datový typ (např. NUMBER). Ukázka takové obalující procedury: \\
 
-\begin{lstlisting}
-FUNCTION IMISOID_HESLO_WRAPPER(PIcp in Varchar2, PHeslo in Varchar2) RETURN NUMBER AS
+\begin{lstlisting}[label=lis:wrapper, caption=Obalující procedura]
+FUNCTION IMISOID_HESLO_WRAPPER(PIcp in Varchar2,
+PHeslo in Varchar2) RETURN NUMBER AS
   myvar boolean;
 BEGIN
   myvar := ccap_heslo_pkg.SpravneHeslo(PIcp,PHeslo);
@@ -791,14 +804,18 @@ Pomocí anotace je specifikován MIME typ reprezentace zdroje použitého při o
 \end{itemize}
 Ve výpisu kódu \ref{lis:jaxrs} je ukázka použití pro získání seznamu docházkových událostí uživatele.
 \newpage
-\begin{lstlisting}[language=Java, caption={Ukázka použití JAX-RS},label={lis:jaxrs}]
+\begin{lstlisting}[label=lis:jaxrs, caption=Ukázka použití JAX-RS]
 @Path("/events")
 public class EventsProvider {
 
   @GET
   @Path("{username}")
-  @Produces(MediaType.APPLICATION_JSON + ";charset=utf-8")
-  public Response getEventsForUser(@PathParam("username") String username, @QueryParam("from") String from, @QueryParam("to") String to) throws Exception {
+  @Produces(MediaType.APPLICATION_JSON 
++ ";charset=utf-8")
+  public Response getEventsForUser(
+@PathParam("username") String username, 
+@QueryParam("from") String from, 
+@QueryParam("to") String to) throws Exception {
       ...
    }
 }
@@ -816,18 +833,27 @@ Ukázka použití této třídy se nachází ve výpisu kódu \ref{lis:rest}. Ne
 \end{itemize}
 Vytvořený objekt hlavičky je následně předán v konstruktoru objektu \emph{HttpEntity}. Dále je nutné vytvořit instanci \emph{RestTemplate}. Zde je nutné nastavit \emph{HttpComponentsClientHttpRequestFactory} objekt, který je zodpovědný za vytváření HTTP spojení a konvertor obsahu \emph{MappingJacksonHttpMessageConverter} zodpovědný za převod Java objektu na JSON řetězec určený k odeslání. Posledním úkolem je nastavit požadovanou HTTP metodu, nastavit URL cílové služby společně s parametry a nastavit objekt očekávaný jako odpověď. Poždavek se provede pomocí metody \emph{exchange()}. Ukázka ve výpisu \ref{lis:rest} představuje požadavek na získání seznamu zaměstnanců ze serveru.
 
-\begin{lstlisting}[language=Java, caption={Ukázka použití RestTemplate},label={lis:rest}]
+\begin{lstlisting}[label=lis:rest, caption=Ukázka použití RestTemplate]
 HttpHeaders requestHeaders = new HttpHeaders();
-HttpAuthentication authHeader = AuthenticationUtil.createAuthHeader(context);
+HttpAuthentication authHeader = AuthenticationUtil.
+createAuthHeader(context);
 requestHeaders.setAuthorization(authHeader);
-requestHeaders.setAccept(Collections.singletonList(MediaType.APPLICATION_JSON));
-HttpEntity<Object> entity = new HttpEntity<>(requestHeaders);
+requestHeaders.setAccept(Collections.singletonList
+(MediaType.APPLICATION_JSON));
+
+HttpEntity<Object> entity = 
+new HttpEntity<>(requestHeaders);
 
 RestTemplate restTemplate = new RestTemplate();
-restTemplate.setRequestFactory(new HttpComponentsClientHttpRequestFactory(HttpClientFactory.getThreadSafeClient()));
-restTemplate.getMessageConverters().add(new MappingJacksonHttpMessageConverter());
+restTemplate.setRequestFactory(
+new HttpComponentsClientHttpRequestFactory
+(HttpClientFactory.getThreadSafeClient()));
+restTemplate.getMessageConverters().
+add(new MappingJacksonHttpMessageConverter());
 
-ResponseEntity<Employee[]> response = restTemplate.exchange(url, HttpMethod.GET, entity, Employee[].class, icp);
+ResponseEntity<Employee[]> response = restTemplate.
+exchange(url, HttpMethod.GET, entity, 
+Employee[].class, icp);
 \end{lstlisting}
 
 \chapter{Android aplikace}
@@ -1047,11 +1073,13 @@ Volána ve chvíli, kdy je fragment odstraňován z aktivity.
 \subsubsection*{Provádění transakcí}
 Fragment je možné přidávat, mazat či nahrazovat jiným fragmentem v rámci rodičovské aktivity. Taková akce se nazývá transakce a provádí se pomocí třídy \emph{FragmentTransaction}. V následující ukázce kódu je současný fragment v aktivitě nahrazen fragmentem \emph{PieChartFragment} zobrazující koláčový graf. Ukázka je ze třídy \emph{ChartActivity}:
 
-\begin{lstlisting}
-FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
+\begin{lstlisting}[label=lis:transaction, caption=Transakce fragmentu]
+FragmentTransaction ft = getSupportFragmentManager().
+beginTransaction();
 PieChartFragment pieFragment = new PieChartFragment();
 ft.replace(R.id.displayChart, pieFragment, FRAG_PIE);
-ft.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_CLOSE);
+ft.setTransition(FragmentTransaction.
+TRANSIT_FRAGMENT_CLOSE);
 ft.commit();
 \end{lstlisting}
 
@@ -1240,7 +1268,7 @@ V aplikaci je komponenta použita pro plánování periodické kontroly chyběj�
 \section{Komponenty pro synchronizaci}
 Pro synchronizaci je klíčovou komponentou třída \emph{android.content.\\AbstractThreadedSyncAdapter}. Třída provádí akci na pozadí ve vlastním vlákně. Synchronizace je vyvolána systémovou komponentou \emph{android.content.SyncMan-ager}, v závislosti na konkrétním nastavení pro konkrétní adaptér. Odpadá tak starost o práci s vlákny a k využití této komponenty stačí implementovat metodu \emph{onPerformSync()}:
 \begin{itemize}[]
-\item \textbf{onPerformSync(Account account, Bundle extras, String authority, ContentProviderClient provider, SyncResult syncResult)}\\
+\item \textbf{onPerformSync(Account account, Bundle extras, String authority, ContentProviderClient provider, SyncResult syncResult)}
 \begin{itemize}[]
 \item  \textbf{account} účet, který je synchronizován
 \item  \textbf{extras} parametry specifické pro tento adaptér
@@ -1258,7 +1286,7 @@ Android poskytuje správu účtů pro online služby. Uživatel zadá svoje při
 Různé online služby mohou využívat odlišný způsob pro autentizaci. Android manažer účtů využívá kompomentu \emph{authenticator}\cite{accman}, která je obvykle poskytována třetí stranou - poskytovatelem dané služby. Příkladem služby, která poskytuje vlastní \emph{authenticator} je např. Google, Facebook a Microsoft Exchange.\\ \indent
 Nejdůležitější třída pro práci s účty je \emph{	android.accounts.AccountManager}. Zde je výčet nejdůležitějších metod:
 \begin{itemize}[]
-\item \textbf{addAccountExplicitly(Account account, String password, Bundle userdata)}\\
+\item \textbf{addAccountExplicitly(Account account, String password, Bu-ndle userdata)}\\
 Vytvoří nový účet.
 \item \textbf{Account[]: getAccountsByType(String type)}\\
 Vrátí seznam všech účtů daného typu.
@@ -1282,15 +1310,17 @@ Na diagramu \ref{fig:andauth} je zobrazen průběh vytvoření účtu, který je
 Android umožňuje několik způsobů jak persistentně ukládat data aplikace. Programátor by měl vzít v úvahu, zda data mají být soukromá či dostupná i ostatním aplikacím a také velikost těchto dat. 
 \subsection*{Sdílené preference} Ukládá primitivní datové typy ve tvaru klíč-hodnota. Slouží k uložení nastavení specifických pro aplikaci. K těmto se přistupuje pomocí \emph{android.content.-\\SharedPreferences} rozhraní. Data jsou ukládána persistentně. V aplikaci používám toto úložiště pro nastavení síťového připojení, barevného nastavení pro typy docházkových událostí a další uživatelsky měnitelné hodnoty.\\ \\
 Objekty se získávají pomocí příslušné get metody:
-\begin{lstlisting}
-SharedPreferences settings = PreferenceManager.getDefaultSharedPreferences(context);
+\begin{lstlisting}[label=lis:sharedload, caption=Získání hodnoty nastavení]
+SharedPreferences settings = PreferenceManager.
+getDefaultSharedPreferences(context);
 int color = settings.getInt("color", defaultColor);
 \end{lstlisting}
 
 \noindent
 Změny nastavení se provádějí pomocí \emph{SharedPreferences.Editor} rozhraní, které se postará aby data zůstala konsistentní a řídí transakční zpracování.\\
-\begin{lstlisting}
-SharedPreferences settings = PreferenceManager.getDefaultSharedPreferences(context);
+\begin{lstlisting}[label=lis:sharedloadsave, caption=Uložení hodnoty nastavení] 
+SharedPreferences settings = PreferenceManager.
+getDefaultSharedPreferences(context);
 SharedPreferences.Editor editor = settings.edit();
 editor.putInt(("color", userColor);
 editor.commit();
@@ -1457,7 +1487,7 @@ Celočíselná hodnota reprezentující verzi aplikačního kódu, relativní k 
 
 \subsection*{Aktualizace aplikace}
 K tomu aby bylo možné využívat funkci automatické aktualizace je nutné přidat následující kód do každé aktivity aplikace, kde má být prováděna kontrola dostupnosti nové verze. Předpokladem je přítomnost potřebné knihovny \emph{AppKiltLib.jar} v projektu. Při zjištění nové verze aplikace je uživatel vyzván dialogem (obr. \ref{fig:confirm}) k instalaci nové verze. Následně je zobrazen seznam oprávnění požadovaný aplikací a uživatel je vyzván k akceptaci (obr. \ref{fig:install}).
-\begin{lstlisting}
+\begin{lstlisting}[label=lis:actualise, caption=Kontrola dostupnosti aktualizace] 
 @Override
 protected void onPause() { 
 	super.onPause();
@@ -1493,7 +1523,7 @@ Android systém vyžaduje, aby všechny instalované aplikace byly digitálně p
 
 \subsection*{Reportování chyb}
 K tomu aby bylo možné využívat funkci reportování chyb je nutné přidat do projektu vlastní implementaci třídy \emph{android.app.Application} a v ní volat funkci \emph{AppKilt.init(this, "ID")}, kde řetězce \emph{ID} bude nahrazen skutečným identifikátorem přiděleným aplikaci službou AppKlit. Předpokladem je přítomnost potřebné knihovny \emph{AppKiltLib.jar} v projektu. Nevýhodou je skutečnost, že chybový report je odesílán pouze pokud je zařízení připojeno k síti v momentě, kdy dojde k chybě v aplikaci, jinak se tato informace ztratí. 
-\begin{lstlisting}
+\begin{lstlisting}[label=lis:errorreport, caption=Inicializace reportování chyb] 
 public class MyApplication extends Application {
 
 	@Override
