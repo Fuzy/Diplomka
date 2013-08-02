@@ -3,7 +3,7 @@
 %%
 %%
 \NeedsTeXFormat{LaTeX2e}[1995/12/01]
-\ProvidesClass{bakalarka}
+\ProvidesClass{diplomka}
               [2005/09/16 v1.4f
  Standard LaTeX document class]
 

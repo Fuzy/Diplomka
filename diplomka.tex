@@ -15,16 +15,18 @@
 \usepackage{caption}
 \usepackage{subcaption}
 \usepackage{longtable}
+\usepackage{url}
+%\usepackage[backend=biber,natbib=true,style=numeric,sorting=none]{biblatex}
+%\usepackage[sorting=none,backend=biber]{biblatex}
 
 %\usepackage[pdftex]{graphicx}
 \DeclareCaptionFont{white}{\color{white}}
 \DeclareCaptionFormat{listing}{\colorbox{gray}{\parbox{\textwidth}{#1#2#3}}}
 \captionsetup[lstlisting]{format=listing,labelfont=white,textfont=white}
-\renewcommand\lstlistingname{Ukázka kódu}
-\renewcommand\lstlistlistingname{Ukázka kódu}
+\renewcommand\lstlistingname{Výpis kódu}
+\renewcommand\lstlistlistingname{Výpis kódu}
 %\lstset{language=Java,keywordstyle=\color{blue}, %commentstyle=\color{green},stringstyle=\color{red},showstringspaces=false,breaklines=true,tabsize=3,basicstyle=\footnotesize,captionpos=b}
-
-
+%\addbibresource{diplomka.bib}
 
 \author{Martin Kadlec}
 \title{Docházka a výkazy práce pro systém IMIS na platformě Android}
@@ -120,7 +122,7 @@ Prostředí běhu zajišťuje defaultní správu transakcí. Díky tomu je Oracl
 PL/SQL (Procedural Language/Structured Query Language) je procedurální nadstavba jazyka SQL od firmy Oracle založená na programovacím jazyku Ada.
 \newpage
 \subsection{Architektura}
-Oracle Forms používá client-server architekturu. Klient funguje jako tlustý klient, který se kromě zobrazení dat stará o bussines logiku aplikace. Serverem je myšlel databázový server. Architektura je znázorněna na obr. \ref{fig:arch}
+Oracle Forms používá client-server architekturu. Klient funguje jako tlustý klient, který se kromě zobrazení dat stará o bussines logiku aplikace. Serverem je myšlel databázový server. Architektura je znázorněna na obr. \ref{fig:arch}.
 
 \begin{figure}[H]
   \centering
@@ -146,7 +148,7 @@ Databáze obsahuje data a kód, který s těmito daty pracuje (triggery, procedu
 \newpage
 \subsection{Komponenty formuláře}
 \label{components}
-Z hlediska architektury se Oracle Forms aplikace skládá z těchto celků:
+Z hlediska architektury se Oracle Forms aplikace skládá z těchto celků (obr. \ref{fig:arch3}):
 
 \subsection*{Moduly}
 
@@ -193,7 +195,7 @@ Pokud se jedná o datový blok, který je svázan s tabulkou v databázi, prost�
 Pokud vývojář požaduje nestandartní akci při těchto úkonech, provede překrytí těchto triggerů s vlastní definovanou akcí.
 \newpage
 \subsection{Uživatelské rozhraní}
-Při pohledu na uživatelské rozhraní se Oracle Forms aplikace skládá z těchto objektů:
+Při pohledu na uživatelské rozhraní se Oracle Forms aplikace skládá z těchto objektů (obr. \ref{fig:gui}):
 \begin{figure}[H]
   \centering
   \includegraphics[scale=0.8]{obr/window.png}
@@ -474,7 +476,7 @@ Z množiny triggerů (zmíněných v \ref{components}) použitých ve formulář
 Databázové triggery se provádějí při definovaných událostech jako vložení, změna či smazání záznamu do konkrétní tabulky. Jejich činnost provádí databáze a to bez ohledu na to, který klient k databázi přistupuje. Jejich funkčnost tedy zůstává nezměněna při použití společně s webovou službou.
 
 \subsection{Databázové uložené funkce a  procedury}
-Funkce a procedury uložené v Oracle databázi lze volat z aplikace prostředky jazyka Java. Slouží k tomu rozhraní \emph{java.sql.CallableStatement}. Ukázka volání uložené funkce z Javy:\\
+Funkce a procedury uložené v Oracle databázi lze volat z aplikace prostředky jazyka Java. Slouží k tomu rozhraní \emph{java.sql.CallableStatement}. Ukázka volání uložené funkce z Javy se nachází ve výpisu kódu \ref{lis:call}.\\
 
 \begin{lstlisting}[label=lis:call, caption=Volání uložené procedury]
 CallableStatement callableStatement = conn.prepareCall(
@@ -488,7 +490,7 @@ BigDecimal bool = callableStatement.getBigDecimal(1);
 \end{lstlisting}
 
 \subsubsection{Funkce vracející typ BOOLEAN}
-Problém nastává pokud uložená funkce vrací typ BOOLEAN. Ovladač databáze Oracle JDBC nepodporuje typ BOOLEAN jako návratový datový typ \cite{limitation}. Řešením je použití obalující procedury, která zpracuje výsledek volané procedury vracející BOOLEAN, ale sama vrací podporovaný datový typ (např. NUMBER). Ukázka takové obalující procedury: \\
+Problém nastává pokud uložená funkce vrací typ BOOLEAN. Ovladač databáze Oracle JDBC nepodporuje typ BOOLEAN jako návratový datový typ \cite{limitation}. Řešením je použití obalující procedury, která zpracuje výsledek volané procedury vracející BOOLEAN, ale sama vrací podporovaný datový typ (např. NUMBER). Kód obalující procedury se nachází ve výpisu kódu \ref{lis:wrapper}. \\
 
 \begin{lstlisting}[label=lis:wrapper, caption=Obalující procedura]
 FUNCTION IMISOID_HESLO_WRAPPER(PIcp in Varchar2,
@@ -1071,7 +1073,7 @@ Volána ve chvíli, kdy je fragment odstraňován z aktivity.
 \end{itemize}
 
 \subsubsection*{Provádění transakcí}
-Fragment je možné přidávat, mazat či nahrazovat jiným fragmentem v rámci rodičovské aktivity. Taková akce se nazývá transakce a provádí se pomocí třídy \emph{FragmentTransaction}. V následující ukázce kódu je současný fragment v aktivitě nahrazen fragmentem \emph{PieChartFragment} zobrazující koláčový graf. Ukázka je ze třídy \emph{ChartActivity}:
+Fragment je možné přidávat, mazat či nahrazovat jiným fragmentem v rámci rodičovské aktivity. Taková akce se nazývá transakce a provádí se pomocí třídy \emph{FragmentTransaction}. V následující ukázce kódu je současný fragment v aktivitě nahrazen fragmentem \emph{PieChartFragment} zobrazující koláčový graf. Ukázka transakce fragmentu se nachází ve výpisu kódu \ref{lis:transaction}.
 
 \begin{lstlisting}[label=lis:transaction, caption=Transakce fragmentu]
 FragmentTransaction ft = getSupportFragmentManager().
@@ -1308,8 +1310,7 @@ Na diagramu \ref{fig:andauth} je zobrazen průběh vytvoření účtu, který je
 
 \section{Ukládání dat}
 Android umožňuje několik způsobů jak persistentně ukládat data aplikace. Programátor by měl vzít v úvahu, zda data mají být soukromá či dostupná i ostatním aplikacím a také velikost těchto dat. 
-\subsection*{Sdílené preference} Ukládá primitivní datové typy ve tvaru klíč-hodnota. Slouží k uložení nastavení specifických pro aplikaci. K těmto se přistupuje pomocí \emph{android.content.-\\SharedPreferences} rozhraní. Data jsou ukládána persistentně. V aplikaci používám toto úložiště pro nastavení síťového připojení, barevného nastavení pro typy docházkových událostí a další uživatelsky měnitelné hodnoty.\\ \\
-Objekty se získávají pomocí příslušné get metody:
+\subsection*{Sdílené preference} Ukládá primitivní datové typy ve tvaru klíč-hodnota. Slouží k uložení nastavení specifických pro aplikaci. K těmto se přistupuje pomocí \emph{android.content.-\\SharedPreferences} rozhraní. Data jsou ukládána persistentně. V aplikaci používám toto úložiště pro nastavení síťového připojení, barevného nastavení pro typy docházkových událostí a další uživatelsky měnitelné hodnoty. Ve výpisu kódu \ref{lis:sharedload} je znázorněno načtení hodnoty.
 \begin{lstlisting}[label=lis:sharedload, caption=Získání hodnoty nastavení]
 SharedPreferences settings = PreferenceManager.
 getDefaultSharedPreferences(context);
@@ -1317,7 +1318,7 @@ int color = settings.getInt("color", defaultColor);
 \end{lstlisting}
 
 \noindent
-Změny nastavení se provádějí pomocí \emph{SharedPreferences.Editor} rozhraní, které se postará aby data zůstala konsistentní a řídí transakční zpracování.\\
+Změny nastavení se provádějí pomocí \emph{SharedPreferences.Editor} rozhraní, které se postará, aby data zůstala konsistentní a řídí transakční zpracování. Ve výpisu kódu \ref{lis:sharedloadsave} je znázorněno uložení hodnoty.\\
 \begin{lstlisting}[label=lis:sharedloadsave, caption=Uložení hodnoty nastavení] 
 SharedPreferences settings = PreferenceManager.
 getDefaultSharedPreferences(context);
@@ -1486,7 +1487,7 @@ Celočíselná hodnota reprezentující verzi aplikačního kódu, relativní k 
 \end{itemize}
 
 \subsection*{Aktualizace aplikace}
-K tomu aby bylo možné využívat funkci automatické aktualizace je nutné přidat následující kód do každé aktivity aplikace, kde má být prováděna kontrola dostupnosti nové verze. Předpokladem je přítomnost potřebné knihovny \emph{AppKiltLib.jar} v projektu. Při zjištění nové verze aplikace je uživatel vyzván dialogem (obr. \ref{fig:confirm}) k instalaci nové verze. Následně je zobrazen seznam oprávnění požadovaný aplikací a uživatel je vyzván k akceptaci (obr. \ref{fig:install}).
+K tomu aby bylo možné využívat funkci automatické aktualizace je nutné přidat následující kód do každé aktivity aplikace, kde má být prováděna kontrola dostupnosti nové verze. Předpokladem je přítomnost potřebné knihovny \emph{AppKiltLib.jar} v projektu. Při zjištění nové verze aplikace je uživatel vyzván dialogem (obr. \ref{fig:confirm}) k instalaci nové verze. Následně je zobrazen seznam oprávnění požadovaný aplikací a uživatel je vyzván k akceptaci (obr. \ref{fig:install}). Ve výpisu kódu \ref{lis:actualise} se nachází kód nutný pro automatickou aktualizaci aplikace.
 \begin{lstlisting}[label=lis:actualise, caption=Kontrola dostupnosti aktualizace] 
 @Override
 protected void onPause() { 
@@ -1522,7 +1523,7 @@ protected void onResume() {
 Android systém vyžaduje, aby všechny instalované aplikace byly digitálně podepsány certifikátem, který patří vývojáři aplikace. Soukromý klíč si vygeneruje sám vývojář pomocí dostupných prostředků. Před vydáním aplikace je nutné podepsat distribuovaný balík tímto soukromým klíčem.
 
 \subsection*{Reportování chyb}
-K tomu aby bylo možné využívat funkci reportování chyb je nutné přidat do projektu vlastní implementaci třídy \emph{android.app.Application} a v ní volat funkci \emph{AppKilt.init(this, "ID")}, kde řetězce \emph{ID} bude nahrazen skutečným identifikátorem přiděleným aplikaci službou AppKlit. Předpokladem je přítomnost potřebné knihovny \emph{AppKiltLib.jar} v projektu. Nevýhodou je skutečnost, že chybový report je odesílán pouze pokud je zařízení připojeno k síti v momentě, kdy dojde k chybě v aplikaci, jinak se tato informace ztratí. 
+K tomu aby bylo možné využívat funkci reportování chyb je nutné přidat do projektu vlastní implementaci třídy \emph{android.app.Application} a v ní volat funkci \emph{AppKilt.init(this, "ID")}, kde řetězce \emph{ID} bude nahrazen skutečným identifikátorem přiděleným aplikaci službou AppKlit. Předpokladem je přítomnost potřebné knihovny \emph{AppKiltLib.jar} v projektu. Nevýhodou je skutečnost, že chybový report je odesílán pouze pokud je zařízení připojeno k síti v momentě, kdy dojde k chybě v aplikaci, jinak se tato informace ztratí. Ve výpisu kódu \ref{lis:errorreport} se nachází kód nutný pro automatické reportování chyb.
 \begin{lstlisting}[label=lis:errorreport, caption=Inicializace reportování chyb] 
 public class MyApplication extends Application {
 
@@ -1579,11 +1580,18 @@ Možnost rozšíření práce spatřuji zejména v přídání možnosti zadáva
 \end{list}
 
 \appendix
+\sloppy
 \bibliographystyle{czechiso}
+\begingroup
+\raggedright
 \bibliography{diplomka}
-\addcontentsline{toc}{chapter}{Literatura}
+\endgroup
 
+%\printbibliography
+\addcontentsline{toc}{chapter}{Literatura}
 \pagestyle{fancy}
+
+
 
 \chapter{Uživatelská dokumentace}
 \section{Docházka}
@@ -1952,5 +1960,6 @@ Na obrazovce pro nastavení barev (obr. \ref{fig:colors}) lze nastavit barvy typ
 
 \chapter{Manifest?}
 
+\chapter{Obsah DVD}
 
 \end{document}

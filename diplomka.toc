@@ -93,7 +93,7 @@
 \contentsline {section}{\numberline {6.13}Distribuce aplikace}{68}
 \contentsline {chapter}{\numberline {7}Z\IeC {\'a}v\IeC {\v e}r}{72}
 \contentsline {chapter}{Seznam zkratek}{73}
-\contentsline {chapter}{Literatura}{75}
+\contentsline {chapter}{Literatura}{76}
 \contentsline {chapter}{\numberline {A}U\IeC {\v z}ivatelsk\IeC {\'a} dokumentace}{76}
 \contentsline {section}{\numberline {A.1}Doch\IeC {\'a}zka}{76}
 \contentsline {section}{\numberline {A.2}Menu}{78}
@@ -110,3 +110,4 @@
 \contentsline {subsection}{\numberline {A.10.3}Nastaven\IeC {\'\i } barev typ\IeC {\r u} ud\IeC {\'a}lost\IeC {\'\i } a zak\IeC {\'a}zek}{92}
 \contentsline {chapter}{\numberline {B}Testovac\IeC {\'\i } dokumentace}{93}
 \contentsline {chapter}{\numberline {C}Manifest?}{94}
+\contentsline {chapter}{\numberline {D}Obsah DVD}{95}
