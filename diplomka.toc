@@ -109,5 +109,5 @@
 \contentsline {subsection}{\numberline {A.10.2}Poloha pracovi\IeC {\v s}t\IeC {\v e}}{91}
 \contentsline {subsection}{\numberline {A.10.3}Nastaven\IeC {\'\i } barev typ\IeC {\r u} ud\IeC {\'a}lost\IeC {\'\i } a zak\IeC {\'a}zek}{92}
 \contentsline {chapter}{\numberline {B}Testovac\IeC {\'\i } dokumentace}{93}
-\contentsline {chapter}{\numberline {C}Manifest?}{94}
-\contentsline {chapter}{\numberline {D}Obsah DVD}{95}
+\contentsline {chapter}{\numberline {C}Manifest}{94}
+\contentsline {chapter}{\numberline {D}Obsah DVD}{101}
