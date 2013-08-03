@@ -960,7 +960,7 @@ Verze&Kódové označení&API&Podíl uživatelů[\%]\\ \hline
 %\end{figure}
 
 \section{Komponenty Android aplikace}
-
+V následující kapitole jsou popsány komponenty použité v implementované aplikaci.
 \subsection{Activity}
 Aktivita představuje jednu obrazovku umožňující nějakou funkčnost a interakci s uživatelem prostřednictvím uživatelského rozhraní. 
 
@@ -1958,6 +1958,14 @@ Na obrazovce pro nastavení barev (obr. \ref{fig:colors}) lze nastavit barvy typ
 
 
 \chapter{Testovací dokumentace}
+Funkce webové služby může být testována i bez spojení s databází. Pokud se přistupuje k webové službě pomocí URL složené z \emph{<základní URL>/test}, bude použita testovací množina dat, která je součástí webové služby, ale neukládá se persistentně. Pro použití této možnosti je nutné přidat k nastavení domény řetězec \emph{/test} viz obr. \ref{fig:test}.
+\begin{figure}[H]
+  \centering
+  \includegraphics[scale=0.25]{scr/test.png}
+  \caption{Nastavení sítě pro testování}
+  \label{fig:test}
+\end{figure}
+
 
 \chapter{Manifest}
 \label{manifest}

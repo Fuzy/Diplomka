@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-1.40.10 (MiKTeX 2.8) (preloaded format=pdflatex 2013.8.3)  3 AUG 2013 17:20
+This is pdfTeX, Version 3.1415926-1.40.10 (MiKTeX 2.8) (preloaded format=pdflatex 2013.8.3)  3 AUG 2013 19:52
 entering extended mode
 **C:/MojeData/Škola/DP/Dokument/diplomka.tex
 (C:/MojeData/Škola/DP/Dokument/diplomka.tex
@@ -1240,9 +1240,14 @@ Package pdftex.def Info: scr/changecolor.png used on input line 1953.
 [92 <C:/MojeData/Škola/DP/Dokument/scr/colors.png (PNG copy)> <C:/MojeData/Škol
 a/DP/Dokument/scr/changecolor.png (PNG copy)>]
 P\v {r}\'{\i }loha B.
-[93
+<scr/test.png, id=600, 722.7pt x 1284.8pt>
+File: scr/test.png Graphic file (type png)
+ <use scr/test.png>
+Package pdftex.def Info: scr/test.png used on input line 1964.
+(pdftex.def)             Requested size: 180.67455pt x 321.19922pt.
+ [93
 
-]
+ <C:/MojeData/Škola/DP/Dokument/scr/test.png (PNG copy)>]
 P\v {r}\'{\i }loha C.
 [94
 
@@ -1260,10 +1265,10 @@ LaTeX Warning: There were undefined references.
 
  ) 
 Here is how much of TeX's memory you used:
- 6493 strings out of 495324
- 89028 string characters out of 3182599
- 224034 words of memory out of 3000000
- 9512 multiletter control sequences out of 15000+200000
+ 6499 strings out of 495324
+ 89113 string characters out of 3182599
+ 224045 words of memory out of 3000000
+ 9517 multiletter control sequences out of 15000+200000
  51445 words of font info for 99 fonts, out of 3000000 for 9000
  5 hyphenation exceptions out of 8191
  36i,16n,43p,981b,1722s stack positions out of 5000i,500n,10000p,200000b,50000s
@@ -1277,9 +1282,9 @@ cmr12.pfb><C:/Program Files/MikTex/fonts/type1/public/amsfonts/cm/cmr17.pfb><C:
 /MikTex/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Program Files/MikTex/font
 s/type1/public/amsfonts/cm/cmti12.pfb><C:/Program Files/MikTex/fonts/type1/publ
 ic/amsfonts/cm/cmtt12.pfb>
-Output written on diplomka.pdf (108 pages, 4360710 bytes).
+Output written on diplomka.pdf (108 pages, 4439159 bytes).
 PDF statistics:
- 666 PDF objects out of 1000 (max. 8388607)
+ 667 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
- 276 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 281 words of extra memory for PDF output out of 10000 (max. 10000000)
 
