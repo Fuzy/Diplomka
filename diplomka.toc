@@ -61,53 +61,59 @@
 \contentsline {section}{\numberline {5.3}Komunikace s klientem}{39}
 \contentsline {chapter}{\numberline {6}Android aplikace}{41}
 \contentsline {section}{\numberline {6.1}Funkcionalita}{41}
+\contentsline {subsection}{\numberline {6.1.1}Funkcionalita pro vedouc\IeC {\'\i } zam\IeC {\v e}stnance}{41}
 \contentsline {paragraph}{Doch\IeC {\'a}zka}{41}
 \contentsline {paragraph}{V\IeC {\'y}kazy pr\IeC {\'a}ce}{41}
+\contentsline {subsection}{\numberline {6.1.2}Funkcionalita pro zam\IeC {\v e}stnance}{42}
+\contentsline {paragraph}{Doch\IeC {\'a}zka}{42}
+\contentsline {paragraph}{V\IeC {\'y}kazy pr\IeC {\'a}ce}{42}
 \contentsline {paragraph}{Aktu\IeC {\'a}ln\IeC {\'\i } p\IeC {\v r}\IeC {\'\i }tomnost na pracovi\IeC {\v s}ti}{42}
 \contentsline {paragraph}{Widgety}{42}
 \contentsline {paragraph}{Notifikace}{42}
-\contentsline {paragraph}{Online vs offline}{42}
-\contentsline {subsection}{\numberline {6.1.1}Nastaven\IeC {\'\i } a konfigurovatelnost}{42}
-\contentsline {subsection}{\numberline {6.1.2}U\IeC {\v z}ivatelsk\IeC {\'a} p\IeC {\v r}\IeC {\'\i }v\IeC {\v e}tivost}{43}
-\contentsline {subsection}{\numberline {6.1.3}N\IeC {\'a}vrhy na vylep\IeC {\v s}en\IeC {\'\i }}{43}
-\contentsline {section}{\numberline {6.2}V\IeC {\'y}b\IeC {\v e}r podporovan\IeC {\'y}ch verz\IeC {\'\i } Android API}{43}
-\contentsline {section}{\numberline {6.3}Komponenty Android aplikace}{44}
-\contentsline {subsection}{\numberline {6.3.1}Activity}{44}
-\contentsline {subsection}{\numberline {6.3.2}Fragment}{48}
-\contentsline {subsection}{\numberline {6.3.3}Async task}{51}
-\contentsline {subsection}{\numberline {6.3.4}Service}{53}
-\contentsline {subsection}{\numberline {6.3.5}Intent}{54}
-\contentsline {subsection}{\numberline {6.3.6}Content provider}{55}
-\contentsline {subsection}{\numberline {6.3.7}Broadcast receiver}{56}
-\contentsline {subsection}{\numberline {6.3.8}Loader}{56}
-\contentsline {subsection}{\numberline {6.3.9}Alarm manager}{57}
-\contentsline {section}{\numberline {6.4}Komponenty pro synchronizaci}{57}
-\contentsline {section}{\numberline {6.5}U\IeC {\v z}ivatelsk\IeC {\'y} \IeC {\'u}\IeC {\v c}et}{58}
-\contentsline {section}{\numberline {6.6}Ukl\IeC {\'a}d\IeC {\'a}n\IeC {\'\i } dat}{60}
-\contentsline {section}{\numberline {6.7}Widgety}{61}
-\contentsline {section}{\numberline {6.8}Z\IeC {\'\i }sk\IeC {\'a}v\IeC {\'a}n\IeC {\'\i } geografick\IeC {\'e} polohy za\IeC {\v r}\IeC {\'\i }zen\IeC {\'\i }}{62}
-\contentsline {section}{\numberline {6.9}Google Maps Android API v2}{63}
-\contentsline {section}{\numberline {6.10}Notifikace}{64}
-\contentsline {section}{\numberline {6.11}Vytv\IeC {\'a}\IeC {\v r}en\IeC {\'\i } graf\IeC {\r u}}{65}
-\contentsline {section}{\numberline {6.12}Opr\IeC {\'a}vn\IeC {\v e}n\IeC {\'\i }}{67}
-\contentsline {section}{\numberline {6.13}Distribuce aplikace}{68}
-\contentsline {chapter}{\numberline {7}Z\IeC {\'a}v\IeC {\v e}r}{72}
-\contentsline {chapter}{Seznam zkratek}{73}
-\contentsline {chapter}{Literatura}{76}
-\contentsline {chapter}{\numberline {A}U\IeC {\v z}ivatelsk\IeC {\'a} dokumentace}{76}
-\contentsline {section}{\numberline {A.1}Doch\IeC {\'a}zka}{76}
-\contentsline {section}{\numberline {A.2}Menu}{78}
-\contentsline {section}{\numberline {A.3}Ovl\IeC {\'a}dac\IeC {\'\i } panel}{79}
-\contentsline {section}{\numberline {A.4}Grafy s statistiky}{80}
-\contentsline {section}{\numberline {A.5}V\IeC {\'y}kazy}{82}
-\contentsline {section}{\numberline {A.6}P\IeC {\v r}\IeC {\'\i }tomnost zam\IeC {\v e}stnanc\IeC {\r u}}{83}
-\contentsline {section}{\numberline {A.7}Vytvo\IeC {\v r}en\IeC {\'\i } \IeC {\'u}\IeC {\v c}tu}{84}
-\contentsline {section}{\numberline {A.8}Notifikace}{86}
-\contentsline {section}{\numberline {A.9}Widgety}{87}
-\contentsline {section}{\numberline {A.10}Nastaven\IeC {\'\i }}{88}
-\contentsline {subsection}{\numberline {A.10.1}S\IeC {\'\i }\IeC {\v t}ov\IeC {\'e} p\IeC {\v r}ipojen\IeC {\'\i }}{90}
-\contentsline {subsection}{\numberline {A.10.2}Poloha pracovi\IeC {\v s}t\IeC {\v e}}{91}
-\contentsline {subsection}{\numberline {A.10.3}Nastaven\IeC {\'\i } barev typ\IeC {\r u} ud\IeC {\'a}lost\IeC {\'\i } a zak\IeC {\'a}zek}{92}
-\contentsline {chapter}{\numberline {B}Testovac\IeC {\'\i } dokumentace}{93}
-\contentsline {chapter}{\numberline {C}Manifest}{94}
-\contentsline {chapter}{\numberline {D}Obsah DVD}{101}
+\contentsline {paragraph}{Online vs offline}{43}
+\contentsline {subsection}{\numberline {6.1.3}Nastaven\IeC {\'\i } a konfigurovatelnost}{43}
+\contentsline {subsection}{\numberline {6.1.4}U\IeC {\v z}ivatelsk\IeC {\'a} p\IeC {\v r}\IeC {\'\i }v\IeC {\v e}tivost}{43}
+\contentsline {subsection}{\numberline {6.1.5}N\IeC {\'a}vrhy na vylep\IeC {\v s}en\IeC {\'\i }}{44}
+\contentsline {section}{\numberline {6.2}V\IeC {\'y}b\IeC {\v e}r c\IeC {\'\i }lov\IeC {\'e}ho za\IeC {\v r}\IeC {\'\i }zen\IeC {\'\i } a verze API}{44}
+\contentsline {subsection}{\numberline {6.2.1}V\IeC {\'y}b\IeC {\v e}r c\IeC {\'\i }lov\IeC {\'e}ho za\IeC {\v r}\IeC {\'\i }zen\IeC {\'\i }}{44}
+\contentsline {subsection}{\numberline {6.2.2}V\IeC {\'y}b\IeC {\v e}r podporovan\IeC {\'y}ch verz\IeC {\'\i } Android API}{44}
+\contentsline {section}{\numberline {6.3}Komponenty Android aplikace}{45}
+\contentsline {subsection}{\numberline {6.3.1}Activity}{45}
+\contentsline {subsection}{\numberline {6.3.2}Fragment}{49}
+\contentsline {subsection}{\numberline {6.3.3}Async task}{52}
+\contentsline {subsection}{\numberline {6.3.4}Service}{54}
+\contentsline {subsection}{\numberline {6.3.5}Intent}{55}
+\contentsline {subsection}{\numberline {6.3.6}Content provider}{56}
+\contentsline {subsection}{\numberline {6.3.7}Broadcast receiver}{57}
+\contentsline {subsection}{\numberline {6.3.8}Loader}{57}
+\contentsline {subsection}{\numberline {6.3.9}Alarm manager}{58}
+\contentsline {subsection}{\numberline {6.3.10}Komponenta pro synchronizaci}{58}
+\contentsline {section}{\numberline {6.4}U\IeC {\v z}ivatelsk\IeC {\'y} \IeC {\'u}\IeC {\v c}et}{59}
+\contentsline {section}{\numberline {6.5}Ukl\IeC {\'a}d\IeC {\'a}n\IeC {\'\i } dat}{61}
+\contentsline {section}{\numberline {6.6}Widgety}{62}
+\contentsline {section}{\numberline {6.7}Z\IeC {\'\i }sk\IeC {\'a}v\IeC {\'a}n\IeC {\'\i } geografick\IeC {\'e} polohy za\IeC {\v r}\IeC {\'\i }zen\IeC {\'\i }}{63}
+\contentsline {section}{\numberline {6.8}Google slu\IeC {\v z}ba pro mapy}{64}
+\contentsline {section}{\numberline {6.9}Notifikace}{65}
+\contentsline {section}{\numberline {6.10}Vytv\IeC {\'a}\IeC {\v r}en\IeC {\'\i } graf\IeC {\r u}}{66}
+\contentsline {section}{\numberline {6.11}Opr\IeC {\'a}vn\IeC {\v e}n\IeC {\'\i }}{68}
+\contentsline {section}{\numberline {6.12}Distribuce aplikace}{69}
+\contentsline {chapter}{\numberline {7}Z\IeC {\'a}v\IeC {\v e}r}{73}
+\contentsline {chapter}{Seznam zkratek}{74}
+\contentsline {chapter}{Literatura}{77}
+\contentsline {chapter}{\numberline {A}U\IeC {\v z}ivatelsk\IeC {\'a} dokumentace}{77}
+\contentsline {section}{\numberline {A.1}Doch\IeC {\'a}zka}{77}
+\contentsline {section}{\numberline {A.2}Menu}{79}
+\contentsline {section}{\numberline {A.3}Ovl\IeC {\'a}dac\IeC {\'\i } panel}{80}
+\contentsline {section}{\numberline {A.4}Grafy s statistiky}{81}
+\contentsline {section}{\numberline {A.5}V\IeC {\'y}kazy}{83}
+\contentsline {section}{\numberline {A.6}P\IeC {\v r}\IeC {\'\i }tomnost zam\IeC {\v e}stnanc\IeC {\r u}}{84}
+\contentsline {section}{\numberline {A.7}Vytvo\IeC {\v r}en\IeC {\'\i } \IeC {\'u}\IeC {\v c}tu}{85}
+\contentsline {section}{\numberline {A.8}Notifikace}{87}
+\contentsline {section}{\numberline {A.9}Widgety}{88}
+\contentsline {section}{\numberline {A.10}Nastaven\IeC {\'\i }}{89}
+\contentsline {subsection}{\numberline {A.10.1}S\IeC {\'\i }\IeC {\v t}ov\IeC {\'e} p\IeC {\v r}ipojen\IeC {\'\i }}{91}
+\contentsline {subsection}{\numberline {A.10.2}Poloha pracovi\IeC {\v s}t\IeC {\v e}}{92}
+\contentsline {subsection}{\numberline {A.10.3}Nastaven\IeC {\'\i } barev typ\IeC {\r u} ud\IeC {\'a}lost\IeC {\'\i } a zak\IeC {\'a}zek}{93}
+\contentsline {chapter}{\numberline {B}Testovac\IeC {\'\i } dokumentace}{94}
+\contentsline {chapter}{\numberline {C}Manifest}{95}
+\contentsline {chapter}{\numberline {D}Obsah DVD}{102}

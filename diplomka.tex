@@ -531,8 +531,6 @@ Celkový průběh synchronizace je znázorněn v diagramu \ref{fig:sync}. Klient
 \label{fig:sync}
 \end{figure}
 
-Diagram \ref{fig:syncup} podrobněji rozepisuje průběh odeslání požadavku na server. Pokud klient nemá server ID záznamu, znamená to, že záznam byl vytvořen na straně klienta a odesílá se požadavek na vytvoření. Pokud klient zná server ID může požadovat smazání nebo aktualizaci záznamu. 
-
 Diagram \ref{fig:syncdown} podrobněji rozepisuje průběh přijetí záznamu ze serveru.
 \begin{figure}[H]
   \centering
@@ -541,11 +539,15 @@ Diagram \ref{fig:syncdown} podrobněji rozepisuje průběh přijetí záznamu ze
 \label{fig:syncdown}
 \end{figure}
 
+Diagram \ref{fig:syncup} podrobněji rozepisuje průběh odeslání požadavku na server. Pokud klient nemá server ID záznamu, znamená to, že záznam byl vytvořen na straně klienta a odesílá se požadavek na vytvoření. Pokud klient zná server ID může požadovat smazání nebo aktualizaci záznamu. 
+
+
+
 \begin{figure}[H]
   \centering
   \includegraphics[scale=0.7]{visio/syncup.pdf}
 \caption{Diagram aktivit pro odeslání požadavku na server}
-\label{obr:syncup}
+\label{fig:syncup}
 \end{figure}
 \vspace{-8mm}
 \subsection{Obousměrná synchronizace s úpravou databáze}
@@ -860,17 +862,15 @@ Employee[].class, icp);
 \end{lstlisting}
 
 \chapter{Android aplikace}
-
+V následující kapitole popisuji implementovanou Android aplikaci. Nejdříve popíšu funkcionalitu aplikace a výběr cílového zařízení a verze API. Dále popisuji komponenty Android aplikace. Nakonec představím služby použité pro zobrazení mapy, grafů a službu pro distribuci aplikace.
 \section{Funkcionalita}
-[TODO co uz bylo ve starem, co v novem]
-Na základě současného systému a potřeb zaměstnanců byla vybrána k implementaci následující funkčnost: 
+Na základě funkcionality poskytované současným systémem a potřeb zaměstnanců byla vybrána k implementaci následující funkčnost: 
+
+\subsection{Funkcionalita pro vedoucí zaměstnance}
+V následujících seznamech je výčet funkcí určených primárně pro vedoucí pracovníky. Vzhledem k vlastnostem současného systému mohou tyto funkce používat i řadoví pracovníci.
 
 \paragraph{Docházka}
 \begin{itemize}[noitemsep,nolistsep]
-\item Zobrazení událostí docházky daného zaměstnance pomocí denní časové osy
-\item Zobrazení událostí docházky daného zaměstnance pomocí seznamu
-\item Uživatel má možnost přidávat, editovat a mazat svoje události
-\item Aplikace zajišťuje automatickou synchronizaci těchto údajů s firemní databází
 \item Zobrazení poměru typů docházkových událostí za dané období pro vybraného zaměstnance
 \item Zobrazení vývoje daného typu události v daném období pro vybraného zaměstnance
 \item Zobrazení souhrných statistik událostí za dané období pro vybraného zaměstnance
@@ -878,17 +878,31 @@ Na základě současného systému a potřeb zaměstnanců byla vybrána k imple
 
 \paragraph{Výkazy práce}
 \begin{itemize}[noitemsep,nolistsep]
-\item Zobrazení seznamu výkazů za dané období pro vybraného zaměstnance
 \item Zobrazení poměru typů zakázek za dané období pro vybraného zaměstnance
 \item Zobrazení vývoje daného typu zakázky v daném období pro vybraného zaměstnance
 \item Zobrazení souhrných statistik výkazů za dané období pro vybraného zaměstnance
 \end{itemize}
 
-\newpage
+\subsection{Funkcionalita pro zaměstnance}
+V následujících seznamech je výčet funkcí určených pro všechny pracovníky.
+\paragraph{Docházka}
+\begin{itemize}[noitemsep,nolistsep]
+\item Zobrazení událostí vlastní docházky pomocí denní časové osy
+\item Zobrazení událostí vlastní docházky pomocí seznamu
+\item Možnost přidávat, editovat a mazat svoje události (aplikace zajišťuje automatickou synchronizaci těchto údajů s firemní databází)
+\end{itemize}
+
+\paragraph{Výkazy práce}
+\begin{itemize}[noitemsep,nolistsep]
+\item Zobrazení seznamu výkazů za dané období pro vybraného zaměstnance
+\item Porovnání součtu odpracovaného času se součtem vykázaného času
+\end{itemize}
+
+%\newpage
 \paragraph{Aktuální přítomnost na pracovišti}
 \begin{itemize}[noitemsep,nolistsep]
 \item Zobrazení seznamu všech zaměstnanců a jejich poslední docházkové události  (aktuální stav přítomnosti či nepřítomnosti na pracovišti)
-\item Uživatel má možnost spravovat seznam svých oblíbených zaměstnanců a tento seznam zobrazovat přednostně
+\item Uživatel má možnost spravovat seznam svých oblíbených zaměstnanců a tyto zaměstnance zobrazovat přednostně
 \end{itemize}
 
 \paragraph{Widgety}
@@ -922,13 +936,18 @@ Zařízení si musí pamatovat údaje nutné pro snadnou obsluhu tzn. uživatels
 \end{itemize}
 
 \subsection{Uživatelská přívětivost}
-Uživatelské rozhraní aplikace klade důraz na přehlednost, ergonomii a časově efektivní obsluhu.[TODO jeste neco vymyslet]
+Uživatelské rozhraní aplikace klade důraz na přehlednost, ergonomii a časově efektivní obsluhu. Při návrhu rozhraní pro mobilní aplikace je třeba brát ohled na malou velikost obrazovky (oproti desktopové apilkaci). Dále přítomnost softwarové (či hardwarové) klávesnice, jejíž použití je vhodné jen v nevyhnutelných případech.  \\ \indent Zařízení si pamatuje identitu uživatele a proto není nutné zadávat identifikační údaje při zadávání událostí docházky.
 \subsection{Návrhy na vylepšení}
 Původní ambicí byla možnost zadavání výkazů práce. Vzhledem k tomu, že taková funkčnost by vyžadovala změny v současném systému, bylo od tohoto záměru upuštěno. Kromě zadávání výkazů práce by bylo možné rovněž vykazovat do knihy jízd.\\ \indent
 Velikým přínosem by byla možnost vytváření šablon pro často opakované výkazy, která by uživateli ušetřila nezanedbatelné množství času.\\ \indent
 Posledním vylepšením by byla možnost rychlého zavolání přímo z profilu vybraného zaměstnance.
+  
+\section{Výběr cílového zařízení a verze API}
+V této kapitolu zdůvodňuji výběr cílového zařízení a podporovaných verzí Android API.
+\subsection{Výběr cílového zařízení}
+Jako součást požadavků zadavatele bylo zvoleno jako cílové zařízení smartphone. Aplikaci bude možné spustit i na zařízení typu tablet, nicméně uživatelské rozhraní aplikace není pro tento typ zařízení optimalizováno.
 
-\section{Výběr podporovaných verzí Android API}
+\subsection{Výběr podporovaných verzí Android API}
 Aplikace podporuje operační systémy od verze 2.3.3. Jak je vidět z tabulky \ref{tab:share} aplikace podporuje více než 95\% trhu. Jako hlavní vývojové zařízení byl použit smartphone Google Nexus s operační systémem ve verzi 4.2.2.
 
 
@@ -947,7 +966,7 @@ Verze&Kódové označení&API&Podíl uživatelů[\%]\\ \hline
 4.2.x&Jelly Bean&17&5.6\\ \hline
   \end{tabular}
 \end{center}
-\caption{Poměr verzí zařízení na trhu k 8.7.2013\cite{share}}
+\caption{Zastoupení verzí zařízení na trhu k 8.7.2013\cite{share}}
 \label{tab:share}
 \end{table}
 
@@ -1268,7 +1287,7 @@ Naplánuje akci na určitý čas.
 \subsection*{Použití v aplikaci}
 V aplikaci je komponenta použita pro plánování periodické kontroly chybějící události docházky uživatele.
 
-\section{Komponenty pro synchronizaci}
+\subsection{Komponenta pro synchronizaci}
 Pro synchronizaci je klíčovou komponentou třída \emph{android.content.\\AbstractThreadedSyncAdapter}. Třída provádí akci na pozadí ve vlastním vlákně. Synchronizace je vyvolána systémovou komponentou \emph{android.content.SyncMan-ager}, v závislosti na konkrétním nastavení pro konkrétní adaptér. Odpadá tak starost o práci s vlákny a k využití této komponenty stačí implementovat metodu \emph{onPerformSync()}:
 \begin{itemize}[]
 \item \textbf{onPerformSync(Account account, Bundle extras, String authority, ContentProviderClient provider, SyncResult syncResult)}
@@ -1379,7 +1398,7 @@ Slouží k registraci posluchače získávajícího aktualizace s informacemi o 
 \subsection*{Použití v aplikaci}
 V aplikaci je funkce získání polohy použita pro zjištění zda se uživatel nachází či nenachází v prostorách pracoviště. Uživatel si nejprve nastaví polohu pracoviště pomocí příslušné obrazovky (obr. \ref{fig:location}). Aplikace periodicky kontroluje polohu zařízení a sleduje poslední docházkovou aktivitu. Pokud se uživatel nachází na pracovišti a nemá zadaný příchod nebo se nenachází na pracovišti a nemá zadaný odchod, aplikace ho upozorní pomocí notifikací (obr. \ref{fig:notif}). Uživatel tuto funkci může chápat jako zásah do soukromý a může ji vypnout. Získaná data o poloze se využívají pouze k upozornění uživatele.
 
-\section{Google Maps Android API v2}
+\section{Google služba pro mapy}
 Google Maps Android API\cite{map} je služba poskytovaná společností Google umožňující využívat data Google Maps na Android zařízení. API automaticky zajišťuje přístup k serverům Google Maps, stažení a zobrazení mapy a odezvu na uživatelova gesta na zobrazené mapě. \\ \indent
 API je součástí balíku Google Play services SDK\cite{play}. Před použitím map v aplikaci je nejprve nutné tento balík nainstalovat a získat API klíč nutný k tomu, aby aplikace mohla přistupovat k této službě. Vývojář si nejprve vytvoří klíč pro svojí aplikaci, poté zažádá prostřednictvím Google APIs Console ve svém Google účtu o klíč určený pro přístup ke službě. \\ \indent
 Pro využití map v aplikaci je nejdůležitější třída\\ \emph{com.google.android.gms.maps.GoogleMap} umožňující zobrazení mapy, nastavení zobrazené polohy, měnit typ mapy nebo animovat zobrazení. Ukázka mapy zobrazené pomocí této služby je na obr. \ref{fig:map}.
