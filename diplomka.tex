@@ -62,6 +62,7 @@ Na tomto místě bych chtěl poděkovat Ing. Jiřímu Jansovi a Ing. Ladislavovi
 This thesis deals with design and implementation of mobile application for attendance and work records in company. Thesis analyzes architecture of current system and finds a way how to integratie new application to it. Thesis presents development of a RESTful web service on Java EE server and creation of an Android RESTful web service client, while respecting requirements of users and funcionality of present system.
 %Attendance and work records for the IMIS system on Android platform
 \pagestyle{empty}
+\vspace{-20mm}
 \tableofcontents
 \pagestyle{fancy}
 \renewcommand{\chaptermark}[1]{\markboth{\textit{#1}}{}}
@@ -104,10 +105,10 @@ Na obrázku \ref{fig:atts} je znázorněn pracovní den se služební cestou. Za
 \subsection{Vykazování odvedené práce}
 Vykazování odvedené práce je jedním ze způsobů pro průběžnou kontrolu aktivit zaměstnanců. Ve firmě probíhá současně více projektů a bez výkazů by bylo velmi těžké sledovat průběžně náklady jednotlivých projektů. 
 Díky evidenci je možné sledovat produktivitu jednotlivých zaměstnanců stejně jako nalézt slabá místa v pracovním procesu.
-\\ \indent Výkazy práce jsou propojeny s docházkovým systémem a je možné porovnávat výstupy z těchto systémů. 
+\\ \indent Výkazy práce jsou propojeny s docházkovým systémem a je možné porovnávat výstupy z těchto systémů. Při evidování odvedené práce je nutné přidělit odpracovaný čas konkrétním projektům. 
 
 \subsection{Motivace}
-Motivací pro vznik této práce bylo vytvořit mobilní aplikaci umožnující provádět každodenní agendu - zadávat příchody, odchody a výkazy práce pro zaměstnance, kteří často cestují a působí mimo sídlo organizace. Také snaha o využítí možností mobilního zařízení. Aplikace umožní pohodlné zadávání údajů a přinese možnost mít požadované informace po ruce.
+Motivací pro vznik této práce bylo vytvořit mobilní aplikaci umožňující provádět každodenní agendu - zadávat příchody, odchody a výkazy práce pro zaměstnance, kteří často cestují a působí mimo sídlo organizace. Také snaha o využítí možností mobilního zařízení. Aplikace umožní pohodlné zadávání údajů a přinese možnost mít požadované informace po ruce.
 
 Výsledná mobilní aplikace nemá nahradit vybrané části používaného systému, ale poskytnout efektivnější alternativu ve vybraných činnostech.
 
@@ -664,7 +665,7 @@ Na základě analýzy v sekci \ref{sec:architecture} byla identifikována nutnos
 
 
 \section{Návrh REST URI}
-Při návrhu REST služby jsem nejprve identifikoval všechny zdroje, které webová služba zpřístupňuje. Jedná se o údaje o docházce zaměstnanců, výkazech práce a zaměstnancích samotných. 
+Při návrhu REST služby je nejprve nutné identifikovat všechny zdroje, které webová služba zpřístupňuje\cite{restdesign}. Jedná se o údaje o docházce zaměstnanců, výkazech práce a zaměstnancích samotných. 
  \par
 Poskytované služby pro zdroj docházky zaměstnaců tzn. jejich příchody a odchody zobrazuje tabulka \ref{tab:urievents}. Služba umožňuje operace CRUD na datovém zdroji zaměstnanců a dále zjištění součtu doby v zaměstnání.
 
@@ -1358,7 +1359,7 @@ SQLite databáze je v aplikaci použita pro persistentní ukládání dat o udá
 
 
 \section{Widgety}
-Widget je malá aplikace, která může být zobrazena na hostiteli widget typicky na domácí obrazovce (angl. homescreen) Android zařízení. Widget běží v rámci procesu svého hostitele.\\ \indent
+ Widget je malá aplikace běžící v rámci procesu svého hostitele, typicky na domácí obrazovce (angl. homescreen) Android zařízení. \cite{androidinaction}.\\ \indent
 K vytvoření widgety jsou zapotřebí \emph{android.appwidget.AppWidgetProvid-\\erInfo} objekt obsahující metadata,  implementace třídy \emph{android.appwidget.A-\\ppWidgetProvider} definující chování prvku, layout definující vzhled prvku a 
 volitelně i konfigurační aktivita, která bude spuštěna při vytvoření nové widget komponenty. 
 Zde je výčet nejdůležitějších metod třídy \emph{AppWidgetProvider}:

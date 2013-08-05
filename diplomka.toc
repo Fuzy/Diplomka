@@ -100,20 +100,20 @@
 \contentsline {chapter}{\numberline {7}Z\IeC {\'a}v\IeC {\v e}r}{73}
 \contentsline {chapter}{Seznam zkratek}{74}
 \contentsline {chapter}{Literatura}{77}
-\contentsline {chapter}{\numberline {A}U\IeC {\v z}ivatelsk\IeC {\'a} dokumentace}{77}
-\contentsline {section}{\numberline {A.1}Doch\IeC {\'a}zka}{77}
-\contentsline {section}{\numberline {A.2}Menu}{79}
-\contentsline {section}{\numberline {A.3}Ovl\IeC {\'a}dac\IeC {\'\i } panel}{80}
-\contentsline {section}{\numberline {A.4}Grafy s statistiky}{81}
-\contentsline {section}{\numberline {A.5}V\IeC {\'y}kazy}{83}
-\contentsline {section}{\numberline {A.6}P\IeC {\v r}\IeC {\'\i }tomnost zam\IeC {\v e}stnanc\IeC {\r u}}{84}
-\contentsline {section}{\numberline {A.7}Vytvo\IeC {\v r}en\IeC {\'\i } \IeC {\'u}\IeC {\v c}tu}{85}
-\contentsline {section}{\numberline {A.8}Notifikace}{87}
-\contentsline {section}{\numberline {A.9}Widgety}{88}
-\contentsline {section}{\numberline {A.10}Nastaven\IeC {\'\i }}{89}
-\contentsline {subsection}{\numberline {A.10.1}S\IeC {\'\i }\IeC {\v t}ov\IeC {\'e} p\IeC {\v r}ipojen\IeC {\'\i }}{91}
-\contentsline {subsection}{\numberline {A.10.2}Poloha pracovi\IeC {\v s}t\IeC {\v e}}{92}
-\contentsline {subsection}{\numberline {A.10.3}Nastaven\IeC {\'\i } barev typ\IeC {\r u} ud\IeC {\'a}lost\IeC {\'\i } a zak\IeC {\'a}zek}{93}
-\contentsline {chapter}{\numberline {B}Testovac\IeC {\'\i } dokumentace}{94}
-\contentsline {chapter}{\numberline {C}Manifest}{95}
-\contentsline {chapter}{\numberline {D}Obsah DVD}{102}
+\contentsline {chapter}{\numberline {A}U\IeC {\v z}ivatelsk\IeC {\'a} dokumentace}{78}
+\contentsline {section}{\numberline {A.1}Doch\IeC {\'a}zka}{78}
+\contentsline {section}{\numberline {A.2}Menu}{80}
+\contentsline {section}{\numberline {A.3}Ovl\IeC {\'a}dac\IeC {\'\i } panel}{81}
+\contentsline {section}{\numberline {A.4}Grafy s statistiky}{82}
+\contentsline {section}{\numberline {A.5}V\IeC {\'y}kazy}{84}
+\contentsline {section}{\numberline {A.6}P\IeC {\v r}\IeC {\'\i }tomnost zam\IeC {\v e}stnanc\IeC {\r u}}{85}
+\contentsline {section}{\numberline {A.7}Vytvo\IeC {\v r}en\IeC {\'\i } \IeC {\'u}\IeC {\v c}tu}{86}
+\contentsline {section}{\numberline {A.8}Notifikace}{88}
+\contentsline {section}{\numberline {A.9}Widgety}{89}
+\contentsline {section}{\numberline {A.10}Nastaven\IeC {\'\i }}{90}
+\contentsline {subsection}{\numberline {A.10.1}S\IeC {\'\i }\IeC {\v t}ov\IeC {\'e} p\IeC {\v r}ipojen\IeC {\'\i }}{92}
+\contentsline {subsection}{\numberline {A.10.2}Poloha pracovi\IeC {\v s}t\IeC {\v e}}{93}
+\contentsline {subsection}{\numberline {A.10.3}Nastaven\IeC {\'\i } barev typ\IeC {\r u} ud\IeC {\'a}lost\IeC {\'\i } a zak\IeC {\'a}zek}{94}
+\contentsline {chapter}{\numberline {B}Testovac\IeC {\'\i } dokumentace}{95}
+\contentsline {chapter}{\numberline {C}Manifest}{96}
+\contentsline {chapter}{\numberline {D}Obsah DVD}{103}

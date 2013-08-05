@@ -9,84 +9,70 @@
 \providecommand{\eprint}[2][]{\url{#2}}
 
 \bibitem{achartengine}
-AChartEngine. [online], [cit. 2013-7-12].
+4ViewSoft: AChartEngine. [online], [cit. 2013-7-12].
 \newline\urlprefix\url{http://www.achartengine.org/}
 
-\bibitem{appkilt}
-AppKilt Market. [online], [cit. 2013-7-12].
-\newline\urlprefix\url{http://www.appkilt.com/}
+\bibitem{rest}
+Fielding, R.~T.: \emph{Architectural Styles and the Design of Network-based
+  Software Architectures}. Doctoral dissertation, University of California,
+  Irvine, 2000.
+
+\bibitem{accman}
+Google: The Developer's Guide. [online], [cit. 2013-7-2].
+\newline\urlprefix\url{http://developer.android.com/reference/android/accounts%
+/AccountManager.html}
 
 \bibitem{googlecharts}
-Google Charts. [online], [cit. 2013-7-12].
+Google: Google Charts. [online], [cit. 2013-7-12].
 \newline\urlprefix\url{https://developers.google.com/chart/}
 
 \bibitem{map}
-Google Maps Android API v2. [online], [cit. 2013-7-18].
+Google: Google Maps Android API v2. [online], [cit. 2013-7-18].
 \newline\urlprefix\url{https://developers.google.com/maps/documentation/androi%
 d/}
 
 \bibitem{play}
-Google Play Services. [online], [cit. 2013-7-18].
+Google: Google Play Services. [online], [cit. 2013-7-18].
 \newline\urlprefix\url{http://developer.android.com/google/play-services/index%
 .html}
 
 \bibitem{share}
-Platform Versions. [online], [cit. 2013-7-15].
+Google: Platform Versions. [online], [cit. 2013-7-15].
 \newline\urlprefix\url{http://developer.android.com/about/dashboards/index.htm%
 l}
 
-\bibitem{jersey}
-RESTful Web Services in Java. [online], [cit. 2013-7-6].
-\newline\urlprefix\url{https://jersey.java.net/}
-
 \bibitem{springandroid}
-SPRING FOR ANDROID. [online], [cit. 2013-7-6].
+GoPivotal, I.: SPRING FOR ANDROID. [online], [cit. 2013-7-6].
 \newline\urlprefix\url{http://www.springsource.org/spring-android}
 
 \bibitem{sqlite}
-SQLite. [online], [cit. 2013-7-18].
+Hipp, D.~R.: SQLite. [online], [cit. 2013-7-18].
 \newline\urlprefix\url{http://www.sqlite.org/}
 
-\bibitem{rest}
-Fielding, R.~T.: Architectural Styles and the Design of Network-based Software
-  Architectures. [online], [cit. 2013-7-6].
-\newline\urlprefix\url{http://www.ics.uci.edu/~fielding/pubs/dissertation/top.%
-htm}
-
-\bibitem{accman}
-http://developer.android.com/: The Developer's Guide. [online], [cit.
-  2013-7-2].
-\newline\urlprefix\url{http://developer.android.com/reference/android/accounts%
-/AccountManager.html}
-
-\bibitem{microsoft}
-http://technet.microsoft.com/: Migrating Oracle Forms. [online], [cit.
-  2013-7-5].
-\newline\urlprefix\url{http://www.oracle.com/technetwork/developer-tools/forms%
-/overview/index.html}
-
-\bibitem{forms}
-http://www.oracle.com/: Oracle Forms. [online], [cit. 2013-7-5].
-\newline\urlprefix\url{http://www.oracle.com/technetwork/developer-tools/forms%
-/overview/index.html}
-
-\bibitem{jaxrs}
-Java.net: Java API for RESTful Services (JAX-RS). [online], [cit. 2013-7-6].
-\newline\urlprefix\url{http://jax-rs-spec.java.net/}
-
 \bibitem{websluzby}
-Kosek, J.: Využití webových služeb a protokolu SOAP při komunikaci.
-  [online], [cit. 2013-7-6].
-\newline\urlprefix\url{http://www.kosek.cz/diplomka/html/websluzby.html}
+Kosek, J.: \emph{Využití webových služeb a protokolu SOAP při komunikaci}.
+  Diplomová práce, Vysoká škola ekonomická v Praze, Praha, 2002.
 
 \bibitem{config}
 Lockwood, A.: ANDROID DESIGN PATTERNS. [online], [cit. 2013-7-10].
 \newline\urlprefix\url{http://www.androiddesignpatterns.com/2013/04/retaining-%
 objects-across-config-changes.html}
 
+\bibitem{restdesign}
+Masse, M.: \emph{REST API Design Rulebook}. O'Reilly Media, 2011, ISBN
+  978-1-4493-1050-9.
+
+\bibitem{appkilt}
+New Designs~Unlimited, L.: AppKilt Market. [online], [cit. 2013-7-12].
+\newline\urlprefix\url{http://www.appkilt.com/}
+
 \bibitem{uddi}
 OASIS: UDDI. [online], [cit. 2013-7-6].
 \newline\urlprefix\url{http://uddi.xml.org/uddi-101}
+
+\bibitem{jaxrs}
+Oracle: Java API for RESTful Services (JAX-RS). [online], [cit. 2013-7-6].
+\newline\urlprefix\url{http://jax-rs-spec.java.net/}
 
 \bibitem{limitation}
 Oracle: Oracle® Database JDBC Developer's Guide. [online], [cit. 2013-7-9].
@@ -97,6 +83,24 @@ xref.htm}
 Oracle: Oracle Database Mobile Server. [online], [cit. 2013-7-7].
 \newline\urlprefix\url{http://www.oracle.com/technetwork/products/database-mob%
 ile-server/overview/index.html}
+
+\bibitem{forms}
+Oracle: Oracle Forms. [online], [cit. 2013-7-5].
+\newline\urlprefix\url{http://www.oracle.com/technetwork/developer-tools/forms%
+/overview/index.html}
+
+\bibitem{jersey}
+Oracle: RESTful Web Services in Java. [online], [cit. 2013-7-6].
+\newline\urlprefix\url{https://jersey.java.net/}
+
+\bibitem{microsoft}
+TechNet, M.: Migrating Oracle Forms. [online], [cit. 2013-7-5].
+\newline\urlprefix\url{http://technet.microsoft.com/en-us/library/bb463141.asp%
+x}
+
+\bibitem{androidinaction}
+W.~FRANK~ABLESON, C.~K., ROBI~SEN: \emph{Android in Action}. MANNING, 2011,
+  ISBN 978-1-935182-72-6.
 
 \bibitem{wsdl}
 W3C: Web Services Description Language (WSDL) 1.1. [online], [cit. 2013-7-6].

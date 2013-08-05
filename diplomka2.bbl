@@ -48,10 +48,9 @@ SQLite. [online], [cit. 2013-7-18].
 \newline\urlprefix\url{http://www.sqlite.org/}
 
 \bibitem{rest}
-Fielding, R.~T.: Architectural Styles and the Design of Network-based Software
-  Architectures. [online], [cit. 2013-7-6].
-\newline\urlprefix\url{http://www.ics.uci.edu/~fielding/pubs/dissertation/top.%
-htm}
+Fielding, R.~T.: \emph{Architectural Styles and the Design of Network-based
+  Software Architectures}. Doctoral dissertation, University of California,
+  Irvine, 2000.
 
 \bibitem{accman}
 http://developer.android.com/: The Developer's Guide. [online], [cit.
@@ -75,14 +74,17 @@ Java.net: Java API for RESTful Services (JAX-RS). [online], [cit. 2013-7-6].
 \newline\urlprefix\url{http://jax-rs-spec.java.net/}
 
 \bibitem{websluzby}
-Kosek, J.: Využití webových služeb a protokolu SOAP při komunikaci.
-  [online], [cit. 2013-7-6].
-\newline\urlprefix\url{http://www.kosek.cz/diplomka/html/websluzby.html}
+Kosek, J.: \emph{Využití webových služeb a protokolu SOAP při komunikaci}.
+  Diplomová práce, Vysoká škola ekonomická v Praze, Praha, 2002.
 
 \bibitem{config}
 Lockwood, A.: ANDROID DESIGN PATTERNS. [online], [cit. 2013-7-10].
 \newline\urlprefix\url{http://www.androiddesignpatterns.com/2013/04/retaining-%
 objects-across-config-changes.html}
+
+\bibitem{restdesign}
+Masse, M.: \emph{REST API Design Rulebook}. O'Reilly Media, 2011, ISBN
+  978-1-4493-1050-9.
 
 \bibitem{uddi}
 OASIS: UDDI. [online], [cit. 2013-7-6].
@@ -97,6 +99,10 @@ xref.htm}
 Oracle: Oracle Database Mobile Server. [online], [cit. 2013-7-7].
 \newline\urlprefix\url{http://www.oracle.com/technetwork/products/database-mob%
 ile-server/overview/index.html}
+
+\bibitem{androidinaction}
+W.~FRANK~ABLESON, C.~K., ROBI~SEN: \emph{Android in Action}. MANNING, 2011,
+  ISBN 978-1-935182-72-6.
 
 \bibitem{wsdl}
 W3C: Web Services Description Language (WSDL) 1.1. [online], [cit. 2013-7-6].
