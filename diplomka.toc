@@ -96,6 +96,9 @@
 \contentsline {section}{\numberline {6.8}Google slu\IeC {\v z}ba pro mapy}{64}
 \contentsline {section}{\numberline {6.9}Notifikace}{65}
 \contentsline {section}{\numberline {6.10}Vytv\IeC {\'a}\IeC {\v r}en\IeC {\'\i } graf\IeC {\r u}}{66}
+\contentsline {subsection}{\numberline {6.10.1}Implementace vlastn\IeC {\'\i } komponenty}{66}
+\contentsline {subsection}{\numberline {6.10.2}Vyu\IeC {\v z}it\IeC {\'\i } cloudov\IeC {\'e}ho \IeC {\v r}e\IeC {\v s}en\IeC {\'\i }}{66}
+\contentsline {subsection}{\numberline {6.10.3}Pou\IeC {\v z}it\IeC {\'\i } knihovny t\IeC {\v r}et\IeC {\'\i } strany}{67}
 \contentsline {section}{\numberline {6.11}Opr\IeC {\'a}vn\IeC {\v e}n\IeC {\'\i }}{68}
 \contentsline {section}{\numberline {6.12}Distribuce aplikace}{69}
 \contentsline {chapter}{\numberline {7}Z\IeC {\'a}v\IeC {\v e}r}{73}

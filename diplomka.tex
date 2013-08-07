@@ -668,7 +668,7 @@ Na základě analýzy v sekci \ref{sec:architecture} byla identifikována nutnos
 \section{Návrh REST URI}
 Při návrhu REST služby je nejprve nutné identifikovat všechny zdroje, které webová služba zpřístupňuje\cite{restdesign}. Jedná se o údaje o docházce zaměstnanců, výkazech práce a zaměstnancích samotných. 
  \par
-Poskytované služby pro zdroj docházky zaměstnaců tzn. jejich příchody a odchody zobrazuje tabulka \ref{tab:urievents}. Služba umožňuje operace CRUD na datovém zdroji zaměstnanců a dále zjištění součtu doby v zaměstnání.
+Poskytované služby pro zdroj docházky zaměstnaců (tzn. jejich příchody a odchody) zobrazuje tabulka \ref{tab:urievents}. Služba umožňuje operace CRUD na datovém zdroji zaměstnanců a dále zjištění součtu doby v zaměstnání.
 
 \definecolor{Gray}{gray}{0.9}
 \renewcommand{\arraystretch}{1.5}
@@ -864,9 +864,9 @@ Employee[].class, icp);
 \end{lstlisting}
 
 \chapter{Android aplikace}
-V následující kapitole popisuji implementovanou Android aplikaci. Nejdříve popíšu funkcionalitu aplikace a výběr cílového zařízení a verze API. Dále popisuji komponenty Android aplikace. Nakonec představím služby použité pro zobrazení mapy, grafů a službu pro distribuci aplikace.
+V následující kapitole se věnuji implementované Android aplikaci. Nejdříve popisuji funkcionalitu aplikace a výběr cílového zařízení a verze API. Dále popisuji komponenty Android aplikace. Nakonec představím služby použité pro zobrazení mapy, grafů a službu pro distribuci aplikace.
 \section{Funkcionalita}
-Na základě funkcionality poskytované současným systémem a potřeb zaměstnanců byla vybrána k implementaci následující funkčnost: 
+Na základě funkcionality poskytované současným systémem a potřeb zaměstnanců byla vybrána k implementaci následující funkčnost.
 
 \subsection{Funkcionalita pro vedoucí zaměstnance}
 V následujících seznamech je výčet funkcí určených primárně pro vedoucí pracovníky. Vzhledem k vlastnostem současného systému mohou tyto funkce používat i řadoví pracovníci.
@@ -919,7 +919,7 @@ V následujících seznamech je výčet funkcí určených pro všechny pracovn�
 \end{itemize}
 
 \paragraph{Online vs offline}\mbox{}\\ \\ \indent
-Veškeré výše zmíněné funkce jsou dostupné jak v režimu online tak i offline. Rozdíl je v tom, že v režimu offline nemusí aplikace pracovat s aktuálními daty.
+Veškeré výše zmíněné funkce jsou dostupné jak v režimu online tak offline. Rozdíl je v tom, že v režimu offline nemusí aplikace pracovat s aktuálními daty.
 
 \subsection{Nastavení a konfigurovatelnost}
 Zařízení si musí pamatovat údaje nutné pro snadnou obsluhu tzn. uživatelské jméno a heslo. V následujícím seznamu je výčet všech konfigurovatelných vlastností aplikace:
@@ -938,9 +938,10 @@ Zařízení si musí pamatovat údaje nutné pro snadnou obsluhu tzn. uživatels
 \end{itemize}
 
 \subsection{Uživatelská přívětivost}
-Uživatelské rozhraní aplikace klade důraz na přehlednost, ergonomii a časově efektivní obsluhu. Při návrhu rozhraní pro mobilní aplikace je třeba brát ohled na malou velikost obrazovky (oproti desktopové apilkaci). Dále přítomnost softwarové (či hardwarové) klávesnice, jejíž použití je vhodné jen v nevyhnutelných případech.  \\ \indent Zařízení si pamatuje identitu uživatele a proto není nutné zadávat identifikační údaje při zadávání událostí docházky.
+Uživatelské rozhraní aplikace klade důraz na přehlednost, ergonomii a časově efektivní obsluhu. Při návrhu rozhraní pro mobilní aplikace je třeba brát ohled na malou velikost obrazovky (oproti desktopové apilkaci). Dále přítomnost softwarové (či hardwarové) klávesnice, jejíž použití je vhodné jen v nevyhnutelných případech.  \\ \indent Zařízení si pamatuje identitu uživatele, a proto není nutné zadávat identifikační údaje při zadávání událostí docházky.
+
 \subsection{Návrhy na vylepšení}
-Původní ambicí byla možnost zadavání výkazů práce. Vzhledem k tomu, že taková funkčnost by vyžadovala změny v současném systému, bylo od tohoto záměru upuštěno. Kromě zadávání výkazů práce by bylo možné rovněž vykazovat do knihy jízd.\\ \indent
+Původní ambicí byla možnost zadavání výkazů práce. Vzhledem k tomu, že taková funkčnost by vyžadovala změny v současném systému, bylo od tohoto záměru upuštěno. Kromě zadávání výkazů práce by bylo možné rovněž vykazovat knihy jízd.\\ \indent
 Velikým přínosem by byla možnost vytváření šablon pro často opakované výkazy, která by uživateli ušetřila nezanedbatelné množství času.\\ \indent
 Posledním vylepšením by byla možnost rychlého zavolání přímo z profilu vybraného zaměstnance.
   
@@ -1083,9 +1084,9 @@ K vytvoření fragmentu je nutné oddědit od třídy \emph{android.app.Fragment
 Tato třída je podobná třídě aktivity s tím rozdílem, že obsahuje několik metod životního cyklu navíc:
 \begin{itemize}[]
 \item \textbf{onAttach()}\\
-Metoda je volána jakmile je fragment přiřazen k aktivitě. 
+Metoda je volána, jakmile je fragment přiřazen k aktivitě. 
 \item \textbf{onCreateView()}\\
-Volána poté co je fragment vytvořen. Fragment který má uživatelské rozhraní musí vrátit objekt \emph{View}, který obsahuje uživatelské rozhraní pro tento fragment.
+Volána poté, co je fragment vytvořen. Fragment, který má uživatelské rozhraní, musí vrátit objekt \emph{View}, který obsahuje uživatelské rozhraní pro tento fragment.
 \item \textbf{onActivityCreated()}\\
 Volána ve chvíli, kdy je vytvořena hostující aktivita.
 \item \textbf{onDestroyView()}\\
@@ -1108,7 +1109,7 @@ ft.commit();
 \end{lstlisting}
 
 \subsubsection*{Změna konfigurace s využitím fragmentu}
-Další uplatnění fragmentů se nachází v ošetření situace, kdy se v důsledku rotace zařízení změní poloha displeje. V případě kdy aktivita spouští asynchronní úkol (\emph{Asynctask} \ref{sec:asynctask}) a uživatel otočí displej, aktivita bude restartována. V momentě kdy \emph{Asynctask} dokončí svůj úkol bude jeho výsledek zasílat staré instanci aktivity, která v té chvíli už neexistuje. Kromě toho nově vytvořená aktivita spustí znovu ten samý \emph{Asynctask}. Obojí je samozřejmě nežádoucí. Řešením tohoto problému je využít fragment jako hostitele pro \emph{Asynctask} a nastavit metodou fragmentu \emph{setRetainInstance (true)} vlastnost, že fragment nebude restartován při restartu jeho hostitelské aktivity\cite{config}. 
+Další uplatnění fragmentů se nachází v ošetření situace, kdy se v důsledku rotace zařízení změní poloha displeje. V případě, kdy aktivita spustila asynchronní úkol (\emph{Asynctask} \ref{sec:asynctask}) a uživatel otočí displej, aktivita bude restartována. V momentě, kdy \emph{Asynctask} dokončí svůj úkol, bude jeho výsledek zasílat staré instanci aktivity, která v té chvíli už neexistuje. Kromě toho nově vytvořená aktivita spustí znovu ten samý \emph{Asynctask}. Obojí je samozřejmě nežádoucí. Řešením tohoto problému je využít fragment jako hostitele pro \emph{Asynctask} a nastavit metodou fragmentu \emph{setRetainInstance (true)} vlastnost, kdy fragment nebude restartován při restartu jeho hostitelské aktivity\cite{config}. 
 
 \subsubsection*{Fragmenty použité v aplikaci}
 
@@ -1160,12 +1161,12 @@ Volána na UI (User Interface) vlákně před tím, než je úkol spuštěn. Met
 \item \textbf{doInBackground(Params...)}\\
 Provádí se ve vlastním vlákně na pozadí. Vrací výsledek svojí akce. Může oznamovat průběh akce pomocí \emph{ publishProgress(Progress...)}.
 \item \textbf{onProgressUpdate(Progress...)}\\
-Volána na UI vlákně. Slouží k zobrazení průběhu akce zatímco úkol na pozadí je stále prováděn.
+Volána na UI vlákně. Slouží k zobrazení průběhu akce, zatímco úkol na pozadí je stále prováděn.
 \item \textbf{onPostExecute(Result)}\\
 Volána na UI vlákně po tom, co je úkol na pozadí dokončen. Výsledek akce na pozadí je předán jako parametr.
 \end{itemize}
 
-\emph{AsyncTask} komponenty jsou vhodné pro krátké operace (max jednotky sekund), které přímo ovlivňují chování uživatelského rozhraní. Příkladem takové operace může být stažení dat, která mají být zobrazena okamžitě jakmile jsou dostupná. Taková akce musí být provedena asynchronně jinak by docházelo k efektu zamrzání uživatelského rozhraní.
+\emph{AsyncTask} komponenty jsou vhodné pro krátké operace (max jednotky sekund), které přímo ovlivňují chování uživatelského rozhraní. Příkladem takové operace může být stažení dat, která mají být zobrazena okamžitě, jakmile jsou dostupná. Taková akce musí být provedena asynchronně, jinak by docházelo k efektu zamrzání uživatelského rozhraní.
 
 \subsubsection*{Třídy AsyncTask použité v aplikaci}
 
@@ -1198,7 +1199,7 @@ Asynchronní úkol provádějící test spojení se serverem.
 
 \begin{description}[]
 \item \textbf{Started}\\
-Spuštěná služba, je taková služba, která byla spuštěna voláním metody \emph{startService()} kontextu komponenty. Služba běží na pozadí dokud neskončí svojí činnost, a to i tehdy pokud byla spouštějící komponenta zničena. Služba typicka provádí nějakou operaci, bez interakce se spouštějící komponentou a po dokončení se sama zničí. Metody životního cyklu služby jsou: 
+Spuštěná služba, je taková služba, která byla spuštěna voláním metody \emph{startService()} kontextu komponenty. Služba běží na pozadí, dokud neskončí svojí činnost, a to i tehdy, pokud byla spouštějící komponenta zničena. Služba typicka provádí nějakou operaci, bez interakce se spouštějící komponentou a po dokončení se sama zničí. Metody životního cyklu služby jsou: 
 \begin{itemize}[]
 \item \textbf{onCreate()}\\
 Volána ve chvíli, kdy je služba vytvořena. Je určena k počáteční inicializaci.
@@ -1208,7 +1209,7 @@ Volána ve chvíli, kdy je služba spuštěna. Metodou \emph{stopSelf()} se mů�
 Volána systémem ve chvíli, kdy je služba ničena. Určena pro uvolnění zdrojů.
 \end{itemize}
 \item \textbf{Bound}\\
-Připoutaná (angl. bound) služba, je taková služba, ke které se komponenta připoutala voláním \emph{bindService()}. Připoutaná služba poskytuje klient-server rozhraní, které umožňuje komunikaci s touto službou pomocí meziprocesové komunikace. Služba běží pouze pokud je k ní nějaká komponenta svázaná. Ke službě může být připoutáno více komponent, jakmile se všechny odpoutají, je služba zničena. Metody životního cyklu služby jsou kromě \emph{onCreate()}, \emph{onDestroy()} tyto:
+Připoutaná (angl. bound) služba, je taková služba, ke které se komponenta připoutala voláním \emph{bindService()}. Připoutaná služba poskytuje klient-server rozhraní, které umožňuje komunikaci s touto službou pomocí meziprocesové komunikace. Služba běží pouze tehdy, pokud je k ní nějaká komponenta svázaná. Ke službě může být připoutáno více komponent, jakmile se všechny odpoutají, je služba zničena. Metody životního cyklu služby jsou kromě \emph{onCreate()}, \emph{onDestroy()} tyto:
 \begin{itemize}[]
 \item \textbf{onBind()}\\
 Volána systémem ve chvíli, kdy se jiná komponenta chce ke službě přivázat voláním \emph{bindService()}. Vrací objekt \emph{IBinder}, který představuje rozhraní pro komunikaci.
@@ -1223,7 +1224,7 @@ V aplikaci se komponenty služby používají pro synchronizaci docházkových u
 Objekt třídy \emph{android.content.Intent} obsahuje abstraktní popis operace, která má být provedena. Objekt \emph{Intent} se používá pro spuštění jiné aktivity, spuštění služby či zaslání události komponentě Broadcast receiver (viz sekce \ref{sec:broadcast}). Může být rovněž použit pro komunikaci mezi komponentami aplikace či dokonce různých aplikací. Objekt \emph{Intent} nese informace o:
 
 \begin{itemize}[]
-\item \textbf{akce}\\ Akce která má být provedena.
+\item \textbf{akce}\\ Akce, která má být provedena.
 \item \textbf{data}\\ Data důležitá pro provedení operace.
 \end{itemize}
 
@@ -1279,7 +1280,7 @@ Volána v případě kdy Loader byl resetován. Určena pro zrušení všech ref
 
 
 \subsection{Alarm manager}
-Třída \emph{android.app.AlarmManager} je určená pro případy, kdy má nějaká akce proběhnout v určený čas a to i v případě kdy aplikace není spuštěna. Ve chvíli kdy je akce prováděna \emph{AlarmManager} drží zámek CPU do té doby než akce skončí. Volitelně lze nastavit, zda se má kvůli provedení akce vzbudit zařízení z režimu spánku.
+Třída \emph{android.app.AlarmManager} je určená pro případy, kdy má nějaká akce proběhnout v určený čas a to i v případě kdy, aplikace není spuštěna. Ve chvíli, kdy je akce prováděna, \emph{AlarmManager} drží zámek CPU do té doby než akce skončí. Volitelně lze nastavit, zda se má kvůli provedení akce vzbudit zařízení z režimu spánku.
 \begin{itemize}[]
 \item \textbf{setRepeating(int type, long triggerAtMillis, long intervalMillis, PendingIntent operation)}\\
 Naplánuje pravidelně se opakující akci.
@@ -1320,7 +1321,7 @@ Přidá autentizační token do cache paměti pro daný účet.
 Získání uloženého hesla pro účet./Nastavení hesla.
 \end{itemize}
 
-Na diagramu \ref{fig:andauth} je zobrazen průběh vytvoření účtu, který je použit v implementované aplikaci. Jakmile uživatel v sekci \emph{Nastavení->Účty} (obr. \ref{fig:setting}) zvolí přidání nového účtu a následně zvolí typ účtu (obr. \ref{fig:addacc}), manažer účtů spustí službu \emph{AutheticationService}. Služba vytvoří instanci třídy \emph{AccountAuthenticator} - \emph{authenticator} komponenty. \emph{AccountManager} následně volá metodu \emph{addAccount()}, která zkontroluje zda již účet daného typu existuje. Pokud ne vrací objekt \emph{Bundle} obsahující \emph{Intent} s klíčem \emph{AccountManager.KEY\_INTENT} označující, že bude nutná interakce s uživatelem. Následně je spuštěna aktivita \emph{AuthenticatorActivity} vyzývající uživatele, aby zadal svoje přihlašovací údaje. Po potvrzení je vytvořen účet (obr. \ref{fig:setting}).
+Na diagramu \ref{fig:andauth} je zobrazen průběh vytvoření účtu, který je použit v implementované aplikaci. Jakmile uživatel v sekci \emph{Nastavení->Účty} (obr. \ref{fig:setting}) zvolí přidání nového účtu a následně zvolí typ účtu (obr. \ref{fig:addacc}), manažer účtů spustí službu \emph{AutheticationService}. Služba vytvoří instanci třídy \emph{AccountAuthenticator} - \emph{authenticator} komponenty. \emph{AccountManager} následně volá metodu \emph{addAccount()}, která zkontroluje zda již účet daného typu existuje. Pokud ne, vrací objekt \emph{Bundle} obsahující \emph{Intent} s klíčem \emph{AccountManager.KEY\_INTENT} označující, že bude nutná interakce s uživatelem. Následně je spuštěna aktivita \emph{AuthenticatorActivity} vyzývající uživatele, aby zadal svoje přihlašovací údaje. Po potvrzení je vytvořen účet (obr. \ref{fig:setting}).
 \begin{figure}[H]
   \centering
   \includegraphics[scale=0.7]{visio/andauth.pdf}
@@ -1331,8 +1332,9 @@ Na diagramu \ref{fig:andauth} je zobrazen průběh vytvoření účtu, který je
 
 
 \section{Ukládání dat}
-Android umožňuje několik způsobů jak persistentně ukládat data aplikace. Programátor by měl vzít v úvahu, zda data mají být soukromá či dostupná i ostatním aplikacím a také velikost těchto dat. 
-\subsection*{Sdílené preference} Ukládá primitivní datové typy ve tvaru klíč-hodnota. Slouží k uložení nastavení specifických pro aplikaci. K těmto se přistupuje pomocí \emph{android.content.-\\SharedPreferences} rozhraní. Data jsou ukládána persistentně. V aplikaci používám toto úložiště pro nastavení síťového připojení, barevného nastavení pro typy docházkových událostí a další uživatelsky měnitelné hodnoty. Ve výpisu kódu \ref{lis:sharedload} je znázorněno načtení hodnoty.
+Android umožňuje několik způsobů, jak persistentně ukládat data aplikace. Programátor by měl vzít v úvahu, zda data mají být soukromá či dostupná i ostatním aplikacím a také zohlednit velikost těchto dat. 
+
+\subsection*{Sdílené preference} Ukládá primitivní datové typy ve tvaru klíč-hodnota. Slouží k uložení nastavení specifických pro aplikaci. K těmto se přistupuje pomocí \emph{android.content.-\\SharedPreferences} rozhraní. Data jsou ukládána persistentně. V aplikaci používám toto úložiště pro uložení nastavení síťového připojení, barevného nastavení pro typy docházkových událostí a další uživatelsky měnitelné hodnoty. Ve výpisu kódu \ref{lis:sharedload} je znázorněno načtení hodnoty.
 \begin{lstlisting}[label=lis:sharedload, caption=Získání hodnoty nastavení]
 SharedPreferences settings = PreferenceManager.
 getDefaultSharedPreferences(context);
@@ -1340,7 +1342,7 @@ int color = settings.getInt("color", defaultColor);
 \end{lstlisting}
 
 \noindent
-Změny nastavení se provádějí pomocí \emph{SharedPreferences.Editor} rozhraní, které se postará, aby data zůstala konsistentní a řídí transakční zpracování. Ve výpisu kódu \ref{lis:sharedloadsave} je znázorněno uložení hodnoty.\\
+Změny nastavení se provádějí pomocí \emph{SharedPreferences.Editor} rozhraní, které se postará o to, aby data zůstala konsistentní a řídí transakční zpracování. Ve výpisu kódu \ref{lis:sharedloadsave} je znázorněno uložení hodnoty.\\
 \begin{lstlisting}[label=lis:sharedloadsave, caption=Uložení hodnoty nastavení] 
 SharedPreferences settings = PreferenceManager.
 getDefaultSharedPreferences(context);
@@ -1354,8 +1356,8 @@ Soubory lze ukládat v interní paměti zařízení. Tyto soubory jsou defaultn�
 \subsection*{Externí úložiště}
 Další možností pro ukládání souborů je externí úložiště (např. SD karta).  Toto úložiště je sdílené a data mohou být editována i mimo aplikaci.
 \subsection*{SQLite databáze}
-Data lze ukládat persistentně pomocí SQLite\cite{sqlite} databáze. Vytvořená databáze je dostupná jakkékoli třídě v aplikaci, ale není přístupná mimo aplikaci, která jí vytořila. \\ \indent
-SQLite databáze nepoužívá vlastní proces jako serverové databáze. Databázi představuje jeden soubor na disku, se kterým pracuje proces aplikace. K použití databáze nejsou potřeba další balíky knihoven. Použití databáze nevyžaduje instalaci. Transakce jsou podporovány a splňují vlastnosti ACID (Atomicity, Consistency, Isolation, Durability) a to i v případě kdy je operační systém mobilního zařízení neočekávaně ukončen. Databáze používá dynamické typování. \\ \indent
+Data lze ukládat persistentně pomocí SQLite\cite{sqlite} databáze. Vytvořená databáze je dostupná jakkékoli třídě v aplikaci, ale není přístupná mimo aplikaci, která ji vytořila. \\ \indent
+SQLite databáze nepoužívá vlastní proces jako serverové databáze. Databázi představuje jeden soubor na disku, se kterým pracuje proces aplikace. K použití databáze nejsou potřeba další balíky knihoven. Použití databáze nevyžaduje instalaci. Transakce jsou podporovány a splňují vlastnosti ACID (Atomicity, Consistency, Isolation, Durability) a to i v případě, kdy je operační systém mobilního zařízení neočekávaně ukončen. Databáze používá dynamické typování. \\ \indent
 SQLite databáze je v aplikaci použita pro persistentní ukládání dat o událostech docházky, výkazech a zaměstnancích.
 
 
@@ -1372,7 +1374,7 @@ Volána ve chvíli, kdy je poslední instance widgety smazána ze svého hostite
 \item \textbf{onEnabled()}\\
 Volána ve chvíli, kdy je vytvořena první instance widgetu.
 \item \textbf{onUpdate()}\\
-Volána pokaždé kdy má být widget aktualizován, což nastane v případě kdy uplyne perioda (definována v metadatech) nebo při přijetí \emph{Intent} objektu vytvořeného za účelem aktualizace widgetu. 
+Volána pokaždé, kdy má být widget aktualizován, což nastane v případě, kdy uplyne perioda (definována v metadatech) nebo při přijetí \emph{Intent} objektu vytvořeného za účelem aktualizace widgetu. 
 \end{itemize}
 \subsection*{Použití v aplikaci}
 V aplikaci jsou k dispozici dva typy widget komponent. Widget pro rychlé zadání docházkové události je zobrazen na obr. \ref{fig:widgetatt}. Widget pro zobrazení přítomnosti (poslední docházkové události) vybraného uživatele je zobrazena na obr. \ref{fig:widgetemp} a jeho konfigurační aktivita pro výběr zaměstnance je na obr. \ref{fig:widgetact}.
@@ -1398,11 +1400,11 @@ Slouží k registraci posluchače získávajícího aktualizace s informacemi o 
 \end{itemize}
 
 \subsection*{Použití v aplikaci}
-V aplikaci je funkce získání polohy použita pro zjištění zda se uživatel nachází či nenachází v prostorách pracoviště. Uživatel si nejprve nastaví polohu pracoviště pomocí příslušné obrazovky (obr. \ref{fig:location}). Aplikace periodicky kontroluje polohu zařízení a sleduje poslední docházkovou aktivitu. Pokud se uživatel nachází na pracovišti a nemá zadaný příchod nebo se nenachází na pracovišti a nemá zadaný odchod, aplikace ho upozorní pomocí notifikací (obr. \ref{fig:notif}). Uživatel tuto funkci může chápat jako zásah do soukromý a může ji vypnout. Získaná data o poloze se využívají pouze k upozornění uživatele.
+V aplikaci je funkce získání polohy použita pro zjištění, zda se uživatel nachází či nenachází v prostorách pracoviště. Uživatel si nejprve nastaví polohu pracoviště pomocí příslušné obrazovky (obr. \ref{fig:location}). Aplikace periodicky kontroluje polohu zařízení a sleduje poslední docházkovou aktivitu. Pokud se uživatel nachází na pracovišti a nemá zadaný příchod, nebo se nenachází na pracovišti a nemá zadaný odchod, aplikace ho upozorní pomocí notifikací (obr. \ref{fig:notif}). Uživatel tuto funkci může chápat jako zásah do soukromí a může ji vypnout. Získaná data o poloze se využívají pouze k upozornění uživatele.
 
 \section{Google služba pro mapy}
 Google Maps Android API\cite{map} je služba poskytovaná společností Google umožňující využívat data Google Maps na Android zařízení. API automaticky zajišťuje přístup k serverům Google Maps, stažení a zobrazení mapy a odezvu na uživatelova gesta na zobrazené mapě. \\ \indent
-API je součástí balíku Google Play services SDK\cite{play}. Před použitím map v aplikaci je nejprve nutné tento balík nainstalovat a získat API klíč nutný k tomu, aby aplikace mohla přistupovat k této službě. Vývojář si nejprve vytvoří klíč pro svojí aplikaci, poté zažádá prostřednictvím Google APIs Console ve svém Google účtu o klíč určený pro přístup ke službě. \\ \indent
+API je součástí balíku Google Play services SDK\cite{play}. Před použitím map v aplikaci je nejprve nutné tento balík nainstalovat a získat API klíč nutný k tomu, aby aplikace mohla přistupovat k této službě. Vývojář si nejprve vytvoří klíč pro svoji aplikaci. Poté zažádá prostřednictvím Google APIs Console ve svém Google účtu o klíč určený pro přístup ke službě. \\ \indent
 Pro využití map v aplikaci je nejdůležitější třída\\ \emph{com.google.android.gms.maps.GoogleMap} umožňující zobrazení mapy, nastavení zobrazené polohy, měnit typ mapy nebo animovat zobrazení. Ukázka mapy zobrazené pomocí této služby je na obr. \ref{fig:map}.
 
 \begin{figure}[H]
@@ -1413,21 +1415,22 @@ Pro využití map v aplikaci je nejdůležitější třída\\ \emph{com.google.a
 \end{figure}
 
 \subsection*{Použití v aplikaci}
-V aplikaci jsou mapy použiti pro zobrazení aktuální polohy zařízení na obrazovce pro nastavení geografické polohy pracoviště.
+V aplikaci jsou mapy použity pro zobrazení aktuální polohy zařízení na obrazovce pro nastavení geografické polohy pracoviště.
+
 \section{Notifikace}
-Notifikace je zpráva zobrazená uživateli mimo uživatelské rozhraní aplikace. Notifikace je po vytvoření zobrazena v notifikační oblasti obrazovky zařízení. Po rozbalení notifikační lišty lze vidět detailní popis notifikace a také na ní lze kliknout.
+Notifikace je zpráva zobrazená uživateli mimo uživatelské rozhraní aplikace. Notifikace je po vytvoření zobrazena v notifikační oblasti obrazovky zařízení. Po rozbalení notifikační lišty lze vidět detailní popis notifikace, také na ní lze kliknout.
 \\ \indent
-V aplikaci je pomocí notifikace oznámeno uživateli, že zapoměl zadat příchod či odchod na pracoviště. To je kontrolováno na pozadí a proto je uživatel informován tímto způsobem. Při kliknutí je puštěna aktivita umožnující přidání docházkové události.
+V aplikaci je pomocí notifikace oznámeno uživateli, že zapomněl zadat příchod či odchod na pracoviště. To je kontrolováno na pozadí, a proto je uživatel informován tímto způsobem. Při kliknutí je puštěna aktivita umožnující přidání docházkové události.
 Ukázky notifikací jsou na obr. \ref{fig:notif} a \ref{fig:notifnotset}.
 
 \section{Vytváření grafů}
 Pro potřebu přehledného zobrazení statistik jsem se rozhodl využít grafy. Konkrétně koláčový graf pro zobrazení poměrů typů docházkových událostí či zakázek a sloupcový graf pro zobrazení jejich vývoje v čase. Při hledání vhodného řešení poskytující grafové komponenty jsem uvažoval následující varianty:
 
-\subsection*{Implementace vlastní komponenty}
+\subsection{Implementace vlastní komponenty}
 Implementace vlastních komponent pro grafy by bylo velice časově náročné a proto jsem tuto variantu zamítl.
 
-\subsection*{Využití cloudového řešení}
-Jako cloudové řešení se nabízí Google Charts API\cite{googlecharts}. Google Charts API poskytuje Javascriptové knihovny, pro vygenerování grafu. Aplikace stáhne knihovny, které potřebuje pro požadový graf, vytvoří objekt grafu, naplní ho daty, upraví jeho parametry a nakonec ho umístí do \emph{android.webkit.WebView} komponenty, která slouží k zobrazení webového obsahu. Nevýhoda použití Google Charts API spočívá v nedostupnosti jakýchkoli grafů při nedostupnosti síťového připojení. Na obr. \ref{fig:gcharts} je ukázka grafu.
+\subsection{Využití cloudového řešení}
+Jako cloudové řešení se nabízí Google Charts API\cite{googlecharts}. Google Charts API poskytuje Javascriptové knihovny pro vygenerování grafu. Aplikace stáhne knihovny, které potřebuje pro požadový graf, vytvoří objekt grafu, naplní ho daty, upraví jeho parametry a nakonec ho umístí do \emph{android.webkit.WebView} komponenty, která slouží k zobrazení webového obsahu. Nevýhoda použití Google Charts API spočívá v nedostupnosti jakýchkoli grafů při nedostupnosti síťového připojení. Na obr. \ref{fig:gcharts} je ukázka grafu.
 \begin{figure}[H]
   \centering
   \includegraphics[scale=0.5]{obr/gcharts.png}
@@ -1435,8 +1438,8 @@ Jako cloudové řešení se nabízí Google Charts API\cite{googlecharts}. Googl
 \label{fig:gcharts}
 \end{figure}
 
-\subsection*{Použití knihovny třetí strany}
-Jako nejlepší řešení jsem vyhodnotil použití knihovny třetí strany konkrétně AChartEngine\cite{achartengine} ve verzi 1.1.0. Výhoda tohoto řešení spočívá v tom, že s grafy lze pracovat i pokud je zařízení mimo dosah sítě. Ukázky použitých grafů jsou na obr. \ref{fig:achartspie} a  \ref{fig:achartsstack}.
+\subsection{Použití knihovny třetí strany}
+Jako nejlepší řešení jsem vyhodnotil použití knihovny třetí strany konkrétně AChartEngine\cite{achartengine} ve verzi 1.1.0. Výhoda tohoto řešení spočívá v tom, že grafy lze vytvořit i pokud je zařízení mimo dosah sítě. Ukázky použitých grafů jsou na obr. \ref{fig:achartspie} a  \ref{fig:achartsstack}.
 \begin{figure}[H]
 \centering
 \begin{minipage}{.48\textwidth}
@@ -1455,7 +1458,7 @@ Jako nejlepší řešení jsem vyhodnotil použití knihovny třetí strany konk
 
 
 \section{Oprávnění}
-V operačním systému Android běží každá aplikace ve svém \emph{sandboxu}, což je bezpečnostní mechanismus, který slouží pro oddělování běžících procesů. Pokud chce aplikace přístup k systémovým zdrojům, datům jiné aplikace či soukromým datům uživatele musí o to explicitně požádat. To se děje prostřednictvím oprávnění (angl. permissions) staticky deklarovaných pomocí tagu \emph{<uses-permission>} v souboru manifestu (AndroidManifest.xml příloha \ref{manifest}). Při instalaci aplikace je uživateli zobrazen seznam všech těchto oprávnění, které aplikace požaduje a bez jeho souhlasu nemůže být aplikace nainstalována. Níže je seznam všech oprávnění, které aplikace vyžaduje:
+V operačním systému Android běží každá aplikace ve svém \emph{sandboxu}, což je bezpečnostní mechanismus, který slouží pro oddělování běžících procesů. Pokud chce aplikace přístup k systémovým zdrojům, datům jiné aplikace či soukromým datům uživatele, musí o to explicitně požádat. To se děje prostřednictvím oprávnění (angl. permissions) staticky deklarovaných pomocí tagu \emph{<uses-permission>} v souboru manifestu (AndroidManifest.xml příloha \ref{manifest}). Při instalaci aplikace je uživateli zobrazen seznam všech těchto oprávnění, které aplikace požaduje a bez jeho souhlasu nemůže být aplikace nainstalována. Níže je seznam všech oprávnění, které aplikace vyžaduje:
 
 \begin{itemize}%[noitemsep,nolistsep]
 \item  \textbf{ACCESS\_FINE\_LOCATION}\\
@@ -1500,7 +1503,7 @@ Vzhledem k tomu, že aplikace je určena pro použití v soukromé společnosti,
 \end{itemize}
 
 \subsection*{Verze aplikace}
-Informace o verzi aplikace je nutná aby bylo možné provádět aktualizace. Verze aplikace se definuje pomocí atributů v souboru manifestu:
+Informace o verzi aplikace je nutná, aby bylo možné provádět aktualizace. Verze aplikace se definuje pomocí atributů v souboru manifestu:
 \begin{itemize}[noitemsep,nolistsep]
 \item \textbf{android:versionCode}
 Celočíselná hodnota reprezentující verzi aplikačního kódu, relativní k ostatním verzím. Hodnota by měla být zvýšena při každém vydání nové aplikace a díky tomu mohla být provedena aktualizace.
@@ -1509,7 +1512,7 @@ Celočíselná hodnota reprezentující verzi aplikačního kódu, relativní k 
 \end{itemize}
 
 \subsection*{Aktualizace aplikace}
-K tomu aby bylo možné využívat funkci automatické aktualizace je nutné přidat následující kód do každé aktivity aplikace, kde má být prováděna kontrola dostupnosti nové verze. Předpokladem je přítomnost potřebné knihovny \emph{AppKiltLib.jar} v projektu. Při zjištění nové verze aplikace je uživatel vyzván dialogem (obr. \ref{fig:confirm}) k instalaci nové verze. Následně je zobrazen seznam oprávnění požadovaný aplikací a uživatel je vyzván k akceptaci (obr. \ref{fig:install}). Ve výpisu kódu \ref{lis:actualise} se nachází kód nutný pro automatickou aktualizaci aplikace.
+K tomu, aby bylo možné využívat funkci automatické aktualizace, je nutné přidat následující kód do každé aktivity aplikace, kde má být prováděna kontrola dostupnosti nové verze. Předpokladem je přítomnost potřebné knihovny \emph{AppKiltLib.jar} v projektu. Při zjištění nové verze aplikace je uživatel vyzván dialogem (obr. \ref{fig:confirm}) k instalaci nové verze. Následně je zobrazen seznam oprávnění požadovaný aplikací a uživatel je vyzván k akceptaci (obr. \ref{fig:install}). Ve výpisu kódu \ref{lis:actualise} se nachází kód nutný pro automatickou aktualizaci aplikace.
 \begin{lstlisting}[label=lis:actualise, caption=Kontrola dostupnosti aktualizace] 
 @Override
 protected void onPause() { 
@@ -1545,7 +1548,7 @@ protected void onResume() {
 Android systém vyžaduje, aby všechny instalované aplikace byly digitálně podepsány certifikátem, který patří vývojáři aplikace. Soukromý klíč si vygeneruje sám vývojář pomocí dostupných prostředků. Před vydáním aplikace je nutné podepsat distribuovaný balík tímto soukromým klíčem.
 
 \subsection*{Reportování chyb}
-K tomu aby bylo možné využívat funkci reportování chyb je nutné přidat do projektu vlastní implementaci třídy \emph{android.app.Application} a v ní volat funkci \emph{AppKilt.init(this, "ID")}, kde řetězce \emph{ID} bude nahrazen skutečným identifikátorem přiděleným aplikaci službou AppKlit. Předpokladem je přítomnost potřebné knihovny \emph{AppKiltLib.jar} v projektu. Nevýhodou je skutečnost, že chybový report je odesílán pouze pokud je zařízení připojeno k síti v momentě, kdy dojde k chybě v aplikaci, jinak se tato informace ztratí. Ve výpisu kódu \ref{lis:errorreport} se nachází kód nutný pro automatické reportování chyb.
+K tomu, aby bylo možné využívat funkci reportování chyb, je nutné přidat do projektu vlastní implementaci třídy \emph{android.app.Application} a v ní volat funkci \emph{AppKilt.init(this, "ID")}, kde řetězec \emph{ID} bude nahrazen skutečným identifikátorem přiděleným aplikaci službou AppKlit. Předpokladem je přítomnost potřebné knihovny \emph{AppKiltLib.jar} v projektu. Nevýhodou je skutečnost, že chybový report je odesílán pouze tehdy, pokud je zařízení připojeno k síti v momentě, kdy dojde k chybě v aplikaci, jinak se tato informace ztratí. Ve výpisu kódu \ref{lis:errorreport} se nachází kód nutný pro automatické reportování chyb.
 \begin{lstlisting}[label=lis:errorreport, caption=Inicializace reportování chyb] 
 public class MyApplication extends Application {
 
@@ -1569,13 +1572,13 @@ public class MyApplication extends Application {
 \end{itemize}
 
 \chapter{Závěr}
-Cílem práce bylo vybrat a implementovat zvolenou funkčnost současného systému pro evidenci docházky a výkazů práce IMIS používaného ve společnosti CCA Group a.s. pro mobilní zařízení na platformě Android. Mobilní aplikace má sloužit zejména zaměstnancům, kteří se při svojí práci často pohybují mimo pracoviště.
+Cílem práce bylo vybrat a implementovat zvolenou funkčnost současného systému pro evidenci docházky a výkazů práce IMIS používaného ve společnosti CCA Group a.s. pro mobilní zařízení na platformě Android. Mobilní aplikace má sloužit zejména zaměstnancům, kteří se během své práce často pohybují mimo pracoviště.
 \\ \indent
 Vytvořená aplikace umožňuje efektivnější provádění některých funkcí současného systému jako je zadávání docházky zaměstnance. Dále přináší i nové funkce jako jsou přehledné grafické zobrazení reportů pro docházku a výkazy práce určené zejména pro nadřízené či upozornění při opomenutí zadání docházky. Aplikace tedy nachází uplatnění nejen pro zaměstnance na služebních cestách, ale i v každodenní pracovní činnosti.
 \\ \indent
 Architektura současného systému používá tlustého klienta připojujícího se k firemní databázi. Potřebná bussines logika se nachází částečně na straně klientské aplikace a z části na straně databáze. Logiku vyskytující se na straně klienta bylo nutné implementovat do webové služby, která slouží jako rozhraní mezi mobilní aplikací a databází organizace. Výběr architektury s použitím RESTful webové služby je výhodný pro případ budoucí implementace aplikací jiných mobilních platforem. Rovněž je výhodný z hlediska budoucích změn v systému, které by byly provedeny na straně webové služby bez zásahu do klientských aplikací.
 \\ \indent
-Možnost rozšíření práce spatřuji zejména v přídání možnosti zadávat výkazy práce, což je funkce, která nebyla vzhledem k nutnosti změn v současném systému organizace implementována. Pokud by měl uživatel možnost vytvářet si šablony pro opakující se akce, mohl by provádět každodenní výkazy práce efektivněji a organizace by díky tomu mohla snížit náklady na režijní činnosti.
+Možnost rozšíření práce spatřuji zejména v přidání možnosti zadávat výkazy práce, což je funkce, která nebyla vzhledem k nutnosti změn v současném systému organizace implementována. Pokud by měl uživatel možnost vytvářet si šablony pro opakující se akce, mohl by provádět každodenní výkazy práce efektivněji a organizace by díky tomu mohla snížit náklady na režijní činnosti.
 
 \chapter*{Seznam zkratek} 
 \addcontentsline{toc}{chapter}{Seznam zkratek}
@@ -1632,7 +1635,7 @@ Možnost rozšíření práce spatřuji zejména v přídání možnosti zadáva
   \label{fig:daytimelinealt}
 \end{minipage}
 \end{figure}
-Hlavní obrazovka aplikace zobrazuje grafický přehled docházkových událostí pro daný den (obr. \ref{fig:daytimeline}). Zobrazuje se blok jakkékoli přítomnosti a blok vybrané nepřítomnosti (oběd, služebně, lékař). Na obrázku je zobrazena přítomnost v práci od 8-12 hod následována odchodem na oběd ve 12 hod, příchodem z oběda ve 13 hod a následně dosud neukončená přítomnost v práci. Alternativně lze události docházky zobrazit jako seznam jednotlivých událostí (obr. \ref{fig:daytimelinealt}). Každá položka je ohraničena rámečkem jehož barva reprezentuje stav synchronizace.\newpage
+Hlavní obrazovka aplikace zobrazuje grafický přehled docházkových událostí pro daný den (obr. \ref{fig:daytimeline}). Zobrazuje se blok jakkékoli přítomnosti a blok vybrané nepřítomnosti (oběd, služebně, lékař). Na obrázku je zobrazena přítomnost v práci od 8-12 hod následována odchodem na oběd ve 12 hod, příchodem z oběda ve 13 hod a následně dosud neukončená přítomnost v práci. Alternativně lze události docházky zobrazit jako seznam jednotlivých událostí (obr. \ref{fig:daytimelinealt}). Každá položka je ohraničena rámečkem, jehož barva reprezentuje stav synchronizace.\newpage
 \noindent
 Barvy rámečku:
 \begin{itemize}[noitemsep,nolistsep]
@@ -1724,7 +1727,7 @@ Pomocí tlačítka \emph{Menu} v horním pravém rohu lze zobrazit menu aplikace
 
 \section{Grafy s statistiky}
 \label{sec:charts}
-Modul pro grafy a statistiky je dostupný jak pro docházku tak pro výkazy. Zobrazuje data pro vybraného uživatele za dané období. Lze prohlížet data uložená offline (od předchozího dotazu) nebo aktuální data pomocí tlačíka \emph{Aktualizovat}. Mezi jednotlivými obrazovkami lze přepínat pomocí tlačítka \emph{Přepnout zobrazení}. Ovládací panel pro volbu zaměstnance a období je popsán v sekci \ref{sec:panel}
+Modul pro grafy a statistiky je dostupný pro docházku i pro výkazy. Zobrazuje data pro vybraného uživatele za dané období. Lze prohlížet data uložená offline (od předchozího dotazu) nebo aktuální data pomocí tlačíka \emph{Aktualizovat}. Mezi jednotlivými obrazovkami lze přepínat pomocí tlačítka \emph{Přepnout zobrazení}. Ovládací panel pro volbu zaměstnance a období je popsán v sekci \ref{sec:panel}
 \begin{itemize}[noitemsep,nolistsep]
 \item \textbf{Koláčový graf}\\ zobrazuje poměr jednotlivých typů událostí docházky či typů zakázek (obr. \ref{fig:piechart})
 \item \textbf{Sloupcový graf}\\zobrazuje vývoj jednotlivých typů událostí docházky či typů zakázek po jednotlivých dnech (obr. \ref{fig:stackchart})
@@ -1755,7 +1758,7 @@ Modul pro grafy a statistiky je dostupný jak pro docházku tak pro výkazy. Zob
 
 \section{Výkazy}
 \label{sec:records}
-Obrazovka zobrazuje seznam pracovních výkazů (obr. \ref{fig:records}). Zobrazuje data pro vybraného uživatele za daného období. Lze prohlížet data uložená offline (od předchozího dotazu) nebo aktuální data pomocí tlačíka \emph{Aktualizovat}. Po kliknutí na záznam lze zobrazit detail výkazu (obr. \ref{fig:record}). V obdélníkovém rámečku v pravo nahoře je zobrazen rozdíl mezi odpracovaným a vykázaným časem. Po kliknutí lze zobrazit detailní informace. Tyto údaje jsou stahovány ze serveru při každém požadavku, neukládají se persistentně na straně Android aplikace.
+Obrazovka zobrazuje seznam pracovních výkazů (obr. \ref{fig:records}). Zobrazuje data pro vybraného uživatele za dané období. Lze prohlížet data uložená offline (od předchozího dotazu) nebo aktuální data pomocí tlačíka \emph{Aktualizovat}. Po kliknutí na záznam lze zobrazit detail výkazu (obr. \ref{fig:record}). V obdélníkovém rámečku vpravo nahoře je zobrazen rozdíl mezi odpracovaným a vykázaným časem. Po kliknutí lze zobrazit detailní informace. Tyto údaje jsou stahovány ze serveru při každém požadavku, neukládají se persistentně na straně Android aplikace.
 %\vspace{-1 mm}
 \begin{figure}[H]
   \centering
@@ -1773,7 +1776,7 @@ Obrazovka zobrazuje seznam pracovních výkazů (obr. \ref{fig:records}). Zobraz
 
 \section{Přítomnost zaměstnanců}
 \label{sec:emps}
-Zobrazuje seznam zaměstnanců a jejich stav přítomnosti (poslední docházkovou událost) (obr. \ref{fig:emps}). Při řazení záznamů mají přednost přítomní před nepřítomnými a oblíbení před těmi, které si uživatel neoznačil jako oblíbené, dále se řadí se podle abecedních názvů kódů pracovníků. Lze prohlížet data uložená offline (od předchozího dotazu) nebo aktuální data pomocí tlačíka \emph{Aktualizovat}. Po kliknutí na záznam zaměstnance lze zobrazit jeho detailní profil (obr. \ref{fig:emp}). Na profilu zaměstnance lze kliknutím na ikonu s motivem hvězdy měnit status oblíbenosti.
+Zobrazuje seznam zaměstnanců a jejich stav přítomnosti (poslední docházkovou událost) (obr. \ref{fig:emps}). Při řazení záznamů mají přednost přítomní před nepřítomnými a oblíbení před těmi, které si uživatel neoznačil jako oblíbené, dále se řadí podle abecedních názvů kódů pracovníků. Lze prohlížet data uložená offline (od předchozího dotazu) nebo aktuální data pomocí tlačíka \emph{Aktualizovat}. Po kliknutí na záznam zaměstnance lze zobrazit jeho detailní profil (obr. \ref{fig:emp}). Na profilu zaměstnance lze kliknutím na ikonu s motivem hvězdy měnit status oblíbenosti.
 
 \begin{figure}[H]
 \centering
