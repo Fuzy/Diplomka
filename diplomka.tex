@@ -949,7 +949,7 @@ V této kapitolu zdůvodňuji výběr cílového zařízení a podporovaných ve
 Jako součást požadavků zadavatele bylo zvoleno jako cílové zařízení smartphone. Aplikaci bude možné spustit i na zařízení typu tablet, nicméně uživatelské rozhraní aplikace není pro tento typ zařízení optimalizováno.
 
 \subsection{Výběr podporovaných verzí Android API}
-Aplikace podporuje operační systémy od verze 2.3.3. Jak je vidět z tabulky \ref{tab:share} aplikace podporuje více než 95\% trhu. Jako hlavní vývojové zařízení byl použit smartphone Google Nexus s operační systémem ve verzi 4.2.2.
+Aplikace podporuje operační systémy od verze 3.0. Jak je vidět z tabulky \ref{tab:share} aplikace podporuje více než 63\% zařízení na trhu. Jako hlavní vývojové zařízení byl použit smartphone Google Nexus s operační systémem ve verzi 4.2.2.
 
 
 \begin{table}[H]\footnotesize
@@ -1978,7 +1978,8 @@ Na obrazovce pro nastavení barev (obr. \ref{fig:colors}) lze nastavit barvy typ
 
 
 \chapter{Testovací dokumentace}
-Funkce webové služby může být testována i bez spojení s databází. Pokud se přistupuje k webové službě pomocí URL složené z \emph{<základní URL>/test}, bude použita testovací množina dat, která je součástí webové služby, ale neukládá se persistentně. Pro použití této možnosti je nutné přidat k nastavení domény řetězec \emph{/test} viz obr. \ref{fig:test}.
+Funkce webové služby může být testována i bez spojení s databází. Pokud se přistupuje k webové službě pomocí URL složené z \emph{<základní URL>/test}, bude použita testovací množina dat, která je součástí webové služby, ale neukládá se persistentně. Pro použití této možnosti je nutné přidat k nastavení domény řetězec \emph{/test} viz obr. \ref{fig:test}. 
+Testovací verze serveru nepodporuje plnou funkčnost.
 \begin{figure}[H]
   \centering
   \includegraphics[scale=0.25]{scr/test.png}
