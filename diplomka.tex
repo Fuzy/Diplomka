@@ -75,9 +75,10 @@ This thesis deals with design and implementation of mobile application for atten
 %\renewcommand{\chaptermark}[1]{\markboth{\textit{#1}}{}}
 %\renewcommand{\sectionmark}[1]{\markright{\textit{#1}}{}}
 \chapter{Úvod}
-Teměř v každé organizaci existuje potřeba evidovat docházku zaměstnanců. Evidence se využívá jednak při kontrole plnění pracovních povinností a rovněž při zpracování mzdové agendy. V mnoha organizacích je navíc potřeba evidovat odvedenou práci. Evidenci lze využít pro průběžné sledování nákladů projektu, měření výkonosti zaměstnanců či analýze procesů v organizaci a díky tomu lze nalézt zlepšení. Systém pro evidenci by měl klást minimální požadavky na zaměstnance a plnit tak svou funkci s minimálními náklady. Systém by rovněž měl podporovat Business intelligence činnosti.\\ \indent
-V této diplomové práci se konkrétně zabývám systémem pro evidenci docházky a výkazů práce IMIS vyvinutém ve společnosti CCA Group a.s.. Společnost tento systém používá pro svoje interní potřeby a rovněž jej implementovala u některých svých zákazníků. Cílem práce je vybrat a implementovat zvolenou funkčnost současného systému pro mobilní zařízení na platformě Android. Implementované řešení má využívat vlastností specifických pro mobilní zařízení. Uživateli má přinést možnost snadného a rychlého použití při služebních cestách či v případě kdy pouze nemá svůj pracovní počítač po ruce. Také uvažuje možnost, že se uživatel nenachází v dostupnosti firemní sítě a umožňuje některou činnost i v offline režimu.\\ \indent
-Nejprve bude nastíněna problematika evidence docházky a výkazů práce a bude popsána technologie použitá v současném systému (kap. 2). Kapitola 3 se věnuje analýze řešení, popisuje výběr vhodné architektury a s tím související výběr vhodné webové služby. Dále analyzuje využitelnost kódu současného systému pro novou aplikaci. Nakonec se věnuje problematice synchronizace dat mezi mobilní aplikací a databází organizace. V kapitole 4 je popsán způsob zabezpečení implementované aplikace. Kapitola 5 se věnuje implementaci webové služby. V Kap. 6 bude čtenář seznámen s kompletním seznamem funkcí implementované klientské aplikace. Kapitola se dále věnuje problematice vývoje aplikace pro platformu Android a popisuje komponenty použité v implementované aplikaci.
+Teměř v každé organizaci existuje potřeba evidovat docházku zaměstnanců. Evidence se využívá jednak při kontrole plnění pracovních povinností a rovněž při zpracování mzdové agendy. V mnoha organizacích je navíc potřeba evidovat odvedenou práci. Evidenci lze využít pro průběžné sledování nákladů projektu, měření výkonosti zaměstnanců či analýze procesů v organizaci. Systém pro evidenci by měl klást minimální požadavky na zaměstnance a plnit tak svou funkci s minimálními náklady. Systém by rovněž měl podporovat Business Intelligence činnosti.\\ \indent
+V této diplomové práci se konkrétně zabývám systémem pro evidenci docházky a výkazů práce IMIS vyvinutém ve společnosti CCA Group a.s.. Společnost tento systém používá pro svoje interní potřeby a rovněž jej implementovala u některých svých zákazníků. Cílem práce je vybrat a implementovat zvolenou funkčnost současného systému pro mobilní zařízení na platformě Android. Implementované řešení má využívat vlastností specifických pro mobilní zařízení. Uživateli má přinést možnost snadného a rychlého použití při služebních cestách či v případech, kdy pouze nemá svůj pracovní počítač po ruce. Také uvažuje možnost, že se uživatel nenachází v dostupnosti firemní sítě a umožňuje některou činnost i v offline režimu.\\ \indent
+Nejprve bude nastíněna problematika evidence docházky a výkazů práce a bude popsána technologie použitá v současném systému (kap. 2). Kapitola 3 se věnuje analýze řešení, popisuje výběr vhodné architektury a s tím související výběr vhodné webové služby. Dále analyzuje využitelnost kódu současného systému pro novou aplikaci. Nakonec se věnuje problematice synchronizace dat mezi mobilní aplikací a databází organizace. V kapitole 4 je popsán způsob zabezpečení implementované aplikace. Kapitola 5 se věnuje implementaci webové služby. V kap. 6 bude čtenář seznámen s kompletním seznamem funkcí implementované klientské aplikace. Poslední kapitola se dále věnuje problematice vývoje aplikace pro platformu Android a popisuje komponenty použité v implementované aplikaci.
+%a díky tomu lze nalézt zlepšení. 
 \chapter{Současný systém}
 Integrovaný manažerský informační systém (IMIS) je součástí informačního systému Ramses ERP vyvinutého společností CCA Group a.s.. Jedná se modulový ERP systém zabývající se oblastmi podnikových financí, kontrolováním nákladů, personalistikou a činnostmi podporující obchod. Společnost tento systém sama využívá pro svoje interní potřeby.
 
@@ -114,13 +115,13 @@ Výsledná mobilní aplikace nemá nahradit vybrané části používaného syst
 
 
 \section{Použitá technologie}
-Současný systém je postaven na Oracle technologii. Jako uživatelské rozhraní používá Oracle Forms a data jsou ukládany v Oracle databázi.
+Současný systém je postaven na Oracle technologii. Jako uživatelské rozhraní používá Oracle Forms a data jsou ukládana v Oracle databázi.
  
 \subsection{Oracle Forms}
 Oracle Forms\cite{forms} je softwarový produkt vyvinutý společností Oracle. Slouží k vytváření formulářů, které interagují s Oracle databází. Jako programovací jazyk využívá PL/SQL. Produkt byl původně používán jako terminálové rozhraní pro komuikaci se serverem. Později byl přepracován do architektury klient-server.\\ \indent
 Prostředí běhu zajišťuje defaultní správu transakcí. Díky tomu je Oracle Forms silný nástroj pro efektivní vývoj aplikací, jejichž primárním cílem je přístup k datům uložených v databázi. 
 
-\subsection*{PL/SQL}
+\paragraph{PL/SQL}
 PL/SQL (Procedural Language/Structured Query Language) je procedurální nadstavba jazyka SQL od firmy Oracle založená na programovacím jazyku Ada.
 \newpage
 \subsection{Architektura}
@@ -194,7 +195,7 @@ Aplikace v Oracle pracuje s následujícími typy triggerů:
 \item Transactional triggers - vyvolají se při různých událostech související s interakcí s datovým úložištěm.
 \end{itemize}
 Pokud se jedná o datový blok, který je svázan s tabulkou v databázi, prostředí běhu automaticky zajištuje DML pro tyto bloky.
-Pokud vývojář požaduje nestandartní akci při těchto úkonech, provede překrytí těchto triggerů s vlastní definovanou akcí.
+Pokud vývojář požaduje nestandardní akci při těchto úkonech, provede překrytí těchto triggerů s vlastní definovanou akcí.
 \newpage
 \subsection{Uživatelské rozhraní}
 Při pohledu na uživatelské rozhraní se Oracle Forms aplikace skládá z těchto objektů (obr. \ref{fig:gui}):
@@ -206,13 +207,13 @@ Při pohledu na uživatelské rozhraní se Oracle Forms aplikace skládá z těc
 \end{figure}
 
 
-Plátno je objekt, na který je nakresleno celé GUI formuláře, tedy všechny viditelné objekty.  Okno ohraničuje plochu plátna, která bude zobrazena. Plátno je zobrazeno v okně. Blok sdružuje jednotlivé položky, které se vztahují ke stejnému databázovému objektu.
+Plátno je objekt, na který je nakresleno celé GUI formuláře, tedy všechny viditelné objekty.  Okno ohraničuje plochu plátna, která bude zobrazena. Plátno je zobrazeno v okně. Blok sdružuje jednotlivé položky, jež se vztahují ke stejnému databázovému objektu.
 \vspace{-3mm}
 \subsection*{Seznam hodnot}
 Seznam hodnot je prvek uživatelského rozhraní, který uživateli nabízí výběr hodnot. Výběr může být na základě pevně daných dat či dotazem do databáze.
 
-\section{Důležité formuláře}
-V této jsou popsány formuláře pro vybranou funčnost systému. 
+\section{Vybrané formuláře}
+V této kapitole jsou popsány formuláře pro vybranou funčnost systému. 
  Konktrétně se jedná o formuláře pro zápis příchodů a odchodů na pracovistě a vykazování provedené práce.
 \subsection{Zápis příchodů a odchodů}
 \begin{figure}[H]
@@ -226,7 +227,7 @@ V této jsou popsány formuláře pro vybranou funčnost systému.
 \item Položky bloku pro zápis docházky
 \begin{description}[noitemsep,nolistsep]
 \item [Kód] - identifikátor zaměstnance.
-\item [Heslo] - heslo zaměstnance. Pokud heslo nemá tak prázdné pole.
+\item [Heslo] - heslo zaměstnance. Pokud heslo nemá, zůstává prázdné pole.
 \item [Druh]  - druh události, příchod či odchod. Kód události.
 \item [Popis] - doplní se automaticky podle kódu události.
 \item [Poznámka] - volitelná poznámka.
@@ -268,9 +269,9 @@ V této jsou popsány formuláře pro vybranou funčnost systému.
 \end{itemize}
 
 \chapter{Analýza}
-V této kapitole se zabývám analýzou současného systému a návrhem cílové aplikace. Nejprve popíšu zvolenou architekturu a s tím související výběr typu webové služby. Dále popisuji datovou vrstvu jak současného systému tak i cílové aplikace a popisuju některé výhrady k datové vrstvě současného systému. Popisuji kde všude se nachází bussines logika relevantní pro funkčnost cílové aplikace a možnosti využití současného kódu. Popisuji způsob synchronizace dat mezi klientskou aplikací a podnikovou databází. Nakonec zmiňuji některé aspekty týkající se uživatelského rozhraní cílové aplikace.
+V této kapitole je analyzován současný systém a navrženo řešení cílové aplikace. Nejprve popíšu zvolenou architekturu a s tím související výběr typu webové služby. Dále popisuji datovou vrstvu jak současného systému tak i cílové aplikace a popisuju některé výhrady k datové vrstvě současného systému. Popisuji kde všude se nachází bussines logika relevantní pro funkčnost cílové aplikace a možnosti využití současného kódu. Popisuji způsob synchronizace dat mezi klientskou aplikací a podnikovou databází. Nakonec zmiňuji některé aspekty týkající se uživatelského rozhraní cílové aplikace.
 
-\section{Architektura}
+\section{Architektura řešení}
 \label{sec:architecture}
 Při návrhu architektury jsem se rozhodoval mezi třemi variantami: přímé spojení Android aplikace ke vzdálené databázi pomocí JDBC, synchronizaci dat se vzdálenou databází pomocí Oracle Database Mobile Server a nakonec s využitím webové služby, která by sloužila jako rozhraní mezi klientskou aplikací a databázovým serverem.
 
@@ -279,20 +280,20 @@ Přestože příme připojení k Oracle databázi pomocí JDBC je možné, tuto 
 Vzhledem k tomu, že původní Forms aplikace funguje jako tlustý klient, provádí veškerou bussines logiku. Tato logika je zapotřebí ke správné funkčnosti systému. Bylo by tedy nutné přenést tuto logiku na stranu klienta a potřeba komunikace se vzdálenou databází by byla větší než k pouhému přenesení dat.
 
 \subsection{Oracle Database Mobile Server}
-Oracle Database Mobile Server 11g\cite{mobile} je server zajišťující  synchronizaci dat mezi Oracle databází a mobilními zařízeními. Klíčovou vlastností tohoto produktu je synchronizační jádro, které je schopné zajistit synchronizaci velkého počtu mobilních zařízení se vzdáleným databázovým systémem. Přestože bylo toto synchronizační jádro navrženo pro stabilní připojení, je schopné zajistit spolehlivou funkci i při nestabilním připojení. V případě, že je spojení přerušeno synchronizace je pozastavena a po navázání spojení pokračuje v místě přerušení. Dále umožuje šifrování dat, jak pro přenos tak i pro jejich persistenci.\\ \indent
-Tato varianta byla zamítnuta protože řeší pouze synchronizaci dat a neumožňuje zajistit provedení business logiky. Dalším důvodem je skutečnost, že její použití by vyžadovalo zakoupení licence pro tento server.\\ \indent
+Oracle Database Mobile Server 11g\cite{mobile} je server zajišťující  synchronizaci dat mezi Oracle databází a mobilními zařízeními. Klíčovou vlastností tohoto produktu je synchronizační jádro, které je schopno zajistit synchronizaci velkého počtu mobilních zařízení se vzdáleným databázovým systémem. Přestože bylo toto synchronizační jádro navrženo pro stabilní připojení, je schopné zajistit spolehlivou funkci i při nestabilním připojení. V případě, že je spojení přerušeno, synchronizace je pozastavena a po navázání spojení pokračuje v místě přerušení. Dále umožňuje šifrování dat pro přenos i pro jejich persistenci.\\ \indent
+Tato varianta byla zamítnuta, protože řeší pouze synchronizaci dat a neumožňuje zajistit provedení business logiky. Dalším důvodem je skutečnost, že její použití by vyžadovalo zakoupení licence pro tento server.\\ \indent
 Server je možné spustit na serverech Oracle WebLogic Server a Oracle Glassfish. Mobilní klient, který běží na straně mobilního zařízení zajišťuje správu zařízení nutnou k synchronizaci. Tento klient je dostupný pro platfromy Java, Android, Blackberry, Windows a Linux.
 
 \subsection{Webová služba}
-Jako použitou architekturu jsem zvolil použití webové služby, která bude fungovat jako rozhraní mezi klientskou aplikací a databázovým serverem. Android klient v této architektuře funguje jako tenký klient spravující jen část funkčnosti z původního tlustého klienta. Business logika je umístěna na straně webové služby. Díky tomu že, webová služba bude umístěna v blízkosti firemní databáze, dojde k minimalizace odezev při zajištění business logiky systému. Mezi klientem a webovou službou se přenášejí pouzy data, která jsou opravdu nutná. \\ \indent
-Z pohledu rozšiřitelnosti systému o další mobilní platformy se toto řešení jeví rovněž výhodně. Business logika by nebyla implementována ani na klientských aplikacích jiných platforem. Při změne logiky bude potřeba úpravy v kódu pouze na straně webové služby. Cílová architektura je vyobrazena na obrázku \ref{fig:deployment}.
+Jako použitou architekturu jsem zvolil použití webové služby, která bude fungovat jako rozhraní mezi klientskou aplikací a databázovým serverem. Android klient v této architektuře funguje jako tenký klient spravující jen část funkčnosti z původního tlustého klienta. Business logika je umístěna na straně webové služby. Díky tomu, že webová služba bude umístěna v blízkosti firemní databáze, dojde k minimalizace odezvy při zajištění business logiky systému. Mezi klientem a webovou službou budou přenášena pouze data, která jsou opravdu nutná. \\ \indent
+Z pohledu rozšiřitelnosti systému o další mobilní platformy se řešení pomocí webové služby jeví rovněž výhodně. Business logika by nebyla implementována ani na klientských aplikacích jiných platforem. Při změne logiky bude potřeba úpravy v kódu pouze na straně webové služby. Cílová architektura je vyobrazena na obrázku \ref{fig:deployment}.
 
 \newpage
 \subsection{Zvolená architektura}
 Android aplikace funguje jako tenký klient, který se připojuje k webové službě. Webová služba přistupuje k samotné databázi. Jednotlivé komponenty jsou zobrazeny na obr. \ref{fig:deployment} a popsány níže:
 \begin{itemize}
-\item Android - aplikace je podporovaná od API 10. Obsahuje persistentní úložiště. Pro komunikace s webovou službou je určena \emph{AsyncTask} komponenta, která ukládá záznamy do databáze. Záznamy z databáze jsou zobrazeny v uživatelském rozhraní \emph{AsyncActvity}. Kromě tohoto scenáře se navíc bude úložiště automaticky synchronizovat s databázovým serverem prostřednictvím webové služby (není zobrazeno na obr. \ref{fig:deployment}).
-\item Webová služba - je implementovaná v Java EE 6. Dodržuje RESTful principy s využitím Java API pro RESTful webové služby (JAX-RS) 1.1. Webová služba zpřístupňuje data pro klienta prostřednictvním \emph{Provider} komponent zpracovávající HTTP požadavek. Data jsou získávány z databáze pomocí \emph{DAO} (Data Access Object) objektů. Jako produkční aplikační server bude použit GlassFish 4.
+\item Android - aplikace je podporovaná od API 10. Obsahuje persistentní úložiště. Pro komunikaci s webovou službou je určena \emph{AsyncTask} komponenta, která ukládá záznamy do databáze. Záznamy z databáze jsou zobrazeny v uživatelském rozhraní \emph{AsyncActvity}. Kromě tohoto scenáře se navíc bude úložiště automaticky synchronizovat s databázovým serverem prostřednictvím webové služby (není zobrazeno na obr. \ref{fig:deployment}).
+\item Webová služba - je implementována v Java EE 6. Dodržuje RESTful principy s využitím Java API pro RESTful webové služby (JAX-RS) 1.1. Webová služba zpřístupňuje data pro klienta prostřednictvním \emph{Provider} komponent zpracovávající HTTP požadavek. Data jsou získávána z databáze pomocí \emph{DAO} (Data Access Object) objektů. Jako produkční aplikační server bude použit GlassFish 4.
 \item Databázový server - hostuje databázi Oracle 10g, která obsahuje data ke kterým Android aplikace přistupuje. Navíc obsahuje databázové procedury a funkce, které jsou součástí bussines logiky používané v současném systému.
 \end{itemize}
 %Diagram zobrazující uvedené komponenty je na obr. \ref{obr:deployment}:
@@ -312,8 +313,8 @@ Representational State Transfer\cite{rest} (REST) je architektonický styl pro d
 \item [Klient-server] Využívá se architektura klient-server z důvodu rozdělení zodpovědností pro komponenty systému (\emph{Separation of concerns}). Klient je zodpovědný za uživatelské rozhraní, díky tomu je získána větší přenositelnost na jiné platformy. Na straně serveru, který je zodpovědný za datovou vrstvu, se získá výhoda větší škálovatelnosti. 
 \item [Bezestavost] Komunikace probíhá bezestavově. Každý požadavek musí obsahovat všechny informace nutné k jeho vyřízení. Pokud je nutné pamatovat si stav, je to zodpovědností klienta. Díky tomu se zvyšuje spolehlivost systému, protože to usnadňuje zotavení se ze stavu částečného selhání. Také se zvyšuje škálovatelnost, protože server si nemusí udržovat informaci o stavu a díky tomu potřebuje méně zdrojů. Rovněž je snažší takový server implementovat.
 \item [Mezipaměť] Data přijímaná jako odpověď ze serveru musí být označena, zda mohou být uložena do mezipaměti klienta či nikoli. Pokud jsou uložena, klient je může využít opakovaně. Díky tomu je snížen počet interakcí. 
-\item [Jednotné rozhraní] Zdroje jsou identifikovány pomocí URI, které ale nezávisí na tom jakým způsobem budou data vrácena klientovi. Každý požadavek na server obsahuje informaci jakým způsobem mají být data zpracována (pomocí MIME hlavičky HTTP požadavku).  
-\item [Vícevrstevný systém] Klient nemusí získávat data přímo ze serveru na který se obrací. Server může fungovat jako prostředník, který je sám v roli klienta vůči jinému uzlu systému. Rozdělení systému do více vrstev může být využito k zapouzdření zastaralých služeb, k ochraně nových služeb před zastaralými klienty či zjednodušení kompoment díky sdílení zřídka využívaných služeb. Jiným přínosem může být zlepšení škálovatelnosti díky rozložení zátěže mezi více uzlů na stejné vrstvě systému.
+\item [Jednotné rozhraní] Zdroje jsou identifikovány pomocí URI, které ale nezávisí na tom, jakým způsobem budou data vrácena klientovi. Každý požadavek na server obsahuje informaci, jakým způsobem mají být data zpracována (pomocí MIME hlavičky HTTP požadavku).  
+\item [Vícevrstevný systém] Klient nemusí získávat data přímo ze serveru, na který se obrací. Server může fungovat jako prostředník, který je sám v roli klienta vůči jinému uzlu systému. Rozdělení systému do více vrstev může být využito k zapouzdření zastaralých služeb, k ochraně nových služeb před zastaralými klienty či zjednodušení kompoment díky sdílení zřídka využívaných služeb. Jiným přínosem může být zlepšení škálovatelnosti díky rozložení zátěže mezi více uzlů na stejné vrstvě systému.
 \item [Kód na požádání] Server může klientovi poskytovat kód, který je spustitelný na straně klienta a přinést tak další funkcionalitu.
 \end{description}
 
@@ -345,7 +346,7 @@ Na obr. \ref{fig:soap} je znázorněn vztah základních technologií používan
 
 \begin{description}
 \item [Webová služba] Poskytovatel služby. Ke službě se přistupuje pomocí \emph{endpoint} URL. \emph{Endpoint} URL definuje umístění služby, kde poskytovatel očekává příchozí požadavky.
-\item [Klient] Konzument služby, který si v UDDI registru vyhledá požadovanou službu. Poté sestaví zprávu podle specifikace a kontaktuje poskytovatele.
+\item [Klient] Konzument služby, který si v UDDI registru vyhledá požadovanou službu. Následně sestaví zprávu podle specifikace a kontaktuje poskytovatele.
 \item [UDDI\cite{uddi}] (Universal Description, Discovery, and Integration) registr je místo, které poskytuje informace o dostupných službách a jejich poskytovatelích. 
 \item [WSDL\cite{wsdl}] (Web Services Description Language) je jazyk, kterým je popisována funkcionalita poskytovaná webovou službou. WSDL soubor poskytuje strojově čitelný popis toho, jak může být služba volána, jaké parametry očekává a jaké datové struktury vrací.
 \end{description}
@@ -396,7 +397,7 @@ Další využití je pro zobrazení seznamu přítomných zaměstnanců.
 Data budou ukládané ve třech tabulkách SQLite databáze. Datový model nebude řešit referenční integritu těchto tabulek. Zajištění referenčí integrity je záležitostí databáze systému a její zajištění na straně klienta je zbytečné.
 
 \newpage
-\subsection{Práce s datumem a časem}
+\subsection{Práce s datem a časem}
 Při návrhu datového modelu jsem řešil problém pomocí jakého datového typu vyjadřovat údaj o čase či datu. V Oracle databázi je použit datový typ Date. SQLite databáze nabízí tři způsoby jako ukládat informaci o čase:
 \begin{itemize}
 \item \textbf{TEXT} podle ISO8601 normy ve formátu\\
@@ -440,15 +441,15 @@ Tabulka pro evidenci docházkových události neobsahuje primární klíč. To j
 \item pozice řádku v datovém bloku 
 \item číslo datového souboru, kde se záznam nachází. Číslo souboru je relativní vzhledem k tabulkovému prostoru.
 \end{itemize}
-Pomocí ROWID lze tedy jednoznačně identifikovat záznam. Bohužel kvůli k tomu, že jeho hodnota je relativní vzhledem k tabulkovému prostoru, tak jeho použití jako unikátního identifikátoru může selhat v těchto situacích:
+Pomocí ROWID lze tedy jednoznačně identifikovat záznam. Bohužel kvůli tomu, že jeho hodnota je relativní vzhledem k tabulkovému prostoru, tak jeho použití jako unikátního identifikátoru může selhat v těchto situacích:
 \begin{itemize}[noitemsep,nolistsep]
 \item záznam je fyzicky přemístěn do jiného tabulkového prostoru či jiné databáze, v tom případě bude vygenerován nový ROWID a záznam uložený na klientovi bude odkazovat na neexistující umístění či v horším případě na existující ale jiný záznam
 \item pokud uživatel smaže záznam prostřednictvím jiného klienta zatímco má záznam uložený na svém mobilním zařízení, může rovněž dojít k situaci, kdy záznam uložený na klientovi bude odkazovat na neexistující umístění nebo na existující ale jiný záznam 
 \end{itemize}
 
-Vhodným řešením by byla změna databázového schématu tabulky pro záznam docházkových událostí a to přidáním primárního klíče. Vzhledem k tomu že se se záznamy pro docházku po zpracování aktuální měsíce již dále nepracuje, tak případná změna starších dat nemůže napáchat reálné škody. 
+Vhodným řešením by byla změna databázového schématu tabulky pro záznam docházkových událostí a to přidáním primárního klíče. Vzhledem k tomu, že se se záznamy pro docházku po zpracování aktuální měsíce již dále nepracuje, tak případná změna starších dat nemůže napáchat reálné škody. 
 \subsubsection*{Schéma pro docházku}
-Záznam o příchodu či odchodu reprezentuje vždy jeden záznam pro každou z těchto událostí. Při práci s těmito daty na aplikační vrstvě je nutné vždy spárovat příchody a odchody týkající se daného zaměstnance. Je na zvážení zda nemohlo být datové schéma navržené lépe např. příchod či odchod by představoval jeden záznam v tabulce nebo pokud by každý odchod odkazoval na příslušný příchod. Kromě jednoduššího zpracování na aplikační vrstvě by byla rovněž snažší kontrola chybného vstupu, kdy zaměstnanec omylem zadá dva příchody či odchody následující po sobě. Taková kontrola se v současnosti v systému neprovádí.
+Záznam o příchodu či odchodu reprezentuje vždy jeden záznam pro každou z těchto událostí. Při práci s těmito daty na aplikační vrstvě je nutné vždy spárovat příchody a odchody týkající se daného zaměstnance. Je na zvážení, zda nemohlo být datové schéma navržené lépe (např. příchod či odchod by představoval jeden záznam v tabulce nebo pokud by každý odchod odkazoval na příslušný příchod). Kromě jednoduššího zpracování na aplikační vrstvě by byla rovněž snazší kontrola chybného vstupu, kdy zaměstnanec omylem zadá dva příchody či odchody následující po sobě. Taková kontrola se v současnosti v systému neprovádí.
 
 \subsubsection*{Datum a čas odděleně}
 Datum a čas docházkové události se uchovává odděleně, kdy každá z těchto hodnot má svůj příslušný sloupec. Je na zvážení, zda tyto údaje neměly být ukládány jako jedna hodnota.
@@ -492,7 +493,7 @@ BigDecimal bool = callableStatement.getBigDecimal(1);
 \end{lstlisting}
 
 \subsubsection{Funkce vracející typ BOOLEAN}
-Problém nastává pokud uložená funkce vrací typ BOOLEAN. Ovladač databáze Oracle JDBC nepodporuje typ BOOLEAN jako návratový datový typ \cite{limitation}. Řešením je použití obalující procedury, která zpracuje výsledek volané procedury vracející BOOLEAN, ale sama vrací podporovaný datový typ (např. NUMBER). Kód obalující procedury se nachází ve výpisu kódu \ref{lis:wrapper}. \\
+Problém nastává, pokud uložená funkce vrací typ BOOLEAN. Ovladač databáze Oracle JDBC nepodporuje typ BOOLEAN jako návratový datový typ \cite{limitation}. Řešením je použití obalující procedury, která zpracuje výsledek volané procedury vracející BOOLEAN, ale sama vrací podporovaný datový typ (např. NUMBER). Kód obalující procedury se nachází ve výpisu kódu \ref{lis:wrapper}. \\
 
 \begin{lstlisting}[label=lis:wrapper, caption=Obalující procedura]
 FUNCTION IMISOID_HESLO_WRAPPER(PIcp in Varchar2,
@@ -514,17 +515,17 @@ END;
 Další zdrojový kód používáný formuláři se nachází v knihovnách. Ačkoli se jedná o nezávislé jednotky, není způsob jak použít procedury v nich obsažené z prostředí jazyka Java.
 
 \subsection{Shrnutí}
-Část současného kódu zajišťující business logiku formulářů bude muset být přepsána do jazyka Java. Tento přepsaný kód bude umístěn do webové služby. Konkrétně se jedná o zdrojový kód umístěný v současných formulářích a knihovnách, které jsou jimy používány. Kód umístěný na straně databáze lze využít a nebude muset být přepsán.
+Část současného kódu zajišťující business logiku formulářů bude muset být přepsána do jazyka Java. Tento přepsaný kód bude umístěn do webové služby. Konkrétně se jedná o zdrojový kód umístěný v současných formulářích a knihovnách, které jsou jimi používány. Kód umístěný na straně databáze lze využít a nebude muset být přepsán.
 
 \newpage
 \section{Synchronizace dat}
-V současném systému uživatel zadává data prostřednictvím příslušného formuláře. Změny jsou aplikovány bezprostředně po uložení během databázové transakce. Mobilní klient přináší nový způsob použití - data lze zadat i v režimu offline, kdy mobilní klient není v dosahu webové služby. Tyto data jsou uložena persistentně na straně klienta a jsou synchronizována až ve chvíli kdy je možná komunikace s webovou službou.\\ \indent
+V současném systému uživatel zadává data prostřednictvím příslušného formuláře. Změny jsou aplikovány bezprostředně po uložení během databázové transakce. Mobilní klient přináší nový způsob použití - data lze zadat i v režimu offline, kdy mobilní klient není v dosahu webové služby. Tato data jsou uložena persistentně na straně klienta a jsou synchronizována až ve chvíli, kdy je možná komunikace s webovou službou.\\ \indent
 Synchronizace se týká pouze dat pro docházku uživatele. Ostatní data jsou prostřednictvím mobilního klienta pouze zobrazována. Je třeba počítat s tím, že záznamy přidané na straně klienta v režimu offline nemusí být přijaty při synchronizaci z důvodu porušení business pravidel a uživatel by měl být o této skutečnosti vhodně informován.
 
 \subsection{Obousměrná synchronizace}
 Při obousměrné synchronizaci se odesílají data ze strany klienta na server tak i opačným směrem ze serveru na klienta. Klienta lze navrhnout tak, aby si uchovával informaci o změnách na svojí straně. Při analýze databázového schématu pro docházku v současném systému jsem zjistil, že databáze neuchovává informaci o změnách na svojí straně. Beze změny této skutečnosti není možné sledovat změny na straně databáze. Výsledkem je poněkud neefektivní způsob synchronizace, kdy klient odesílá na server pouze změny, zatímco ze serveru stahuje všechna data pro daného uživatele a období.
 \\ \indent
-Celkový průběh synchronizace je znázorněn v diagramu \ref{fig:sync}. Klient nejprve odešle všechny svoje změny na server. Poté smaže všechny úspěšně odeslaná data. Bez smazání by nebylo možné zjistit, že na serveru došlo ke změně či smazání dat jiným klientem. Poté už zbývá pouze stažení aktuálních dat ze serveru. Data která na klientovi nebyla smazána z důvodu neúspěsného odeslání na server, zůstávají do té doby, než uživatel tyto data upraví tak aby vyhovovali bussines pravidlům. Dalším důvodem pro neúspěšnou synchronizaci může být přerušení spojení. Data zůstavají na klientovi, až do doby úspěšného pokusu o synchronizaci.
+Celkový průběh synchronizace je znázorněn v diagramu \ref{fig:sync}. Klient nejprve odešle všechny svoje změny na server. Poté smaže všechna úspěšně odeslaná data. Bez smazání by nebylo možné zjistit, že na serveru došlo ke změně či smazání dat jiným klientem. Poté už zbývá pouze stažení aktuálních dat ze serveru. Data, která na klientovi nebyla smazána z důvodu neúspěsného odeslání na server, zůstávají do té doby, než uživatel tato data upraví tak, aby vyhovovala bussines pravidlům. Dalším důvodem pro neúspěšnou synchronizaci může být přerušení spojení. Data zůstavají na klientovi, až do doby úspěšného pokusu o synchronizaci.
 \begin{figure}[H]
   \centering
   \includegraphics[scale=0.7]{visio/sync.pdf}
@@ -553,10 +554,10 @@ Diagram \ref{fig:syncup} podrobněji rozepisuje průběh odeslání požadavku n
 \vspace{-8mm}
 \subsection{Obousměrná synchronizace s úpravou databáze}
 Jiná varianta řešení problému synchronizace dat, která se snaží eliminovat nedostatky předchozí varianty, by vyžadovala změny v databázovém schématu současného systému. U každého záznamu by byla přidána informace o poslední změně záznamu s vhodnou časovou přesností. Pokud by došlo k požadavku na smazání záznamu, nebyl by záznam skutečně smazán, ale pouze nastaven přížnak smazaného záznamu. Při použití tohoto řešení by bylo možné synchronizovat oběma směry pouze změny ze strany klienta i serveru. \\ \indent
-Klient který iniciuje synchronizaci nejprve odešle na server požadavek ke kterému připojí údaj o času provedení poslední synchronizace. Server odesílá ke klientovi pouze ty data, která se změnila po tomto termínu. Poté klient odesílá svoje změny na server.
+Klient, který iniciuje synchronizaci nejprve odešle na server požadavek, ke kterému připojí údaj o času provedení poslední synchronizace. Server odesílá ke klientovi pouze ty data, která se změnila po tomto termínu. Poté klient odesílá svoje změny na server.
 
 \subsection{Řešení kolizí}
-Kolize teoreticky nastane vždy, když se v době od poslední synchronizace změní stejná data jak na serveru, tak v zařízení. Vzhledem k tomu, že server neukládá informaci o čase poslední synchronizace a není tedy možné zjistit že vůbec došlo ke změne dat, tak mobilní klient vždy přepíše záznam na serveru.
+Kolize teoreticky nastane vždy, když se v době od poslední synchronizace změní stejná data jak na serveru, tak v zařízení. Vzhledem k tomu, že server neukládá informaci o čase poslední synchronizace a není tedy možné zjistit, že vůbec došlo ke změne dat, tak mobilní klient vždy přepíše záznam na serveru.
 
 \subsection{Srovnání}
 V obou případech řešení je iniciátorem synchronizace klient. Druhá varianta by oproti první přinesla úsporu množství přenesených dat. Vzhledem k tomu, že druhá varianta by vyžadovala změnu v databázovém schématu současného systému, zvolil jsem první variantu i přesto, že z hlediska efektivity synchronizace je to horší řešení.
@@ -568,13 +569,13 @@ Uživatelské rozhraní současného systému je desktopové rozhraní. Při imp
 \chapter{Zabezpečení}
 V následující kapitole se zabývám zabezpečením aplikace. Popisuji několik možných variant z hlediska ověřování identity uživatele. Na závěr vysvětluji výběr zvoleného řešení.
 \section{Autentizace a autorizace}
-Při analýze současného systému jsem zjistil, že informace o docházce a výkazech zaměstnanců jsou dostupné všem ostatním uživatelům (údaje týkající se nadřízených pracovníků jsou dostupné i podřízením). Dalším zajímavostí je, že heslo používané k zadání docházky je pro uživatele nepovinné (má ho jen ten uživatel, který si ho nastavil). 
+Při analýze současného systému jsem zjistil, že informace o docházce a výkazech zaměstnanců jsou dostupné všem ostatním uživatelům (údaje týkající se nadřízených pracovníků jsou dostupné i podřízeným). Další zajímavostí je, že heslo používané k zadání docházky je pro uživatele nepovinné (má ho jen ten uživatel, který si ho nastavil). 
 
 \subsection*{Autentizace}
 Autentizace je proces ověření proklamované identity subjektu. Uživatel se identifikuje pomocí svého uživatelského jména a hesla.
 
 \subsection*{Autorizace}
-Autorizace je proces získávání souhlasu s provedením nějaké operace. Uživatel musí zadávat svoj přístupové údaje při zadání každého záznamu docházky. 
+Autorizace je proces získávání souhlasu s provedením nějaké operace. Uživatel musí zadávat své přístupové údaje při zadání každého záznamu docházky. 
 
 \subsection*{Riziko poškození systému}
 Webová služba umožňuje čtení a úpravu docházkových dat a dále čtení dat o výkazech práce a zaměstnancích. Dále používá některé databázové objekty jako jsou procedury a funkce, které pracují s těmito daty. Je vhodné aby aplikace měla přístup pouze k těm databázovým objektům, které jsou relevantní pro navrženou funkčnost aplikace. To je vhodné pro maximální zabezpečení okolního systému a minimalizaci případných rizik při zneužití či chybě v aplikaci. Toto je zodpovědností databázového administrátora organizace a v této práci se touto problematikou dále nezabývám.
@@ -588,18 +589,18 @@ Virtuální privátní síť  je prostředek pro propojení počítačů v prost
 
 \subsection*{Vlastnosti připojení VPN}
 \begin{itemize}[noitemsep,nolistsep]
-\item Zapouzdření\\ Při použití technologie VPN jsou data zapouzdřena pomocí hlavičky obsahující směrovací informace, které umožňují průchod dat přes tranzitní síť.
+\item Zapouzdření\\ Při použití technologie VPN jsou data zapouzdřena pomocí hlavičky obsahující směrovací informace, která umožňuje průchod dat přes tranzitní síť.
 \item Ověřování\\
 Klient a VPN server se vzájemně ověřují na úrovni počítače. Android má integrovanou podporu pro VPN využívající protokoly PPTP, L2TP a IPSec.
 \item Šifrování dat\\
 Pro utajení dat během jejich přenosu sdílenou nebo veřejnou tranzitní sítí jsou data na straně odesílatele zašifrována a na straně příjemce dešifrována. Šifrování a dešifrování je založeno na tom, že odesílatel i příjemce používají společný šifrovací klíč.
 \end{itemize}
 
-Webová služba je tedy umístěna na serveru uvnitř firemní sítě. Pokud klient chce komunikovat s webovou službou musí tak činit 
+Webová služba je tedy umístěna na serveru uvnitř firemní sítě. Pokud klient chce komunikovat s webovou službou, musí tak činit 
 prostřednictvím sítě VPN.
 
 \section{Autentizace proti databázi}
-Klient i server jsou součástí jedné VPN sítě, která zajišťuje důvěryhodný komunikační kanál.  Klient posílá na server HTTP požadavek jehož součástí je autentizační hlavička nesoucí uživatelské jméno a heslo. Webová služba ověří jméno a heslo pomocí databázové procedury. Jméno a heslo uživatele je uloženo v databázi. Implementované řešení je znázorněno na obr. \ref{fig:auth} který zobrazuje sekveční UML diagram v případě úspěšné autentizace.
+Klient i server jsou součástí jedné VPN sítě, která zajišťuje důvěryhodný komunikační kanál.  Klient posílá na server HTTP požadavek, jehož součástí je autentizační hlavička nesoucí uživatelské jméno a heslo. Webová služba ověří jméno a heslo pomocí databázové procedury. Jméno a heslo uživatele je uloženo v databázi. Implementované řešení je znázorněno na obr. \ref{fig:auth} který zobrazuje sekveční UML diagram v případě úspěšné autentizace.
 \begin{figure}[H]
   \centering
   \includegraphics[scale=0.8]{visio/auth.pdf}
@@ -608,7 +609,7 @@ Klient i server jsou součástí jedné VPN sítě, která zajišťuje důvěryh
 \end{figure}
 
 \section{Autentizace proti LDAP}
-Alternativním řešením by bylo ověřování uživatelů pomocí LDAP adresáře. Organizace již LDAP používá v některých dalších firemních systémech. Toto řešení se liší v tom, že dotaz na ověření identity uživatele probíhá k LDAP adresáři a nikoli k databázi. Implementované řešení je znázorněno na obr. \ref{fig:authldap}, který zobrazuje sekveční UML diagram v případě úspěšné autentizace.
+Alternativním řešením by bylo ověřování uživatelů pomocí LDAP adresáře. Organizace již LDAP používá v některých dalších firemních systémech. Toto řešení se liší v tom, že dotaz na ověření identity uživatele probíhá k LDAP adresáři a nikoli k databázi. Implementované řešení je znázorněno na obr. \ref{fig:authldap}, který zobrazuje sekvenční UML diagram v případě úspěšné autentizace.
 \begin{figure}[H]
   \centering
   \includegraphics[scale=0.8]{visio/auth_ldap.pdf}
@@ -617,11 +618,11 @@ Alternativním řešením by bylo ověřování uživatelů pomocí LDAP adresá
 \end{figure}
 \vspace{-6mm}
 \subsection{LDAP}
- Directory Access Protocol (LDAP) je internetový protokol definující přístup k distribuované adresářové službě. Podle tohoto protokolu jsou jednotlivé položky na serveru ukládány formou záznamů a uspořádány do stromové struktury. Protokol LDAP je byl navržen v souladu  se sadou standartů X.500 vyvinutých pro adresářové služby v počítačových sítích. Protokol LDAP je jejich odlehčenou verzí.\\ \indent
+ Directory Access Protocol (LDAP) je internetový protokol definující přístup k distribuované adresářové službě. Podle tohoto protokolu jsou jednotlivé položky na serveru ukládány formou záznamů a uspořádány do stromové struktury. Protokol LDAP byl navržen v souladu  se sadou standartů X.500 vyvinutých pro adresářové služby v počítačových sítích. Protokol LDAP je jejich odlehčenou verzí.\\ \indent
 Aplikace funguje na bázi klient-server. Klient se při komunikaci se serverem autentizuje. Prostřednictvím klienta lze přidávat, modifikovat a mazat záznamy na serveru.
 
 \subsection*{Schéma}
-Úkolem informačního modelu LDAP je definovat datové typy a informace, které lze v adresářovém serveru ukládat. Data jsou uchovávána ve stromové struktuře pomocí záznamů. Záznam představuje souhrn atributů (dvojice jméno - hodnota). Atributy nesou informaci o stavu daného záznamu. Záznamy, uložené v adresáři, musí odpovídat přípustnému schématu. Schéma  představuje soubor povolených objektových tříd a k nim náležících atributů.\\
+Úkolem informačního modelu LDAP je definovat datové typy a informace, které lze v adresářovém serveru ukládat. Data jsou uchovávána ve stromové struktuře pomocí záznamů. Záznam představuje souhrn atributů (dvojice jméno - hodnota). Atributy nesou informaci o stavu daného záznamu. Záznam uložený v adresáři musí odpovídat přípustnému schématu. Schéma  představuje soubor povolených objektových tříd a k nim náležících atributů.\\
 Ukázka schématu definující strukturu záznamu zaměstnance:
 \begin{verbatim}
 objectclass ( 1.1.2.2.2 NAME 'zamestnanec'
@@ -631,7 +632,7 @@ objectclass ( 1.1.2.2.2 NAME 'zamestnanec'
                 MAY zkratkaZamestnance )
 \end{verbatim}
 
-Objekt popisující zaměstnance dědí od objektu osoba, vyžaduje povinný atribut 'jmeno' a 'identifikacniCislo' a nepovinný atribut 'zkratkaZamestnance'.
+Objekt popisující zaměstnance dědí od objektu osoba, vyžaduje povinný atribut \emph{jmeno} a \emph{identifikacniCislo} a nepovinný atribut \emph{zkratkaZamestnance}.
 
 \subsection*{Funkční model}
 Funkční model umožňuje pomocí základních operací manipulovat a přistupovat k záznamům v adresáři a měnit či zjišťovat tak jejich stav.
@@ -657,8 +658,8 @@ ldap://host:port/DN?attributes?scope?filter?extensions
 
 \section{Shrnutí}
 Hlavním prvkem zabezpečení je VPN přístup. Uživatel bez přístupu do firemní VPN nemůže komunikovat s webovou službou. Od uživatele se očekává, že si nakonfiguruje VPN připojení v nastavení Android mobilního zařízení.\\ \indent
-Použil jsem první řešení protože je shoduje se způsobem ověřování v současném systému. Stávají řešení pomocí Oracle Forms aplikace používá rovněž ověření uživatele dotazem k databázi tzn. ověření se děje na aplikační vrstvě. \\ \indent
-Je nutné dívat se na pravidlo dobrovolného hesla jako na firemní pravidlo, které může být kdykoli zrušeno. V případě zrušení tohoto pravidla by se z největší pravděpodobností uplatnilo ověřování proti LDAP adresáři. 
+Použil jsem řešení autentizace proti databázi, protože se shoduje se způsobem ověřování v současném systému. Stávají řešení pomocí Oracle Forms aplikace používá rovněž ověření uživatele dotazem k databázi, tzn. ověření se děje na aplikační vrstvě. \\ \indent
+Je nutné dívat se na pravidlo dobrovolného hesla jako na firemní pravidlo, které může být kdykoli zrušeno. V případě zrušení tohoto pravidla by se s největší pravděpodobností uplatnilo ověřování proti LDAP adresáři. 
 
 \chapter{Webová služba}
 Na základě analýzy v sekci \ref{sec:architecture} byla identifikována nutnost vytvoření webové služby, která dosud v systému neexistuje. Webová služba je implementována v souladu s REST architekturou. 

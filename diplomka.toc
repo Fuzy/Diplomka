@@ -7,6 +7,7 @@
 \contentsline {subsection}{\numberline {2.1.3}Motivace}{3}
 \contentsline {section}{\numberline {2.2}Pou\IeC {\v z}it\IeC {\'a} technologie}{4}
 \contentsline {subsection}{\numberline {2.2.1}Oracle Forms}{4}
+\contentsline {paragraph}{PL/SQL}{4}
 \contentsline {subsection}{\numberline {2.2.2}Architektura}{5}
 \contentsline {paragraph}{Forms prost\IeC {\v r}ed\IeC {\'\i } b\IeC {\v e}hu}{5}
 \contentsline {paragraph}{Datab\IeC {\'a}ze}{5}
@@ -16,11 +17,11 @@
 \contentsline {paragraph}{Modul PL/SQL knihovny}{6}
 \contentsline {paragraph}{Modul knihovny objekt\IeC {\r u}}{7}
 \contentsline {subsection}{\numberline {2.2.4}U\IeC {\v z}ivatelsk\IeC {\'e} rozhran\IeC {\'\i }}{9}
-\contentsline {section}{\numberline {2.3}D\IeC {\r u}le\IeC {\v z}it\IeC {\'e} formul\IeC {\'a}\IeC {\v r}e}{9}
+\contentsline {section}{\numberline {2.3}Vybran\IeC {\'e} formul\IeC {\'a}\IeC {\v r}e}{9}
 \contentsline {subsection}{\numberline {2.3.1}Z\IeC {\'a}pis p\IeC {\v r}\IeC {\'\i }chod\IeC {\r u} a odchod\IeC {\r u}}{10}
 \contentsline {subsection}{\numberline {2.3.2}V\IeC {\'y}kaz pr\IeC {\'a}ce}{11}
 \contentsline {chapter}{\numberline {3}Anal\IeC {\'y}za}{12}
-\contentsline {section}{\numberline {3.1}Architektura}{12}
+\contentsline {section}{\numberline {3.1}Architektura \IeC {\v r}e\IeC {\v s}en\IeC {\'\i }}{12}
 \contentsline {subsection}{\numberline {3.1.1}P\IeC {\v r}\IeC {\'\i }m\IeC {\'e} p\IeC {\v r}ipojen\IeC {\'\i } k datab\IeC {\'a}zi}{12}
 \contentsline {subsection}{\numberline {3.1.2}Oracle Database Mobile Server}{13}
 \contentsline {subsection}{\numberline {3.1.3}Webov\IeC {\'a} slu\IeC {\v z}ba}{13}
@@ -32,7 +33,7 @@
 \contentsline {section}{\numberline {3.3}Datov\IeC {\'a} vrstva}{18}
 \contentsline {subsection}{\numberline {3.3.1}Datov\IeC {\'y} model}{18}
 \contentsline {subsection}{\numberline {3.3.2}Datov\IeC {\'y} model v mobiln\IeC {\'\i } aplikaci}{19}
-\contentsline {subsection}{\numberline {3.3.3}Pr\IeC {\'a}ce s datumem a \IeC {\v c}asem}{20}
+\contentsline {subsection}{\numberline {3.3.3}Pr\IeC {\'a}ce s datem a \IeC {\v c}asem}{20}
 \contentsline {subsection}{\numberline {3.3.4}V\IeC {\'y}hrady k datov\IeC {\'e} vrstv\IeC {\v e}}{21}
 \contentsline {section}{\numberline {3.4}Business logika}{22}
 \contentsline {subsection}{\numberline {3.4.1}Triggery formul\IeC {\'a}\IeC {\v r}e}{23}
