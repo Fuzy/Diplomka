@@ -75,15 +75,15 @@ This thesis deals with design and implementation of mobile application for atten
 %\renewcommand{\chaptermark}[1]{\markboth{\textit{#1}}{}}
 %\renewcommand{\sectionmark}[1]{\markright{\textit{#1}}{}}
 \chapter{Úvod}
-Teměř v každé organizaci existuje potřeba evidovat docházku zaměstnanců. Evidence se využívá jednak při kontrole plnění pracovních povinností a rovněž při zpracování mzdové agendy. V mnoha organizacích je navíc potřeba evidovat odvedenou práci. Evidenci lze využít pro průběžné sledování nákladů projektu, měření výkonosti zaměstnanců či analýze procesů v organizaci. Systém pro evidenci by měl klást minimální požadavky na zaměstnance a plnit tak svou funkci s minimálními náklady. Systém by rovněž měl podporovat Business Intelligence činnosti.\\ \indent
+Téměř v každé organizaci existuje potřeba evidovat docházku zaměstnanců. Evidence se využívá jednak při kontrole plnění pracovních povinností a rovněž při zpracování mzdové agendy. V mnoha organizacích je navíc potřeba evidovat odvedenou práci. Evidenci lze využít pro průběžné sledování nákladů projektu, měření výkonnosti zaměstnanců či analýze procesů v organizaci. Systém pro evidenci by měl klást minimální požadavky na zaměstnance a plnit tak svou funkci s minimálními náklady. Systém by rovněž měl podporovat Business Intelligence činnosti.\\ \indent
 V této diplomové práci se konkrétně zabývám systémem pro evidenci docházky a výkazů práce IMIS vyvinutém ve společnosti CCA Group a.s.. Společnost tento systém používá pro svoje interní potřeby a rovněž jej implementovala u některých svých zákazníků. Cílem práce je vybrat a implementovat zvolenou funkčnost současného systému pro mobilní zařízení na platformě Android. Implementované řešení má využívat vlastností specifických pro mobilní zařízení. Uživateli má přinést možnost snadného a rychlého použití při služebních cestách či v případech, kdy pouze nemá svůj pracovní počítač po ruce. Také uvažuje možnost, že se uživatel nenachází v dostupnosti firemní sítě a umožňuje některou činnost i v offline režimu.\\ \indent
 Nejprve bude nastíněna problematika evidence docházky a výkazů práce a bude popsána technologie použitá v současném systému (kap. 2). Kapitola 3 se věnuje analýze řešení, popisuje výběr vhodné architektury a s tím související výběr vhodné webové služby. Dále analyzuje využitelnost kódu současného systému pro novou aplikaci. Nakonec se věnuje problematice synchronizace dat mezi mobilní aplikací a databází organizace. V kapitole 4 je popsán způsob zabezpečení implementované aplikace. Kapitola 5 se věnuje implementaci webové služby. V kap. 6 bude čtenář seznámen s kompletním seznamem funkcí implementované klientské aplikace. Poslední kapitola se dále věnuje problematice vývoje aplikace pro platformu Android a popisuje komponenty použité v implementované aplikaci.
 %a díky tomu lze nalézt zlepšení. 
 \chapter{Současný systém}
-Integrovaný manažerský informační systém (IMIS) je součástí informačního systému Ramses ERP vyvinutého společností CCA Group a.s.. Jedná se modulový ERP systém zabývající se oblastmi podnikových financí, kontrolováním nákladů, personalistikou a činnostmi podporující obchod. Společnost tento systém sama využívá pro svoje interní potřeby.
+Integrovaný manažerský informační systém (IMIS) je součástí informačního systému Ramses ERP vyvinutého společností CCA Group a.s.. Jedná se o modulový ERP systém zabývající se oblastmi podnikových financí, kontrolováním nákladů, personalistikou a činnostmi podporující obchod. Společnost tento systém sama využívá pro svoje interní potřeby.
 
 \section{Vybraná funkcionalita}
-V této práci se zaměřuji na funkcionalitu z oblasti systému věnující se personalistice. Konktrétně se jedná o moduly pro zápis příchodů a odchodů na pracovistě a vykazování provedené práce. Jedná se o činnosti, které zaměstnanec provádí jako každodenní rutinu a zároveň jsou to činnosti s nejširší skupinou uživatelů v rámci podniku.
+V této práci se zaměřuji na funkcionalitu z oblasti systému věnující se personalistice. Konkrétně se jedná o moduly pro zápis příchodů a odchodů na pracovistě a vykazování provedené práce. Jedná se o činnosti, které zaměstnanec provádí jako každodenní rutinu a zároveň jsou to činnosti s nejširší skupinou uživatelů v rámci podniku.
  
 \subsection{Evidence docházky}
 Docházkový systém slouží k evidenci docházky zaměstnanců, která se následně využívá k přípravě podkladů pro zpracování mzdové agendy.\\ \indent
@@ -982,6 +982,7 @@ Verze&Kódové označení&API&Podíl uživatelů[\%]\\ \hline
 %\end{figure}
 
 \section{Komponenty Android aplikace}
+\label{sec:components}
 V následující kapitole jsou popsány komponenty použité v implementované aplikaci.
 \subsection{Activity}
 Aktivita představuje jednu obrazovku umožňující nějakou funkčnost a interakci s uživatelem prostřednictvím uživatelského rozhraní. 
@@ -1458,6 +1459,7 @@ Jako nejlepší řešení jsem vyhodnotil použití knihovny třetí strany konk
 
 
 \section{Oprávnění}
+\label{sec:persmissions}
 V operačním systému Android běží každá aplikace ve svém \emph{sandboxu}, což je bezpečnostní mechanismus, který slouží pro oddělování běžících procesů. Pokud chce aplikace přístup k systémovým zdrojům, datům jiné aplikace či soukromým datům uživatele, musí o to explicitně požádat. To se děje prostřednictvím oprávnění (angl. permissions) staticky deklarovaných pomocí tagu \emph{<uses-permission>} v souboru manifestu (AndroidManifest.xml příloha \ref{manifest}). Při instalaci aplikace je uživateli zobrazen seznam všech těchto oprávnění, které aplikace požaduje a bez jeho souhlasu nemůže být aplikace nainstalována. Níže je seznam všech oprávnění, které aplikace vyžaduje:
 
 \begin{itemize}%[noitemsep,nolistsep]
@@ -1729,29 +1731,29 @@ Pomocí tlačítka \emph{Menu} v horním pravém rohu lze zobrazit menu aplikace
 \label{sec:charts}
 Modul pro grafy a statistiky je dostupný pro docházku i pro výkazy. Zobrazuje data pro vybraného uživatele za dané období. Lze prohlížet data uložená offline (od předchozího dotazu) nebo aktuální data pomocí tlačíka \emph{Aktualizovat}. Mezi jednotlivými obrazovkami lze přepínat pomocí tlačítka \emph{Přepnout zobrazení}. Ovládací panel pro volbu zaměstnance a období je popsán v sekci \ref{sec:panel}
 \begin{itemize}[noitemsep,nolistsep]
-\item \textbf{Koláčový graf}\\ zobrazuje poměr jednotlivých typů událostí docházky či typů zakázek (obr. \ref{fig:piechart})
-\item \textbf{Sloupcový graf}\\zobrazuje vývoj jednotlivých typů událostí docházky či typů zakázek po jednotlivých dnech (obr. \ref{fig:stackchart})
-\item \textbf{Statistiky}\\zobrazuje poměr jednotlivých typů událostí docházky či typů zakázek a součet jejich času (obr. \ref{fig:stats})
+\item \textbf{Koláčový graf}\\ zobrazuje poměr jednotlivých typů událostí docházky či typů zakázek za dané období pro vybraného zaměstnance (obr. \ref{fig:piechart})
+\item \textbf{Sloupcový graf}\\zobrazuje sourhn jednotlivých typů událostí docházky či typů zakázek po jednotlivých dnech (obr. \ref{fig:stackchart})
+\item \textbf{Výpis statistik}\\zobrazuje poměr jednotlivých typů událostí docházky či typů zakázek a součet jejich času (obr. \ref{fig:stats})
 \end{itemize}
 
 \begin{figure}[H]
   \centering
   \includegraphics[scale=0.25]{scr/piechart.png}
-  \caption{Koláčový graf}
+  \caption{Zobrazení poměru typů událostí docházky či typů zakázek za dané období pro vybraného zaměstnance}
   \label{fig:piechart}
 \end{figure}
 
 \begin{figure}[H]
   \centering
   \includegraphics[scale=0.25]{scr/stackchart.png}
-  \caption{Sloupcový graf}
+  \caption{Zobrazení sourhnu jednotlivých typů událostí docházky či typů zakázek po jednotlivých dnech}
   \label{fig:stackchart}
 \end{figure}
 
 \begin{figure}[H]
   \centering
   \includegraphics[scale=0.25]{scr/stats.png}
-   \caption{Statistiky}
+   \caption{Zobrazení souhrných statistik pro jednotlivé typy událostí docházky či typy zakázek}
   \label{fig:stats}
 \end{figure}
 \vspace{-15 mm}
@@ -1759,7 +1761,7 @@ Modul pro grafy a statistiky je dostupný pro docházku i pro výkazy. Zobrazuje
 \section{Výkazy}
 \label{sec:records}
 Obrazovka zobrazuje seznam pracovních výkazů (obr. \ref{fig:records}). Zobrazuje data pro vybraného uživatele za dané období. Lze prohlížet data uložená offline (od předchozího dotazu) nebo aktuální data pomocí tlačíka \emph{Aktualizovat}. Po kliknutí na záznam lze zobrazit detail výkazu (obr. \ref{fig:record}). V obdélníkovém rámečku vpravo nahoře je zobrazen rozdíl mezi odpracovaným a vykázaným časem. Po kliknutí lze zobrazit detailní informace. Tyto údaje jsou stahovány ze serveru při každém požadavku, neukládají se persistentně na straně Android aplikace.
-%\vspace{-1 mm}
+\vspace{-1.5mm}
 \begin{figure}[H]
   \centering
   \includegraphics[scale=0.25]{scr/records.png}
@@ -1981,18 +1983,18 @@ Na obrazovce pro nastavení barev (obr. \ref{fig:colors}) lze nastavit barvy typ
 \end{figure}
 
 
-\chapter{Testovací dokumentace}
-Funkce webové služby může být testována i bez spojení s databází. Pokud se přistupuje k webové službě pomocí URL složené z \emph{<základní URL>/test}, bude použita testovací množina dat, která je součástí webové služby, ale neukládá se persistentně. Pro použití této možnosti je nutné přidat k nastavení domény řetězec \emph{/test} viz obr. \ref{fig:test}. 
+\chapter{Ověření funkčnosti aplikace}
+Funkčnost aplikace lze vyzkoušet i bez připojení k databázi společnosti. Pokud se přistupuje k webové službě pomocí URL složené z \emph{<základní URL>/test}, bude použita testovací množina dat, která je součástí webové služby, ale neukládá se persistentně. Pro použití této možnosti je nutné přidat k nastavení domény řetězec \emph{/test} viz obr. \ref{fig:test}. 
 Testovací verze serveru nepodporuje plnou funkčnost.
 \begin{figure}[H]
   \centering
   \includegraphics[scale=0.25]{scr/test.png}
-  \caption{Nastavení sítě pro testování}
+  \caption{Nastavení připojení k serveru pro testovací účely}
   \label{fig:test}
 \end{figure}
 
 
-\chapter{Manifest}
+\chapter{Manifest aplikace}
 \label{manifest}
 \definecolor{gray}{rgb}{0.4,0.4,0.4}
 \definecolor{darkblue}{rgb}{0.0,0.0,0.6}
@@ -2019,6 +2021,9 @@ Testovací verze serveru nepodporuje plnou funkčnost.
 breaklines=true,  
 numbers=left,    
 }
+
+Součástí každé Android aplikace je soubor \emph{AndroidManifest.xml}. Soubor manifestu obsahuje informace o názvu aplikace, minimální verzi systému Android, na kterém lze aplikaci spustit, výčet komponent aplikace (popsaných v kapitole \ref{sec:components}) a výčet oprávnění aplikace (popsaný v kapitole \ref{sec:persmissions}). Následuje výpis souboru manifestu vyvinuté aplikace.
+
 \begin{lstlisting}
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
           package="imis.client"
@@ -2050,7 +2055,7 @@ numbers=left,
             android:required="true"/>
 
     <uses-sdk
-            android:minSdkVersion="10"
+            android:minSdkVersion="11"
             android:targetSdkVersion="17"/>
 
     <application
@@ -2231,6 +2236,12 @@ numbers=left,
 </manifest>
 \end{lstlisting}
 
-\chapter{Obsah DVD}
+\chapter{Obsah přiloženého média}
+Součástí práce je rovněž přiložené paměťové médium (DVD) obsahující tyto adresáře a soubory:
+\begin{itemize}
+\item Android - adresář obsahující Android aplikaci
+\item WebApp - adresář obsahující aplikaci webové služby
+\item readme.txt - textový soubor obsahující podrobný popis výše zmíněných adresářů a popis připravených testovacích dat
+\end{itemize}
 
 \end{document}

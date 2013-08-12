@@ -118,6 +118,6 @@
 \contentsline {subsection}{\numberline {A.10.1}S\IeC {\'\i }\IeC {\v t}ov\IeC {\'e} p\IeC {\v r}ipojen\IeC {\'\i }}{92}
 \contentsline {subsection}{\numberline {A.10.2}Poloha pracovi\IeC {\v s}t\IeC {\v e}}{93}
 \contentsline {subsection}{\numberline {A.10.3}Nastaven\IeC {\'\i } barev typ\IeC {\r u} ud\IeC {\'a}lost\IeC {\'\i } a zak\IeC {\'a}zek}{94}
-\contentsline {chapter}{\numberline {B}Testovac\IeC {\'\i } dokumentace}{95}
-\contentsline {chapter}{\numberline {C}Manifest}{96}
-\contentsline {chapter}{\numberline {D}Obsah DVD}{103}
+\contentsline {chapter}{\numberline {B}Ov\IeC {\v e}\IeC {\v r}en\IeC {\'\i } funk\IeC {\v c}nosti aplikace}{95}
+\contentsline {chapter}{\numberline {C}Manifest aplikace}{96}
+\contentsline {chapter}{\numberline {D}Obsah p\IeC {\v r}ilo\IeC {\v z}en\IeC {\'e}ho m\IeC {\'e}dia}{103}
